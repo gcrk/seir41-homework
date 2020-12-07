@@ -48,7 +48,7 @@ You need to do this every time you're submitting homework.
   - `git pull upstream main` - merge changes that have been made to this repository into your own local repository.
   - `git push origin main`
 - **Once you're finished, submit a pull request for me to accept your homework**
-  - Navigate to your forked version of this repository on Github eg https://github.com/{{YOUR_USERNAME_HERE}}/seic38.
+  - Navigate to your forked version of this repository on Github eg https://github.com/{{YOUR_USERNAME_HERE}}/seir41.
   - Hit the **Pull request** button.
   - Make sure the destination for the pull request is set to my repository, not your own or anyone else's.
   * **IMPORTANT:** In the pull request comment, tell me the following:
