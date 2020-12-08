@@ -52,3 +52,16 @@ const verbing = function (verb) {
 
 	return result;
 };
+
+// Not Bad Function
+const notBad = function (string) {
+	const indexOfNot = string.indexOf("not");
+	const indexOfBad = string.indexOf("bad");
+	let result = string;
+
+	if (indexOfNot !== -1 && indexOfBad !== -1 && indexOfBad > indexOfNot) {
+		result = `${string.substr(0, indexOfNot)}good${string.substr(indexOfBad + 3)}`;
+	}
+
+	return result;
+};
