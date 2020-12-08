@@ -17,7 +17,7 @@ const halfNumber = function (num) {
 
 // Function to find the percentage of the first value to the second value
 const percentOf = function (num1, num2) {
-    const result = num1 / num2 * 100;
+    const result = (num1 / num2 * 100).toFixed(2);
     console.log(`${num1} is ${result}% of ${num2}.`);
     return result;
 };
@@ -30,3 +30,9 @@ const areaOfCircle = function (radius) {
 };
 
 // Part 2
+const calculateNumber = function (num) {
+    const halfOfNumber = halfNumber(num);
+    const squareOfNumber = squareNumber(halfOfNumber);
+    const areaOfNumber = areaOfCircle(squareOfNumber);
+    const percentageOfNumber = percentOf(areaOfNumber, squareOfNumber);
+};
