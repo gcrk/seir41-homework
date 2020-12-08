@@ -9,3 +9,10 @@ const drEvil = function (amount) {
 
     return result;
 };
+
+// MixUp Function
+const mixUp = function (s1, s2) {
+    const firstMixedWord = s2.substring(0,2) + s1.substring(2);
+    const secondMixedWord = s1.substring(0,2) + s2.substring(2);
+    return `${firstMixedWord} ${secondMixedWord}`;
+};
