@@ -12,8 +12,8 @@ const drEvil = function (amount) {
 
 // MixUp Function
 const mixUp = function (s1, s2) {
-	const firstMixedWord = s2.substring(0, 2) + s1.substring(2);
-	const secondMixedWord = s1.substring(0, 2) + s2.substring(2);
+	const firstMixedWord = s2.substr(0, 2) + s1.substr(2);
+	const secondMixedWord = s1.substr(0, 2) + s2.substr(2);
 	return `${firstMixedWord} ${secondMixedWord}`;
 };
 
@@ -32,6 +32,21 @@ const fixStart = function (string) {
 			} else {
 				result += string[i];
 			}
+		}
+	}
+
+	return result;
+};
+
+// Verbing Function
+const verbing = function (verb) {
+	let result = verb;
+
+	if (verb.length >= 3) {
+		if (verb.substr(-3) === "ing") {
+			result += "ly";
+		} else {
+			result += "ing";
 		}
 	}
 
