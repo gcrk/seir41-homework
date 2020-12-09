@@ -1,58 +1,65 @@
-// # Exercises: for loops
-//
-// ## The even/odd reporter
-//
-// Write a for loop that will iterate from 0 to 20. For each iteration, it will check if the current number is even or odd, and report that to the screen (e.g. "2 is even").
+// The Calculator
+// Part 1
+// Write a function called squareNumber that will take one argument (a number), square that number, and return the result. It should also log a string like "The result of squaring the number 3 is 9."
+// Write a function called halfNumber that will take one argument (a number), divide it by 2, and return the result. It should also log a string like "Half of 5 is 2.5.".
+// Write a function called percentOf that will take two numbers, figure out what percent the first number represents of the second number, and return the result. It should also log a string like "2 is 50% of 4."
+// Write a function called areaOfCircle that will take one argument (the radius), calculate the area based on that, and return the result. It should also log a string like "The area for a circle with radius 2 is 12.566370614359172."
+// Bonus: Round the result so there are only two digits after the decimal.
 
-for (let n = 0; n <= 20; n++) {
-    if (n % 2 === 0) {
-        console.log('${ n } is even');
-    } else {
-        console.log('${ n } is odd');
-    }
-}
-
-
-// ## Multiplication Tables
-//
-// Write a for loop that will iterate from 0 to 10. For each iteration of the for loop, it will multiply the number by 9 and log the result (e.g. "2 * 9 = 18").
-//
-// Bonus: Use a nested for loop to show the tables for every multiplier from 1 to 10 (100 results total).
-//
-
-
-// Multiplication tables
-var multiplier = 9;
-for (var i = 0; i <= 10; i++) {
-    var result = multiplier * i;
-    console.log(multiplier + ' * ' + i + ' = ' + result);
-}
-
-
-for (var multiplier = 0; multiplier <= 10; multiplier++) {
- for (var i = 0; i <= 10; i++) {
-   var result = multiplier * i;
-   console.log(multiplier + ' * ' + i + ' = ' + result);
+function squareNumber(num) {
+   let squared = num * num;
+   console.log("The result of squaring the number " + num + "is" + squared);
+   return squared;
  }
-}
-// ## The Grade Assigner
-//
-// Check the results of assignGrade function from the conditionals exercise for every value from 60 to 100 - so your log should show "For 89, you got a B. For 90, you got an A.", etc.
 
-function assignGrade(score) {
-    if (score > 90) {
-        return 'A';
-    } else if (score > 80) {
-        return 'B';
-    } else if (score > 70) {
-        return 'C';
-    } else if (score > 65) {
-        return 'D';
-    } else {
-        return 'F';
-    }
+squareNumber(3);
+
+function halfNumber(num) {
+let half = num / 2;
+console.log("Half of" + num + "is" + half);
+return half;
 }
 
-for (var i = 60; i <= 100; i++) {
-  console.log('For $ { i }, you got a ${ assignGrade(i) }');
+squareNumber(3);
+
+function halfNumber(num) {
+  let half = num / 2;
+  console.log("Half of" + num + "is" + half);
+  return half;
 }
+
+halfNumber(5);
+
+function percentOf(num1, num2) {
+  let percent = (num1 / num2) * 100;
+  console.log(num1 + "is" + percent +"% of" + num2);
+  return percent;
+
+}
+
+percentOf(2, 4);
+
+function areaOfCircle(radius) {
+let area = Math.PI * squareNumber(radius);
+console.log("The area of circle with radius" + radius + "is" + area);
+return area;
+
+}
+
+areaOfCircle(2);
+
+// Part 2
+// Write a function that will take one argument (a number) and perform the following operations, using the functions you wrote earlier1:
+
+// Take half of the number and store the result.
+// Square the result of #1 and store that result.
+// Calculate the area of a circle with the result of #2 as the radius.
+// Calculate what percentage that area is of the squared result (#3).
+
+function oneArgument(num) {
+  let half = halfNumber(num);
+  let squared = squareNumber(num);
+  let area = areaOfCircle(squared);
+  let percentage = percentOf(squared, area);
+}
+oneArgument(10);
