@@ -6,13 +6,21 @@ let hangman = 0;
 let reward = 0;
 
 const guessLetter = function (c) {
+	// stores a random reward between 0 and 100
 	let randomReward = Math.floor(Math.random() * 100);
 	let guessedFlag = false;
 
+	// check if the char c has been guessed before. If so, do nothing.
+	// function checkIfGuessed will return a boolean value.
 	if (!checkIfGuessed(c)) {
+		// logs new character guesses
 		guesses.push(c.toUpperCase());
+
 		for (let i = 0; i < word.length; i++) {
+			// checking if the args char c is in the word array
 			if (c.toUpperCase() === word[i]) {
+				// The following tracks Successful guesses that prints to the screen
+				// Tracks and updates rewards pool as well
 				guessedLetters[i] = word[i];
 				guessedFlag = true;
 				reward += randomReward;
@@ -21,6 +29,8 @@ const guessLetter = function (c) {
 			}
 		}
 
+		// If the guess is incorrect: deduct reward pool with the random reward value.
+		// If it goes to negative territory, make reward pool to 0.
 		if (!guessedFlag) {
 			if (reward > randomReward) {
 				reward -= randomReward;
@@ -28,6 +38,7 @@ const guessLetter = function (c) {
 				reward = 0;
 			}
 
+			// logs hangman value
 			hangman++;
 			console.log(`Sorry, there is no ${c.toUpperCase()} in this word.`);
 			console.log(`You have lost $${randomReward} from your reward pool!`);
@@ -35,17 +46,20 @@ const guessLetter = function (c) {
 	}
 	printToScreen();
 
+	// Check if the player has guessed all letters correctly and have won
 	if (word.toString() === guessedLetters.toString()) {
 		console.log("Congrats! You have won the game!");
 		console.log(`Your final reward amount: $${reward}`);
 	}
 
+	// Check if the player has guessed incorrectly for 6x and have lost
 	if (hangman === 6) {
 		console.log("You have lost the game!");
 		printHangman();
 	}
 };
 
+// function prints out the board and relevant statistical values like Reward pool, Guessed Letters and Hangman Counter
 const printToScreen = function () {
 	let output = "";
 	let output2 = "";
@@ -65,6 +79,7 @@ const printToScreen = function () {
 	console.log("");
 };
 
+// function checks the user's guesses whether it's been tried before. Returns a boolean value.
 const checkIfGuessed = function (c) {
 	for (let i = 0; i < guesses.length; i++) {
 		if (c.toUpperCase() === guesses[i]) {
@@ -75,6 +90,7 @@ const checkIfGuessed = function (c) {
 	return false;
 };
 
+// function prints hangman to console
 const printHangman = function () {
 	console.log("________");
 	console.log("|      |");
