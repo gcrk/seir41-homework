@@ -101,22 +101,36 @@ const reverseString = (str) => {
 //Q6. 
 const words = ['pollution', 'node', 'pneumonoultramicroscopicsilicovolcanoconiosis']
 
+// const findLongestWord = (arr) => {
+//     //Set longest to an empty string 
+//     let longestWord = "";
+//     //Loop through array
+//     for (i = 0; i < arr.length; i++) {
+//         //Check which of the array values has the largest length when compared the length of an empty string = 0.
+//         if (arr[i].length > longestWord.length) {
+//             //longest word is the one that satisfies the condtion.
+//             longestWord = arr[i];
+//         }
+//     }
+//     //Return the longest word 
+//     return longestWord;
+// }
+
+// console.log(findLongestWord(words));
+
 const findLongestWord = (arr) => {
     //Set longest to an empty string 
     let longestWord = "";
     //Loop through array
-    for (i = 0; i < arr.length; i++) {
+    for (i = 0; i = < arr.length; i++) {
         //Check which of the array values has the largest length when compared the length of an empty string = 0.
-        if (arr[i].length > longestWord.length) {
-            //longest word is the one that satisfies the condtion.
-            longestWord = arr[i];
-        }
+        console.log(arr[i].length);
     }
     //Return the longest word 
     return longestWord;
 }
 
-// console.log(findLongestWord(words));
+console.log(findLongestWord(words));
 
 
 
