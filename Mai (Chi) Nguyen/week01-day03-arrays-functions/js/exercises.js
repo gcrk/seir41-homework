@@ -208,10 +208,19 @@ const letterCount = new Set();
 let numberOfGuesses = function () {
   return letterCount.size;
 }
+// Keep track of the state of the hangman as a number (starting at 0),
+let hangmanNumber = 0;
 
+//### MAIN FUNCTION
 const wheelOfFortune = function (guess) {
 
-  // - Keep track of all the guessed letters (right and wrong) and only let the user guess a letter once. If they guess a letter twice, do nothing.
+// If they guess a letter twice, do nothing.
+  if (letterCount.has(guess)) {
+    console.log(`You have guessed "${guess}" before!`);
+    return;
+  }
+
+  // - Keep track of all the guessed letters (right and wrong) and only let the user guess a letter once.
   let letterFound = 0;
   letterCount.add(guess);
   console.log(`Number of times you guess: ${numberOfGuesses()}`);
@@ -223,19 +232,28 @@ const wheelOfFortune = function (guess) {
       letterFound += 1;
     }
   }
-
   // - When it's done iterating, it should log the current guessed letters ('F__')
   console.log(currentGuess);
-
 // - Every time a letter is guessed, generate a random amount and reward the user if they found a letter (multiplying the reward if multiple letters found), otherwise subtract from their reward.
   if (letterFound === 0) {  //generate reward
     currentReward -= Number((Math.random()*100).toFixed(2));
     console.log(`Sorry, "${guess}" is not the right letter!`)
     currentReward = maxOfTwo(currentReward, 0);
+//and subtract or add to that number every time they make a wrong guess.
+    hangmanNumber += 1;
+    hangmanNumber = maxOfTwo(hangmanNumber, 0);
   } else {
     currentReward += Number((Math.random()*100*letterFound).toFixed(2));
     // and congratulate the user if they found a new letter.
     console.log(`Congratulation! Number of letter "${guess}" found: ${letterFound}`);
+    hangmanNumber -= 1;
+  }
+  console.log(`HANGMAN: ${hangmanNumber}`)
+// - Once the number reaches 6 (a reasonable number of body parts for a hangman), inform the user that they lost and show a hangman on the log.
+
+  if (hangmanNumber >= 6) {
+    console.log("Sorry you have lost!");
+    return;
   }
 
   let leftOver = 0; //count leftover letters from current guess.
@@ -257,9 +275,11 @@ const wheelOfFortune = function (guess) {
 }
 
 
-wheelOfFortune("p");
-wheelOfFortune("a");
-wheelOfFortune("n");
-wheelOfFortune("i");
-wheelOfFortune("i");
-wheelOfFortune("k");
+wheelOfFortune("c");
+wheelOfFortune("e");
+wheelOfFortune("s");
+wheelOfFortune("9");
+wheelOfFortune("m");
+wheelOfFortune("b");
+wheelOfFortune("f");
+wheelOfFortune("g");
