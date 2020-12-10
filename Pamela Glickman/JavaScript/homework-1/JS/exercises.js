@@ -102,6 +102,15 @@ const mixUp = function (string1, string2) {
 // return a version where all occurences of its first character have been replaced with '*', except for the first character itself. You can assume that the string is at least one character long. For example:
 // ```
 // fixStart('babble'): 'ba**le'
+
+const fixStart = function (string) {
+  const firstLetter = string[0];
+  const reg = new RegExp(firstLetter, "g");
+  const replacedStr = string.replace(reg, "*");
+  const result = firstLetter + replacedStr.substring(1);
+  console.log(result);
+  return;
+}
 // ```
 //
 // ## Verbing
@@ -114,6 +123,17 @@ const mixUp = function (string1, string2) {
 //   verbing('swimming'): 'swimmingly'
 //   verbing('go'): 'go'
 // ```
+const verbing = function(string) {
+  if (string.length >= 3) {
+    const lastLetters = string.substring(string.length - 3);
+    if (lastLetters === "ing") {
+      string = string + "ly";
+    } else {
+      string = string + "ing"
+    }
+  }
+  console.log(string);
+}
 //
 // ## Not Bad
 //
@@ -128,3 +148,13 @@ const mixUp = function (string1, string2) {
 //   notBad('This movie is not so bad!'): 'This movie is good!'
 //   notBad('This dinner is bad!'): 'This dinner is bad!'
 // ```
+
+const notBad = function(string) {
+  const notIndex = string.indexOf("not");
+  const badIndex = string.indexOf("bad");
+  if (notIndex > -1 && badIndex > -1 && notIndex < badIndex) {
+    string = string.substring(0, notIndex) + "good" + string.substring(badIndex + 3);
+  }
+  console.log(string);
+  return string;
+}
