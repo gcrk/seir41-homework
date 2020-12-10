@@ -31,6 +31,8 @@ console.log(maxOfThree(3, 5, 7))
 console.log(maxOfThree(5, 7, 3))
 console.log(maxOfThree(7, 5, 3))
 
+
+
 // 3. Write a function that takes a character (i.e. a string of length 1) and returns true if it is a vowel, false otherwise.
 
 //we want a function that would return false if there was no vowel and return true if the arguemnt is a vowel
@@ -70,6 +72,9 @@ console.log(multiplyArray([2, 4, 5, 6]))
 
 
 
+let a = Str.split();
+str.reverse();
+str.join();
 
 
 // # Homework: The Word Guesser
@@ -89,7 +94,9 @@ console.log(multiplyArray([2, 4, 5, 6]))
 
 let wordLetters = ['b', 'e', 'n', 'c', 'h'];
 
-let guessedLetters = ['\_', '\_', '\_', '\_', '\_'];
+let currentLetters = ['\_', '\_', '\_', '\_', '\_'];
+
+let currentPoint = '';
 
 
 function theWordGuesser(guessedLetter) {

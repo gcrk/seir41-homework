@@ -1,51 +1,122 @@
-// # Warmup - Raindrops
+// # Geometry Function Lab
 
-// Write a Javascript program that will take a number (eg 28 or 1755 or 9, etc) and output the following:
+// ### Part 1, Rectangle
 
-// If the number contains 3 as a factor, output 'Pling'.
-// If the number contains 5 as a factor, output 'Plang'.
-// If the number contains 7 as a factor, output 'Plong'.
-// If the number does not contain 3, 5, or 7 as a factor, output the number as a string.
+// Given the following a `rectangle` object like the one below, write the following functions which accept a `rectangle` object as an argument:
 
 
-
-const factors = function(n) {
- var num_factors = [], i;
- 
- for (i = 1; i <= Math.floor(Math.sqrt(n)); i += 1)
-  if (n % i === 0)
-  {
-   num_factors.push(i);
-   if (n / i !== i)
-    num_factors.push(n / i);
-  }
- num_factors.sort(function(x, y)
-   {
-     return x - y;});  // numeric sort
-     return num_factors;
-    }
-
-
-console.log(factors(15));  // [1,3,5,15] 
-// console.log(factors(16));  // [1,2,4,8,16] 
-// console.log(factors(17));  // [1,17]
-
-const raindrops = function () {
-    if (factors.includes(3)) {
-        return "Pling";
-    };
-    
-
+const rectangle2 = {
+  length: 4,
+  width: 4,
 };
 
-console.log(raindrops);
+
+const rectangle1 = {
+  length: 4,
+  width: 5,
+};
+
+// * isSquare - Returns whether the rectangle is a square or not
+
+function isSquare (width, length) {
+if (length === width){
+  console.log(`${true}, this rectangle is a square!`)
+} else {
+  console.log(`${false}, this rectangle is a square!`)
+}
+};
+
+isSquare(rectangle1.width, rectangle1.length);
+isSquare(rectangle2.width, rectangle2.length);
 
 
-// ### Examples
+// * area - Returns the area of the rectangle
 
-// 28 has 7 as a factor.
-// In raindrop-speak, this would be a simple "Plong".
-// 1755 has 3 and 5 as factors.
-// In raindrop-speak, this would be a "PlingPlang".
-// 34 has neither 3, 5 nor 7 as a factor.
-// Raindrop-speak doesn't know what to make of that, so it just goes with the straightforward "34".
+function area (width, length) {
+  console.log(width * length)
+  };
+
+
+area(rectangle1.width, rectangle1.length);
+area(rectangle2.width, rectangle2.length);
+    
+// * perimeter - Returns the perimeter of the rectangle
+
+function perimeter (width, length){
+  console.log((2 * width) + (2 * length))
+};
+
+perimeter(rectangle1.width, rectangle1.length);
+perimeter(rectangle2.width, rectangle2.length);
+  
+
+// ### Part 2, Triangle
+
+// Given the following a `triangle` object like the one below, write the following functions which accept a `triangle` object as an argument:
+
+// * isEquilateral - Returns whether the triangle is equilateral or not
+// * isIsosceles - Returns whether the triangle is isosceles or not
+// * area - Returns the area of the Triangle
+// * isObtuse - Returns whether the triangle is obtuse or not
+
+const triangle1 = {
+  sideA: 4,
+  sideB: 7,
+  sideC: 3,
+};
+
+const triangle2 = {
+  sideA: 4,
+  sideB: 4,
+  sideC: 8,
+};
+const triangle3 = {
+  sideA: 3,
+  sideB: 3,
+  sideC: 3,
+};
+
+function isEquilateral(sideA, sideB, sideC) {
+if ( sideA === sideB && sideA === sideC ) {
+  console.log(`yep - this triangle is Eq u i l a t er a l`)
+} else {
+  console.log(`nope - this triangle is not equilateral you idiot!`)
+}
+};
+
+isEquilateral(triangle1.sideA, triangle1.sideB, triangle1.sideC);
+
+function isIsosceles(sideA, sideB, sideC) {
+  if ( sideA === sideB || sideB === sideC || sideA === sideC) {
+  console.log(`yep - this triangle is Iso-sceles`)
+} else {
+  console.log(`nope - this triangle is not isosceles - you sure you know what isosceles means?!`)
+}
+};
+
+
+isIsosceles(triangle2.sideA, triangle2.sideB, triangle2.sideC);
+
+
+function area(sideA, sideB, sideC){
+  return sideA * sideB * sideC
+};
+console.log(area(triangle3.sideA, triangle3.sideB, triangle3.sideC));
+
+function isObtuse(sideA, sideB, sideC){
+  if(sideA > Math.abs(sideB - sideC) && sideA < (sideB + sideC)) {
+    console.log('interesting - this triangle is an obtuse triange!')
+  } 
+  else if(sideB > Math.abs(sideA - sideC) && sideB < (sideA + sideC)) {
+    console.log('interesting - this triangle is an obtuse triange!')
+  }
+  else if(sideC > Math.abs(sideA - sideC) && sideC < (sideA + sideC)) {
+    console.log('interesting - this triangle is an obtuse triange!')
+  } else {
+    console.log('nope - this triange is not an obtuse triangle!')
+  }
+};
+
+isObtuse(triangle3.sideA, triangle3.sideB, triangle3.sideC);
+isObtuse(triangle2.sideA, triangle2.sideB, triangle2.sideC);
+isObtuse(triangle1.sideA, triangle1.sideB, triangle1.sideC);
