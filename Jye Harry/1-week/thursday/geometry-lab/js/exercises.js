@@ -69,16 +69,6 @@ const isIsosceles = function (tri) {
   return (tri.sideA === tri.sideB || tri.sideA === tri.sideC || tri.sideB === tri.sideC) && (tri.sideA !== tri.sideB || tri.sideA !== tri.sideC || tri.sideB !== tri.sideC);
 }
 
-const compareSides = function (tri) {
-  const sides = Object.values(tri);
-  for (var i = 0; i < sides.length; i++) {
-    const ii = (i + 1) % 3;
-    if (sides[i] === sides[ii]) {
-      return sides[(ii + 1) % 3];
-    }
-  }
-}
-
 const triArea = function (tri) {
   const s = (tri.sideA + tri.sideB + tri.sideC) / 2;
   return Math.sqrt(s * (s - tri.sideA) * (s - tri.sideB) * (s - tri.sideC));
