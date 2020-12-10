@@ -28,7 +28,11 @@ const isEquilateral = function (triangle) {
 };
 
 const isIsosceles = function (triangle) {
-	return triangle.sideA === triangle.sideB || triangle.sideA === triangle.sideC || triangle.sideB === triangle.sideC;
+	const a = triangle.sideA;
+	const b = triangle.sideB;
+	const c = triangle.sideC;
+
+	return (a === b && a !== c) || (a === c && a !== c) || (b === c && b != a);
 };
 
 const areaTriangle = function (triangle) {
