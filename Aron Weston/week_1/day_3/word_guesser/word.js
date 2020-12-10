@@ -7,6 +7,12 @@ const fox = ['f', 'o', 'x'];
 const guess = ['', '', '', 'f', 'o', 'x'];
 
 
+//What are you trying to do?
+// Take the input 
+// Loop the array
+// If array contains
+
+
 const guessLetter = (input) => {
 
     // Loop through guess and see if 
@@ -23,8 +29,6 @@ const guessLetter = (input) => {
             } else {
                 console.log(incorrect);
             }
-
-
 
 
             // if (input.contains("o")) {

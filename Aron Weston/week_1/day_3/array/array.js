@@ -9,7 +9,7 @@ const maxOfTwoNumbers = (a, b) => {
     }
 }
 
-// console.log(maxOfTwoNumbers(1, 4));
+// console.log("Q1 - Max of two", maxOfTwoNumbers(1, 4));
 
 
 //Q2. 
@@ -24,7 +24,7 @@ const maxOfThree = (a, b, c) => {
     }
 }
 
-// console.log(maxOfThree(1, 2, 3));
+// console.log("Q2 - Max of three", maxOfThree(1, 2, 3));
 
 //Q3. 
 const isVowel = (char) => {
@@ -38,13 +38,14 @@ const isVowel = (char) => {
     //Conditional
     if (vowels) {
         return true;
-    } else {
-        return false;
     }
 
 }
 
-// console.log(isVowel('a'));
+// console.log("Q3 - Is it a vowel?", isVowel('a'));
+// console.log("Q3 - Is it a vowel?", isVowel('10'));
+
+
 
 //Q4
 const arr = [1, 2, 3, 4];
@@ -74,8 +75,8 @@ const multiplyArray = (arr) => {
     return sum;
 }
 
-// console.log(multiplyArray(arr));
-// console.log(sumArray(arr));
+// console.log("Q4", multiplyArray(arr));
+// console.log("Q4", sumArray(arr));
 
 
 //Q5. 
@@ -84,47 +85,36 @@ const reverseString = (str) => {
 
     //.split() - using split we can assign the string to an array, and pass in and empty string "" as a value separator
     let a = str.split("");
+    console.log(a);
 
     //.reverse() - as our string is now an array, lets reverse our array at (a)
     let b = a.reverse();
-
+    console.log(b);
     //.join() - join together all of the values of an array and pass in an empty string to have it read like a word.
     let c = b.join('')
-
+    console.log(c);
     return c;
 
 }
 
-// console.log(reverseString("jag testar"));
+console.log(reverseString("jag testar"));
+
+
 
 
 //Q6. 
 const words = ['pollution', 'node', 'pneumonoultramicroscopicsilicovolcanoconiosis']
 
-// const findLongestWord = (arr) => {
-//     //Set longest to an empty string 
-//     let longestWord = "";
-//     //Loop through array
-//     for (i = 0; i < arr.length; i++) {
-//         //Check which of the array values has the largest length when compared the length of an empty string = 0.
-//         if (arr[i].length > longestWord.length) {
-//             //longest word is the one that satisfies the condtion.
-//             longestWord = arr[i];
-//         }
-//     }
-//     //Return the longest word 
-//     return longestWord;
-// }
-
-// console.log(findLongestWord(words));
-
 const findLongestWord = (arr) => {
     //Set longest to an empty string 
     let longestWord = "";
     //Loop through array
-    for (i = 0; i = < arr.length; i++) {
+    for (i = 0; i < arr.length; i++) {
         //Check which of the array values has the largest length when compared the length of an empty string = 0.
-        console.log(arr[i].length);
+        if (arr[i].length > longestWord.length) {
+            //longest word is the one that satisfies the condition.
+            longestWord = arr[i];
+        }
     }
     //Return the longest word 
     return longestWord;
@@ -134,19 +124,23 @@ console.log(findLongestWord(words));
 
 
 
-//Q7.
 
-const filterLongWords = (arr, n) => {
-    //Set response variable 
-    let res = [];
-    //Loop array
-    for (i = 0; i < arr.length; i++) {
-        //For each word, check if their character length is greater than i 
-        if (arr[i].length >= n) {
-            //true = assign it to res and return
-            return res.push(arr[i]);
-        }
-    }
-}
 
-console.log(filterLongWords(words, 46));
+
+
+//Q7. // Unspaget this. 
+
+// const filterLongWords = (arr, n) => {
+//     //Set response variable 
+//     let res = [];
+//     //Loop array
+//     for (i = 0; i < arr.length; i++) {
+//         //For each word, check if their character length is greater than i 
+//         if (arr[i].length >= n) {
+//             //true = assign it to res and return
+//             return res.push(arr[i]);
+//         }
+//     }
+// }
+
+// console.log(filterLongWords(words, 46));
