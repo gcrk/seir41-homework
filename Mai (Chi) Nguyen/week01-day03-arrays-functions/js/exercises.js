@@ -14,7 +14,7 @@ const maxOfTwo = function (a, b) {
     return b;
   };
 }
-console.log(maxOfTwo(10, 5));
+// console.log(maxOfTwo(10, 5));
 
 // Define a function maxOfThree that takes three numbers as arguments and returns the largest of them.
 
@@ -26,7 +26,7 @@ const maxOfThree = function (a, b, c) {
   }
 }
 
-console.log(maxOfThree(10, 5, 12));
+// console.log(maxOfThree(10, 5, 12));
 
 // Write a function that takes a character (i.e. a string of length 1) and returns true if it is a vowel, false otherwise.
 
@@ -65,8 +65,8 @@ const vowelCheck = function (letter) {
 //   }
 // }
 
-console.log(vowelCheck("o"));
-console.log(vowelCheck(10));
+// console.log(vowelCheck("o"));
+// console.log(vowelCheck(10));
 
 // ## Bonus
 //
@@ -82,8 +82,8 @@ const reverseString = function (text) {
 
 //can also use array.reverse();
 
-console.log(reverseString("Mai xinh"));
-console.log(reverseString("jag testar"));
+// console.log(reverseString("Mai xinh"));
+// console.log(reverseString("jag testar"));
 
 // 6. Write a function `findLongestWord` that takes an array of words and returns the length of the longest one.
 
@@ -97,7 +97,7 @@ const findLongestWord = function (words) {
   return longestWord;
 }
 
-console.log(findLongestWord(["air", "harry porter", "taylor swiftttttt"]));
+// console.log(findLongestWord(["air", "harry porter", "taylor swiftttttt"]));
 
 // 7. Write a function `filterLongWords` that takes an array of words and an number `i` and returns the array of words that are longer than i.
 
@@ -111,7 +111,7 @@ const filterLongWords = function (words, num) {
   return longWords;
 }
 
-console.log(filterLongWords(["milk", "dish washer", "friends"], 4));
+// console.log(filterLongWords(["milk", "dish washer", "friends"], 4));
 
 // /# Homework: The Word Guesser
 //
@@ -135,7 +135,7 @@ console.log(filterLongWords(["milk", "dish washer", "friends"], 4));
 // - Start with a reward amount of $0
 // - Every time a letter is guessed, generate a random amount and reward the user if they found a letter (multiplying the reward if multiple letters found), otherwise subtract from their reward.
 // - When they guess the word, log their final reward amount.
-//
+
 // const words = ['p', 'i', 'n', 'k', 'i'];
 // const currentGuess = ['_', '_', '_', '_', '_'];
 //
@@ -184,8 +184,8 @@ console.log(filterLongWords(["milk", "dish washer", "friends"], 4));
 //
 //   }
 // }
-//
-//
+
+
 // wheelOfFortune("p");
 // wheelOfFortune("a");
 // wheelOfFortune("n");
@@ -197,7 +197,7 @@ console.log(filterLongWords(["milk", "dish washer", "friends"], 4));
 // - Keep track of all the guessed letters (right and wrong) and only let the user guess a letter once. If they guess a letter twice, do nothing.
 // - Keep track of the state of the hangman as a number (starting at 0), and subtract or add to that number every time they make a wrong guess.
 // - Once the number reaches 6 (a reasonable number of body parts for a hangman), inform the user that they lost and show a hangman on the log.
-
+//
 const words = ['p', 'i', 'n', 'k', 'i'];
 const currentGuess = ['_', '_', '_', '_', '_'];
 
@@ -211,7 +211,7 @@ let numberOfGuesses = function () {
 // Keep track of the state of the hangman as a number (starting at 0),
 let hangmanNumber = 0;
 
-//### MAIN FUNCTION
+//## MAIN FUNCTION
 const wheelOfFortune = function (guess) {
 
 // If they guess a letter twice, do nothing.
@@ -241,12 +241,12 @@ const wheelOfFortune = function (guess) {
     currentReward = maxOfTwo(currentReward, 0);
 //and subtract or add to that number every time they make a wrong guess.
     hangmanNumber += 1;
-    hangmanNumber = maxOfTwo(hangmanNumber, 0);
   } else {
     currentReward += Number((Math.random()*100*letterFound).toFixed(2));
     // and congratulate the user if they found a new letter.
     console.log(`Congratulation! Number of letter "${guess}" found: ${letterFound}`);
     hangmanNumber -= 1;
+    hangmanNumber = maxOfTwo(hangmanNumber, 0);
   }
   console.log(`HANGMAN: ${hangmanNumber}`)
 // - Once the number reaches 6 (a reasonable number of body parts for a hangman), inform the user that they lost and show a hangman on the log.
@@ -274,12 +274,12 @@ const wheelOfFortune = function (guess) {
   }
 }
 
-
-wheelOfFortune("c");
-wheelOfFortune("e");
-wheelOfFortune("s");
-wheelOfFortune("9");
-wheelOfFortune("m");
-wheelOfFortune("b");
-wheelOfFortune("f");
-wheelOfFortune("g");
+//
+// wheelOfFortune("c");
+// wheelOfFortune("e");
+// wheelOfFortune("s");
+// wheelOfFortune("9");
+// wheelOfFortune("m");
+// wheelOfFortune("b");
+// wheelOfFortune("f");
+// wheelOfFortune("g");
