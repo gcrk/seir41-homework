@@ -1,6 +1,6 @@
 const drEvil = function(amount) {
   let output = amount + " dollars";
-  if (amount === 1000000) {
+  if (amount >= 1000000) {
     output += " (pinky)";
   }
   return output
