@@ -111,8 +111,12 @@ const complexCalculation = function (num){
       // ```
       // fixStart('babble'): 'ba**le'
       const fixStart = function (s) {
-            result = s.replaceAll (s[0],'*');
-            console.log (result);
+
+            result1 = s.replaceAll (s[0],'*');
+            result2 = result1.replace(result1[0],s[0]);
+
+
+            console.log (result2);
 
       }
           fixStart ('adddaa');
@@ -128,6 +132,20 @@ const complexCalculation = function (num){
       //   verbing('swim'): 'swimming'
       //   verbing('swimming'): 'swimmingly'
       //   verbing('go'): 'go'
+      const verbing = function (word){
+        if (word.length<3){
+          console.log (word);
+        }
+
+        if (word.length>=3) {
+           if(word.substring(word.length-3,word.length)==="ing") {
+          console.log(word + "ly");
+        }
+      }
+
+      verbing ("swimming");
+      verbing ("swim");
+
       // ```
       //
       // ## Not Bad
