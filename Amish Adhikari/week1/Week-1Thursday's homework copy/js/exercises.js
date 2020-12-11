@@ -1,102 +1,134 @@
-// # Array and Functions Bonus Material
+// # Geometry Function Lab
 //
-// 1. Define a function `maxOfTwoNumbers` that takes two numbers as arguments and returns the largest of them. Use the if-then-else construct available in Javascript. You'll have to remember your pre-work, or do some googling to figure this out.
-const maxOfTwoNumbers = function (a,b){
-  if (a>b){
-    return a;
-  } else {
-   return b;
-}
-};
-console.log(`The greater number of 30 and 20 is ${ maxOfTwoNumbers(30,20) }.`)
-
-
-// 2. Define a function `maxOfThree` that takes three numbers as arguments and returns the largest of them.
-
-
-
-  const maxOfThree = function(x, y, z) {
-    var maxNumber;
-
-       if (x > y && x > z){
-         maxNumber = x;
-       }
-       else if (y > x && y > z){
-         maxNumber = y;
-       }
-      else{
-        maxNumber = z;
-       }
-       return maxNumber;
-     };
-
-  console.log(`The largest number is ${maxOfThree (6,18,12)}`);
-
-
-// 3. Write a function that takes a character (i.e. a string of length 1) and returns true if it is a vowel, false otherwise.
-
-const checkForVowel = function (vowel) {
-  if (vowel == "a" || vowel == "e" || vowel == "i" || vowel == "o" || vowel == "u"|| vowel == "A" || vowel == "E" || vowel == "I" || vowel == "O" || vowel == "U"){
-return true;
-}else {
-  return false;
-}
-};
-
-console.log(`${ checkForVowel ("z")}`);
-
-// 4. Define a function `sumArray` and a function `multiplyArray` that sums and multiplies (respectively) all the numbers in an array of numbers. For example, `sumArray([1,2,3,4])` should return 10, and `multiplyArray([1,2,3,4])` should return 24.
-const sumArray = [10,2,3,4];
-const multiplyArray = [10,2,3,4];
-  for(let i=0; i<sumArray.length; i++) {
-
-}
-  console.log(`${ sumArray[0]+ sumArray[1]+ sumArray[2]+ sumArray[3] } `);
-  console.log(`${ sumArray[0] * sumArray[1] * sumArray[2] * sumArray[3] } `);
-
-
-// ## Bonus
+// ### Part 1, Rectangle
 //
-// 5. Define a function `reverseString` that computes the reversal of a string. For example, reverseString("jag testar") should return the string "ratset gaj".
+// Given the following a `rectangle` object like the one below, write the following functions which accept a `rectangle` object as an argument:
+//
+// * isSquare - Returns whether the rectangle is a square or not
+// * area - Returns the area of the rectangle
+// * perimeter - Returns the perimeter of the rectangle
+//
+// ```javascript
+// const rectangleA = {
+//   length: 4,
+//   width: 4
+// };
+// ```
 
-const reverseString = function (string){
-    return string.split("").reverse().join("");
-}
-console.log( `${ reverseString("jag testar") }`)
-// 6. Write a function `findLongestWord` that takes an array of words and returns the length of the longest one.
-
-const findLongestWord = function(strs) {
-  let longest = '';
-  for (let i = 0; i < strs.length; i++) {
-    if (strs[i].length > longest.length)
-    longest = strs[i];
-}
-return longest;
+const rectangleA = {
+  length: 4,
+  width: 4
 };
-const findLongestLengthWord = function(arr){
-var num1 = 0;
-for (var i = 0; i < arr.length; i++) {
-  if (arr[i].length > num1) {
-    num1 = arr[i].length;
-  }
+const rectangle = function(geometry){
+  let result;
+  if(geometry.length === geometry.width){
+    result = 'Yes is a Square';
+} else{
+    result = 'You ain\'t a square mate!';
 }
-return num1;
-};
-
-console.log( `The longest string is ${findLongestWord(["Andy", "Roman", "Murray","Angelina"])}, and length of the string is ${findLongestLengthWord(["Andy", "Roman", "Murray","Angelina"])}`);
-
-
-
-// 7. Write a function `filterLongWords` that takes an array of words and an number `i` and returns the array of words that are longer than i.
-
-const filterLongWords = (arr, n){
-    let res = '';
-    for (i = 0; i < arr.length; i++) {
-        if (arr[i].length > n) {
-            res = arr[i];
-        }
-    return res;
-  }
+return result;
 };
 
-console.log( `${filterLongWords(["man", "woman", "children", "teenagers"])}`);
+const areaOfRectangle = function (geometry) {
+  return (geometry.length * geometry.width);
+}
+const perimeterOfRectangle = function (geometry) {
+  return 2 * (geometry.length + geometry.width);
+}
+
+console.log(`Is this a square? ${ rectangle (rectangleA)}`);
+console.log(`The area for a rectangle is ${ areaOfRectangle (rectangleA) }.`);
+console.log(`The perimeter for a rectangle is ${ perimeterOfRectangle (rectangleA) }.`);
+
+
+// ### Part 2, Triangle
+//
+// Given the following a `triangle` object like the one below, write the following functions which accept a `triangle` object as an argument:
+//
+// * isEquilateral - Returns whether the triangle is equilateral or not
+// * isIsosceles - Returns whether the triangle is isosceles or not
+// * area - Returns the area of the Triangle
+// * isObtuse - Returns whether the triangle is obtuse or not
+//
+// ```javascript
+const triangleA = {
+  sideA: 4,
+  sideB: 3,
+  sideC: 4
+};
+ const isEquilateral = function note (triangle){
+let result;
+   if (triangle.sideA === triangle.sideB && triangle.sideA === triangle.sideC && triangle.sideA !== null && triangle.sideC !== null){
+     result = 'Yess!!! this is an Equilateral triangle';
+} else {
+     result = 'Ohh!! No, this is not an Equilateral triangle';
+}
+   return result;
+};
+const isIsosceles = function attention (triangle){
+  let result;
+    if (triangle.sideA == triangle.sideB && triangle.sideB !== triangle.sideC && triangle.sideA !== null) {
+}
+result = 'Yess!!! this is an Isosceles triangle';
+    if (triangle.sideA !== triangle.sideB && triangle.sideB == triangle.sideC && triangle.sideA !== null) {
+
+result = 'Yess!!! this is an Isosceles triangle';
+}   else {
+    result = 'Ohh!! No, this is not an Isosceles triangle';
+}
+  return result
+};
+const isObtuse = function alert (triangle){
+  let result;
+  if
+    (triangle.sideA < triangle.sideB || triangle.sideA < triangle.sideC
+  || triangle.sideA > triangle.sideB || triangle.sideB > triangle.sideC
+  || triangle.sideC >triangle.sideB  || triangle.sideA > triangle.sideC
+  && triangle.sideB !== triangle.sideC && triangle.sideC !== triangle.sideA && triangle.sideA !== triangle.sideB ){
+    result = 'Yess!!! this is an Obtuse triangle';
+
+} else
+    result = 'Ohh!! No, this is not an Obtuse triangle';
+
+  return result;
+};
+
+console.log(isEquilateral(triangleA));
+console.log(isIsosceles(triangleA));
+console.log(isObtuse(triangleA));
+
+//console.log(`${sTriangle(triangleA)}`);
+
+
+// # The Cash Register
+//
+// Write a function called cashRegister that takes a shopping cart object. The object contains item names and prices (itemName: itemPrice). The function should return the total price of the shopping cart.
+// Example
+//
+// ```
+// // Input
+// const cartForParty = {
+//   banana: "1.25",
+//   handkerchief: ".99",
+//   Tshirt: "25.01",
+//   apple: "0.60",
+//   nalgene: "10.34",
+//   proteinShake: "22.36"
+// };
+//
+// // Output
+// cashRegister(cartForParty)); // 60.55
+
+const cartForParty = {
+  banana: "1.25",
+  handkerchief: ".99",
+  Tshirt: "25.01",
+  apple: "0.60",
+  nalgene: "10.34",
+  proteinShake: "22.36"
+};
+const cashRegister = function (cartAmount){
+
+return (parseFloat(cartAmount.banana) + parseFloat(cartAmount.handkerchief) + parseFloat(cartAmount.Tshirt) + parseFloat(cartAmount.apple) + parseFloat(cartAmount.nalgene) + parseFloat(cartAmount.proteinShake))
+};
+console.log(`${cashRegister(cartForParty)}`);
