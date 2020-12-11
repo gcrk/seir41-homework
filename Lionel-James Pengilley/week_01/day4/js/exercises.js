@@ -39,7 +39,7 @@ console.log(isSquare(rectangleA));
 // * area - Returns the area of the rectangle
 
 const area = function (shape) {
-  let result = rectangleA.length * rectangleA.width;
+  let result = rectangleA.length * rectangleA.width;//WHOOPS. Wrong formula again!
   return result;
 };
 
