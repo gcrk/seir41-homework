@@ -29,181 +29,83 @@
 //
 
 //
-// const lineN = ['Times Square', '34th', '28th', '23rd', 'Union Square', '8th'];
-//
-// const lineL = ['8th', '6th', 'Union Square', '3rd', '1st'];
-//
-// const line6 = ['Grand Central', '33rd', '28th', '23rd', 'Union Square', 'Astor Place'];
-//
 
+const lineAll = {
+  N: ['Times Square', '34th', '28th', '23rd', 'Union Square', '8th'],
+  L: ['8th', '6th', 'Union Square', '3rd', '1st'],
+  6: ['Grand Central', '33rd', '28th', '23rd', 'Union Square', 'Astor Place']
+};
 
-// console.log(lineAll1[0]);
+// function plan a single trip on the same line
+const singleTrip = function (line, stop1, stop2) {
+  let stopIndex1 = lineAll[line].indexOf(stop1); //log the index of stop1
+  let stopIndex2 = lineAll[line].indexOf(stop2); //log the index of stop2
+  let stopsInLine = lineAll[line];
 
-// const wayToUS = function (line, stop) {
-//   let lineIndex = lineAll.indexOf(line);
-//   let lineArray = lineAll[lineIndex];
-//   let stopIndex = lineArray.indexOf(stop);
-//   let usIndex = lineArray.indexOf('Union Square');
-//
-//   let fromStopToUS = [];
-//   let numOfStop = 0;
-//   let result = [];
-//
-//   if (stopIndex < usIndex) {
-//     for (let i = stopIndex; i <= usIndex; i++) {
-//       fromStopToUS.push(lineArray[i]);
-//     }
-//   } else {
-//     for (let i = stopIndex; i >= usIndex; i--) {
-//       fromStopToUS.push(lineArray[i]);
-//     }
-//   }
-//   result.push(fromStopToUS.join(', '));
-//
-//   numOfStop = fromStopToUS.length;
-//   result.push(numOfStop);
-//
-//   console.log(result);
-//   return result;
-// }
-let indexOfLine = ['N', 'L', '6'];
-const lineAll = [
-  {lineName: 'N',
-  stop: ['Times Square', '34th', '28th', '23rd', 'Union Square', '8th']}, {lineName: 'L',
-  stop: ['8th', '6th', 'Union Square', '3rd', '1st']},
-  {lineName: '6',
-  stop: ['Grand Central', '33rd', '28th', '23rd', 'Union Square', 'Astor Place']}
-];
-// let a = index.indexOf('N');
-// console.log(a);
-// console.log(lineAll[0].stop)
-
-
-const wayToUS = function (line, stop) {
-  let lineIndex = indexOfLine.indexOf(line);
-  let stopArray = lineAll[lineIndex].stop;
-  let stopIndex = stopArray.indexOf(stop);
-  let usIndex = stopArray.indexOf('Union Square');
-
-  let fromStopToUS = [];
-  let numOfStop = 0;
-  let result = [];
-
-  if (stopIndex < usIndex) {
-    for (let i = stopIndex; i <= usIndex; i++) {
-      fromStopToUS.push(stopArray[i]);
-    }
-  } else {
-    for (let i = stopIndex; i >= usIndex; i--) {
-      fromStopToUS.push(stopArray[i]);
-    }
-  }
-  result.push(fromStopToUS.join(', '));
-
-  numOfStop = fromStopToUS.length;
-  result.push(numOfStop);
-
-  return result;
-}
-
-
-
-// wayToUS(lineN, '34th');
-
-const wayFromUS = function (line, stop) {
-  //access index of the line
-  let lineIndex = indexOfLine.indexOf(line);
-  let stopArray = lineAll[lineIndex].stop;
-  //access the stop index
-  let stopIndex = stopArray.indexOf(stop);
-  let usIndex = stopArray.indexOf('Union Square');
-
-  let fromUSToStop = [];
-  let numOfStop = 0;
-  let result = [];
-
-  if (stopIndex > usIndex) {
-    for (let i = (usIndex + 1); i <= stopIndex; i++) {
-      fromUSToStop.push(stopArray[i]);
-    }
-  } else {
-    for (let i = (usIndex - 1); i >= stopIndex; i--) {
-      fromUSToStop.push(stopArray[i]);
-    }
-  }
-  result.push(fromUSToStop.join(', '));
-
-  numOfStop = fromUSToStop.length;
-  result.push(numOfStop);
-
-  return result;
-}
-// wayFromUS(lineN, '34th');
-// const convertName = function (name) {
-//   let nameList = {
-//     'N': N,
-//     'L': L,
-//     '6': 6,
-//   };
-//   let result;
-//   result = nameList[name];
-//   console.log(nameList[name]);
-// };
-//
-// convertName('6');
-
-const fromS1ToS2 = function (line, s1, s2) {
-  let lineIndex = indexOfLine.indexOf(line);
-  let stopArray = lineAll[lineIndex].stop;
-  let stopIndex1 = stopArray.indexOf(s1);
-  let stopIndex2 = stopArray.indexOf(s2);
-
-  let fromS1ToS2 = [];
-  let numOfStop = 0;
-  let result = [];
+  let result = {
+    listOfStops: [],
+    numOfStops: 0,
+  };
 
   if (stopIndex1 < stopIndex2) {
-    for (let i = stopIndex1; i <= stopIndex2; i++) {
-      fromS1ToS2.push(stopArray[i]);
-    }
+    result.listOfStops = stopsInLine.slice(stopIndex1 + 1, stopIndex2 + 1);
+    result.numOfStops += stopIndex2 - stopIndex1;
   } else {
-    for (let i = stopIndex1; i >= stopIndex2; i--) {
-      fromS1ToS2.push(stopArray[i]);
-    }
+    result.listOfStops = stopsInLine.slice(stopIndex2, stopIndex1).reverse();
+    result.numOfStops += stopIndex1 - stopIndex2;
   }
-  result.push(fromS1ToS2.join(', '));
-
-  numOfStop = fromS1ToS2.length;
-  result.push(numOfStop);
-
   return result;
-}
+};
+
+// console.log(sameLineTrip('N', '34th', '8th'));
+// console.log(sameLineTrip('N', 'Union Square', '34th'));
+
+// FUNCTION to avoid case sensitivity
+const capitalizeFirstLetter = function (string) {
+  let result = string[0].toUpperCase() + string.slice(1).toLowerCase();
+  return result;
+};
 
 
 // ### MAIN FUNCTION
-const planTrip = function (l1, s1, l2, s2) {
-  if (l1 !== l2) {
-    let toUS = wayToUS(l1, s1);
+const planTrip = function (line1, stop1, line2, stop2) {
 
-    let fromUS = wayFromUS(l2, s2);
+  line1 = prompt('Starting line: ').toUpperCase(); //avoid case sensitivity of user input
+  stop1 = capitalizeFirstLetter(prompt(`Starting station on ${line1} line: `));
+  line2 = prompt('Destination line: ').toUpperCase();
+  stop2 = capitalizeFirstLetter(prompt(`Destination station on ${line2} line: `));
 
-    console.log(`You must travel through the following stops on the ${l1} line: ${  toUS[0] }.`);
+
+
+  if (line1 !== line2) {
+    let tripToUS = singleTrip(line1, stop1, 'Union Square');
+
+    let tripFromUS = singleTrip(line2, 'Union Square', stop2);
+
+    console.log(`You want to travel from stop ${stop1} of ${line1} line to stop ${stop2} of ${line2} line.`)
+
+    console.log(`You must travel through the following stops on the ${line1} line: ${  tripToUS.listOfStops.join(", ") }.`);
     console.log('Change at Union Square.');
-    console.log(`Your journey continues on ${l2} line through the following stops: ${ fromUS[0] }.`)
-    console.log(`${toUS[1] + fromUS[1]} stops in total.`)
+    console.log(`Your journey continues on ${line2} line through the following stops: ${ tripFromUS.listOfStops.join(", ") }.`)
+    console.log(`${tripToUS.numOfStops + tripFromUS.numOfStops } stops in total.`)
 
   } else {
 
-    let trip = fromS1ToS2(l1, s1, s2);
-    console.log(`You must travel through the following stops on the same ${l1} line: ${ trip[0] }.`);
-    console.log(`${ trip[1] } stops in total.`)
+    let trip = singleTrip(line1, stop1, stop2);
+
+    console.log(`You want to travel from stop ${stop1} to stop ${stop2} of ${line1} line.`)
+    console.log(`You must travel through the following stops on the same ${line1} line: ${ trip.listOfStops.join(", ") }.`);
+    console.log(`${ trip.numOfStops } stops in total.`)
   }
 }
 
-planTrip('N', '34th', '6', 'Grand Central');
-planTrip('N', '34th', 'N', '23rd');
-planTrip('N', '34th', '6', 'Astor Place');
-planTrip('6', '33rd', 'L', '8th');
+
+// planTrip();
+// planTrip('N', '34th', '6', 'Grand Central');
+// planTrip('N', '34th', 'N', '23rd');
+// planTrip('N', '34th', '6', 'Astor Place');
+// planTrip('6', '33rd', 'L', '8th');
+// planTrip('L', '1st', 'N', '34th');
 
 
 
