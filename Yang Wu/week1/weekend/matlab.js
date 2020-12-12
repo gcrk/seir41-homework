@@ -66,7 +66,7 @@ const planTrip = function (iLine, iStop, tLine, tStop) {
       let stopList = lN1.slice (idT+1, idI+1).reverse();
       console.log (`You must travel through the following stops on the ${iLine} Line: ${stopList.join(", ")}. ${stopNum} stops in total.`);
     }
-    
+
   } else { //change line at US
     let idT = lN2.indexOf (tStop);
     let idU1 = lN1.indexOf ("Union Square"); //find the position of US in different lists
@@ -88,7 +88,7 @@ const planTrip = function (iLine, iStop, tLine, tStop) {
       let stopList2 = lN2.slice (idU2+1, idT+1);
       console.log (`Your journey continues through the following stops on the ${tLine} Line: ${stopList2.join (", ")}.`);
     } else {
-      let stopList2 = lN2.slice (idT+1, idU2+1).reverse();
+      let stopList2 = lN2.slice (idT, idU2).reverse();
       console.log (`Your journey continues through the following stops on the ${tLine} Line: ${stopList2.join (", ")}.`);
     };
 
