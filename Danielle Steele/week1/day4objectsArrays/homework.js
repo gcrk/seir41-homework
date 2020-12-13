@@ -2,12 +2,7 @@
 // ### Part 1, Rectangle
 
 
-
-// Given the following a `rectangle` object like the one below,
-// write the following functions which accept a `rectangle`
-// object as an argument:
-
-//Object below//
+//Object//
 const rectangleA = {
    length: 4,
    width: 4
@@ -16,8 +11,9 @@ const rectangleA = {
  const rectangleB = {
     length: 8,
     width: 4
-  };
+  }; //created rectangleB to test the isSquare function
 
+// write the following functions which accept a `rectangle` object as an argument:
 
 // * isSquare - Returns whether the rectangle is a square or not
 const isSquare = (arg1) => {
@@ -34,12 +30,10 @@ console.log(isSquare(rectangleB));
 
 
 
-// // // * area - Returns the area of the rectangle
-//  const areaOfX = (rectangleA) => {
-//      if (XXXXX) {
-//       return ???
-//      }
- //}
+// * area - Returns the area of the rectangle
+const areaOf = (rectangle) => {
+  
+}
 
 
 
