@@ -2,20 +2,16 @@ const N = ['Times Square', '34th', '28th', '23rd', 'Union Square', '8th'];
 const L = ['8th', '6th', 'Union Square', '3rd', '1st'];
 const Six = ['Grand Central', '33rd', '28th', '23rd', 'Union Square', 'Astor Place'];
 
-const trainLines = document.getElementById('train-lines');
-
-
 
 N.forEach(station => document.getElementById('line-N').innerHTML += `<td>${station}</td`);
 L.forEach(station => document.getElementById('line-L').innerHTML += `<td>${station}</td`);
 Six.forEach(station => document.getElementById('line-six').innerHTML += `<td>${station}</td`);
 
 
-
 //Global set of regrex for use over two functions
-const regN = /^n$/i;
-const regSix = /^(6|six)$/i;
-const regL = /^l$/i;
+const regN = /^(n|n line)$/i;
+const regSix = /^(6|six|6 line|six line)$/i;
+const regL = /^(l|line)$/i;
 const ny = 'The city of NY wishes to advise that you are not on a MTA train line';
 
 
@@ -56,7 +52,7 @@ const originDestination = (oL, oS, dL, dS) => {
     const destination = destinationLine.indexOf(dS);
 
     //Messages
-    const a = `You must travel through the following stops on the ${oL} line:`;
+    const a = `To get from the ${oS.toUpperCase()} on the ${oL.toUpperCase()} LINE, to ${dS.toUpperCase()} on the ${dL.toUpperCase()} LINE, you must travel through the following stops on the ${oL.toUpperCase()} LINE: `;
     const b = `Your journey continues through the following stops on the ${dL} line:`
     const change = 'Change at Union Square'
     const changeDepartureLine = `This is not a stop. Please change your stop on the departure line.`
@@ -94,6 +90,14 @@ const originDestination = (oL, oS, dL, dS) => {
             }
         });
 
+        //Output table to DOM
+        const trainMap = document.querySelector('#train-map')
+        const mapDepartureLine = document.querySelector('#departure-line');
+
+        mapDepartureLine.innerHTML += `<td><strong>${oL.toUpperCase()} Line </strong></td>`;
+        departureJourney.forEach(station => mapDepartureLine.innerHTML += `<td>${station}</td`);
+
+
         //Destination Line
         const destinationJourney = destinationLine.filter(function (stops) {
             let stopsIndex = destinationLine.indexOf(stops);
@@ -108,6 +112,17 @@ const originDestination = (oL, oS, dL, dS) => {
 
         //Total Stops
         const totalStops = departureJourney.length + destinationJourney.length;
+
+        //Output table to DOM
+        const mapDestinationLine = document.querySelector('#destination-line');
+        mapDestinationLine.innerHTML += `<td><strong>${dL.toUpperCase()} Line </strong></td>`;
+        destinationJourney.forEach(station => mapDestinationLine.innerHTML += `<td>${station}</td`);
+
+        //Output small message to the DOM
+        let title = document.createElement('p');
+        title.innerHTML += `<h5>Your New York Map.</h5> <p>${a} <strong>${departureJourney.join(', ')}</strong>. <br><br> ${change}. <br><br>${b} <strong>${destinationJourney.join(', ')}.</strong><br><br>${totalStops} stops in total.</p>`;
+        trainMap.insertBefore(title, mapDepartureLine);
+
 
         //SAME LINE?
         if (departureLine === destinationLine) {
@@ -157,47 +172,22 @@ const originDestination = (oL, oS, dL, dS) => {
     }
 }
 
+const getTicket = document.querySelector('#get-ticket');
+const container = document.querySelector('.container');
+
+// getTicket.addEventListener('click', () => {
+//     const oL = prompt("Enter your train line");
+//     const oS = prompt(`You've chosen ${oL} Line. Enter your departure stop. `);
+//     const dL = prompt(`You're entering at ${oS} on ${oL} Line. Enter your destination line`);
+//     const dS = prompt(`You've chosen ${dL} Line. Enter your departure stop.`);
+
+//     // let p = document.createElement('h5');
+//     // p.innerHTML = `Check the console for your directions.`;
+//     // container.insertBefore(p, getTicket);
+
+//     originDestination(oL, oS, dL, dS);
 
 
-document.getElementById('get-ticket').addEventListener('click', () => {
-    const oL = prompt("Enter your train line");
-    const oS = prompt(`You've chosen ${oL} Line. Enter your departure stop. `);
-    const dL = prompt(`You're entering at ${oS} on ${oL} Line. Enter your destination line`);
-    const dS = prompt(`You've chosen ${dL} Line. Enter your departure stop.`);
+// })
 
-    originDestination(oL, oS, dL, dS);
-})
-
-
-// originDestination('N', '23rd', 'N', 'Times Square');
-
-
-
-
-
-
-
-
-
-
-
-// //DESTINATION CONDITIONALS
-// if (destination === destinationUS) {
-//     console.log(`You are at Union Square, change here for the ${dL} line`);
-// } else if (destination < destinationUS) {
-
-
-//     // destinationJourney = reverseLine.splice(destinationStops + 1, destination);
-
-//     // console.log(`${b} ${destinationJourney}`);
-
-// } else {
-
-//     console.log('Going to', dS);
-//     // destinationJourney = destinationLine.splice(destinationStops - 1, destination);
-//     // console.log(`${b} ${destinationJourney}`);
-
-// }
-
-// //Log total stops
-// console.log(totalStops);
+originDestination("N", "Times Square", '6', "Grand Central");

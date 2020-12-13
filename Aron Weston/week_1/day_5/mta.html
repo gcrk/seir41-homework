@@ -9,17 +9,25 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.min.css"
         integrity="sha512-EZLkOqwILORob+p0BXZc+Vm3RgJBOe1Iq/0fiI7r/wJgzOFZMlsqTa29UEl6v6U6gsV4uIpsNZoV32YZqrCRCQ=="
         crossorigin="anonymous" />
+
+    <style>
+        .chosen {
+            background-color: #F5F5CE;
+        }
+    </style>
 </head>
 
 <body>
-    <div class="container">
+    <div id="container" class="container">
         <h1>Welcome to New York</h1>
 
-        <p>The home of the worlds biggest rats, best pizza and a plain terrible metro system. Get your metro tickets below. Enter your line, your departure stop and your destination line and destination stop.</p>
+        <p>The home of the worlds biggest rats, best pizza and a plain terrible metro system. Get your metro tickets
+            below. Enter your line, your departure stop, your destination line and destination stop.</p>
 
-        <p>If you have fat fingers or are weird and prefer to type <code>Six</code> rather than <code>6</code>, don't worry, I know a guy. Chuck in a <strong>6 Line</strong> while you're at it, make my day.</p>
+        <p>If you have fat fingers or are weird and prefer to type <code>Six</code> rather than <code>6</code>, don't
+            worry, I know a guy. Chuck in a <strong>6 Line</strong> while you're at it, make my day.</p>
         <h4>Train Lines & Stops</h4>
-        <table class="u-full-width">
+        <table id="train-lines" class="u-full-width">
             <tbody>
                 <tr id="line-N">
                     <td><strong>N Line</strong></td>
@@ -32,6 +40,15 @@
                 </tr>
             </tbody>
         </table>
+
+        <table class="u-full-width">
+            <tbody id ="train-map">
+                <tr id="departure-line"></tr>
+                <tr id="destination-line"></tr>
+            </tbody>
+        </table>
+
+
         <button id="get-ticket">Click to get your ticket</button>
     </div>
 
