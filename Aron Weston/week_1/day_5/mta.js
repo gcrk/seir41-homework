@@ -4,7 +4,12 @@ const Six = ['Grand Central', '33rd', '28th', '23rd', 'Union Square', 'Astor Pla
 
 const trainLines = document.getElementById('train-lines');
 
-trainLines.innerHTML += `<p>N Line: ${N.join(', ')}.</p><p>L Line:${L}</p><p>Six Line: ${Six}</p>`
+
+
+N.forEach(station => document.getElementById('line-N').innerHTML += `<td>${station}</td`);
+L.forEach(station => document.getElementById('line-L').innerHTML += `<td>${station}</td`);
+Six.forEach(station => document.getElementById('line-six').innerHTML += `<td>${station}</td`);
+
 
 
 //Global set of regrex for use over two functions
@@ -135,14 +140,14 @@ const originDestination = (oL, oS, dL, dS) => {
                 console.log(`${a} ${departureJourney.reverse().join(', ')}`);
                 console.log(change);
             } else {
-                console.log(`${a} ${departureJourney}`);
+                console.log(`${a} ${departureJourney.join(', ')}.`);
                 console.log(change);
             }
             //Destination Line
             if (destination === departureUS) {
                 console.log(`You are at Union Square, change here for the ${dL} line`);
             } else if (destination > destinationUS) {
-                console.log(`${b} ${destinationJourney.join(', ')}.`);
+                console.log(`${b} ${destinationJourney}.`);
                 console.log(`${totalStops} stops in total.`);
             } else {
                 console.log(`${b} ${destinationJourney.reverse().join(', ')}.`);
@@ -155,16 +160,16 @@ const originDestination = (oL, oS, dL, dS) => {
 
 
 document.getElementById('get-ticket').addEventListener('click', () => {
-    // const oL = prompt("Enter your train line");
-    // const oS = prompt(`You've chosen ${oL} Line. Enter your departure stop. `);
-    // const dL = prompt(`You're entering at ${oS} on ${oL} Line. Enter your destination line`);
-    // const dS = prompt(`You've chosen ${dL} Line. Enter your departure stop.`);
+    const oL = prompt("Enter your train line");
+    const oS = prompt(`You've chosen ${oL} Line. Enter your departure stop. `);
+    const dL = prompt(`You're entering at ${oS} on ${oL} Line. Enter your destination line`);
+    const dS = prompt(`You've chosen ${dL} Line. Enter your departure stop.`);
 
     originDestination(oL, oS, dL, dS);
 })
 
 
-originDestination('N', '23rd', 'N', 'Times Square');
+// originDestination('N', '23rd', 'N', 'Times Square');
 
 
 
