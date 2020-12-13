@@ -2,11 +2,15 @@ const N = ['Times Square', '34th', '28th', '23rd', 'Union Square', '8th'];
 const L = ['8th', '6th', 'Union Square', '3rd', '1st'];
 const Six = ['Grand Central', '33rd', '28th', '23rd', 'Union Square', 'Astor Place'];
 
+const trainLines = document.getElementById('train-lines');
+
+trainLines.innerHTML += `<p>N Line: ${N.join(', ')}.</p><p>L Line:${L}</p><p>Six Line: ${Six}</p>`
+
 
 //Global set of regrex for use over two functions
-const regN = /n/i;
+const regN = /^n$/i;
 const regSix = /^(6|six)$/i;
-const regL = /l/i;
+const regL = /^l$/i;
 const ny = 'The city of NY wishes to advise that you are not on a MTA train line';
 
 
@@ -53,6 +57,7 @@ const originDestination = (oL, oS, dL, dS) => {
     const changeDepartureLine = `This is not a stop. Please change your stop on the departure line.`
     const changeDestinationLine = `This is not a stop. Please change your stop on the departure line.`
     const noLine = `Neither are stops. Please change your stop on BOTH your origin AND destination line.`
+    const noGo = `You've chosen the same stop on the same line. Pick a different stop or line.`
 
     const departureUS = departureLine.indexOf('Union Square');
     const destinationUS = destinationLine.indexOf('Union Square');
@@ -72,10 +77,9 @@ const originDestination = (oL, oS, dL, dS) => {
         console.log("Departure Line", oL, departureLine);
         console.log("Destination Line", dL, destinationLine);
 
-
         //Departure Line - filter through the departure line array 
         const departureJourney = departureLine.filter(function (stops) {
-            let stopsIndex = departureLine.indexOf(stops)
+            let stopsIndex = departureLine.indexOf(stops);
             if (stopsIndex > departure && stopsIndex <= departureUS) {
                 return true;
             } else if (stopsIndex < departure && stopsIndex >= departureUS) {
@@ -102,25 +106,27 @@ const originDestination = (oL, oS, dL, dS) => {
 
         //SAME LINE?
         if (departureLine === destinationLine) {
-            //Splice everything after the departure index including the
-            console.log(departure);
-            console.log(destination);
 
-            //TO DO: 
-            if (departure > destination) {
-                //Forwards through the array - departure > destination 
-                const arr = departureLine.filter(function (stop) {
+            // console.log("depart", departure, oS);
+            // console.log("dest", destination, dS);
 
-                })
-                console.log(arr);
+            //Set a result variable 
+            let singleLine;
+            if (departure === destination) {
+                console.log(noGo);
+            } else if (departure < destination) {
+                singleLine = departureLine.splice(departure + 1, destination);
+                console.log(`${a} ${singleLine.join(', ')}.`);
+                console.log(`${singleLine.length} stops in total`);
             } else {
-                //Backwards through the array departure < destination
-                const arr2 = departureLine.reverse();
-                arr2.splice(departure + 1, arr2.length - (departure + 1));
-                console.log(arr2);
+                singleLine = departureLine.splice(destination, departure);
+                singleLine.reverse()
+                console.log(`${a} ${singleLine.join(', ')}.`);
+                console.log(`${singleLine.length} stops in total`);
             }
+
         } else {
-            //DIFFERENT LINES - SWITCHING TRAINS
+            //DIFFERENT LINES & SWITCHING TRAINS
 
             //Departure Line
             if (departure === departureUS) {
@@ -136,17 +142,30 @@ const originDestination = (oL, oS, dL, dS) => {
             if (destination === departureUS) {
                 console.log(`You are at Union Square, change here for the ${dL} line`);
             } else if (destination > destinationUS) {
-                console.log(`${b} ${destinationJourney}`);
+                console.log(`${b} ${destinationJourney.join(', ')}.`);
                 console.log(`${totalStops} stops in total.`);
             } else {
-                console.log(`${b} ${destinationJourney.reverse()}`);
+                console.log(`${b} ${destinationJourney.reverse().join(', ')}.`);
                 console.log(`${totalStops} stops in total.`);
             }
         }
     }
 }
 
-originDestination('six', '33rd', 'Ndfwef', 'Times Square')
+
+
+document.getElementById('get-ticket').addEventListener('click', () => {
+    // const oL = prompt("Enter your train line");
+    // const oS = prompt(`You've chosen ${oL} Line. Enter your departure stop. `);
+    // const dL = prompt(`You're entering at ${oS} on ${oL} Line. Enter your destination line`);
+    // const dS = prompt(`You've chosen ${dL} Line. Enter your departure stop.`);
+
+    originDestination(oL, oS, dL, dS);
+})
+
+
+originDestination('N', '23rd', 'N', 'Times Square');
+
 
 
 
