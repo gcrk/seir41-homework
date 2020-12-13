@@ -10,7 +10,7 @@ const regL = /l/i;
 const ny = 'The city of NY wishes to advise that you are not on a MTA train line';
 
 
-const originLine = (oL) => {
+const allAboard = (oL) => {
     if (regN.test(oL)) {
         return N;
     } else if (regL.test(oL)) {
@@ -22,8 +22,7 @@ const originLine = (oL) => {
     }
 }
 
-
-const destLine = (dL) => {
+const endOfTheLine = (dL) => {
     if (regN.test(dL)) {
         return N;
     } else if (regL.test(dL)) {
@@ -35,103 +34,146 @@ const destLine = (dL) => {
     }
 }
 
+//oL = origin line, oS = 
+
 const originDestination = (oL, oS, dL, dS) => {
+
     //Get the lines arrays
-    const ogL = originLine(oL);
-    const desL = destLine(dL);
+    const departureLine = allAboard(oL);
+    const destinationLine = endOfTheLine(dL);
 
     //Index of origin stop on origin line  
-    const ogStopIndex = ogL.indexOf(oS);
-    //Index of destination stop on destination line 
-    const destStopIndex = desL.indexOf(dS);
+    const departure = departureLine.indexOf(oS);
+    const destination = destinationLine.indexOf(dS);
 
-    console.log("Origin Line", oL, ogL);
-    console.log("Destination Line", dL, desL);
+    //Messages
+    const a = `You must travel through the following stops on the ${oL} line:`;
+    const b = `Your journey continues through the following stops on the ${dL} line:`
+    const change = 'Change at Union Square'
+    const changeDepartureLine = `This is not a stop. Please change your stop on the departure line.`
+    const changeDestinationLine = `This is not a stop. Please change your stop on the departure line.`
+    const noLine = `Neither are stops. Please change your stop on BOTH your origin AND destination line.`
+
+    const departureUS = departureLine.indexOf('Union Square');
+    const destinationUS = destinationLine.indexOf('Union Square');
 
 
-    //If the stop they've entered is not on the line, tell them its not 
-    if (ogStopIndex === -1) {
-        console.log(`This is not a stop. Please change your stop on the origin line.`);
-    } else if (destStopIndex === -1) {
-        console.log(`This is not a stop. Please change your stop on the destination line.`);
-    } else if (ogStopIndex === -1 && destStopIndex === -1)
-        console.log(`Neither are stops. Please change your stop on BOTH your origin AND destination line.`);
+    //If the stop they've entered is not on the line, tell them its not
+    if (departureLine === ny || destinationLine === ny) {
+        console.log(ny);
+    } else if (departure === -1) {
+        console.log(changeDepartureLine);
+    } else if (destination === -1) {
+        console.log(changeDestinationLine);
+    } else if (departure === -1 && destination === -1)
+        console.log(noLine);
     else {
+        // Show the lines
+        console.log("Departure Line", oL, departureLine);
+        console.log("Destination Line", dL, destinationLine);
 
 
-        let a = `You must travel through the following stops on the ${oL} line:`;
-        let b = `Your journey continues through the following stops on the ${dL} line:`
-        let change = 'Change at Union Square'
+        //Departure Line - filter through the departure line array 
+        const departureJourney = departureLine.filter(function (stops) {
+            let stopsIndex = departureLine.indexOf(stops)
+            if (stopsIndex > departure && stopsIndex <= departureUS) {
+                return true;
+            } else if (stopsIndex < departure && stopsIndex >= departureUS) {
+                return true;
+            } else {
+                return false;
+            }
+        });
 
-        //Origin situation
-        const unionOG = ogL.indexOf('Union Square');
-        const ogDiff = unionOG - ogStopIndex;
-        const originStops = Math.abs(ogDiff);
+        //Destination Line
+        const destinationJourney = destinationLine.filter(function (stops) {
+            let stopsIndex = destinationLine.indexOf(stops);
+            if (stopsIndex >= destination && stopsIndex < destinationUS) {
+                return true;
+            } else if (stopsIndex <= destination && stopsIndex > destinationUS) {
+                return true;
+            } else {
+                return false;
+            }
+        });
 
-        //Destination
-        const unionDest = desL.indexOf('Union Square');
-        const destDiff = unionDest - destStopIndex;
-        const destStops = Math.abs(destDiff);
-        let ogSplice;
-        let destSplice;
+        //Total Stops
+        const totalStops = departureJourney.length + destinationJourney.length;
 
-        //ORIGIN CONDITIONALS
-        //Conditions to create the to go stops
-        if (ogStopIndex === unionOG) {
-            console.log(`You are at Union Square, change here for the ${dL} line`);
-        } else if (ogStopIndex < unionOG) {
-            //Set splice to start at the stop index in the array, then cut out the difference values, then add +1 to get Union Square back in.
-            ogSplice = ogL.splice(ogStopIndex, ogDiff + 1);
-            //Tell them where they need to go
-            console.log(`${a} ${ogSplice}`);
-            console.log(change);
+        //SAME LINE?
+        if (departureLine === destinationLine) {
+            //Splice everything after the departure index including the
+            console.log(departure);
+            console.log(destination);
+
+            //TO DO: 
+            if (departure > destination) {
+                //Forwards through the array - departure > destination 
+                const arr = departureLine.filter(function (stop) {
+
+                })
+                console.log(arr);
+            } else {
+                //Backwards through the array departure < destination
+                const arr2 = departureLine.reverse();
+                arr2.splice(departure + 1, arr2.length - (departure + 1));
+                console.log(arr2);
+            }
         } else {
-            //Same as above, but here we're getting rid of Union Square because we've told them to switch lines
-            ogSplice = ogL.splice(ogDiff - 1, ogStopIndex);
-            console.log(`${a} ${ogSplice}`);
-            console.log(change);
+            //DIFFERENT LINES - SWITCHING TRAINS
+
+            //Departure Line
+            if (departure === departureUS) {
+                console.log(`You are at Union Square, change here for the ${dL} line`);
+            } else if (departure > departureUS) {
+                console.log(`${a} ${departureJourney.reverse().join(', ')}`);
+                console.log(change);
+            } else {
+                console.log(`${a} ${departureJourney}`);
+                console.log(change);
+            }
+            //Destination Line
+            if (destination === departureUS) {
+                console.log(`You are at Union Square, change here for the ${dL} line`);
+            } else if (destination > destinationUS) {
+                console.log(`${b} ${destinationJourney}`);
+                console.log(`${totalStops} stops in total.`);
+            } else {
+                console.log(`${b} ${destinationJourney.reverse()}`);
+                console.log(`${totalStops} stops in total.`);
+            }
         }
-
-        //DESTINATION CONDITIONALS
-        if (destStopIndex === unionDest) {
-            console.log(`You are at Union Square, change here for the ${dL} line`);
-        } else if (destStopIndex < unionDest) {
-
-            //Lets flip shit around
-            let destRev = desL.reverse();
-
-            console.log(destRev);
-
-            destSplice = destRev.splice(destStopIndex + 1, destDiff);
-
-            console.log(`${b} ${destSplice}`);
-
-        } else {
-            destSplice = desL.splice(destDiff, destStopIndex);
-            console.log(`${b} ${destSplice}`);
-        }
-
-        // Total stops
-        const totalStops = `${originStops + destStops} stops in total`
-        console.log(totalStops);
-
-        // } else {
-        //     //SAME LINES
-        //     console.log('SAME LINES');
-        //     //Stops remaining 
-        //     let diff = (ogStopIndex - destStopIndex);
-        //     let stops = Math.abs(diff)
-        //     console.log(`The distance between ${oS} & ${dS} is ${stops} stops`);
-
-
-        //     //TODO: this won't handle negative values for some reason: try N8th and N28th - it should show 3 stops but only shows 8th. Might need a less than or 
-
-        //     // List the remaining stops given a index value 
-        //     let toGo = ogL.splice(ogStopIndex, destStopIndex);
-        //     console.log(`You must travel through the following stops on the ${oL} line: ${toGo}`);
-        // }
     }
 }
 
+originDestination('six', '33rd', 'Ndfwef', 'Times Square')
 
-originDestination('N', 'Times Square', 'N', '8th')
+
+
+
+
+
+
+
+
+
+// //DESTINATION CONDITIONALS
+// if (destination === destinationUS) {
+//     console.log(`You are at Union Square, change here for the ${dL} line`);
+// } else if (destination < destinationUS) {
+
+
+//     // destinationJourney = reverseLine.splice(destinationStops + 1, destination);
+
+//     // console.log(`${b} ${destinationJourney}`);
+
+// } else {
+
+//     console.log('Going to', dS);
+//     // destinationJourney = destinationLine.splice(destinationStops - 1, destination);
+//     // console.log(`${b} ${destinationJourney}`);
+
+// }
+
+// //Log total stops
+// console.log(totalStops);
