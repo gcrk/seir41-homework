@@ -84,6 +84,7 @@ console.log(validateCreditCard("1111-2222-3333-4445"));
 console.log(validateCreditCard("1010-1010-1010-1010"));
 console.log(validateCreditCard("1010-1010-1010-101"));
 console.log(validateCreditCard("2222-2222-2222-2222"));
+console.log(validateCreditCard("2222-22a2-2222-2222"));
 
 // *Bonus*: Return an object indicating whether the credit card is valid, and if not, what the error is
 //
