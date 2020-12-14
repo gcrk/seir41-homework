@@ -75,8 +75,9 @@ console.log(multiplyArray([1,2,3,4]));
 
 //Homework: The Word Guesser
 
-//You'll create a simple word guessing game where the user gets infinite tries to guess the word (like Hangman without the hangman, or like Wheel //of Fortune without the wheel and fortune).
+//You'll create a simple word guessing game where the user gets infinite tries to guess the word (like Hangman without the hangman, or like Wheel of Fortune without the wheel and fortune).
 //
+
 
 //Create two global arrays: one to hold the letters of the word (e.g. 'F', 'O', 'X'), and one to hold the current guessed letters (e.g. it would //start with '_', '_', '_' and end with 'F', 'O', 'X').
 //Write a function called guessLetter that will:
