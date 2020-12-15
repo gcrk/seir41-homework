@@ -75,8 +75,8 @@ const originDestination = (oL, oS, dL, dS) => {
         console.log(noLine);
     else {
         // Show the lines
-        console.log("Departure Line", oL, departureLine);
-        console.log("Destination Line", dL, destinationLine);
+        // console.log("Departure Line", oL, departureLine);
+        // console.log("Destination Line", dL, destinationLine);
 
         //Departure Line - filter through the departure line array 
         const departureJourney = departureLine.filter(function (stops) {
@@ -127,9 +127,6 @@ const originDestination = (oL, oS, dL, dS) => {
         //SAME LINE?
         if (departureLine === destinationLine) {
 
-            // console.log("depart", departure, oS);
-            // console.log("dest", destination, dS);
-
             //Set a result variable 
             let singleLine;
             if (departure === destination) {
@@ -175,19 +172,20 @@ const originDestination = (oL, oS, dL, dS) => {
 const getTicket = document.querySelector('#get-ticket');
 const container = document.querySelector('.container');
 
-// getTicket.addEventListener('click', () => {
-//     const oL = prompt("Enter your train line");
-//     const oS = prompt(`You've chosen ${oL} Line. Enter your departure stop. `);
-//     const dL = prompt(`You're entering at ${oS} on ${oL} Line. Enter your destination line`);
-//     const dS = prompt(`You've chosen ${dL} Line. Enter your departure stop.`);
+getTicket.addEventListener('click', () => {
+    const oL = prompt("Enter your train line");
+    const oS = prompt(`You've chosen ${oL} Line. Enter your departure stop. `);
+    const dL = prompt(`You're entering at ${oS} on ${oL} Line. Enter your destination line`);
+    const dS = prompt(`You've chosen ${dL} Line. Enter your departure stop.`);
 
-//     // let p = document.createElement('h5');
-//     // p.innerHTML = `Check the console for your directions.`;
-//     // container.insertBefore(p, getTicket);
+    // let p = document.createElement('h5');
+    // p.innerHTML = `Check the console for your directions.`;
+    // container.insertBefore(p, getTicket);
 
-//     originDestination(oL, oS, dL, dS);
+    originDestination(oL, oS, dL, dS);
 
 
-// })
+})
 
-originDestination("N", "Times Square", '6', "Grand Central");
+// originDestination("N", "Times Square", '6', "Grand Central");
+// originDestination("N", "Times Square", '6', "Grand Central");
