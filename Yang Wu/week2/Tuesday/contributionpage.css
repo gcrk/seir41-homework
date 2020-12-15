@@ -1,0 +1,79 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@1,300&display=swap');
+
+
+body {
+  background-color:#e6e8f7;
+  padding:0;
+  margin:0;
+}
+
+#container {
+  max-width:960px;
+  margin:0 auto;
+}
+
+h1 {
+  font-family:Oswald, Ariel;
+  text-align:center;
+  font-size:200%;
+  color:#0521B3;
+  border-bottom:1px solid #A9A9A9;
+}
+
+header blockquote {
+  font-family:'JetBrains Mono',"Times New Roman";
+  font-size:110%;
+  line-height:1.5;
+  text-shadow: 5px 5px 4px #6979D1;
+  padding-bottom: 2em;
+}
+
+header blockquote span {
+  display:block;
+  text-align:center;
+}
+
+.contribution {
+  display:flex;
+  flex-direction:row;
+  margin:0 auto;
+}
+
+.work, .vision {
+  width:45%;
+  margin:0 auto;
+}
+
+.contribution h3 {
+  text-align:center;
+  font-family:Oswald, Ariel;
+  font-size:120%;
+  margin-bottom:10px;
+  letter-spacing:0.05em;
+}
+
+.contribution hr {
+  border-color:#6979D1;
+  margin-bottom:10px;
+}
+
+.contribution img {
+  display:block;
+  width:45%;
+  height:135px;
+  margin:0 auto;
+}
+
+.contribution blockquote {
+  margin:2em auto;
+  font-family:"Roboto Condensed","Times New Roman";
+  font-size:120%;
+  letter-spacing:0.05em;
+  line-height:1.2;
+}
+
+.contribution blockquote p span {
+  color:#0521B3;
+}
