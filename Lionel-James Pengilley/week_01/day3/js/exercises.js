@@ -30,6 +30,9 @@ const maxOfThree = function (n1, n2, n3) {
 
 console.log(maxOfThree(1, 2, 3));
 
+//Could use a Math.max method
+
+
 // 3. Write a function that takes a character (i.e. a string of length 1) and returns true if it is a vowel, false otherwise.
 
 const vowelChecker = function (character) {
@@ -41,6 +44,12 @@ const vowelChecker = function (character) {
 };
 
 console.log(vowelChecker('l'));
+
+// Could also make an array and check if the string is in an array.
+// could add a line that makes inputs to lowercase
+
+
+
 
 // 4. Define a function `sumArray` and a function `multiplyArray` that sums and multiplies (respectively) all the numbers in an array of numbers.
 // For example, `sumArray([1,2,3,4])` should return 10, and `multiplyArray([1,2,3,4])` should return 24.
