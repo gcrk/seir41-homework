@@ -1,37 +1,99 @@
-// # Exercises: Objects
+console.log('hi')
+// # MTA Lab
 //
-// ## The Recipe Card
+// ## Objectives:
+// * Apply your knowledge of Javascript to solve a real world problem.
+// * Get really good at array manipulation.
 //
-// Never forget another recipe!
+// #### Activity
+// * Create a program that models a simple subway system.
 //
-// Create an object to hold information on your favorite recipe. It should have properties for title (a string), servings (a number), and ingredients (an array of strings).
+// * The program takes the line and stop that a user is getting on at and the line
+// and stop that user is getting off at and prints the journey and the total number of stops for the trip in the console:
 //
-// On separate lines (one console.log statement for each), log the recipe information so it looks like:
-// - Mole
-// - Serves: 2
-// - Ingredients:
-// - cinnamon
-// - cumin
-// - cocoa
-const favoriteRecipe={
-      title: 'Mole',
-      serves: 2,
-      ingredients:['cinnamon','cumin','cocoa']
+// ```javascript
+// planTrip('N', 'Times Square', '6', '33rd'); // This is only a suggested function name and signature.
+//
+// // console.log() shows output similar to this:
+// // "You must travel through the following stops on the N line: 34th, 28th, 23rd, Union Square."
+// // "Change at Union Square."
+// // "Your journey continues through the following stops: 23rd, 28th, 33rd."
+// // "7 stops in total."
+// ```
+//
+// * There are 3 subway lines:
+//   * The N line has the following stops: Times Square, 34th, 28th, 23rd, Union Square, and 8th
+//   * The L line has the following stops: 8th, 6th, Union Square, 3rd, and 1st
+//   * The 6 line has the following stops: Grand Central, 33rd, 28th, 23rd, Union Square, and Astor Place.
+//   * All 3 subway lines intersect at Union Square, but there are no other intersection points. (For example, this means the 28th stop on the N line is different than the 28th street stop on the 6 line, so you'll have to differentiate this when you name your stops in the arrays.)
+// * Tell the user the number of stops AND the stops IN ORDER that they will pass through or change at.
+//
+//
+// #### Hints:
+// * Work out how you would do it on paper first! Then start to explain that process in Javascript.
+// * Get the program to work for a single line before trying to tackle multiple lines.
+// * Don't worry about prompting the user for input. Hard code some values to get it working. You can use ```prompt()``` later to make it more interactive.
+// * Consider diagramming the lines by sketching out the subway lines and their stops and intersection.
+// * The key to the lab is finding the index positions of each stop. (hint: ```indexOf()```)
+// * Make sure the stops that are the same for different lines have different names (i.e. 23rd on the N and on the 6 need to be differentiated)
+
+const lineN = ["TS","34th","28th","23rd","Uion Square","8th"];
+const lineL = ["8th","6th","Union Squre","3rd","1st"];
+const line6 = ["GC","33th","28th","23rd","Union Square","AP"];
+
+let indexStart=null;
+let indexFinish=null;
+
+const planTrip = function (firstLine, firstLineStop, secondLine, secondLineStop){
+
+
+
+
+const getIndex = function(a,b,c,d){
+   for (i=0; i<a.length; i++){
+     if (b===a[i]){
+        indexStart = i;
+        }
+   }
+
+   for (j=0; j<c.length; i++){
+     if (d===c[j]){
+        indexFinish = j;
+        }
+   }
+}
+
+getIndex (firstLine, firstLineStop, secondLine, secondLineStop)
+
+
+
+
 };
 
-console.log(favoriateRecipe.title);
 
-// ## The Reading List
-//
-// Keep track of which books you read and which books you want to read!
-//
-// - Create an array of objects, where each object describes a book and has properties for the title (a string), author (a string), and alreadyRead (a boolean indicating if you read it yet).
-// - Iterate through the array of books. For each book, log the book title and book author like so: "The Hobbit by J.R.R. Tolkien".
-// - Now use an if/else statement to change the output depending on whether you read it yet or not. If you read it, log a string like 'You already read "The Hobbit" by J.R.R. Tolkien', and if not, log a string like 'You still need to read "The Lord of the Rings" by J.R.R. Tolkien.'
-//
-// ## The Movie Database
-//
-// It's like IMDB, but much much smaller!
-//
-// - Create an object to store the following information about your favorite movie: title (a string), duration (a number), and stars (an array of strings).
-// - Create a function to print out the movie information like so: "Puff the Magic Dragon lasts for 30 minutes. Stars: Puff, Jackie, Living Sneezes."
+planTrip (lineN,"28th",line6,"GC")
+
+
+
+
+// const planTrip = function (firstLine, firstLineStop, secondLine, secondLineStop){
+
+
+   //find the index of firstLineStop in firstLine
+
+
+
+
+
+   //  let indexFinish = null;
+   // //find the index of secondLineStop in secondLineStop
+   // for (j=0; j<secondLine.length; j++){
+   // if (secondLineStop===secondLine[j]){
+   //     indexFinish = j
+   //
+   // }
+   // }
+
+
+console.log(indexStart)
+console.log(indexFinish)
