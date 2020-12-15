@@ -1,0 +1,25 @@
+// scopes
+
+// Global scopes/////////
+const globalMsg = 'Hello world';
+
+const showGlobalMsg = function () {
+console.log (globalMsg);
+}
+
+showGlobalMsg();
+
+// Function scope/////
+
+const showLocalMsg = function () {
+const LocalMsg = 'goodbye'
+console.log
+}
+// var inside a block //////////////////
+while () {
+//inside the block//
+} var global
+
+//let inside a block/////
+
+difference is let is block scoped - any loop
