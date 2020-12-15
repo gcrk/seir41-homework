@@ -57,6 +57,7 @@ nav span {
 	box-sizing: border-box;
 	border-bottom-left-radius: 1em;
 	border-bottom-right-radius: 1em;
+	transition: 0.3s;
 	/* text-decoration: none; */
 	/* display: none; */
 }
@@ -64,6 +65,7 @@ nav span {
 nav span:hover {
 	background-color: #db1a33;
 	box-shadow: 0 0 15px black; /* embose */
+	/* transition: 0.3s; */
 }
 
 a span,
@@ -131,7 +133,7 @@ aside {
 	/* box-sizing: border-box; */
 	display: inline-block;
 	width: 21%;
-	height: 455px;
+	height: 200px;
 	vertical-align: top;
 	background-color: #ffcf99;
 	padding: 1em;
@@ -139,10 +141,10 @@ aside {
 	box-shadow: 0 0 15px black; /* embose */
 	margin-top: 2em;
 	color: black;
+	transition: 0.5s;
 }
-
-aside ul {
-	padding-left: 16px;
+aside:hover {
+	box-shadow: 0 0 35px black; /* embose */
 }
 
 footer {
@@ -182,4 +184,22 @@ footer {
 	position: absolute;
 	top: 716px;
 	right: 300px;
+}
+
+#home-trivia p {
+	text-align: left;
+}
+
+#home-trivia span {
+	color: #111d4a;
+	font-size: 1.1em;
+	margin-top: 37px;
+	margin-left: 66px;
+	display: inline-block;
+	visibility: hidden;
+}
+
+#home-trivia:hover span {
+	visibility: visible;
+	transition: 1s all;
 }
