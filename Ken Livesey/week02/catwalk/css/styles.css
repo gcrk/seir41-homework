@@ -1,0 +1,8 @@
+body {
+  background-color: #ffffff;
+  overflow: hidden;
+}
+
+.walkingCat {
+  position: absolute;
+}
