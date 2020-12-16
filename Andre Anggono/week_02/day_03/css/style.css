@@ -1,9 +1,22 @@
 #walking-cat-right {
+	top: 30%;
 	position: absolute;
-	/* top: 100px; */
 }
 
 #walking-cat-left {
+	top: 30%;
 	position: absolute;
 	transform: scaleX(-1);
 }
+
+#dancing-cat {
+	top: 30%;
+	position: absolute;
+	display: none;
+}
+
+/* body {
+	background-image: url("dance-floor2.jpg");
+	background-repeat: repeat;
+	background-size: cover;
+} */
