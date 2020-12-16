@@ -1,0 +1,81 @@
+/* ----- Global ----- */
+
+@import url('https://fonts.googleapis.com/css2?family=EB+Garamond&family=Montserrat&display=swap');
+
+html {
+  background-image: radial-gradient(rgba(240, 247, 248, 0.6) .5px, transparent .5px),radial-gradient(rgba(240, 247, 248, 0.6) .5px, transparent .5px);
+  background-size: calc(20 * 1px) calc(20 * 1px);
+  background-position: 0 0,calc(10 * 1px) calc(10 * 1px);
+  background-color: rgb(6, 148, 194);
+}
+
+body {
+  font-family: 'EB Garamond', serif;
+  color: #fff;
+}
+
+/* ----- Header & Nav ------ */
+
+header {
+
+}
+
+
+
+/* ----- Blinking Cursor ----- */
+
+.blinking-cursor {
+  font-weight: 100;
+  font-size: 30px;
+  color: #fff;
+  -webkit-animation: 1s blink step-end infinite;
+  -moz-animation: 1s blink step-end infinite;
+  -ms-animation: 1s blink step-end infinite;
+  -o-animation: 1s blink step-end infinite;
+  animation: 1s blink step-end infinite;
+}
+
+@keyframes "blink" {
+  from, to {
+    color: transparent;
+  }
+  50% {
+    color: #fff;
+  }
+}
+
+@-moz-keyframes blink {
+  from, to {
+    color: transparent;
+  }
+  50% {
+    color: #fff;
+  }
+}
+
+@-webkit-keyframes "blink" {
+  from, to {
+    color: transparent;
+  }
+  50% {
+    color: #fff;
+  }
+}
+
+@-ms-keyframes "blink" {
+  from, to {
+    color: transparent;
+  }
+  50% {
+    color: #fff;
+  }
+}
+
+@-o-keyframes "blink" {
+  from, to {
+    color: transparent;
+  }
+  50% {
+    color: #fff;
+  }
+}
