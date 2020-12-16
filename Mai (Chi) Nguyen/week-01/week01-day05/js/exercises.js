@@ -100,7 +100,7 @@ const planTrip = function (line1, stop1, line2, stop2) {
 }
 
 
-// planTrip();
+planTrip();
 // planTrip('N', '34th', '6', 'Grand Central');
 // planTrip('N', '34th', 'N', '23rd');
 // planTrip('N', '34th', '6', 'Astor Place');
