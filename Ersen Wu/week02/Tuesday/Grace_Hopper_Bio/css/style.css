@@ -44,7 +44,7 @@ nav a {
 h1 {
   text-transform: uppercase;
   text-align: center;
-  background-color: #222;
+    background-image:repeating-linear-gradient(45deg,yellow,green,yellow,green);
   color:#ccc;
   font-size: 400%;
   padding:30px;
@@ -66,8 +66,7 @@ main img {
 aside{
 
   width:100%;
-  vertical-align: top;
-  background-color: #fcc;
+  vertical-align: top;                                                                      background-image:repeating-linear-gradient(45deg,yellow,green,yellow,green);
   padding: 1em;
   border-radius: 5px;
   box-shadow: 0 0 10px black;
