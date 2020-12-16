@@ -1,5 +1,9 @@
-#walking-cat {
+#walking-cat-right {
 	position: absolute;
-	/* left: 0px; */
-	right: 10px;
+	/* top: 100px; */
+}
+
+#walking-cat-left {
+	position: absolute;
+	transform: scaleX(-1);
 }
