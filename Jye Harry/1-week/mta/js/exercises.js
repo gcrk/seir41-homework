@@ -54,20 +54,13 @@ const planTrip = function (line1, stop1, line2, stop2) {
 
 // check if the input lines and stops actually exist
 const checkExist = function (line1, stop1, line2, stop2) {
-  if (lines.hasOwnProperty(line1) && lines.hasOwnProperty(line2)) {
-    return lines[line1].includes(stop1) && lines[line2].includes(stop2);
-  }
-  return false;
+  return lines.hasOwnProperty(line1) && lines.hasOwnProperty(line2) ? lines[line1].includes(stop1) && lines[line2].includes(stop2) : false;
 }
 
 // determine direction the train must move by using indexes of the stops
 const getDirection = function (line, stop1, stop2) {
   // if stop1 index is lower than stop2 index, call getStops(), otherwise reverse the array then call getStops()
-  if (line.indexOf(stop1) < line.indexOf(stop2)) {
-    return getStops(line, stop1, stop2);
-  } else {
-    return getStops((line.slice()).reverse(), stop1, stop2);
-  }
+  return line.indexOf(stop1) < line.indexOf(stop2) ? getStops(line, stop1, stop2) : getStops((line.slice()).reverse(), stop1, stop2)
 }
 
 // gets the stops and number of stops for the journey on the given line

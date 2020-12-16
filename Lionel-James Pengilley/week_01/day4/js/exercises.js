@@ -196,7 +196,7 @@ const validateCreditCard = function (cardNum) {
   const regex1 = /\D/g;//or [^0-9]? ---- all characters that are not digits (numbers?) globally
   const regex2 = /[^0-9]/g;// all characters that are digits
   let cardNumOnly = cardNum.replace(regex1, '');//removing '-' in card number and saving it to a variable
-  cardNumOnly = cardNumOnly.replace(regex2, '').length//Quesstion: How can I find out the length of the occurance of multiple characters in a string?
+  cardNumOnlyLength = cardNumOnly.replace(regex2, '').length//Question: How can I find out the length of the occurance of multiple characters in a string?
   console.log(cardNumOnly);
 }
 
