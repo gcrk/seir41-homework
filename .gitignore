@@ -1,4 +1,6 @@
 
+config.js
+
 .directory
 
 ### OSX ###
@@ -52,4 +54,7 @@ node_modules/
 /yarn-error.log
 
 .byebug_history
+
+
                 
+
