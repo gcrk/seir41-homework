@@ -1,3 +1,4 @@
+
 .directory
 
 ### OSX ###
@@ -5,7 +6,7 @@
 .AppleDouble
 .LSOverride
 
-# Icon must end with two 
+# Icon must end with two
 Icon
 
 # Thumbnails
@@ -51,7 +52,3 @@ node_modules/
 /yarn-error.log
 
 .byebug_history
-
-
-                
-
