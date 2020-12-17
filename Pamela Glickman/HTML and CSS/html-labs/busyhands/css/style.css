@@ -53,8 +53,8 @@ nav {
 }
 
 #main-content, footer {
-	margin-left: 8%;
-	width: 90%;
+	margin: 0 auto;
+	width: 960px;
 }
 
 /*Social media icon styling, copied from example site*/
@@ -83,6 +83,10 @@ nav {
 	 height:60px;
 	 background:blue;
 	 text-indent:-9999em;
+}
+
+#social-media ul li:hover {
+	cursor: pointer;
 }
 
 #social-media ul li.linkedIn {
