@@ -4,17 +4,17 @@ body {
 
 #dog1 {
 
-  visibility: ;
+
 }
 
 #dog2 {
   position: absolute;
-  visibility: hidden;
   top: 100px;
+  display: none;
 }
 
 #dog3 {
-  position: absolute;
+  position: relative;
   visibility: hidden;
   top: 300px;
   width: 250px;

@@ -3,68 +3,44 @@
 // ## The Cat Walk
 
 
-// - Create a variable to store a reference to the img.
+//DOG 1
+  $('#dog1').animate({width: "+=550"}, 6000, function () {
+    $( this ).hide();
+  });
 
-// walk();
-// console.log(img1.style.left);
-//
 
-const stop = function (argument, func) {
-  let result = false;
-
-  if (argument) {
-    clearInterval(func);
-    result = true;
-  }
-  return result;
-}
-
-const invisible = function (img, time) {
-  setTimeout(img.style.visibility = 'hidden', time);
-}
-
-const makeBigger = function () {
-  const image = document.getElementById('dog1');
-  image.width += 2;
-
-  if (image.width > 1600) {
-    clearInterval(extender);
-    setTimeout(image.style.visibility = 'hidden', 5500);
-  }
-  //
-  // stop(image.width > 1600, extender);
-  // if (stop) {
-  //   invisible(image, 5000);
-  // }
-}
-
-let extender =  setInterval(makeBigger, 10);
 
 //DOG 2
-const img2 = document.getElementById('dog2');
-img2.style.left = '-100px';
+// const img2 = document.getElementById('dog2');
+// img2.style.left = '-100px';
+//
+// const delayDog2 = function () {
+//   img2.style.visibility = 'visible';
+// }
+//
+// setTimeout(delayDog2, 6500);
+//
+// const walk2 = function () {
+//   const oldLeft = parseInt(img2.style.left);
+//   const newLeft = oldLeft + 1;
+//   img2.style.left = newLeft + 'px';
+//
+//   if (newLeft > 1500) {
+//     img2.style.left = '-100px';
+//   }
+// }
+//
+// const walkDog2 = function () {
+//   setInterval(walk2, 4);
+// }
+//
+// setTimeout(walkDog2, 6500);
 
-const delayDog2 = function () {
-  img2.style.visibility = 'visible';
-}
+$('#dog2').delay(4000).show(4000).animate({left: '+=1500'}, 4000).css({'left': '-100px'});
+// }).animate({left: '+=10'}, 1000)
+// .show().animate({left: '+=10'}, 1000);
+// $('#dog2').repeat(1000).each($).animate({left: '+=10'}, 1000).wait(50);
 
-setTimeout(delayDog2, 6500);
-
-const walk2 = function () {
-  const oldLeft = parseInt(img2.style.left);
-  const newLeft = oldLeft + 1;
-  img2.style.left = newLeft + 'px';
-
-  if (newLeft > 1500) {
-    img2.style.left = '-100px';
-  }
-}
-
-const walkDog2 = function () {
-  setInterval(walk2, 4);
-}
-
-setTimeout(walkDog2, 6500);
 
 //DOG 3
 
@@ -121,49 +97,49 @@ let timer = setTimeout(walkDog3, 6500);
 
 
 // DOG 4
-
-const img4 = document.getElementById('dog4');
-
-
-const delayDog4 = function () {
-  img4.style.visibility = 'visible';
-}
-
-setTimeout(delayDog4, 6500);
-
-
-
-const walk4 = function () {
-  let oldLeft = parseInt(img3.style.left);
-
-  if (oldLeft !== 0) {
-    if (oldLeft !== 1200) {
-      if (dir === true) {
-        let newLeft = oldLeft + 2;
-        img4.style.left = newLeft + 'px';
-      } else {
-        let newLeft = oldLeft - 2;
-        img3.style.left = newLeft + 'px';
-      }
-    } else if (oldLeft === 600) {
-      if (dir === true) {
-        img3.style.transform = 'scaleX(-1)';
-        dir = false;
-      } else {
-      let newLeft = oldLeft - 2;
-      img3.style.left = newLeft + 'px';
-      }
-    }
-  } else {
-    if (dir === false) {
-      img3.style.transform = 'scaleX(+1)';
-      dir = true;
-    } else {
-      let newLeft = oldLeft + 2;
-      img3.style.left = newLeft + 'px';
-    }
-  }
-}
+//
+// const img4 = document.getElementById('dog4');
+//
+//
+// const delayDog4 = function () {
+//   img4.style.visibility = 'visible';
+// }
+//
+// setTimeout(delayDog4, 6500);
+//
+//
+//
+// const walk4 = function () {
+//   let oldLeft = parseInt(img3.style.left);
+//
+//   if (oldLeft !== 0) {
+//     if (oldLeft !== 1200) {
+//       if (dir === true) {
+//         let newLeft = oldLeft + 2;
+//         img4.style.left = newLeft + 'px';
+//       } else {
+//         let newLeft = oldLeft - 2;
+//         img3.style.left = newLeft + 'px';
+//       }
+//     } else if (oldLeft === 600) {
+//       if (dir === true) {
+//         img3.style.transform = 'scaleX(-1)';
+//         dir = false;
+//       } else {
+//       let newLeft = oldLeft - 2;
+//       img3.style.left = newLeft + 'px';
+//       }
+//     }
+//   } else {
+//     if (dir === false) {
+//       img3.style.transform = 'scaleX(+1)';
+//       dir = true;
+//     } else {
+//       let newLeft = oldLeft + 2;
+//       img3.style.left = newLeft + 'px';
+//     }
+//   }
+// }
 
 // DOG 5
 
