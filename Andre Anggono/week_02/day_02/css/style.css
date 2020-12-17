@@ -83,8 +83,8 @@ header > a {
 
 main {
 	display: inline-block;
-	width: 75%;
-	padding-left: 8px;
+	width: 72%;
+	padding-left: 30px;
 }
 
 #main-hometown {
@@ -158,7 +158,13 @@ footer {
 #hometown-map {
 	/* margin-left: 2.5em; */
 	box-shadow: 0 0 15px black; /* embose */
+	border-radius: 0.5em;
+}
+
+#dyk-vid {
+	box-shadow: 0 0 15px black; /* embose */
 	border-radius: 1em;
+	margin-left: 4.5em;
 }
 
 .info {
@@ -186,11 +192,11 @@ footer {
 	right: 300px;
 }
 
-#home-trivia p {
+#home-dyk p {
 	text-align: left;
 }
 
-#home-trivia span {
+#home-dyk span {
 	color: #111d4a;
 	font-size: 1.1em;
 	margin-top: 37px;
@@ -199,7 +205,16 @@ footer {
 	visibility: hidden;
 }
 
-#home-trivia:hover span {
+#home-dyk:hover span {
 	visibility: visible;
 	transition: 1s all;
+}
+
+.funfacts {
+	/* font-size: 1.4em; */
+	margin-left: 69px;
+}
+
+h3.funfacts {
+	font-size: 1.4em;
 }

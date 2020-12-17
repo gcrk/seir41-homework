@@ -63,7 +63,7 @@ const dancingCat = function (position, isLeft) {
 	} else {
 		dancingCat.style.right = position + "px";
 	}
-
+	console.log("here");
 	document.body.style.backgroundImage = 'url("img/dance-floor2.jpg")';
 	document.body.style.backgroundSize = "cover";
 	dancingCat.style.display = "inline";
