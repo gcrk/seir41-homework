@@ -1,0 +1,137 @@
+body {
+    margin: 0px;
+    padding: 0px;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #7f7d78;
+    font-size: 13px;
+    line-height: 1.1;
+    background: #FFF;
+}
+
+h2 {
+    margin: 0px 0px 10px 0px;
+    font-size: 36px;
+    font-family: Helvetica, Arial, Sans-serif;
+    color: #000000;
+    line-height: 1.1;
+}
+
+a {
+    color: #26689f;
+    text-decoration: none;
+}
+
+p {
+    margin: 0px 0px 15px 0px;
+}
+
+
+
+#container {
+    background: url(../images/background_light.jpg) no-repeat;
+    width: 950px;
+    margin: 0 auto;
+    /*centers our container on the page */
+}
+
+
+
+#header {
+    padding: 20px 0px;
+}
+
+
+nav {
+    width: 100%;
+    background-color: black;
+    display: inline-block;
+}
+
+
+nav ul li {
+    display: inline-block;
+    margin-right: 20px;
+}
+
+
+nav li a {
+    display: block;
+    width: 100px;
+    padding: 10px 0px;
+    color: white;
+}
+
+/*----------------------------------------------------------------------------- 
+SOCIAL MEDIA  
+-----------------------------------------------------------------------------*/
+
+
+#logo {
+    display: inline-block;
+}
+
+#logo h1 {
+    text-indent: -99999em;
+    /* hides the H1 tag from the page, while semantically keeping it present in your HTML */
+}
+
+.social-media {
+    display: inline-block;
+}
+
+.social-media li {
+    display: inline-block;
+    width: 60px;
+    height: 60px;
+    background: blue;
+    text-indent: -9999em;
+}
+
+.social-media ul li.linkedIn {
+    background: url(../images/socialNav.png) 0px 64px;
+}
+
+.social-media ul li.twitter {
+    background: url(../images/socialNav.png) -60px 64px;
+}
+
+.social-media ul li.facebook {
+    background: url(../images/socialNav.png) -120px 64px;
+}
+
+.social-media ul li.rss {
+    background: url(../images/socialNav.png) -180px 64px;
+}
+
+.social-media ul li.linkedIn:hover {
+    background: url(../images/socialNav.png) 0px 0px;
+}
+
+.social-media ul li.twitter:hover {
+    background: url(../images/socialNav.png) -60px 0px;
+}
+
+.social-media ul li.facebook:hover {
+    background: url(../images/socialNav.png) -120px 0px;
+}
+
+.social-media ul li.rss:hover {
+    background: url(../images/socialNav.png) -180px 0px;
+}
+
+
+/*----------------------------------------------------------------------------- 
+# CONTENT 
+-----------------------------------------------------------------------------*/
+
+#content {
+    display: inline-block;
+}
+
+#content p {
+    line-height: 22px;
+}
+
+/*----------------------------------------------------------------------------- 
+# MISC 
+-----------------------------------------------------------------------------*/
