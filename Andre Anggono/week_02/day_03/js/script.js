@@ -19,7 +19,7 @@ const catWalkRight = function (data, moves, screen) {
 		data.id = "walking-cat-left";
 	}
 
-	if (oldLeft < screen / 2 || oldLeft > screen / 2 + 2) {
+	if (oldLeft < screen / 2 || oldLeft > screen / 2 + 5) {
 		const newLeft = oldLeft + moves;
 		data.style.left = newLeft + "px";
 	} else {
@@ -40,7 +40,7 @@ const catWalkLeft = function (data, moves, screen) {
 		data.id = "walking-cat-right";
 	}
 
-	if (oldRight < screen / 2 || oldRight > screen / 2 + 2) {
+	if (oldRight < screen / 2 || oldRight > screen / 2 + 5) {
 		const newRight = oldRight + moves;
 		data.style.right = newRight + "px";
 	} else {
@@ -49,12 +49,13 @@ const catWalkLeft = function (data, moves, screen) {
 		dancingCat(oldRight, false);
 		setTimeout(function () {
 			stopDancingCat(data, moves, oldRight, false);
-		}, 10000);
+		}, 20000);
 	}
 };
 
 const dancingCat = function (position, isLeft) {
 	const dancingCat = document.querySelector("#dancing-cat");
+	const music = document.querySelector("#audio");
 
 	dancingCat.style = "";
 
@@ -63,16 +64,18 @@ const dancingCat = function (position, isLeft) {
 	} else {
 		dancingCat.style.right = position + "px";
 	}
-	console.log("here");
+
 	document.body.style.backgroundImage = 'url("img/dance-floor2.jpg")';
 	document.body.style.backgroundSize = "cover";
 	dancingCat.style.display = "inline";
+	music.play();
 };
 
 const stopDancingCat = function (data, moves, directionValue, isLeft) {
 	const dancingCat = document.querySelector("#dancing-cat");
+	const music = document.querySelector("#audio");
 	dancingCat.style.display = "none";
-
+	music.pause();
 	data.style.display = "inline";
 
 	// cat going right
