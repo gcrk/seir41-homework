@@ -91,3 +91,12 @@ const background = (e) => {
 document.body.addEventListener('mousemove', background);
 //Get the cat
 document.getElementById('cat').addEventListener('click', newCat);
+
+
+if (something) {
+    const moveRight = setInterval(right, 80);
+}
+
+if (something) {
+    const moveUp = setInterval(up, 80);
+}
