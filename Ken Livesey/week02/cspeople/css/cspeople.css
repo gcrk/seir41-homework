@@ -1,0 +1,151 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300&family=Raleway:wght@200&display=swap');
+
+body {
+  box-sizing: border-box;
+  background-color: #c1c1c1; /* treated as double digits for the same*/
+  padding-left: 0;
+  margin: 0;
+  letter-spacing: 1.2;
+  line-height: 1.6;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.container {
+  max-width: 960px; /* Lazy responsive alternate */
+  background-color: #EDDDD4;
+  margin: 0 auto; /* horizontal centering */
+  padding: 1.5em; /* Chunky pixels */
+}
+
+/* || Header & Main Navigation */
+
+nav ul {
+  text-align: left;
+  background-color: #C44536;
+  padding-inline-start: 0em;
+  margin-block-start: 0em;
+  margin-block-end: 0em;
+}
+
+.links-list a {
+  display: inline-block;
+  background-color: #C44536;
+  color: #fff;
+  text-decoration: none;
+  padding: .5em 1em;
+}
+
+.links-list a:hover {
+  background-color: #772E25;
+  color: #fff;
+}
+
+h1 {
+  text-transform: lowercase;
+  text-align: right;
+  background-color: #283D3B;
+  color: #EDDDD4;
+  font-size: 600%;
+  padding: 0.25em;
+  font-family: 'Raleway', sans-serif;
+  margin-block-start: 0em;
+  margin-block-end: 0em;
+}
+
+/* || Main page content */
+
+main {
+  display: inline-block;
+  width: 100%;
+}
+
+main h2 {
+  color: #772E25;
+}
+
+/* || Article sectiom */
+
+main article img {
+  max-width: 960px;
+  margin: 0 auto;
+  display: block;
+}
+
+/* || Blockquote from here */
+
+blockquote {
+  background: #283D3B;
+  border-left: 10px solid #ccc;
+  margin: 1.5em 10px;
+  font-size: 120%;
+  text-align: justify;
+  padding: 1em;
+  color: #EDDDD4;
+  margin-block-end: 1em;
+}
+
+blockquote:before {
+  color: #ccc;
+  content: open-quote;
+  font-size: 5em;
+  line-height: 0.1em;
+  margin-right: 0.25em;
+  vertical-align: -0.4em;
+}
+
+blockquote p {
+  display: inline;
+}
+
+/* || Article Image settings */
+
+.small {
+  max-width: 200px;
+  display: inline-block;
+}
+
+/* || Article box settings */
+
+.main-info-box {
+  display: inline-block;
+  margin: 0 auto;
+  width: 960px;
+}
+
+.video-box {
+  display: block;
+  margin: 0 auto;
+  width: 560px;
+}
+
+.info-box {
+  display: inline-block;
+  margin-top: 0px;
+  margin-right: 1em;
+  margin-bottom: 0px;
+  margin-left: 0px;
+  width: 47%;
+  vertical-align: top;
+}
+
+.wow {
+  display: inline-block;
+  margin: 0 auto;
+  padding-left: 16px;
+  font-size: 125%;
+  letter-spacing: 0.1em;
+  line-height: 1.6;
+  color: #283D3B;
+}
+
+.wow h2 {
+  color: #283D3B;
+  margin-block-start: 0em;
+  margin-block-end: 0em;
+}
+
+.wow ul {
+  padding-inline-start: 1em;
+  margin-block-start: 0em;
+  margin-block-end: 0em;
+}
