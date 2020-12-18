@@ -1,0 +1,77 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@300&display=swap');
+
+body {
+  background-color:#001;
+  background-image: radial-gradient(white 15%, transparent 16%),
+  radial-gradient(white 15%, transparent 16%);
+  background-size: 60px 60px;
+  background-position: 0 0, 30px 30px;
+  padding: 0;
+  margin: 0;
+  font-style: arial;
+}
+
+p {
+font-family: 'Raleway', sans-serif;}
+
+.container {
+  max-width: 960px;
+  background-color: #ccc;
+  margin: auto;
+  padding: 1em;
+  border-bottom-left-radius: 1em;
+  border-bottom-right-radius: 1em;
+}
+
+nav a {
+  text-align: right;
+}
+
+ul {
+    list-style-type: none;
+}
+
+.block-list {
+  margin-top: 0px;
+}
+
+
+h1 {
+  text-transform: uppercase;
+  text-align: center;
+  color: black;
+  font-size: 400%;
+  padding: 0.5em;
+  background-color: #fff;
+  background-image:
+  linear-gradient(90deg, transparent 79px, #abced4 79px, #abced4 81px, transparent 81px),
+  linear-gradient(#eee .1em, transparent .1em);
+  background-size: 100% 1.2em;
+}
+
+main {
+  display: inline-block;
+  width: 75%;
+}
+
+aside {
+  display: inline-block;
+  width: 21%;
+  vertical-align: top;
+  background-color: #6d695c;
+  padding: 1em;
+  border-radius: 0.5em;
+  box-shadow: 0 0 15px black;
+}
+
+main img {
+  display: block;
+  border: 1px solid black;
+  max-width: 75%;
+  max-height: 75%;
+}
+
+
+aside ul {
+  padding-left: 16px;
+}
