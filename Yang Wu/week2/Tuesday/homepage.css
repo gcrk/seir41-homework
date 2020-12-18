@@ -1,0 +1,119 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed&display=swap');
+
+body {
+  background-color:#e6e8f7;
+  padding:0;
+  margin:0;
+  line-height:1.2;
+}
+
+#container {
+  max-width:960px;
+  margin:0 auto;
+  padding:2em;
+}
+
+nav {
+  text-align:left;
+  background-color:#0521B3;
+  padding-top:20px;
+  padding-bottom:20px;
+}
+
+nav a {
+  text-decoration:none;
+  color:white;
+  text-transform:uppercase;
+  padding-left:12px;
+  font-family:Oswald, Ariel;
+  letter-spacing:0.1em;
+}
+
+nav a:hover {
+  text-decoration:underline;
+}
+
+img {
+  width:95%;
+  height:auto;
+  display:block;
+  margin:0 auto;
+}
+
+.headpic::before {
+  content:"";
+  position:absolute;
+  top:0px;
+  bottom:0px;
+  left:24px;
+  right:24px;
+  background:rgba(205,210,239,0.5);
+}
+
+.headpic {
+  position:relative;
+}
+
+h1 {
+  position:absolute;
+  z-index=1000;
+  left:0;
+  right:0;
+  top:10%;
+  text-align:center;
+  font-size:400%;
+  font-family:Oswald, Ariel;
+  letter-spacing:1em;
+  line-height:2em;
+  color:#0521B3;
+  text-transform:uppercase;
+}
+
+h2 {
+  text-align:center;
+  padding-top:10px;
+  font-family:Oswald, Ariel;
+  font-size: :300%;
+  letter-spacing:0.15em;
+}
+
+.headpic h2 {
+  color:#0521B3;
+  position:absolute;
+  z-index=1000;
+  left:0;
+  right:0;
+  top:60%;
+}
+
+blockquote {
+  width:87%;
+  margin:2em auto;
+  font-size:120%;
+  line-height:1.5;
+  font-family:"Roboto Condensed","Times New Roman";
+}
+
+blockquote a{
+  font-weight:bold;
+  text-decoration:none;
+  color:#041DA1;
+}
+
+blockquote a:hover {
+  text-decoration:underline;
+}
+
+.video hr {
+  border-color:#1D37BA;
+  width:100%;
+  margin-bottom:20px;
+}
+
+iframe {
+  width:87%;
+  height:450px;
+  display:block;
+  margin:0 auto;
+}

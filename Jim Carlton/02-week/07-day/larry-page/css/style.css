@@ -38,6 +38,7 @@ header {
   position: fixed;
   left: 50px;
   top: 60px;
+  width: 20%;
 }
 
 .pre-header {
