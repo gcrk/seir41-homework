@@ -1,0 +1,16 @@
+#walking-cat-right {
+	top: 30%;
+	position: absolute;
+}
+
+#walking-cat-left {
+	top: 30%;
+	position: absolute;
+	transform: scaleX(-1);
+}
+
+#dancing-cat {
+	top: 30%;
+	position: absolute;
+	display: none;
+}
