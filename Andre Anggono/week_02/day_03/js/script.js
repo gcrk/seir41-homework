@@ -28,7 +28,7 @@ const catWalkRight = function (data, moves, screen) {
 		dancingCat(oldLeft, true);
 		setTimeout(function () {
 			stopDancingCat(data, moves, oldLeft, true);
-		}, 10000);
+		}, 20000);
 	}
 };
 

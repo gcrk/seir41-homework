@@ -19,7 +19,7 @@ const makeMadLib = function () {
 	const name = $("#person").val();
 
 	const result = `${name} really likes ${adj} ${noun}.`;
-	$("#story").html(result);
+	$("#story").text(result);
 };
 
 $("#lib-button").on("click", makeMadLib);
