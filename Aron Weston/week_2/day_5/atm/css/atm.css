@@ -44,6 +44,13 @@
 }
 
 .zero {
+  transition: 0.2s all;
   background-color: #F52F4F;
+  color: #FFF;
+}
+
+.approved {
+  transition: 0.2s all;
+  background-color: #88E188;
   color: #FFF;
 }
