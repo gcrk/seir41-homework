@@ -1,10 +1,9 @@
 // Keep track of the checking and savings balances somewhere
 $(document).ready(function () {
 
-    const output = (id, account, total, arr) => {
-        console.log(`${account}`, total);
+    const output = (id, total, arr) => {
         $(`${id}`).text(`$${total}`);
-        console.log(arr);
+        console.log(`${id}`, arr);
     }
 
     const msg = (msg, element) => {
@@ -36,7 +35,7 @@ $(document).ready(function () {
         } else {
             checkBalance.push(amount);
             let depositTotal = loop(checkBalance);
-            output('#checking-balance', 'DEPOSIT:', depositTotal, checkBalance);
+            output('#checking-balance', depositTotal, checkBalance);
         }
     });
 
@@ -45,7 +44,7 @@ $(document).ready(function () {
 
         const amount = parseInt($('#checking-amount').val());
 
-        let depositTotal = loop(checkBalance);
+        const depositTotal = loop(checkBalance);
 
         const withdrawTotal = depositTotal - amount;
         const debit = withdrawTotal - depositTotal;
@@ -54,14 +53,26 @@ $(document).ready(function () {
             msg('You have no more money', '#checking');
         } else {
             if (withdrawTotal < 0) {
-                msg("You can't withdraw more than you have!", '#checking', true);
+
+                const savings = loop(savingsBalance);
+
+                if (savings >= amount) {
+                    if (savings < 0) {
+                        msg("No overdraft available, account cannot be negative", '#savings');
+                    } else {
+                        savingsBalance.push(debit);
+                        output('#savings-balance', withdrawTotal, checkBalance);
+                    }
+                } else {
+                    msg("You can't withdraw more than you have!", '#checking');
+                }
             } else if (withdrawTotal === 0) {
                 msg("You're out of money!", '#checking');
                 checkBalance.push(debit);
-                output('#checking-balance', 'WITHDRAW:', withdrawTotal, checkBalance);
+                output('#checking-balance', withdrawTotal, checkBalance);
             } else {
                 checkBalance.push(debit);
-                output('#checking-balance', 'WITHDRAW:', withdrawTotal, checkBalance);
+                output('#checking-balance', withdrawTotal, checkBalance);
             }
         }
     });
@@ -80,7 +91,7 @@ $(document).ready(function () {
         } else {
             savingsBalance.push(amount);
             let depositTotal = loop(savingsBalance);
-            output('#savings-balance', 'SAVE DEPOSIT:', depositTotal, savingsBalance);
+            output('#savings-balance', depositTotal, savingsBalance);
         }
     });
 
@@ -103,10 +114,10 @@ $(document).ready(function () {
             } else if (withdrawTotal === 0) {
                 msg("You're out of money!", '#savings', true);
                 savingsBalance.push(debit);
-                output('#savings-balance', 'SAVE WITHDRAW:', withdrawTotal, savingsBalance);
+                output('#savings-balance', withdrawTotal, savingsBalance);
             } else {
                 savingsBalance.push(debit);
-                output('#savings-balance', 'SAVE WITHDRAW:', withdrawTotal, savingsBalance);
+                output('#savings-balance', withdrawTotal, savingsBalance);
             }
         }
     });
