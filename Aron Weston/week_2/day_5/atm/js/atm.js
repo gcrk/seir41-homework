@@ -1,40 +1,44 @@
 // Keep track of the checking and savings balances somewhere
 $(document).ready(function () {
 
+    const output = (account, total) => {
+        console.log(`${account}`, total);
+        $('#checking-balance').text(`$${total}`);
+        $('#checking-amount').val('');
+    }
+
+    const msg = (msg, element, zero) => {
+        $('<div id="alert"></div>').text(`${msg}`).prependTo($(`${element}`));
+        if (zero) {
+            $('#checking').addClass('zero');
+        } else {
+            $('#checking').removeClass('zero');
+        }
+        setTimeout(clearMsg, 3000);
+    }
+
+    const clearMsg = () => {
+        $('#alert').remove();
+        $('#checking').removeClass('zero');
+        $('#checking-amount').val('');
+    }
 
     const checkBalance = [];
-
-    // $('#checking-balance').text(`$${total}`);
 
     const depositCheck = () => {
         const checkInput = parseInt($('#checking-amount').val())
 
         if (isNaN(checkInput)) {
-            $('<div></div>').text('Insert more than 0').prependTo($('#checking'));
-
-            console.log(checkBalance);
-        } else {
+            msg('Insert more than 0', '#checking', true);
+        } else if (checkInput > 0) {
+            $('#checking').removeClass('zero');
             checkBalance.push(checkInput);
-            //Loop through the array and add all the inputs to the 
             let depositTotal = 0;
             $.each(checkBalance, function () {
                 depositTotal += parseInt(this);
             })
-
-            $('#checking-balance').text(`$${depositTotal}`);
-
-            //Log total
-            console.log('DEPOSIT TOTAL', depositTotal);
-
-            // Change balance output
-            $('#checking-balance').text(`$${depositTotal}`);
-
-            //clear the balance
-            $('#checking-amount').val('')
-
+            output('DEPOSIT:', depositTotal);
         }
-
-
     }
 
 
@@ -50,15 +54,12 @@ $(document).ready(function () {
         let withdrawTotal = depositTotal - checkInput;
 
         if (withdrawTotal < 0) {
-            $('<div></div>').text(`You can't withdraw more than you have`).prependTo($('#checking'));
+            msg("You can't withdraw more than you have", '#checking', true);
         } else if (withdrawTotal === 0) {
-            $('#checking').addClass('zero');
-            $('<div></div>').text(`You're out of money!`).prependTo($('#checking'));
-            $('#checking-balance').text(`$${withdrawTotal}`);
+            msg("You're out of money!", '#checking', true);
+            output('WITHDRAW:', withdrawTotal)
         } else {
-            $('#checking-balance').text(`$${withdrawTotal}`);
-
-            console.log("WITHDRAWAL TOTAL", withdrawTotal);
+            output('WITHDRAW:', withdrawTotal)
         }
     }
 
@@ -68,13 +69,3 @@ $(document).ready(function () {
 
 
 });
-
-
-
-
-//  if (checkInput === "" || checkInput === NaN) {
-//      alert('Do');
-//      console.log(checkBalance);
-//  } else {
-
-//  }
