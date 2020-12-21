@@ -1,11 +1,16 @@
-// Keep track of the checking and savings balances somewhere
 $(document).ready(function () {
 
+    //TODO: condense the following into two main functions for deposit and withdraw and pass 
+    //in the specifics when the functions are declared in the click events
+
+
+    //OUTPUT - take the div id, the final array sum and the array and output to the DOM.
     const output = (id, total, arr) => {
         $(`${id}`).text(`$${total.toLocaleString()}`);
         console.log(`${id}`, arr);
     }
 
+    //MESSAGE - create a text alert to tell the user what is happening in the account, then make it disappear after 2 seconds
     const msg = (msg, element, className) => {
         $('<div id="alert"></div>').text(`${msg}`).prependTo($(`${element}`).addClass(`${className}`));
         setTimeout(function () {
@@ -14,6 +19,7 @@ $(document).ready(function () {
         }, 2000);
     }
 
+    //LOOP - a loop function to sum the account balances
     const loop = (account) => {
         let sum = 0;
         $.each(account, function () {
@@ -22,14 +28,11 @@ $(document).ready(function () {
         return sum;
     }
 
-
-    //CHECKING 
-
     //CHECK - Deposit
     const checkBalance = [];
-    // SAVINGS
     const savingsBalance = [];
 
+    //CHECKING - DEPOSIT
     $('#checking-deposit').on('click', () => {
         const amount = parseInt($('#checking-amount').val())
 
@@ -42,6 +45,7 @@ $(document).ready(function () {
         }
     });
 
+    //SAVINGS - DEPOSIT
     $('#savings-deposit').on('click', () => {
         const amount = parseInt($('#savings-amount').val())
 
@@ -55,9 +59,7 @@ $(document).ready(function () {
     });
 
 
-
-
-    //CHECK - Withdraw
+    //CHECKING - WITHDRAW
     $('#checking-withdraw').on('click', () => {
 
         const amount = parseInt($('#checking-amount').val());
@@ -107,17 +109,13 @@ $(document).ready(function () {
                 checkBalance.push(debit);
                 output('#checking-balance', withdrawTotal, checkBalance);
             } else {
-                msg(`Withdrawal successful: $${debit} `, '#checking', 'approved');
                 checkBalance.push(debit);
                 output('#checking-balance', withdrawTotal, checkBalance);
             }
         }
     });
 
-
-
-
-    //Savings - Withdraw 
+    //SAVINGS - WITHDRAW
     $('#savings-withdraw').on('click', () => {
 
         const amount = parseInt($('#savings-amount').val());
@@ -167,12 +165,9 @@ $(document).ready(function () {
                 savingsBalance.push(debit);
                 output('#savings-balance', withdrawTotal, savingsBalance);
             } else {
-                msg(`Withdrawal successful: $${debit} `, '#savings', 'approved');
                 savingsBalance.push(debit);
                 output('#savings-balance', withdrawTotal, savingsBalance);
             }
         }
     });
-
-
 });
