@@ -27,7 +27,7 @@ console.log(`The greater number of 5 and 10 is ${maxOfTwoNumbers}.`);
 const maxOfThreeNumbers = function(num1, num2, num3) {
 
     return Math.max(num1, num2, num3);
-
+           
 }  
 
 console.log(`The greatest of three numbers is ${maxOfThreeNumbers}.`);

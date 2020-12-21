@@ -46,26 +46,21 @@ const sumString = function (str) {
 const validateCreditCard = function(cardNum) {
 
   let workNum = cardNum.replaceAll("-",""); // remove dashes
-  let result = {valid: undefined, number: cardNum, error: undefined};
+  let result = {valid: false, number: cardNum, error: undefined};
 
   if (workNum.length != 16) { //card length
-    result.valid = false;
     result.error = "wrong length";
     console.log (result);
   } else if (isNaN(workNum) != false ) { // if they are all numbers
-    result.valid = false;
     result.error = "invalid characters";
     console.log (result);
   } else if (/^(.)\1+$/.test(workNum) === true) { //if same number repeating
-    result.valid = false;
     result.error = "only one type of number";
     console.log (result);
   } else if (workNum.slice(-1)%2 != 0){ // check final number
-    result.valid = false;
     result.error = "odd final number";
     console.log (result);
   } else if (sumString(workNum) < 16) { // check string sum
-    result.valid = false; //i am sure this is not DRY code but I don't know how to change it.
     result.error = "sum less than 16";
     console.log (result);
   } else { //valid credit number!

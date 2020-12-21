@@ -1,0 +1,251 @@
+* {
+	box-sizing: border-box;
+}
+
+body {
+	background-color: black;
+
+}
+
+header ul {
+	margin: 0 0 0 25px;
+}
+
+header li {
+	display: inline-block;
+	padding: 15px;
+	text-align: center;
+	margin: 0;
+	border-top: 3px solid black; /* I got sick the header moving when I hovered over it */
+}
+
+header a {
+	color: white;
+	font-weight: 600;
+	text-decoration: none;
+}
+
+/*Improve this */
+header li:hover {
+	color: lightblue;
+	border-top: 3px solid #0066ff;
+	background-image: linear-gradient(rgba(0, 150, 255, 0.25), black);
+}
+
+nav {
+	margin-left: 1%;
+	width: 80%;
+}
+
+[src="images/logo.png"] {
+	display: inline;
+	position: relative; /* Not sure if I was allowed to use position, gave up trying to do it any other way */
+	bottom: 40%
+}
+
+/*We want to stretch the background image */
+#container {
+	background-image: url("../images/bg_body.jpg");
+	background-repeat: repeat-x;
+	background-size: 33%;
+	background-color: #fafafa;
+	margin-bottom: 10px;
+}
+
+#main-content, footer {
+	margin: 0 auto;
+	width: 960px;
+}
+
+/*Social media icon styling, copied from example site*/
+#logos {
+	width: 950px;
+	height: 100px;
+}
+
+#social-media {
+	display: inline;
+	margin-right: 0;
+	margin-left: 65%;
+	width: 400px;
+}
+
+#social-media ul {
+	display: inline;
+	position: relative;
+	top: 30%;
+	left: 5%;
+}
+
+#social-media ul li {
+	 display:inline-block;
+	 width:60px;
+	 height:60px;
+	 background:blue;
+	 text-indent:-9999em;
+}
+
+#social-media ul li:hover {
+	cursor: pointer;
+}
+
+#social-media ul li.linkedIn {
+	background:url(../images/socialNav.png) 0px 64px;
+}
+#social-media ul li.twitter {
+	background:url(../images/socialNav.png) -60px 64px;
+}
+
+#social-media ul li.facebook {
+	background:url(../images/socialNav.png) -120px 64px;
+}
+
+#social-media ul li.rss {
+	background:url(../images/socialNav.png) -180px 64px;
+}
+
+
+
+#social-media ul li.linkedIn:hover {
+	background:url(../images/socialNav.png) 0px 0px;
+}
+
+#social-media ul li.twitter:hover {
+	background:url(../images/socialNav.png) -60px 0px;
+}
+
+#social-media ul li.facebook:hover {
+	background:url(../images/socialNav.png) -120px 0px;
+}
+
+#social-media ul li.rss:hover {
+	background:url(../images/socialNav.png) -180px 0px;
+}
+
+/* End of Social Media styling */
+
+.photobanner {
+	margin-bottom: -4px;
+}
+
+#blurb {
+	background-image: url("../images/bg_blurb.jpg");
+	border-top: 2px solid lightgrey;
+	border-left: 2px solid lightgrey;
+	border-right: 2px solid white;
+	border-bottom: 2px solid white;
+	width: 950px;
+}
+
+#blurb p {
+	display: inline-block;
+	width: 660px;
+	padding: 0 10px;
+}
+
+#blurb img {
+	margin-left: 50px;
+	position: relative;
+	top: 15px;
+}
+
+.home-box, .box-footer {
+	display: inline-block;
+	width: 300px;
+	margin-right: 22px;
+	margin-top: 0;
+	padding-bottom: 20px;
+}
+
+.home-box:nth-of-type(3), .box-footer:nth-of-type(3) {
+	margin-right: 0;
+}
+
+.home-box h2 {
+	font-weight: 400;
+	margin-bottom: 10px;
+	margin-top: 30px;
+}
+
+.home-box img {
+	border: 5px solid lightgrey;
+}
+
+.home-box  {
+	font-size: 14px;
+}
+
+a {
+	text-decoration: none;
+	color: #0066ff;
+}
+
+footer {
+	color: grey;
+}
+
+footer h2 {
+	color: white;
+	border-bottom: 1px solid lightgrey;
+	padding-bottom: 10px;
+	margin-bottom: 0;
+}
+
+.box-footer {
+	height: 150px;
+}
+
+.box-footer ul {
+	list-style-type: none;
+	padding: 0;
+}
+
+.box-footer li {
+	padding: 10px 0;
+	border-bottom: 1px solid lightgrey;
+}
+
+.box-footer li:first-of-type {
+	padding-top: 0;
+}
+
+#footer-menus {
+	margin-bottom: 40px;
+}
+
+.blogroll {
+	position: relative;
+	top: 20px;
+	width: 220px;
+}
+
+.textwidgit {
+	position: relative;
+	bottom: 102px;
+	width: 400px;
+}
+
+.metawidget {
+	position: relative;
+	bottom: 56px;
+	width: 220px;
+}
+
+#pageInfo {
+	margin-top: 80px;
+	margin-bottom: 20px;
+}
+
+#copyright, #companybottom {
+	display: inline;
+	width: 300px;
+	font-size: 14px;
+}
+
+#companybottom {
+	margin-left: 46%;
+}
+
+#companybottom a {
+	font-weight: 600;
+}
