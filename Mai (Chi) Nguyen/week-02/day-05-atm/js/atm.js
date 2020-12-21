@@ -57,16 +57,18 @@ $(document).ready( function () {
     if (deposit && deposit >= 0) { //check whether there is a number in the input and greater 0
       checkingBalance += deposit;   // add up the deposit to balance
       $('#checking-balance').html('$' + checkingBalance); // put the output to UI
+
       if (checkingBalance === 0) {
         $('#checking-balance').addClass('zero');
       } else {
         $('#checking-balance').removeClass('zero');
-      }
+      };
     }
   })
 // ------------ withdraw button
   $('#checking-withdraw').on("click", function () {
     let withdraw = parseInt($('#checking-amount').val()); // pass number value
+    let totalBalance = checkingBalance + savingsBalance;
 
     if (checkingBalance >= withdraw && withdraw >= 0) { //check the input number in greater 0 and lesser than Balance
       checkingBalance -= withdraw;
@@ -76,6 +78,11 @@ $(document).ready( function () {
       } else {
         $('#checking-balance').removeClass('zero');
       }
+    } else if (withdraw > checkingBalance && withdraw <= totalBalance) {
+      savingsBalance = totalBalance - (withdraw - checkingBalance);
+      checkingBalance = 0;
+      $('#checking-balance').html('$' + checkingBalance);
+      $('#savings-balance').html('$' + savingsBalance);
     }
   })
 
@@ -117,6 +124,9 @@ $(document).ready( function () {
       }
     }
   })
+
+  //-----------------overdraft----------
+
 
 
 
