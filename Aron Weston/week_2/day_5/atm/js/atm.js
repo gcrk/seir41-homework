@@ -27,11 +27,14 @@ $(document).ready(function () {
 
     //CHECK - Deposit
     const checkBalance = [];
+    // SAVINGS
+    const savingsBalance = [];
+
     $('#checking-deposit').on('click', () => {
         const amount = parseInt($('#checking-amount').val())
 
         if (isNaN(amount) || amount <= 0) {
-            msg('Insert more than 0', '#checking');
+            msg('Deposit more than $0', '#checking');
         } else {
             checkBalance.push(amount);
             let depositTotal = loop(checkBalance);
@@ -44,27 +47,44 @@ $(document).ready(function () {
 
         const amount = parseInt($('#checking-amount').val());
 
-        const depositTotal = loop(checkBalance);
+        const checking = loop(checkBalance);
 
-        const withdrawTotal = depositTotal - amount;
-        const debit = withdrawTotal - depositTotal;
+        const withdrawTotal = checking - amount;
+        const debit = withdrawTotal - checking;
 
         if (isNaN(amount)) {
             msg('You have no more money', '#checking');
         } else {
             if (withdrawTotal < 0) {
-
                 const savings = loop(savingsBalance);
-
-                if (savings >= amount) {
+                if (amount > (checking + savings)) {
+                    msg("No overdraft available. Insufficient funds.", '#checking');
+                } else {
                     if (savings < 0) {
                         msg("No overdraft available, account cannot be negative", '#savings');
                     } else {
-                        savingsBalance.push(debit);
-                        output('#savings-balance', withdrawTotal, checkBalance);
+                        if (checking > 0) {
+                            //Take the checking balance
+                            //Subtract the checking balance from the debit 
+                            //Push the negative value to the savings balance 
+                            let x = checking - amount;
+
+                            savingsBalance.push(x);
+                            const newSavings = loop(savingsBalance);
+                            output('#savings-balance', newSavings, savingsBalance);
+
+                            x = x + amount;
+
+                            checkBalance.push(-x);
+                            const newChecking = loop(checkBalance);
+                            output('#checking-balance', newChecking, checkBalance);
+
+                        } else {
+                            savingsBalance.push(debit);
+                            const newSavings = loop(savingsBalance);
+                            output('#savings-balance', newSavings, savingsBalance);
+                        }
                     }
-                } else {
-                    msg("You can't withdraw more than you have!", '#checking');
                 }
             } else if (withdrawTotal === 0) {
                 msg("You're out of money!", '#checking');
@@ -80,8 +100,7 @@ $(document).ready(function () {
 
 
 
-    // SAVINGS
-    const savingsBalance = [];
+
 
     $('#savings-deposit').on('click', () => {
         const amount = parseInt($('#savings-amount').val())
