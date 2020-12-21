@@ -49,7 +49,6 @@ $(document).ready(function () {
 
     });
 
-
     //Checking - Withdraw 
     $('#checking-withdraw').on('click', () => {
 
