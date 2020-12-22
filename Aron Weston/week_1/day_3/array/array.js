@@ -100,8 +100,6 @@ const reverseString = (str) => {
 // console.log(reverseString("jag testar"));
 
 
-
-
 //Q6. 
 const words = ['pollution', 'node', 'pneumonoultramicroscopicsilicovolcanoconiosis']
 
