@@ -32,64 +32,82 @@
 // * Make sure there is overdraft protection going both ways.
 // * Are there ways to refactor your code to make it DRYer?
 
-let checkingBalance = 0;
-let savingsBalance = 0;
-let totalBalance = 0;
+class Account {
+  constructor(name, balance) {
+    this.name = name;
+    this.balance = balance;
+  }
+
+  formattedBalance() {
+    return '$' + this.balance;
+  }
+
+  deposit(amount) {
+    this.balance += amount;
+    return balance;
+  }
+
+  withdraw(amount) {
+    let amountWithdrew = min(amount, this.balance);
+    this.balance -= amountWithdrew
+    return amountWithdrew;
+  }
+}
+
+let checkingAccount = new Account("Checking", 0);
+let savingsAccount = new Account("Savings", 0);
+const totalBalance = function() {
+  let totalBalance = checkingAccount.balance + savingsAccount.balance;
+  return totalBalance;
+}
 
 // Function to check the input amount
 const inputAmount = function (account) {
   let result = 0;
 
-  if (account === "checking") {
+  if (account === checkingAccount) {
     result = parseInt($('#checking-amount').val());
 
-  } else if (account === "savings") {
+  } else if (account === savingsAccount) {
     result = parseInt($('#savings-amount').val());
   };
 
   // make sure the input amount is greater than 0
-  if (result === 0) {
-    alert('Please enter the amount that is greater than 0.')
-  } else {
-    return result;
+  if (!result || result <= 0) {
+    alert('Please enter the amount that is greater than 0.');
+    result = 0;
   }
+
+  return result;
 }
 
-// Function to check current total balance
-const currentTotalBalance = function () {
-  totalBalance = checkingBalance + savingsBalance;
-  return totalBalance;
-};
+// Function to log the account balance
 
-// Function that check if balance is Zero
-  const checkZero = function () {
+const updateAccountBalanceUI = function (account) {
 
-    if (checkingBalance === 0) { // check for checking account
-      $('#checking-balance').addClass('zero');
-    } else {
-      $('#checking-balance').removeClass('zero');
-    };
-
-    if (savingsBalance === 0) { // check for savings account
-      $('#savings-balance').addClass('zero');
-    } else {
-      $('#savings-balance').removeClass('zero');
-    };
-
+  let component;
+  if (account === checkingAccount) {
+    component = $('#checking-balance');
+  } else if (account === savingsAccount) {
+    component = $('#savings-balance');
   }
 
-  // Function to log the account balance
-
-  const logAccountBalance = function (account) {
-
-    if (account === "checking") {
-      $('#checking-balance').html('$' + checkingBalance);
-
-    } else if (account === "savings") {
-      $('#savings-balance').html('$' + savingsBalance);
-    }
-
+  if (component) {
+    component.html(account.formattedBalance);
   }
+
+  // Update component class to reflect zero value
+  if (checkingBalance === 0) { // check for checking account
+    component.addClass('zero');
+  } else {
+    component.removeClass('zero');
+  };
+}
+
+const updateBalanceUI = function () {
+  updateAccountBalanceUI(checkingAccount);
+  updateAccountBalanceUI(savingsAccount);
+}
 
   // overdraft functions
 
@@ -109,7 +127,6 @@ const currentTotalBalance = function () {
 
       logAccountBalance("checking");
       logAccountBalance("savings");
-
   };
 
   // Function to reset the input form after submitting
@@ -128,21 +145,15 @@ $(document).ready( function () {
 
   // CHECKING BOX ---------------------------
 
-  checkZero();
+  updateBalanceUI();
 
   // ---- deposit button
   $('#checking-deposit').on("click", function () {
 
-    const deposit = inputAmount("checking"); // pass number value
+    const depositAmount = inputAmount(checkingAccount); // pass number value
 
-    if (deposit && deposit >= 0) { //check whether there is a number in the input and greater 0
-      checkingBalance += deposit;   // add up the deposit to balance
-      logAccountBalance("checking"); // put the output to UI
-    }
-
-    currentTotalBalance();
-    checkZero();
-
+    checkingAccount.deposit(depositAmount);   // add up the deposit to balance
+    updateAccountBalanceUI(checkingAccount);
   })
 
 // ------------ withdraw button
@@ -169,16 +180,10 @@ $(document).ready( function () {
 //--------- deposit button
   $('#savings-deposit').on("click", function () {
 
-    const deposit = inputAmount("savings"); // pass number value
+    const depositAmount = inputAmount(savingsAccount); // pass number value
 
-    if (deposit && deposit >= 0) { //check whether there is a number in the input and greater 0
-      savingsBalance += deposit;   // add up the deposit to balance
-      logAccountBalance("savings"); // log current balance to UI
-    }
-
-    currentTotalBalance();
-    checkZero();
-
+    checkingAccount.deposit(depositAmount);   // add up the deposit to balance
+    updateAccountBalanceUI(checkingAccount);
   })
 
 // ----------withdraw button
