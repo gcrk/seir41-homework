@@ -17,7 +17,7 @@ $(document).ready(function () {
             } else if (balance === 0) {
                 account.push(-credit);
                 bank.output(`${outputID}`, bank.totalBalance(account));
-                bank.message("Insufficient Funds.", `${msgID}`, 'zero');
+                bank.message("You have no more money.", `${msgID}`, 'zero');
             } else if (balance < 0) {
                 bank.overdraft(account, credit, msgID, outputID);
             }
@@ -44,7 +44,7 @@ $(document).ready(function () {
                 overdraftID = '#checking-balance';
             }
             if (credit > (currentTotal + overdraftTotal)) {
-                bank.message("No overdraft available. Insufficient funds in all accounts.", `${msgID}`, 'zero');
+                bank.message("No overdraft available.", `${msgID}`, 'zero');
             } else {
                 if (currentTotal > 0) {
                     //Before deductions
