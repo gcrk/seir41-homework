@@ -32,6 +32,65 @@
 // * Make sure there is overdraft protection going both ways.
 // * Are there ways to refactor your code to make it DRYer?
 
+let checkingBalance = 0;
+let savingsBalance = 0;
+let totalBalance = 0;
+
+// Function to check input amount
+const inputAmount = function (account) {
+  let result = 0;
+
+  if (account === checking) {
+    result = parseInt($('#checking-amount').val());
+  } else if (account === savings) {
+    result = parseInt($('#savings-amount').val());
+  }
+
+  return result;
+}
+
+// Function to check current total balance
+const checkTotalBalance = function () {
+  totalBalance = checkingBalance + savingsBalance;
+  return totalBalance;
+};
+
+// Function that check if balance is Zero
+  const checkZero = function (account) {
+    if (account === checking) {
+      if (checkingBalance === 0) {
+        $('#checking-balance').addClass('zero');
+      } else {
+        $('#checking-balance').removeClass('zero');
+      };
+    } else if (account === savings) {
+      if (savingsBalance === 0) {
+        $('#savings-balance').addClass('zero');
+      } else {
+        $('#savings-balance').removeClass('zero');
+      };
+    }
+  }
+
+  // Function to log the account balance
+
+  const logAccountBalance = function (account) {
+    if (account === checking) {
+      $('#checking-balance').html('$' + checkingBalance);
+    } else if (account === savings) {
+      $('#savings-balance').html('$' + savingsBalance);
+    }
+  }
+
+  // overdraft functions
+
+  const overdraftFunction = function (amount) {
+      let overdraft = parseInt(amount) - checkingBalance;
+      savingsBalance -= overdraft;
+      checkingBalance = 0;
+      logAccountBalance(checking);
+      logAccountBalance(savings);
+  };
 
 $(document).ready( function () {
   // const zeroBalance = function (num) {
@@ -40,89 +99,72 @@ $(document).ready( function () {
   //   }
   // }
 
-  // checking box
-  let checkingBalance = 0;
+  // CHECKING BOX ---------------------------
 
-  const checkZero = function () {
-    if (checkingBalance === 0) {
-      $('#checking-balance').addClass('zero');
-    }
-  }
-  checkZero();
+
+  checkZero(checking);
+  checkZero(savings);
+
 
   // ---- deposit button
   $('#checking-deposit').on("click", function () {
-    let deposit = parseInt($('#checking-amount').val()); // pass number value
+
+    let deposit = inputAmount(checking); // pass number value
+
 
     if (deposit && deposit >= 0) { //check whether there is a number in the input and greater 0
       checkingBalance += deposit;   // add up the deposit to balance
-      $('#checking-balance').html('$' + checkingBalance); // put the output to UI
-
-      if (checkingBalance === 0) {
-        $('#checking-balance').addClass('zero');
-      } else {
-        $('#checking-balance').removeClass('zero');
-      };
+      logAccountBalance(checking); // put the output to UI
     }
+    checkTotalBalance();
+    checkZero(checking);
   })
+
 // ------------ withdraw button
   $('#checking-withdraw').on("click", function () {
-    let withdraw = parseInt($('#checking-amount').val()); // pass number value
-    let totalBalance = checkingBalance + savingsBalance;
+    let withdraw = inputAmount(checking); // pass number value
 
-    if (checkingBalance >= withdraw && withdraw >= 0) { //check the input number in greater 0 and lesser than Balance
+    if (withdraw <= checkingBalance  && withdraw >= 0) { //check the input number in greater 0 and lesser than Balance
       checkingBalance -= withdraw;
-      $('#checking-balance').html('$' + checkingBalance);
-      if (checkingBalance === 0) {
-        $('#checking-balance').addClass('zero');
-      } else {
-        $('#checking-balance').removeClass('zero');
-      }
+      logAccountBalance(checking);
+
     } else if (withdraw > checkingBalance && withdraw <= totalBalance) {
-      savingsBalance = totalBalance - (withdraw - checkingBalance);
-      checkingBalance = 0;
-      $('#checking-balance').html('$' + checkingBalance);
-      $('#savings-balance').html('$' + savingsBalance);
+      overdraftFunction();
     }
+    checkTotalBalance();
+    checkZero(checking);
   })
 
 
-  // savings box
+  // SAVINGS BOX --------------------------------------------
 
-  let savingsBalance = 0;
 
-  if (savingsBalance === 0) {
-    $('#savings-balance').addClass('zero');
-  }
 
-//--------- deposit
+//--------- deposit button
   $('#savings-deposit').on("click", function () {
-    let deposit = parseInt($('#savings-amount').val()); // pass number value
+    let deposit = inputAmount(savings); // pass number value
 
     if (deposit && deposit >= 0) { //check whether there is a number in the input and greater 0
       savingsBalance += deposit;   // add up the deposit to balance
-      $('#savings-balance').html('$' + savingsBalance); // put the output to UI
-      if (savingsBalance === 0) {
-        $('#savings-balance').addClass('zero');
-      } else {
-        $('#savings-balance').removeClass('zero');
-      }
+      logAccountBalance(savings); // log current balance to UI
     }
+    checkTotalBalance();
+    checkZero(savings);
   })
 
 // ----------withdraw button
   $('#savings-withdraw').on("click", function () {
-    let withdraw = parseInt($('#savings-amount').val()); // pass number value
 
-    if (savingsBalance >= withdraw && withdraw >= 0) { //check the input number in greater 0 and lesser than Balance
+    let withdraw = inputAmount(savings); // pass number value
+
+    if (withdraw <= savingsBalance && withdraw >= 0) { //check the input number in greater 0 and lesser than Balance
       savingsBalance -= withdraw;
-      $('#savings-balance').html('$' + savingsBalance);
-      if (savingsBalance === 0) {
-        $('#savings-balance').addClass('zero');
-      } else {
-        $('#savings-balance').removeClass('zero');
-      }
-    }
+      logAccountBalance(savings);
+    } else if (withdraw > savingsBalance && withdraw <= totalBalance) {
+      overdraftFunction();
+    };
+    checkTotalBalance();
+    checkZero(savings);
   })
 
   //-----------------overdraft----------
