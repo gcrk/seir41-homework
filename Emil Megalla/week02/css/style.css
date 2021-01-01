@@ -1,0 +1,111 @@
+@import url('https://fonts.googleapis.com/css2?family=Architects+Daughter&display=swap');
+
+body.bio{
+  background-color: #756969;
+  font-family: 'Architects Daughter', cursive, sans-serif;
+}
+
+nav {
+  font-size: 1.5em;
+
+}
+
+nav a {
+color: #afae75;
+}
+
+nav a:hover {
+  color: #edece8;
+}
+
+.center{
+  display: inline-block;
+  margin-right: 10px;
+}
+
+p.bio_p, h1.bio_p{
+  color: White;
+}
+
+h2.bio_p {
+  color: #dde8be;
+}
+
+/* award page */
+body.award {
+   background-image: url("../img/10.jpg");
+   background-size: contain;
+}
+
+li {
+  font-size: 2em;
+  color: White;
+  padding: 40px;
+}
+
+h1.h1 {
+  color: #f7f7f7;
+  text-shadow: #d1c8c8;
+
+
+}
+
+
+
+/* work page */
+
+body.work {
+  background-color: #e5bc19;
+}
+
+header {
+  font-size: 4em;
+}
+
+.first {
+  font-size: 2em;
+}
+
+/*Qoutes page*/
+body.qoutes {
+  background-color: #e8ecef;
+}
+p.img1 {
+  background-image: url("../img/5.jpg");
+  background-size: cover;
+  font-size: 2.5em;
+  border-radius: 0.5em;
+  padding: 50px;
+}
+
+p.img2 {
+  background-image: url("../img/6.jpg");
+  background-size: cover;
+  font-size: 2.5em;
+  border-radius: 0.5em;
+  padding: 50px;
+}
+
+p.img3{
+  background-image: url("../img/7.jpg");
+  background-size: cover;
+  font-size: 2.7em;
+  border-radius: 0.5em;
+  padding: 50px;
+}
+
+p.img4{
+  background-image: url("../img/8.jpg");
+  background-size: cover;
+  font-size: 2.7em;
+  border-radius: 0.5em;
+  padding: 30px;
+}
+
+p.img5{
+  background-image: url("../img/9.jpeg");
+  background-size: cover;
+  font-size: 3em;
+  border-radius: 0.5em;
+  padding: 50px;
+}
