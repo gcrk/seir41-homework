@@ -91,6 +91,13 @@ console.log( findLongestWord("Ethiopia is in a war") );
 //   console.log( findLongestWordLength ("ethiopia is at war") );
 
 // 7. Write a function `filterLongWords` that takes an array of words and an number `i` and returns the array of words that are longer than i.
-const filterLongWords = function(arrayOfStrings, i) {
-
+const filterLongWords = function(array, i) {
+  const longWords = [];
+  for ( let n = 0 ; n < array.length; n++) {
+    if (array[n].length > i) {
+      longWords.push(array[n]);
+    }
+  }
+  return longWords;
 }
+console.log(filterLongWords(['Mosess', 'Cars', 'Teachers'], 5));
