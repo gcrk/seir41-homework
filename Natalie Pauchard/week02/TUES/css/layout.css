@@ -1,0 +1,170 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bungee&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Russo+One&display=swap');
+/* use import from Google fonts and copy into the top of your style sheet, then include in CSS font family. No more than 3 different fonts for title sub titles and paragraphs */
+body {
+  background-color: #2e2d2d; /* short hand for simple colors e.g. expanded to 6 digits #222222*/
+  padding: 0;
+  margin: 0;
+}
+
+.container {
+  max-width: 960px; /* wraps text for smaller - common number for responsive - lazy way*/
+  width: 100%;
+  background-color: #2e2d2d;
+  margin: auto; /* automatically centres technically needs 0 - horizontal centering*/
+  /* em - size of letter M in the alphabet - like chunky pixles for space - they go up more quickly - more efficient way of creating space */
+  border-bottom-left-radius: 1em;
+  border-bottom-right-radius: 1em;
+  padding: 1em;
+}
+
+ul {
+    display: block;
+    list-style-type: disc;
+    padding: 10px;
+    text-align: center;
+    font-family: 'Bungee', cursive;
+}
+
+li {
+    display: inline;
+    padding: 0px 40px 40px 40px;
+    font-size: 20px;
+    font-family: 'Bungee', cursive;
+  }
+
+ul a {
+  color: #efefef;
+  text-decoration: none;
+  text-align: center;
+  font-family: 'Bungee', cursive;
+}
+
+h1 {
+  text-transform: uppercase;
+  text-align: center;
+  background-color: #d1b280;
+  color: #efefef;
+  font-size: 400%;
+  padding: 0.3em;
+  font-family: 'Bungee', cursive;
+  letter-spacing: 0.6px;
+}
+
+h2 {
+  color: #efefef;
+  font-family: 'Bungee', cursive;
+  letter-spacing: 1px;
+}
+
+h3, h5 {
+  color: #efefef;
+  font-family: 'Russo One', sans-seri;
+  letter-spacing: 0.8px;
+}
+
+h4 {
+  font-size: 18px;
+  font-family: 'Roboto', sans-serif;
+  color: #efefef;
+}
+
+h5 {
+  font-size: 25px;
+  font-family: 'Roboto', sans-serif;
+  color: #efefef;
+  text-decoration: underline;
+}
+
+a {
+  color: #efefef;
+}
+
+main {
+  display: inline-block;
+}
+img {
+  margin: 0 auto;
+  display: block;
+  width: 100%;
+}
+
+p {
+  color: #efefef;
+  width: 100%;
+  font-family: 'Roboto', sans-serif;
+  letter-spacing: 0.5px;
+  text-align: justify;
+  margin-bottom: 50px;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+button {
+  width: 10%;
+  display: inline-block;
+  height: 50px;
+}
+p.imitate {
+  margin-bottom: 10px;
+  font-size: 20px;
+
+}
+#play {
+  color: pink;
+  font-size: 25px;
+}
+
+/* #firstQ1:hover {
+  visibility: visible;
+  color: green;
+  transition: 2s all; */
+}
+button {
+  color: #2e2d2d;
+}
+
+button span {
+visibility: hidden;
+background-color: #2e2d2d;
+  /* descendent selector */
+}
+
+#firstQ1:hover {
+  background-color: #0D5B2D;
+  color: green;
+}
+
+#secondQ:hover {
+  background-color: #0D5B2D;
+  color: green;
+}
+
+#thirdQ3:hover {
+  background-color: #0D5B2D;
+  color: green;
+}
+
+#fourthQ:hover {
+  background-color: #0D5B2D;
+  color: green;
+}
+
+#fifthQ:hover {
+  background-color: #0D5B2D;
+  color: green;
+}
+
+
+.span:hover {
+  visibility: visible;
+  color: green;
+  transition: 2s all;
+}
+
+#quote {
+  width: 60%
+  margin-left: 30px;
+}

@@ -1,0 +1,41 @@
+h1, button {
+  text-align: center;
+}
+
+div {
+  width: 300px;
+  margin: 0 auto;
+}
+
+button {
+  font-size: 40px;
+  margin: 20px;
+  padding: 5px 10px;
+  border-radius: 10px;
+  border: 5px solid white;
+  color: white;
+  outline: none;
+}
+
+button:hover {
+  border: 5px solid darkred;
+}
+
+#yes {
+  background-color: darkgreen;
+}
+
+#no {
+  background-color: red;
+}
+
+#walking-cat {
+  left: 0px;
+}
+
+#dancing-cat {
+  position: relative;
+  left: 400px;
+  width: 400px;
+  display: none;
+}
