@@ -2,20 +2,14 @@
 
 //Set global arrays 
 
-const word = ['f', 'o', 'x'];
-
-const guess = [];
-
+const word = ["F", "O", "X"];
+const guessedLetters = ["_", "_", "_", "_", "_"];
 
 const guessLetter = (letter) => {
-
-
     guess.push(letter);
-
     console.log(guess);
+
 }
-
-
-console.log(guessLetter('f'));
-console.log(guessLetter('o'));
-console.log(guessLetter('x'));
+guessLetter('f')
+guessLetter('f')
+guessLetter('f')

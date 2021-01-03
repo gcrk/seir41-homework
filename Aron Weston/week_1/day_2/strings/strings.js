@@ -15,7 +15,7 @@ const drEvil = (dollars) => {
     }
     //Log and return 
     console.log(res);
-    return res;
+    return res; 
 }
 
 
@@ -109,7 +109,7 @@ const notBad = (str) => {
     } else if (bad > not) {
         let y = str.slice(0, not);
         return y + 'good!';
-    } else {
+    } else { 
         return str;
     }
 }
