@@ -216,7 +216,7 @@ p {
 #billy-maddison img, #kip img {
   display: none;
   position: absolute;
-  top: 1220px;
+  top: 1520px;
   right: 50px;
   max-width: 300px;
   border-radius: 20px;
@@ -227,7 +227,7 @@ p {
 }
 
 .center-img {
-  margin: 0 auto;
+  margin: 10 auto 0 auto;
   text-align: center;
 }
 
