@@ -1,0 +1,23 @@
+<style>
+  .moveDiv {
+    position:absolute;
+    left:20px;
+    top:20px;
+    width:10px;
+    height:10px;
+    background-color:#ccc;
+  }
+
+  .moveDivB {
+    position:absolute;
+    left:20px;
+    top:20px;
+    width:10px;
+    height:10px;
+    background-color:#ccc;
+  }
+</style>
+
+
+<div class="moveDiv"></div>
+<div class="moveDivB"></div>
