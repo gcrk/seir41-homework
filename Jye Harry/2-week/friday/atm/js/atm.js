@@ -1,28 +1,31 @@
+const accounts = {
+  checking: 0,
+  savings: 0
+}
+
+const CHECKING = Object.keys(accounts)[0];
+const SAVINGS = Object.keys(accounts)[1];
+
 $(document).ready(function () {
   toggleZeroClass($('#checking-balance').html('$' + accounts.checking), accounts.checking);
   toggleZeroClass($('#savings-balance').html('$' + accounts.savings), accounts.savings);
 
   $('#checking-deposit').on('click', function () {
-    deposit($('#checking-amount'), 'checking', $('#checking-balance'));
+    deposit($('#checking-amount'), CHECKING, $('#checking-balance'));
   })
 
   $('#savings-deposit').on('click', function () {
-    deposit($('#savings-amount'), 'savings', $('#savings-balance'));
+    deposit($('#savings-amount'), SAVINGS, $('#savings-balance'));
   })
 
   $('#checking-withdraw').on('click', function () {
-    withdraw($('#checking-amount'), 'checking', 'savings', $('#checking-balance'), $('#savings-balance'));
+    withdraw($('#checking-amount'), CHECKING, SAVINGS, $('#checking-balance'), $('#savings-balance'));
   })
 
   $('#savings-withdraw').on('click', function () {
-    withdraw($('#savings-amount'), 'savings', 'checking', $('#savings-balance'), $('#checking-balance'));
+    withdraw($('#savings-amount'), SAVINGS, CHECKING, $('#savings-balance'), $('#checking-balance'));
   })
 })
-
-const accounts = {
-  checking: 0,
-  savings: 0
-}
 
 const deposit = function ($amount, acc, $div) {
   accounts[acc] += parseInt($($amount).val());
