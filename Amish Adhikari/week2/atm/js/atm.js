@@ -92,7 +92,7 @@ button1.on("click", function(){
     // Savings withdrawl
     button4.on("click", function(){
         let deposit = parseInt($("#savings-amount").val())
-      
+
         let balance = parseInt($("#savings-balance").text().replace("$", ""))
 
         // console.log(balance);
