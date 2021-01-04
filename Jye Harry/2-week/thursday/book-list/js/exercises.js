@@ -26,15 +26,14 @@ var books = [{
 // - Bonus: add a property to each book with the URL of the book cover, and add an img element for each book on the page.
 // - Bonus: Change the style of the book depending on whether you have read it or not.
 
-const ul = $("<ul>");
+const $ul = $("<ul>");
 
 books.forEach((book) => {
-  const li = $("<li>").append(`<img src="${book.url}" width="100px">`);
-  li.append(`${book.title} by ${book.author}`);
+  const li = $(`<li><img src="${book.url}" width="100px"><p>${book.title} by ${book.author}</p>`);
 
   book.alreadyRead ? li.css("color", "green") : li.css("color", "red");
 
-  ul.append(li);
+  $ul.append(li);
 });
 
-$("body").append(ul);
+$ul.appendTo('body');
