@@ -1,6 +1,6 @@
 //Week 1 - Day 2 - Strings
 
-//S1 - Q1
+//Q1 - DrEvil
 const drEvil = (dollars) => {
 
     //Relaxing variables
@@ -15,14 +15,11 @@ const drEvil = (dollars) => {
     }
     //Log and return 
     console.log(res);
-    return res;
+    return res; 
 }
 
-drEvil(100000000);
 
-
-
-//S1 - Q2
+//Q2 - MixUp
 const mixUp = (str1, str2) => {
 
     //? for min 2 string length.
@@ -56,7 +53,7 @@ const mixUp = (str1, str2) => {
 
 }
 
-//S1 - Q3
+//Q3 - MixUp
 const fixStart = (str) => {
 
     //find the first character of the string
@@ -80,7 +77,7 @@ const fixStart = (str) => {
 
 }
 
-//Q4 
+//Q4 - Verbing
 const verbing = (str) => {
     //Set a result variable to reassign for brevity 
     let res;
@@ -88,14 +85,11 @@ const verbing = (str) => {
     if (str.length >= 3) {
         //2. Does the string include ing?
         if (str.includes('ing')) {
-            //3. Da? Concat 'ly'
             res = str.concat('ly')
         } else {
-            //4. Niet? Concat 'ing' 
             res = str.concat('ing');
         }
     } else {
-        //5. For everything else, there's mastercard. 
         res = str;
     }
     //Log and return
@@ -104,21 +98,28 @@ const verbing = (str) => {
 }
 
 
-//Q5
+//Q5: Not Bad
 const notBad = (str) => {
 
-    let not = str.substring()
+    let not = str.indexOf('not');
+    let bad = str.indexOf('bad');
 
-    //find the first appearance of 'not' and 'bad'
-
+    if (not === -1) {
+        return str;
+    } else if (bad > not) {
+        let y = str.slice(0, not);
+        return y + 'good!';
+    } else { 
+        return str;
+    }
 }
 
-
-//Execute order 666
+console.log(notBad('This dinner is not that bad!'));
+console.log(notBad('This movie is not so bad!'));
+console.log(notBad('This dinner is bad!'));
+drEvil(100000000);
 verbing('go');
 verbing('swim');
 verbing('swimming');
 fixStart('tattle')
 mixUp('mix', 'pod')
-
-
