@@ -1,6 +1,6 @@
 $(document).ready(function () {
-  setZeroClass($('#checking-balance').html('$' + accounts.checking), accounts.checking);
-  setZeroClass($('#savings-balance').html('$' + accounts.savings), accounts.savings);
+  toggleZeroClass($('#checking-balance').html('$' + accounts.checking), accounts.checking);
+  toggleZeroClass($('#savings-balance').html('$' + accounts.savings), accounts.savings);
 
   $('#checking-deposit').on('click', function () {
     deposit($('#checking-amount'), 'checking', $('#checking-balance'));
@@ -26,7 +26,7 @@ const accounts = {
 
 const deposit = function ($amount, acc, $div) {
   accounts[acc] += parseInt($($amount).val());
-  setZeroClass($($div).html('$' + accounts[acc]), accounts[acc]);
+  toggleZeroClass($($div).html('$' + accounts[acc]), accounts[acc]);
 }
 
 const withdraw = function ($amount, acc1, acc2, $div1, $div2) {
@@ -41,9 +41,9 @@ const withdraw = function ($amount, acc1, acc2, $div1, $div2) {
 }
 
 const setAccount = function (amount, acc, $div) {
-  setZeroClass($($div).html('$' + (accounts[acc] -= amount)), accounts[acc]);
+  toggleZeroClass($($div).html('$' + (accounts[acc] -= amount)), accounts[acc]);
 }
 
-const setZeroClass = function ($div, bal) {
+const toggleZeroClass = function ($div, bal) {
   bal === 0 ? $($div).addClass('zero') : $($div).removeClass('zero');
 }
