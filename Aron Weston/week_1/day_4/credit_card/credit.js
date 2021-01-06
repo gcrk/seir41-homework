@@ -78,8 +78,6 @@ const digits = (num) => {
                 error("odd_final_number", num);
                 return false;
             }
-
-
         } else {
             //...Tom.
             error("wrong_length.", num);
