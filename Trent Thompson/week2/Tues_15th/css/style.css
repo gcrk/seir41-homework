@@ -1,0 +1,79 @@
+@import url('https://fonts.googleapis.com/css2?family=EB+Garamond&family=Texturina:ital,wght@0,100;1,100&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@600&display=swap');
+
+
+
+
+.container h1 {
+  font-family: 'Cinzel', serif;
+  font-size: 100px;
+  color: pink;
+  margin-top: 0;
+  margin-bottom: 40px;
+  text-align: center;
+}
+
+.container img {
+  width: 700px;
+  height: 700px;
+  margin-left: 130px;
+}
+
+.container {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 1em;
+  background-color: #e17382;
+}
+
+nav {
+  background-color: #e17382;
+  text-align: center;
+  color: black;
+  word-spacing: 50px;
+  width: 700px;
+  margin-left: 130px;
+  margin-bottom: 40px;
+  height: 30px;
+  text-decoration: none;
+  font-size: 22px;
+}
+
+.container p
+
+  font-family: 'Texturina', serif;
+  line-height: 4;
+}
+
+.container h2 {
+  font-size: 40px;
+
+}
+
+
+
+
+
+
+
+
+
+/*## Requirements
+- At least 3 pages (example: biography, trivia, hometown)
+- At least 1 Google Font
+- Whatever HTML and CSS you desire
+- Keep your code clean and DRY
+- Start working with semantic elements: http://html5doctor.com/lets-talk-about-semantics/
+- No Javascript! Even if you know how to use jQuery, see how far you can push this with pure HTML + CSS
+- Don't worry about responsiveness -- desktop resolution is fine
+
+## Your research should aim to reveal at least two things about each person:
+- Why Joel admires them
+- Something Joel doesn't already know about them
+
+## Optional extras
+- Experiment with http://fortawesome.github.io/Font-Awesome/
+- Record and embed a short podcast or vlog about your favourite scientist
+- Try embedding other media (YouTube or Vimeo video, Soundcloud)
+- Try embedding a Google map (for their hometown and/or alma mater)
+*/
