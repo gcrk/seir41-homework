@@ -1,11 +1,23 @@
-console.log("wtf");
-const img = document.getElementsByTagName('img')[0];
-// console.log(img);
+console.log('cat');
+// Create a new Javascript file and link to it with a script tag at the bottom.
+//
+// Create a variable to store a reference to the img.
+//
+
+const catImage = document.getElementsByTagName('img')[0];
+// catImage.style.position = 'absolute'
 // Change the style of the img to have a "left" of "0px", so that it starts at the left hand of the screens.
-//
+catImage.style.left = '0px';
 // Create a function called catWalk() that moves the cat 10 pixels to the right of where it started, by changing the "left" style property.
-//
-// Call that function every 50 milliseconds. Your cat should now be moving across the screen from left to right. Hurrah!
+const catWalk = function () {
+  const oldLeft = parseInt(catImage.style.left);
+    const newLeft = oldLeft + 10;
+    catImage.style.left = newLeft + 'px';
+  };
+  // Call that function every 50 milliseconds. Your cat should now be moving across the screen from left to right. Hurrah!
+setInterval(catWalk, 50);
+
+
 //
 // Bonus #1: When the cat reaches the right-hand of the screen, restart them at the left hand side ("0px"). So they should keep walking from left to right across the screen, forever and ever.
 //
@@ -14,6 +26,3 @@ const img = document.getElementsByTagName('img')[0];
 // Bonus #3: When the cat reaches the middle of the screen, replace the img with an image of a cat dancing, keep it dancing for 10 seconds, and then replace the img with the original image and have it continue the walk.
 //
 // Bonus #4: Pretty much go nuts or whatever.
-
-
-img.style.opacity = 1.0;
