@@ -33,7 +33,7 @@ const journeyOfUser = function(startLine,getIn,endLine,getOff){
     }
     console.log(`The total number of stops:${noOfStops -1}`);
     console.log(`You must travel through the following stops:${stopsTravelled}`);
-    console.log(startLine);
+    
   };
      function planTrip(startLine,getIn,endLine,getOff){
       if(startLine == "N" || "L" || "S" && endLine == "N" || "L" || "S"){

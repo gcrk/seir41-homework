@@ -97,9 +97,7 @@ const reverseString = (str) => {
 
 }
 
-console.log(reverseString("jag testar"));
-
-
+// console.log(reverseString("jag testar"));
 
 
 //Q6. 
@@ -120,27 +118,29 @@ const findLongestWord = (arr) => {
     return longestWord;
 }
 
-console.log(findLongestWord(words));
+// console.log(findLongestWord(words));
 
 
+// Q7. Write a function filterLongWords that takes an array of words and an number i and returns the array of words that are longer than i.
 
+const wordList = ['rude', 'unit', 'organic', 'unkempt', 'skillful', 'various', 'grin', 'fortunate', 'bite', 'railway', 'charge', 'squeal'];
 
+//Find all the lengths of the input array words
+//Set a new array
+//If the word length is greater or equal to n, push to new array
+//Return array  
+//Else, do nothing
 
+const filterLongWords = (arr, n) => {
+    let res = [];
+    for (i = 0; i < arr.length; i++) {
 
+        if (arr[i].length > n) {
+            res.push(arr[i]);
+        }
+    }
+    console.log(res);
+}
 
-//Q7. // Unspaget this. 
-
-// const filterLongWords = (arr, n) => {
-//     //Set response variable 
-//     let res = [];
-//     //Loop array
-//     for (i = 0; i < arr.length; i++) {
-//         //For each word, check if their character length is greater than i 
-//         if (arr[i].length >= n) {
-//             //true = assign it to res and return
-//             return res.push(arr[i]);
-//         }
-//     }
-// }
-
-// console.log(filterLongWords(words, 46));
+console.log(wordList);
+filterLongWords(wordList, 8);
