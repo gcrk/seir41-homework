@@ -22,9 +22,8 @@ until menu_choice == 'q'
 
         print "Your answer is: "
         puts num1.to_i + num2.to_i
-    end
 
-    elsif 's'
+    when 's'
         puts "Your first number to subtract"
         num1 = gets.chomp
         puts "Your second number to subtract"
@@ -32,10 +31,10 @@ until menu_choice == 'q'
       
         print "Your answer is: "
         puts num1.to_i - num2.to_i
-    end 
+     
     
 
-    elsif 'm'
+    when 'm'
         puts "Your first number to multiply"
         num1 = gets.chomp
         puts "Your second number to multiply"
@@ -43,10 +42,10 @@ until menu_choice == 'q'
   
     print "Your answer is: "
     puts num1.to_i * num2.to_i
-    end
+    
     
 
-    elsif 'd'
+    when 'd'
         puts "Your first number to divide"
         num1 = gets.chomp
         puts "Your second number to divide"
@@ -54,11 +53,10 @@ until menu_choice == 'q'
       
         print "Your answer is: "
         puts num1.to_i / num2.to_i
-    end
 
     else
         puts 'Invalid selection.'
-
+    end
     show_menu
     menu_choice = gets.chomp.downcase
     end
