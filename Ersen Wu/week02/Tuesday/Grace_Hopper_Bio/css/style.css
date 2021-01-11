@@ -1,0 +1,82 @@
+@import url('https://fonts.googleapis.com/css2?family=Andika+New+Basic&display=swap');
+
+
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #222;
+  padding: 0;
+  margin: 0;
+  font-family: 'Andika New Basic', sans-serif;
+}
+
+.container {
+  max-width: 960px;      /*shrinks as screen shrinks to less than 960px*/
+  background-color: #ccc;
+  margin:0 auto;     /*horizontal centering*/
+  padding:1em;  /*chunky pixels*/
+  border-bottom-radius: 1em;
+}
+
+nav {
+  background-color: yellow;
+  text-align: center;
+
+
+
+}
+
+
+nav a {
+  background-color: green;
+  color: red;
+  padding-right: 50px;
+  padding-left: 50px;
+  margin-left: 80px;
+  margin-right: 80px;
+  width:100%;
+
+}
+
+h1 {
+  text-transform: uppercase;
+  text-align: center;
+    background-image:repeating-linear-gradient(45deg,yellow,green,yellow,green);
+  color:#ccc;
+  font-size: 400%;
+  padding:30px;
+}
+
+main{
+
+  width:100%;
+}
+
+main img {
+  margin: 0 auto;
+  display:block;
+  border: 1px solid black;
+  width:200px;
+
+}
+
+aside{
+
+  width:100%;
+  vertical-align: top;                                                                      background-image:repeating-linear-gradient(45deg,yellow,green,yellow,green);
+  padding: 1em;
+  border-radius: 5px;
+  box-shadow: 0 0 10px black;
+
+}
+
+aside ul {
+  padding-left: 10px;
+}
+
+li {
+  color:blue;
+}

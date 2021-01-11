@@ -1,0 +1,56 @@
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="css/style.css">
+  <link href="https://unpkg.com/pattern.css" rel="stylesheet">
+  <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
+  <title>Perl? | Nuts and bolts of Larry Wall</title>
+</head>
+<body>
+  <header>
+    <nav>
+      <div class="pre-header">Nuts and bolts of</div>
+      <div class="larry-header-text">Larry Wall<span class="blinking-cursor">|</span></div>
+      <ul class="menu">
+        <li class="menu-item"><a href="index.html">Go home</a></li>
+        <li class="menu-item"><a href="perl.html">Perl</a></li>
+        <li class="menu-item"><a href="things-larry-said.html">Things Larry Said</a></li>
+      </ul>
+    </nav>
+  </header>
+  <div id="main-container">
+    <div class="top-container">
+      <div id="quote-perl" class="quote">"Yes, Perl is specialized. It's specialized for slinging around crap. Of course, as T. Sturgeon points out, 90% of everything is crap."</div>
+      <img class="perl-main-img" src="assets/perl-camel.png" alt="Perl">
+    </div>
+    <div class="middle-container">
+      <h2>What's this <i>Perl?</i></h2>
+      <p class="body-text">To start things off, we need to understand that Perl is not a programming language by itself, but rather a group of programming languages which are interpreted and dynamic. The family includes Perl 5 and Perl 6 and development of both languages take place independent of each other. While it is said that Perl is not an acronym, some refer to it as ‘Practical Extraction and Reporting Language’.
+      <p class="body-text">It combines the features of languages like C with shell script’s ability to execute large sets of commands. It also has elements of awk and sed, which is largely used in command line scripting to manipulate text. Programmers can use Perl for developing a variety of software applications. However, Perl is an interpreted programming language. The code written in Perl is compiled into byte-code. The byte code is converted in the machine instruction when the program is executed. The feature makes it easier for programmers to run and evaluate Perl applications.</p>
+      <h3>The Semantics</h3>
+      <p class="body-text">Let’s start with the classic Hello World program:</p>
+      <div class="semantics-container">
+        <p class="code-block">print “Hello, world\n”;<br><strong>Output: </strong>Hello, world</p>
+      </div>
+      <p class="body-text">Simple is as simple does. Now, to declare a variable:</p>
+      <div class="semantics-container">
+        <p class="code-block">$str=”My name is Akshay”;<br>print “$str\n”; world\n”;<br><strong>Output: </strong>My name is Akshay</p>
+      </div>
+      <p class="body-text">Like Python, you don’t have to explicitly declare the data type of the variable before hand. Let us look at how to declare arrays:</p>
+      <div class="semantics-container">
+        <p class="code-block">@ages=(25,30,40);<br>@names=(“Jake”,”Logan”,”Felix”,”Ryan”);</p>
+      </div>
+      <p class="body-text">Pretty neat, huh? Remember the special character that is used before the variable name is crucial here. Dollar sign for simple variables, and asperand for arrays.</p>
+      <h3>From the man himself</h3>
+      <p class="body-text">Here's Mr. Wall explaining how Perl came to be (be mindful that the follow hasn't been edited so is slow-paced, though that might be a good thing - slow down and enjoy the idiosyncratic man speak his mind):</p>
+      <div class="video"><iframe src="https://www.youtube.com/embed/aNAtbYSxzuA?controls=1&amp;start=53" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+      <div class="credit-container">
+        <p class="credit">Text credit: <a href="https://blog.usejournal.com/what-is-perl-how-relevant-it-is-and-how-to-get-started-d802e7aba2cd" target="_blank">Noteworthy</a></p>
+        <p class="credit">Video credit: <a href="https://www.youtube.com/channel/UCSOR13jnJ_sqwM_cLnOMJPA" target="_blank">Brand X Industries</a></p>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

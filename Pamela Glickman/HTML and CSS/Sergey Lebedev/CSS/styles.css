@@ -1,0 +1,92 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  padding: 0;
+  margin: 0;
+  font-family: 'Oxanium', cursive;
+}
+
+nav {
+  background-color: darkred;
+}
+
+nav ul {
+  background-color: darkred;
+  list-style-type: none;
+  height: 60px;
+  margin: 0 0 0 45.8%;
+}
+
+nav li {
+  display: inline-block;
+}
+
+nav a {
+  color: white;
+  font-size: 20px;
+  font-weight: 700;
+  padding: 0 20px;
+  text-decoration: none;
+  vertical-align: middle;
+  line-height: 60px;
+}
+
+nav li:hover {
+  background-color: red;
+}
+
+main, footer div {
+  width: 90%;
+  margin: 0 auto;
+}
+
+section {
+  display: inline-block;
+  width: 60%;
+  margin: 10px auto;
+}
+
+h1 {
+  font-size: 2.5em;
+}
+
+aside {
+  display: inline-block;
+  vertical-align: top;
+  padding: 50px 50px 50px 70px;
+  width: 30%;
+}
+
+img {
+  width: 320px;
+  margin-bottom: 50px;
+}
+
+img[src="Images/MESM.jpg"] {
+  margin-top: 150px;
+}
+
+footer {
+  background-color: darkred;
+  color: white;
+  margin-top: 20px;
+}
+
+footer div {
+  text-align: center;
+  padding: 20px;
+}
+
+footer ul {
+  list-style-type: none;
+}
+
+footer a {
+  color: white;
+  text-decoration: none;
+}
+footer a:hover {
+  color: lightgreen;
+}
