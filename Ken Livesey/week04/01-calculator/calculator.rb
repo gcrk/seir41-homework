@@ -55,10 +55,11 @@ Welcome to Ruby REPL
 ```
 =end
 
+#definition of the main menu
 def show_menu
   puts "-=" * 40
-  puts "Calculator".center(80) # TODO: You can use .center to make it look nice.
-  puts "-=" * 40 # El cheapo horizontal dividing line
+  puts "Calculator".center(80)
+  puts "-=" * 40
   puts "[a] - Addition"
   puts "[s] - Subtraction"
   puts "[m] - Multiplication"
@@ -70,6 +71,7 @@ def show_menu
   print "Enter your choice: "
 end
 
+#this defines the global numbers & displays the UI prompts
 def numbers()
   puts 'What is the first number: '
   @first_number = gets.to_f
@@ -77,97 +79,90 @@ def numbers()
   @second_number = gets.to_f
 end
 
+#this is the program definition of the addition method
 def addition(value1, value2)
   result = value1 + value2
   puts "The sum of #{ value1 } + #{ value2 } = #{ result }"
 end
 
+#this is the program definition of the subtraction method
 def subtraction(value1, value2)
   result = value1 - value2
   puts "The sum of #{ value1 } - #{ value2 } = #{ result }"
 end
 
+#this is the program definition of the multiplication method
 def multiplication(value1, value2)
   result = value1 * value2
   puts "The sum of #{ value1 } x #{ value2 } = #{ result }"
 end
 
+#this is the program definition of the division method
 def division(value1, value2)
   result = value1 / value2
   puts "The sum of #{ value1 } / #{ value2 } = #{ result }"
 end
 
+#this is the program definition of the square root method
 def square_root(value1)
   result = Math.sqrt(value1)
   puts "The square root of #{ value1 } = #{ result }"
 end
 
+#this is the program definition of the exponential method
 def exponential(value1)
   result = Math.exp(value1)
   puts "The result is #{ result }"
 end
 
+#main menu function starts here
 show_menu
 menu_choice = gets.chomp.downcase
 
 until menu_choice == 'q'
   case menu_choice
 
-  # addition
+  #UI prompts start from here
+  # this is the addition process
   when 'a'
-    puts 'You chose addition!'    # TODO: Actually do the addition
+    puts 'You chose addition!'
     numbers()
-    # puts 'What is the first number: '
-    # first_number = gets.to_f
-    # puts "What is the second number: "
-    # second_number = gets.to_f
     addition(@first_number, @second_number)
 
-  # subtraction
+  # subtraction process
   when 's'
     puts 'You chose subtraction'
     numbers()
-    # puts 'What is the first number: '
-    # first_number = gets.to_f
-    # puts "What is the second number: "
-    # second_number = gets.to_f
     subtraction(@first_number, @second_number)
 
-  # multiplication
+  # multiplication process
   when 'm'
     puts 'You chose multiplication'
     numbers()
-    # puts 'What is the first number: '
-    # first_number = gets.to_f
-    # puts "What is the second number: "
-    # second_number = gets.to_f
     multiplication(@first_number, @second_number)
 
-  # division
+  # division process
   when 'd'
     puts 'You chose division'
     numbers()
-    # puts 'What is the first number: '
-    # first_number = gets.to_f
-    # puts "What is the second number: "
-    # second_number = gets.to_f
     division(@first_number, @second_number)
-  #square root
+
+  #square root process
   when 'sq'
     puts 'You chose square root'
     puts 'What is the number you want to find the square root of: '
     first_number = gets.to_f
     square_root(first_number)
 
-  #exponential
-when 'ex'
-    puts 'You chose exponential'
-    puts 'What is the number you want to calculate: '
-    first_number = gets.to_f
-    exponential(first_number)
+  #exponential process
+  when 'ex'
+      puts 'You chose exponential'
+      puts 'What is the number you want to calculate: '
+      first_number = gets.to_f
+      exponential(first_number)
   else
     puts 'Invalid selection. Please choose again.'
-  end
+end
 
   show_menu
   menu_choice = gets.chomp.downcase
