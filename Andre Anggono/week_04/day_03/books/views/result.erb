@@ -1,0 +1,77 @@
+<h2>Search Result:</h2>
+
+<% @info["items"].size.times { |i| %>
+
+<div class="result">
+<h3> <%= @info["items"][i]["volumeInfo"]["title"] %> </h3>
+<img src="<%= @info["items"][i]["volumeInfo"]["imageLinks"]["thumbnail"] %>">
+<table>
+  <tbody>
+    <tr>
+      <td><span>Description</span></td>
+      <td><span>  <%= @info["items"][i]["volumeInfo"]["description"]%>  </span></td>
+    </tr>
+    <tr>
+      <td><span>Authors</span></td>
+      <td><span>  <%= @info["items"][i]["volumeInfo"]["authors"].join(', ') %>  </span></td>
+    </tr>
+    <tr>
+      <td><span>Publisher</span></td>
+      <td><span>  <%= @info["items"][i]["volumeInfo"]["publisher"] %>  </span></td>
+    </tr>
+    <tr>
+      <td><span>Published Date</span></td>
+      <td><span>  <%= @info["items"][i]["volumeInfo"]["publishedDate"] %>  </span></td>
+    </tr>
+    <tr>
+      <td><span>Page Count</span></td>
+      <td><span>  <%= @info["items"][i]["volumeInfo"]["pageCount"] %>  </span></td>
+    </tr>
+    <tr>
+      <td><span>Average Rating</span></td>
+      <td><span>  <%= @info["items"][i]["volumeInfo"]["averageRating"] %>  </span></td>
+    </tr>
+    <tr>
+      <td><span>Ratings Count</span></td>
+      <td><span>  <%= @info["items"][i]["volumeInfo"]["ratingsCount"] %>  </span></td>
+    </tr>
+    <tr>
+      <td><span>Maturity Rating</span></td>
+      <td><span>  <%= @info["items"][i]["volumeInfo"]["maturityRating"] %>  </span></td>
+    </tr>
+    <tr>
+      <td><span>Language</span></td>
+      <td><span>  <%= @info["items"][i]["volumeInfo"]["language"] %>  </span></td>
+    </tr>
+    <tr>
+      <td><span>Price</span></td>
+      <td><span>  
+            <%= if @info["items"][i]["saleInfo"]["saleability"] == "FOR_SALE"
+                  currency = @info["items"][i]["saleInfo"]["listPrice"]["currencyCode"]
+                  amount = @info["items"][i]["saleInfo"]["listPrice"]["amount"]
+
+                  "#{currency} $#{amount}"
+                else
+                  "Not For Sale"
+                end
+              %>  
+          </span>
+      </td>
+    </tr>
+    <tr>
+      <td><span>Buy Link</span></td>
+      <td><span>  
+            <%= if @info["items"][i]["saleInfo"]["saleability"] == "FOR_SALE"
+                  link = @info['items'][i]['saleInfo']['buyLink']
+                  "<a href='#'>#{link}</a>"
+                else
+                  "Not Available"
+                end
+              %>  
+          </span>
+      </td>
+    </tr>
+  </tbody>
+</table>
+</div>
+<% } %>
