@@ -13,7 +13,12 @@
     </tr>
     <tr>
       <td><span>Authors</span></td>
-      <td><span>  <%= @info["items"][i]["volumeInfo"]["authors"].join(', ') %>  </span></td>
+      <td><span>  <%= 
+                      author = @info["items"][i]["volumeInfo"]["authors"]
+                      author = author.join(', ') if author != nil 
+                  %> 
+            </span>
+        </td>
     </tr>
     <tr>
       <td><span>Publisher</span></td>
