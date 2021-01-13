@@ -15,8 +15,8 @@ def plan_trip (l1, s1, l2, s2)
   total_stops = first_trip(l1, s1).size + second_trip(l2, s2).size
   puts ">>> #{total_stops} stops in total."
   # puts "<3 Thanks for using our trip planner! <3"
-  print ">><<" * 5, " Thanks for using our trip planner! "
-  puts ">><<" * 5
+  print "=-" * 10, " Thanks for using our trip planner! "
+  puts "=-" * 10
 
 end
 
@@ -63,14 +63,14 @@ def second_trip(l2, s2)
   trip2
 end
 
-# second_trip('N', '34th')
-# second_trip('N', '8th')
-
+## show menu function
 def show_menu
   print "Press (enter) to continue with Ruby Trip Planner OR [q] to quit: "
 end
 
+
 ##################### USER INPUT #####################
+
 puts "//\\" * 24
 puts "WELCOME TO RUBY TRIP PLANNER!".center(70)
 puts "=-" * 35
@@ -81,10 +81,10 @@ user_choice = gets[0].downcase
 until user_choice == 'q'
   ########## ASK FOR USER INPUT: LINE 1
   print "Which line you are traveling from (#{$lines.keys.join('/')}): " #suggestion for users
-  l1 = gets[0].upcase
+  l1 = gets[0].upcase   #take one letter and upcase
 
   # Foolproof: Check the valid name
-  until $lines.include? l1
+  until $lines.include? l1    #check if the name is included in the list
     print "! Invalid name. Please re-enter: "
     l1 = gets[0].upcase
   end
@@ -125,6 +125,7 @@ until user_choice == 'q'
   end
 
   puts "> You want to travel to #{s2} station on the #{l2} line."
+  puts ("=-" * 20).center(70)
 
   plan_trip(l1, s1, l2, s2)
 
