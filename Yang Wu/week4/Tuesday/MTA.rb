@@ -73,6 +73,7 @@ else
   puts "#{stop_num} stops in total."
 end
 
+#add quite and return(enter) functions, also notification of error input.
 
 # #### Hints:
 # * Work out how you would do it on paper first! Then start to explain that process in Ruby.

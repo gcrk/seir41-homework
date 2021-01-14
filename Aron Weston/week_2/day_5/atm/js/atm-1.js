@@ -70,16 +70,11 @@ $(document).ready(function () {
       if (withdrawTotal < 0) {
         const savings = loop(savingsBalance);
         if (amount > checking + savings) {
-          msg(
-            "No overdraft available. Insufficient funds.",
-            "#checking",
-            "zero"
-          );
+          msg("No overdraft available. Insufficient funds.", "#checking", "zero");
         } else {
           if (savings < 0) {
             msg(
-              "No overdraft available, account cannot be negative",
-              "#savings",
+              "No overdraft available, account cannot be negative", "#savings",
               "zero"
             );
           } else {
