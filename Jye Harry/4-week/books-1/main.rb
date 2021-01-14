@@ -15,6 +15,5 @@ get '/result' do
   @publisher = @info["items"][0]["volumeInfo"]["publisher"]
   @descr = @info["items"][0]["volumeInfo"]["description"]
 
-
   erb :result
 end
