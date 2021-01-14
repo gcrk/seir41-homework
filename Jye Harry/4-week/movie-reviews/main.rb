@@ -16,7 +16,7 @@ end
 
 post '/:id' do
   query_db "INSERT INTO reviews (movieID, author, review, rating) VALUES ('#{params[:id]}', '#{params[:author]}', '#{params[:review]}', '#{params[:rating]}')"
-  redirect to("/:id")
+  redirect to("/#{params[:id]}")
 end
 
 def query_db(sql_statement)
