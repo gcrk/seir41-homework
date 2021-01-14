@@ -14,8 +14,22 @@ get "/coffee" do
   erb :coffee_index
 end
 
+#NEW COFFEE
 get "/coffee/new" do
   erb :coffee_new
+end
+
+#CREATE A COFFEE
+post "/coffee" do
+  query_db("INSERT INTO butterflies (product_name, roaster_name) VALUES ('#{params[:b_name]}','#{params[:family]}','#{params[:b_image]}')")
+  redirect to("/butterflies") #get request, fetch the butterfly
+end
+
+#SHOW A COFFEE
+get "/coffee/:id" do
+  @coffee = query_db("SELECT * FROM coffee WHERE ID=#{params[:id]}")
+  @coffee = @coffee.first #get the butterfly out of the array
+  erb :coffee_show
 end
 
 #QUERY DB

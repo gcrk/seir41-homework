@@ -4,7 +4,6 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Aron's Favourite Espressos</title>
     <link rel="stylesheet" href="/css/style.css">
     <link rel="stylesheet" href="/css/materialize.min.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css" integrity="sha384-vp86vTRFVJgpjF9jiIGPEEqYqlDwgyBgEF109VFjmqGmIY/Y4HV4d3Gp2irVfcrp" crossorigin="anonymous">
@@ -14,15 +13,14 @@
 </head>
 
 <body>
-    <div class="container">
-        <%= yield %>
-    </div>
+    <%= yield %>
     <footer>
         <div class="fixed-action-btn">
             <a href="/" class="btn-floating btn-large black"><i class="fas fa-coffee"></i></a>
             <ul>
                 <li><a href="/coffee/new" class="btn-floating btn-large black"><i class="fas fa-plus"></i></a></li>
                 <li><a href="/coffee" class="btn-floating btn-large black"><i class="fas fa-tachometer-alt"></i></a></li>
+                <li><a href="/coffee" class="btn-floating btn-large black"><i class="fas fa-pencil"></i></a></li>
             </ul>
         </div>
     </footer>

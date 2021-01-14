@@ -1,17 +1,23 @@
-<h1>Add a new espresso</h1>
-<form action="/butterflies" method="POST">
-    <label for="product_name">Product Name<input type="text"  name="product_name" required></label>
-    <label for="roaster_name">Roaster<input type="text" name="roaster_name"></label>
-    <label for="roaster_link">Purchase Link<input type="url" name="roaster_link" placeholder="https://marketlane.coffee"></label>
-    <button class="btn">Add Coffee</button>
-</form>
+<head>
+    <title>Add Espresso.</title>
+</head>
 
 
-
-<p># roaster_location TEXT
-# price INTEGER,
-# origins TEXT,
-# roast_profile TEXT,
-# tasting_notes TEXT,
-# brew_notes TEXT,
-# aron_rating INTEGER</p>
+<div class="container">
+    <h1>Add a new espresso.</h1>
+    <div class="row">
+        <form action="/coffee" method="POST" class="col s12">
+            <div class="row">
+                <div class="input-field col s6">
+                    <input name="product_name" type="text" class="validate">
+                    <label for="product_name">Product Name</label>
+                </div>
+                <div class="input-field col s6">
+                    <input name="roaster_name" type="text" class="validate">
+                    <label for="roaster_name">Roaster</label>
+                </div>
+            </div>
+            <button class="btn black">Add Coffee</button>
+        </form>
+    </div>
+</div>

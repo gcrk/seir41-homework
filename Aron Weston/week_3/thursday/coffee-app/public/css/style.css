@@ -27,8 +27,17 @@ img {
     max-width: 100%;
 }
 
+/*--------------------------------------------------------------
+# Form 
+--------------------------------------------------------------*/
 label {
     color: white !important;
+}
+
+/* label underline focus color */
+.input-field input[type=text]:focus {
+    border-bottom: 1px solid #000 !important;
+    box-shadow: none !important;
 }
 
 
@@ -69,4 +78,56 @@ label {
 /* Post content */
 .post-content {
     padding: 20px 0px;
+}
+
+/*--------------------------------------------------------------
+# Show page
+--------------------------------------------------------------*/
+
+.hero-section {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    background-color: #000;
+    color: white;
+}
+
+.hero-section span {
+    color: white;
+}
+
+a.buy-now,
+a.footer-link {
+    color: red;
+}
+
+.hero-section h1 {
+    color: white;
+    font-weight: 600;
+    text-align: left;
+}
+
+img.product-image {
+    height: 100vh;
+    margin-right: 2rem;
+}
+
+.text-section {
+    padding: 2rem 0;
+}
+
+.text-section p {
+    text-align: justify;
+}
+
+/*--------------------------------------------------------------
+# Show page
+--------------------------------------------------------------*/
+
+footer {
+    margin-top: 2rem;
+}
+
+a.footer-link {
+    padding-right: 1rem;
 }

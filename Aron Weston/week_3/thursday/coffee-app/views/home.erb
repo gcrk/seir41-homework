@@ -1,14 +1,15 @@
-<h1>Aron's Favourite Espressos</h1>
-<div class="wrapper">
-    <div class="post-grid">
-        <% @coffees.each do |coffee| %>
-        <article class="post-card">
-            <div class="post-content">
-                <span><%= coffee["product_name"] %></span>
-                <p><%= coffee["roaster_name"] %></span>
-            </div>
-            <a href="/coffee">View Coffee</a>
-        </article>
-        <% end %>
+<div class="container">
+    <h1>Aron's Favourite Espressos</h1>
+    <div class="wrapper">
+        <div class="post-grid">
+            <% @coffees.each do |coffee| %>
+            <a class="post-card" href="/coffee/<%= coffee["id"] %>">
+                <div class="post-content">
+                    <span><%= coffee["product_name"] %></span>
+                    <p><%= coffee["roaster_name"] %></span>
+                </div>
+            </a>
+            <% end %>
+        </div>
     </div>
 </div>
