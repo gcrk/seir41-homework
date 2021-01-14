@@ -1,0 +1,55 @@
+<% unless @movie["image"].nil? || @movie["image"].empty?%>
+  <img src="<%= @movie["image"] %>">
+<% end %>
+<h2>
+  <%= "#{@movie['name']} (#{@movie['year']})" %>
+</h2>
+<p>
+  <strong>Genre:
+  </strong>
+  <%= @movie["genre"] %>
+</p>
+<h4>Plot:</h4>
+<p class='plot'>
+  <%= @movie['plot'] %>
+</p>
+
+<div id='form'>
+  <form action="/<%= @movie['movieID'] %>" method="post">
+    <label>
+      Your name:
+      <input type="text" name="author" placeholder='John Smith'>
+    </label>
+
+    <label>
+      Rating out of 5:
+      <select name="rating">
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+      </select>
+    </label>
+
+    <label>
+      Review:
+      <textarea type="text" name="review" placeholder='This movie was very...'></textarea>
+    </label>
+    <button>Submit review</button>
+  </form>
+</div>
+
+<% unless @reviews.empty? %>
+  <h3>See what the people are saying</h3>
+  <% @reviews.each do |review| %>
+  <div class="review">
+    <p>
+      <%= "#{review['author']} gives this film... #{review['rating']}/5 stars" %>
+    </p>
+    <p>
+      <%= review['review'] %>
+    </p>
+  </div>
+  <% end %>
+<% end %>
