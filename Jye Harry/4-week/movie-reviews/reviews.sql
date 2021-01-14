@@ -13,7 +13,7 @@ CREATE TABLE reviews (
   author TEXT,
   review TEXT,
   rating INTEGER,
-  FOREIGN KEY (movieid) REFERENCES movies (movieid)
+  FOREIGN KEY (movieID) REFERENCES movies (movieID)
 );
 
 INSERT INTO movies (movieID, name, year, genre, plot, image) VALUES (1, 'The Social Network', 2009, 'Biography', "Mark Zuckerberg creates a social networking site, Facebook, with his friend Eduardo's help. Though it turns out to be a successful venture, he severs ties with several people along the way.", 'https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcTj268E01VcjLW3fNrO2z10WpXs7WMeciAB9wYSOA2DI-le_NQH');
