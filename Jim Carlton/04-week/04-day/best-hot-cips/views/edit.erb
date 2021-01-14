@@ -1,0 +1,33 @@
+<h2>Wanna edit <%= @chippery["place"] %>?</h2>
+<p>Fill out the form below and we'll see how it stacks 😉</p>
+
+<form action="/<%= @chippery["id"] %>" method="post">
+
+<label>
+  Chippery Name:
+  <input type="text" name="place" placeholder="<%= @chippery["place"] %>" required>
+</label>
+
+<label>
+  Location:
+  <input type="text" name="location" placeholder="<%= @chippery["location"] %>" required>
+</label>
+
+<label>
+  Rating (out of 10):
+  <input type="number" name="rating" placeholer="<%= @chippery["rating"] %>" required>
+</label>
+
+<label>
+  Map URL:
+  <input type="text" name="map" placeholder="<%= @chippery["map"] %>">
+</label>
+
+<label>
+  Photo/Image:
+  <input type="text" name="image" placeholder="<%= @chippery["image"] %>">
+</label>
+
+<button>Submit! 🍟</button>
+
+</form>
