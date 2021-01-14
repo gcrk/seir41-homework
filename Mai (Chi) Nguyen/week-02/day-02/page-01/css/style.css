@@ -1,0 +1,129 @@
+* {
+  box-sizing: border-box;
+}
+/*
+@import url('https://fonts.googleapis.com/css2?family=Amatic+SC&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap'); */
+
+/* @import url('https://fonts.googleapis.com/css2?family=Cardo&display=swap'); */
+
+
+body {
+  padding: 0;
+  margin: 0;
+  font-family: 'Cardo', serif;
+}
+
+.container {
+  max-width: 960px;
+  margin: 0 auto;
+  /* background-color: #E9ECE5; */
+}
+
+nav {
+  text-align: center;
+  background-color: #3b3a36;
+  padding: 10px;
+  display: absolute;
+}
+
+nav a {
+  text-decoration: none;
+  color: #ddd;
+  padding: 20px;
+}
+
+header {
+  padding: 10px;
+  text-align: center;
+}
+
+
+.bio {
+  border-radius: 4em;
+  border: 2px solid #3b3a36;
+  display: block;
+  margin: 0 auto;
+}
+
+h1 {
+  font-family: 'Amatic SC', cursive;
+  font-size: 400%;
+  margin: 0.3em;
+}
+
+h2 {
+  font-family: 'Dancing Script', cursive;
+  font-size: 200%;
+  margin: 0.1em;
+}
+
+aside {
+  display: inline-block;
+  border: 2px solid #ccc;
+  padding: 20px;
+  width: 22%;
+  vertical-align: top;
+  text-align: center;
+}
+
+.quick-facts h5 {
+  text-transform: uppercase;
+  color: black;
+  font-size: 90%;
+}
+
+.quick-facts h6 {
+  text-transform: uppercase;
+  color: #888;
+}
+
+
+aside img {
+  display: block;
+  width: 95%
+}
+
+main {
+  display: inline-block;
+  width: 68%;
+  margin: 1em;
+  margin-top: 5px;
+}
+
+.general-info {
+  display: inline-block;
+}
+
+.early-life {
+  display: inline-block;
+  width: 45%;
+}
+
+.education {
+  display: inline-block;
+  width: 50%;
+  vertical-align: top;
+}
+
+footer {
+  text-align: center;
+  background-color: #3b3a36;
+  padding: 10px;
+  display: absolute;
+  color: #ddd;
+}
+
+footer p {
+  padding: 0;
+  margin: 5px;
+}
+
+h2 {
+  font-size: 200%;
+}
+
+h3 {
+  font-size: 200%
+}

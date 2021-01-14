@@ -1,0 +1,6 @@
+.do-thing {
+    cursor: pointer;
+    width: 800px;
+    border-radius: 200px;
+    transform: rotate(-90deg)
+}
