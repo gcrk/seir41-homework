@@ -41,6 +41,7 @@ const makeBigger = function () {
 let extender =  setInterval(makeBigger, 10);
 
 //DOG 2
+
 const img2 = document.getElementById('dog2');
 img2.style.left = '-100px';
 

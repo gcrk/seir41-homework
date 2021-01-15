@@ -1,0 +1,23 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@600&display=swap');
+
+
+.container {
+  background-color: #e17382;
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+h1 {
+  font-family: 'Cinzel', serif;
+  color: pink;
+  font-size: 100px;
+  text-align: center;
+}
+
+body {
+  background-color: #e17382;
+}
+
+.container {
+  background-color: #e17382;
+}

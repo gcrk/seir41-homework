@@ -11,15 +11,19 @@ $(document).ready(function () {
     },
     withdraw: (account, credit, outputID, msgID) => {
       const balance = bank.totalBalance(account) - credit;
-      if (balance > 0) {
-        account.push(-credit);
-        bank.output(`${outputID}`, bank.totalBalance(account));
-      } else if (balance === 0) {
-        account.push(-credit);
-        bank.output(`${outputID}`, bank.totalBalance(account));
-        bank.message("You have no more money.", `${msgID}`, "zero");
-      } else if (balance < 0) {
-        bank.overdraft(account, credit, msgID, outputID);
+      if (credit < 0 || credit === 0) {
+        bank.message("Can't withdraw a negative amount.", `${msgID}`, "zero");
+      } else {
+        if (balance > 0) {
+          account.push(-credit);
+          bank.output(`${outputID}`, bank.totalBalance(account));
+        } else if (balance === 0) {
+          account.push(-credit);
+          bank.output(`${outputID}`, bank.totalBalance(account));
+          bank.message("You have no more money.", `${msgID}`, "zero");
+        } else if (balance < 0) {
+          bank.overdraft(account, credit, msgID, outputID);
+        }
       }
     },
     overdraft: (account, credit, msgID, outputID) => {
@@ -63,16 +67,14 @@ $(document).ready(function () {
           currentAccount.push(-y);
           bank.output(`${currentID}`, bank.totalBalance(currentAccount));
 
+          bank.message("Overdraft Approved.", `${msgID}`, "approved");
+
           //After deductions
-          console.log(
-            "CURRENT BALANCE",
-            bank.totalBalance(currentAccount),
-            "OVERDRAFT BALANCE",
-            bank.totalBalance(overdraftAccount)
-          );
+          console.log("CURRENT BALANCE", bank.totalBalance(currentAccount), "OVERDRAFT BALANCE", bank.totalBalance(overdraftAccount));
         } else {
           overdraftAccount.push(-credit);
           bank.output(`${overdraftID}`, bank.totalBalance(overdraftAccount));
+          bank.message("Overdraft Approved.", `${msgID}`, "approved");
         }
       }
     },
