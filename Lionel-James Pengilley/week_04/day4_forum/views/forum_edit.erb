@@ -1,0 +1,20 @@
+<h1>Edit Post</h1>
+
+<form action="/forum/<%= @post["id"] %>" method="post">
+  <label>
+    Username:
+    <input name="username" placeholder="cooldude123" required value="<%= @post["username"] %>">
+  </label>
+
+  <label>
+    Comment:
+    <input name="comment" placeholder="Nice" required value="<%= @post["comment"] %>">
+  </label>
+
+  <label>
+    Image:
+    <input type="url" name="image" placeholder="http://..." value="<%= @post["image"] %>">
+  </label>
+
+  <button>Edit Post</button>
+</form>
