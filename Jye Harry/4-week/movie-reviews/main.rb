@@ -1,30 +1,63 @@
 require 'sinatra'
 require 'sinatra/reloader'
 require 'sqlite3'
+require 'active_record'
+require 'pry'
+
+ActiveRecord::Base.establish_connection(
+  :adapter => 'sqlite3',
+  :database => 'database.sqlite3'
+)
+
+ActiveRecord::Base.logger = Logger.new(STDERR)
+
+class Movie < ActiveRecord::Base
+  has_many :reviews
+end
+
+class Review < ActiveRecord::Base
+  belongs_to :movie
+end
 
 get '/' do
-  @movies = query_db 'SELECT * FROM movies ORDER BY name'
+  @movies = Movie.all.order(:name)
   erb :home
 end
 
+post '/' do
+  Movie.new do |m|
+    m.name = params[:name]
+    m.year = params[:year]
+    m.genre = params[:genre]
+    m.plot = params[:plot]
+    m.image = params[:image]
+    m.save
+  end
+  redirect to('/')
+end
+
+get '/new' do
+  erb :movies_new
+end
+
 get '/:id' do
-  @movie = query_db "SELECT * FROM movies WHERE movieID=#{params[:id]}"
-  @movie = @movie.first
-  @reviews = query_db "SELECT * FROM reviews WHERE movieID=#{params[:id]}"
+  @movie = Movie.find params[:id]
+  @reviews = @movie.reviews
   erb :movies_show
 end
 
-post '/:id' do
-  query_db "INSERT INTO reviews (movieID, author, review, rating) VALUES ('#{params[:id]}', '#{params[:author]}', '#{params[:review]}', '#{params[:rating]}')"
-  redirect to("/#{params[:id]}")
+get '/:id/destroy' do
+  Movie.find(params[:id]).destroy
+  redirect to('/')
 end
 
-def query_db(sql_statement)
-  # connect to the db
-  db = SQLite3::Database.new 'database.sqlite3'
-  db.results_as_hash = true
-  # fetch from the db
-  results = db.execute sql_statement
-  db.close
-  results
+post '/:id' do
+  Review.new do |r|
+    r.movie_id = params[:id]
+    r.author = params[:author]
+    r.review = params[:review]
+    r.rating = params[:rating]
+    r.save
+  end
+  redirect to("/#{params[:id]}")
 end

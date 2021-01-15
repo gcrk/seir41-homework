@@ -1,21 +1,23 @@
-<% unless @movie["image"].nil? || @movie["image"].empty?%>
-  <img src="<%= @movie["image"] %>">
+<% unless @movie.image.nil? || @movie.image.empty?%>
+  <img src="<%= @movie.image %>">
 <% end %>
 <h2>
-  <%= "#{@movie['name']} (#{@movie['year']})" %>
+  <%= "#{@movie.name} (#{@movie.year})" %>
 </h2>
 <p>
   <strong>Genre:
   </strong>
-  <%= @movie["genre"] %>
+  <%= @movie.genre %>
 </p>
 <h4>Plot:</h4>
 <p class='plot'>
-  <%= @movie['plot'] %>
+  <%= @movie.plot %>
 </p>
+<a href='/<%= @movie.id %>/edit'>Edit details</a>
+<a href='/<%= @movie.id %>/destroy'>Delete Movie</a>
 
-<div id='form'>
-  <form action="/<%= @movie['movieID'] %>" method="post">
+<div class='form'>
+  <form action="/<%= @movie.id %>" method="post">
     <label>
       Your name:
       <input type="text" name="author" placeholder='John Smith'>
@@ -32,7 +34,7 @@
       </select>
     </label>
 
-    <label>
+    <label class='.block'>
       Review:
       <textarea type="text" name="review" placeholder='This movie was very...'></textarea>
     </label>
@@ -43,13 +45,13 @@
 <% unless @reviews.empty? %>
   <h3>See what the people are saying</h3>
   <% @reviews.each do |review| %>
-  <div class="review">
-    <p>
-      <%= "#{review['author']} gives this film... #{review['rating']}/5 stars" %>
-    </p>
-    <p>
-      <%= review['review'] %>
-    </p>
-  </div>
+    <div class="review">
+      <p>
+        <%= "#{review.author} rates this film... #{"⭐️" * review.rating}" %>
+      </p>
+      <p>
+        <%= review.review %>
+      </p>
+    </div>
   <% end %>
 <% end %>
