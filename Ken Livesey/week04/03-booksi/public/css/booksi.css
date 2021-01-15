@@ -1,0 +1,80 @@
+@import url('https://fonts.googleapis.com/css2?family=Hachi+Maru+Pop&family=Montserrat&display=swap');
+
+/* Table of contents
+  1. General styles
+  2. Typography
+  3. Layout & Components
+*/
+
+/* ===================
+|| 1. General styles
+    =================== */
+
+body {
+  background-color: #F7FFF7;
+  font-family: 'Montserrat', sans-serif;
+}
+
+form {
+  text-align: center;
+}
+
+.container {
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+.content {
+  text-align: left;
+}
+
+/* ===================
+|| 2. Typography
+    =================== */
+h1,
+h2,
+h3,
+h4 {
+  font-family: 'Hachi Maru Pop', cursive;
+  color: #1A535C;
+}
+
+.site {
+  font-size: 5rem;
+  text-align: center;
+}
+
+/* ===================
+|| 3. Layout & Components
+    =================== */
+
+input {
+  margin-top: 5px;
+  border: 1px;
+  padding: 15px 32px;
+  font-size: 1rem;
+}
+
+
+button {
+  background-color: #4ECDC4;
+  margin-top: 5px;
+  border: 0;
+  padding: 15px 32px;
+  text-align: center;
+  font-size: 1rem;
+  transition: all 1s ease;
+}
+
+button:hover {
+  cursor: pointer;
+  background-color: #FF6B6B;
+}
+
+/* palette {
+  color: #1A535C;
+  color: #4ECDC4;
+  color: #F7FFF7;
+  color: #FF6B6B;
+  color: #FFE66D;
+} */
