@@ -1,0 +1,136 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap');
+
+body {
+  margin: 0;
+  font-family: 'Space Grotesk', sans-serif;
+  background-color: LemonChiffon;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  color: saddlebrown;
+}
+
+h1 {
+  display: flex;
+  align-self: center;
+  justify-content: center;
+}
+
+nav {
+  display: flex;
+  align-self: center;
+  justify-content: center;
+}
+
+ul {
+  display: flex;
+  justify-content: center;
+    padding-inline-start: 0;
+}
+
+li {
+  padding: 10px;
+  list-style: none;
+  display: inline-flex;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  border-bottom: 1px solid inherit;
+}
+
+a:hover {
+  border-bottom: 1px solid inherit;
+}
+
+.main-container {
+  max-width: 80%;
+}
+
+.sub-container {
+  display: flex;
+  align-self: center;
+  justify-content: center;
+}
+
+label {
+  display: block;
+  margin: 20px 0;
+}
+
+input, button {
+  padding: 10px;
+  font-family: font-family: 'Space Grotesk', sans-serif;
+  outline: none;
+  border: 1px solid saddlebrown;
+  border-radius: 20px;
+  background-color: rgba(0,0,0,0);
+  color: saddlebrown;
+}
+
+::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+  color: peru;
+}
+::-moz-placeholder { /* Firefox 19+ */
+  color: peru;
+}
+:-ms-input-placeholder { /* IE 10+ */
+  color: peru;
+}
+:-moz-placeholder { /* Firefox 18- */
+  color: peru;
+}
+
+button {
+  margin: 20px 0;
+  padding: 15px;
+  border-radius: 30px;
+  cursor: pointer;
+}
+
+button:hover {
+  transition: all .2s ease-out;
+  background-color: saddlebrown;
+  color: LemonChiffon;
+}
+
+img {
+  display: flex;
+  max-width: 300px;
+  height: 300px;
+  object-fit: cover;
+}
+
+.chip-list > li {
+  align-self: bottom;
+  text-align: center;
+  margin-top: 20px;
+}
+
+.chip-list {
+  flex-wrap: wrap;
+}
+
+.chip-list > li > p {
+  margin-top: 20px;
+}
+
+.chip-title {
+  font-size: 20px;
+}
+
+.detail-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.controls {
+  margin: 20px 0;
+}
+
+.controls > a {
+  padding: 20px;
+}
