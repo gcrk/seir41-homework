@@ -1,0 +1,56 @@
+/* The page looks hideous, I should add more styles */
+
+main {
+  width: 90%;
+  margin: 0 auto;
+}
+
+div {
+  width: 90%;
+  margin: 0 auto;
+}
+
+h1 {
+  text-align: center;
+  font-size: 4rem;
+  margin: 20px;
+}
+
+h2 {
+  text-align: center;
+  font-size: 3rem;
+}
+
+button {
+  display: block;
+  width: 90%;
+  margin: 2% auto;
+  text-align: center;
+  font-size: 2.5rem;
+  letter-spacing: 3px;
+}
+
+button.submit {
+  margin-bottom: 60px;
+}
+
+form {
+  display: block;
+  width: 80%;
+  margin: 0 auto;
+  text-align: center;
+}
+
+table {
+  width: 80%;
+  margin: 0 auto;
+}
+
+td, th {
+  width: 15%;
+  text-align: center;
+}
+
+img {
+  max-width: 100%;
+}
