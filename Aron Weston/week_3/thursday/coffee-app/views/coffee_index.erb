@@ -1,24 +1,37 @@
-<head><title>The Espresso Dashboard</title></head>
+<head>
+  <title>The Espresso Dashboard</title>
+</head>
 <link rel="stylesheet" href="style.css">
 
-</head>
-<h1>The Espresso Dashboard</h1>
-<table>
-  <thead>
-    <tr>
-      <th>Product Name</th>
-      <th>Roaster</th>
-    </tr>
-  </thead>
-  <tbody>
-    <% @coffees.each do |coffee| %>
-    <tr>
-      <td><%= coffee["product_name"] %></td>
-      <td><%= coffee["roaster_name"] %></td>
-      <td><a href="/coffee/<%= coffee["id"] %>">See Coffee</a></td>
-      <td><a href="/coffee/<%= coffee["id"] %>">Edit</a></td>
-      <td><a href="/coffee/<%= coffee["id"] %>">Delete</a></td>
-    </tr>
-    <% end %>
-  </tbody>
-</table>
+<div class="container">
+  <h1>The Espresso Dashboard</h1>
+  <table>
+    <thead>
+      <tr>
+        <th>Product Name</th>
+        <th>Roaster</th>
+        <th>Location</th>
+        <th>Origin</th>
+        <th>Roast Profile</th>
+        <th>Price per 250g</th>
+        <th>Rating (0 - 10)</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @coffees.each do |coffee| %>
+      <tr>
+        <td><%= coffee["product_name"] %></td>
+        <td><%= coffee["roaster_name"] %></td>
+        <td><%= coffee["roaster_location"] %></td>
+        <td><%= coffee["origin"] %></td>
+        <td><%= coffee["roast_profile"] %></td>
+        <td>$<%= coffee["price"] %></td>
+        <td><%= coffee["aron_rating"] %></td>
+        <td><a href="/coffee/<%= coffee["id"] %>">View</a></td>
+        <td><a href="/coffee/<%= coffee["id"] %>/edit">Edit</a></td>
+        <td><a href="/coffee/<%= coffee["id"] %>/delete">Delete</a></td>
+      </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>

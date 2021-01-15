@@ -1,0 +1,70 @@
+<head>
+    <title>Edit Espresso.</title>
+</head>
+<div class="container">
+    <h1>Edit an espresso.</h1>
+    <div class="row">
+        <form action="/coffee/<%= @coffee["id"] %>" method="POST" class="col s12">
+            <div class="row">
+                <div class="input-field col s6">
+                    <input name="product_name" required type="text" class="validate" value="<%= @coffee["product_name"] %>">
+                    <label class="active" for="product_name">Product Name</label>
+                </div>
+                <div class="input-field col s6">
+                    <input name="product_image" required type="url" value="<%= @coffee["product_image"] %>" class="validate">
+                    <label class="active" for="roaster_image">Image</label>
+                </div>
+
+                <div class="input-field col s6">
+                    <input name="roaster_name" required value="<%= @coffee["roaster_name"] %>" type="text" class="validate">
+                    <label class="active" for="roaster_name">Roaster</label>
+                </div>
+
+                <div class="input-field col s6">
+                    <input name="roaster_location" required value="<%= @coffee["roaster_location"] %>" type="text" class="validate">
+                    <label class="active" for="roaster_location">Location</label>
+                </div>
+
+                <div class="input-field col s6">
+                    <input name="origin" required type="text" value="<%= @coffee["origin"] %>" class="validate">
+                    <label class="active" for="origin">Origin</label>
+                </div>
+
+                <div class="input-field col s6">
+                    <input name="roast_profile" required type="text" value="<%= @coffee["roast_profile"] %>" class="validate">
+                    <label class="active" for="roast_profile">Roast Profile</label>
+                </div>
+
+                <div class="input-field col s6">
+                    <input name="purchase_link" required type="url" value="<%= @coffee["purchase_link"] %>" class="validate">
+                    <label class="active" for="purchase_link">Purchase Link</label>
+                </div>
+
+                <div class="input-field col s6">
+                    <input name="price" required type="text" value="<%= @coffee["price"] %>" class="validate">
+                    <label class="active" for="price">Price</label>
+                </div>
+
+                <div class="input-field col s6">
+                    <input name="aron_rating" required type="number" value="<%= @coffee["aron_rating"] %>" class="validate">
+                    <label class="active"  for="price">Aron Rating</label>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col s12">
+                    <label for="tasting_notes">Tasting Notes
+                        <textarea required name="tasting_notes" class="validate" cols="5" rows="20"><%= @coffee["tasting_notes"] %></textarea></label>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col s12">
+                    <label for="brew_guide">Brew Guide
+                        <textarea required name="brew_guide" class="validate" cols="5" rows="20"><%= @coffee["brew_guide"] %></textarea></label>
+                </div>
+            </div>
+            <button class="btn black">Edit Coffee</button>
+        </form>
+    </div>
+</div>

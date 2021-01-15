@@ -1,1 +1,8 @@
-<label for="roaster_link">Purchase Link<input type="url" name="roaster_link" placeholder="https://marketlane.coffee"></label>
+
+ <%# Delete %>
+<li><a href="/coffee/<%= @coffee["id"] %>/delete" class="btn-floating btn-large black"><i class="fas fa-trash-alt"></i></a></li>
+
+<%# Edit Link %>
+<li><a href="/coffee/<%= @coffees["id"] %>/edit" class="btn-floating btn-large black"><i class="fas fa-edit"></i></a></li>
+
+

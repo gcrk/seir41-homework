@@ -5,8 +5,9 @@
             <% @coffees.each do |coffee| %>
             <a class="post-card" href="/coffee/<%= coffee["id"] %>">
                 <div class="post-content">
-                    <span><%= coffee["product_name"] %></span>
+                    <span class="title"><%= coffee["product_name"] %></span>
                     <p><%= coffee["roaster_name"] %></span>
+                    <p>$<%= coffee["price"] %> per 250g</span>
                 </div>
             </a>
             <% end %>

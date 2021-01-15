@@ -6,7 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/css/style.css">
     <link rel="stylesheet" href="/css/materialize.min.css">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css" integrity="sha384-vp86vTRFVJgpjF9jiIGPEEqYqlDwgyBgEF109VFjmqGmIY/Y4HV4d3Gp2irVfcrp" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css"
+        integrity="sha384-vp86vTRFVJgpjF9jiIGPEEqYqlDwgyBgEF109VFjmqGmIY/Y4HV4d3Gp2irVfcrp" crossorigin="anonymous">
     <script src="/js/jQuery.js"></script>
     <script src="/js/materialize.min.js"></script>
     <script src="/js/main.js"></script>
@@ -14,14 +15,31 @@
 
 <body>
     <%= yield %>
-    <footer>
+    <div>
         <div class="fixed-action-btn">
             <a href="/" class="btn-floating btn-large black"><i class="fas fa-coffee"></i></a>
             <ul>
+                <%# Add a coffee %>
                 <li><a href="/coffee/new" class="btn-floating btn-large black"><i class="fas fa-plus"></i></a></li>
-                <li><a href="/coffee" class="btn-floating btn-large black"><i class="fas fa-tachometer-alt"></i></a></li>
-                <li><a href="/coffee" class="btn-floating btn-large black"><i class="fas fa-pencil"></i></a></li>
+
+                <%# Coffee Dashboard %>
+                <li><a href="/coffee" class="btn-floating btn-large black"><i class="fas fa-tachometer-alt"></i></a>
+                </li>
+
+                <%# Search %>
+                <li><a href="/coffee/search" class="btn-floating btn-large black"><i class="fas fa-search"></i></a>
+                </li>
+
+                <%# TO DO: only show the edit/delete links if we're on the coffee page; maybe check if params contains an id. %>
             </ul>
+        </div>
+    </div>
+
+    <footer>
+        <div class="container">
+            <a class="footer-link" href="/">Fav coffees</a>
+            <a class="footer-link" href="/coffee">Dashboard</a>
+            <a class="footer-link" href="/coffee/new">Add a coffee</a>
         </div>
     </footer>
 
