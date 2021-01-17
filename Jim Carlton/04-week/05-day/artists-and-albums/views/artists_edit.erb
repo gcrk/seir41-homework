@@ -1,0 +1,37 @@
+<h2>Edit <%= @artist[:name] %>! 🎙</h2>
+
+<form action="/artists/<%= @artist.id %>" method="post" id="artist-edit">
+
+  <label>
+    Artist Name:
+    <input type="text" name="name" placeholder="e.g. Aphex Twin" required>
+  </label>
+
+  <label>
+    Bio:
+    <input type="text" name="bio" placeholder="e.g. Richard D James was born in 1979...">
+  </label>
+
+  <label>
+    Genres
+    <input type="text" name="genres" placeholder="e.g. Experimental">
+  </label>
+
+  <label>
+    Quote:
+    <input type="text" name="quote" placeholder="e.g. I created SAW I when I was a teenager">
+  </label>
+
+  <label>
+    Website:
+    <input type="text" name="website" placeholder="e.g. https://www...">
+  </label>
+
+  <label>
+    Photos:
+    <input type="text" name="photos" placeholder="e.g. https://www...">
+  </label>
+
+  <button>Update! 🎙</button>
+
+</form>
