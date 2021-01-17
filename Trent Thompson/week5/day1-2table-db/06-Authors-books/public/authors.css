@@ -1,0 +1,25 @@
+body {
+  background-color: teal;
+  font-family: 'Imbue', serif;
+}
+
+.container {
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+nav {
+  max-width: 960px;
+  margin: 20px auto 0 auto
+}
+
+a {
+  font-weight: bolder;
+  font-size: 20px;
+}
+
+h1 {
+    background-color: papayawhip;
+    text-align: center;
+    border-radius:0.2rem;
+}

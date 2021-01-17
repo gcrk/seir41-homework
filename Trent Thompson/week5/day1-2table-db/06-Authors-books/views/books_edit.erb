@@ -1,0 +1,14 @@
+<h1><%=@books[:book]%> Edit Page</h1>
+
+<form action="/books/<%=@books[:id]%>" method="post"> <!-- id is needed so we know aht to edit -->
+  <label>
+    Name:
+    <input name="book" placeholder="<%=@books[:book]%>">
+  </label
+
+  <label>
+    Genre:
+    <input name="genre" placeholder="<%=@books[:genre]%>">
+  </label>
+  <button>Submit Changes</button>
+</form>
