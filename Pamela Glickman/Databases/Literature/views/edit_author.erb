@@ -1,0 +1,15 @@
+<h2>Edit <%= @author["name"] %></h2>
+
+<form action="/edit_author/<%= @author["author_id"] %>" method="post">
+  <p>
+    <label for="name">Name: </label>
+    <input id="name" name="name" value="<%= @author["name"] %>" required>
+    <label for="birth_year">Birth Year: </label>
+    <input id="birth_year" type="number" name="birth_year" value="<%= @author["birth_year"] %>">
+    <label for="death_year">Death Year: </label>
+    <input id="death_year" type="number" name="death_year" value="<%= @author["death_year"] %>">
+    <label for="death_year">Image: </label>
+    <input id="death_year" name="image" value="<%= @author["image"] %>" required>
+  </p>
+  <button> Edit the Author </button>
+</form>

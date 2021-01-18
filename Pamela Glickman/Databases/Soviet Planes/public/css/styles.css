@@ -1,7 +1,13 @@
 /* The page looks hideous, I should add more styles */
+body {
+  color: darkred;
+  background-color: lemonchiffon;
+}
 
 main {
-  width: 90%;
+  font-size: 1rem;
+  font-family: 'Raleway', sans-serif;
+  width: 100%;
   margin: 0 auto;
 }
 
@@ -11,46 +17,106 @@ div {
 }
 
 h1 {
+  font-family: 'Staatliches', cursive;
+  letter-spacing: 5px;
   text-align: center;
-  font-size: 4rem;
-  margin: 20px;
+  font-size: 4.5rem;
+  margin: 20px auto;
+  width: 70%;
+  border-bottom: 5px solid #aa0000;
+  text-shadow: 2px 2px 2px black;
 }
 
 h2 {
   text-align: center;
   font-size: 3rem;
+  text-shadow: 1px 1px 2px black;
+}
+
+input {
+  background-color: inherit;
+  padding: 2px;
+  color: #cc6600;
+  font-size: 1rem;
+  text-align: center;
+  border: 1px solid lemonchiffon;
+  border-bottom: 2px solid #cc6600;
+  outline: none;
+}
+
+input:hover {
+  cursor: pointer;
 }
 
 button {
+  color: white;
+  background-color: darkred;
   display: block;
   width: 90%;
-  margin: 2% auto;
+  margin: 12% auto;
   text-align: center;
-  font-size: 2.5rem;
   letter-spacing: 3px;
+  font-size: 2rem;
+  border: none;
+  outline: none;
+  border-radius: 10px;
+  text-shadow: 1px 1px 2px black;
+  box-shadow: 1px 1px 2px black;
 }
 
+button.edit {
+  color: white;
+  background-color: orangered;
+}
+
+
 button.submit {
-  margin-bottom: 60px;
+  background-color: darkred;
+  color: white;
+  margin: 6% auto;
+  width: 70%;
+  font-size: 2.5rem;
+}
+
+button:hover {
+  background-color: #aa0000;
+  cursor: pointer;
+}
+
+button.edit:hover {
+  background-color: #ff6600;
 }
 
 form {
   display: block;
   width: 80%;
-  margin: 0 auto;
-  text-align: center;
+  margin: 2% auto;
+}
+
+p {
+  display: flex;
+  justify-content: space-between;
+  line-height: 2;
+  margin-bottom: 5%:
+}
+
+thead {
+  line-height: 3;
 }
 
 table {
   width: 80%;
-  margin: 0 auto;
+  margin: 5% auto;
+  font-size: 1.4rem;
 }
 
 td, th {
-  width: 15%;
+  width: 20%;
   text-align: center;
 }
 
 img {
+  border: 1px solid grey;
   max-width: 100%;
+  box-shadow: 2px 2px 2px black;
 }

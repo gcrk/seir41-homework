@@ -1,0 +1,152 @@
+body {
+    background-color: #d6c2b5;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.container {
+    max-width: 960px;
+    margin: 0 auto;
+}
+
+a {
+    text-decoration: none;
+    color: white;
+}
+
+nav a {
+    color: red;
+    text-align: right;
+}
+
+nav a:hover {
+    color: rgb(241, 177, 177);
+    transition: 0.1s all;
+}
+
+img {
+    max-width: 100%;
+}
+
+textarea {
+    height: 100% !important;
+}
+
+/*--------------------------------------------------------------
+# Form 
+--------------------------------------------------------------*/
+label {
+    color: rgb(34, 34, 34) !important;
+}
+
+/* label underline focus color */
+.input-field input[type=text]:focus {
+    border-bottom: 1px solid #000 !important;
+    box-shadow: none !important;
+}
+
+
+/*--------------------------------------------------------------
+# Cards
+--------------------------------------------------------------*/
+
+/* Post grid flex wrapper */
+.post-grid {
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 auto;
+}
+
+/* Card element */
+.post-card {
+    flex: 1 1 250px;
+    flex-direction: column;
+    overflow: hidden;
+    margin: 10px;
+    padding: 0 20px 40px;
+    min-height: 220px;
+    background-color: #fff;
+    border-radius: 4px;
+    background-size: cover;
+}
+
+/* .post-card:hover {
+    transform: translateX(10px);
+} */
+
+transition: transform 0.2s ease-in-out;
+
+/* Post image
+.post-image {
+    display: block;
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 5px;
+} */
+
+/* Post content */
+.post-content {
+    padding: 20px 0px;
+}
+
+.post-content p {
+    color: black;
+}
+
+.post-content .title {
+    font-size: 25px;
+    color: red;
+}
+
+/*--------------------------------------------------------------
+# Show page
+--------------------------------------------------------------*/
+
+.hero-section {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    background-color: #000;
+    color: white;
+}
+
+.hero-section span {
+    color: white;
+}
+
+a.buy-now,
+a.footer-link {
+    color: red;
+}
+
+.hero-section h1 {
+    color: white;
+    font-weight: 600;
+    text-align: left;
+}
+
+img.product-image {
+    height: 100vh;
+    margin-right: 2rem;
+}
+
+.text-section {
+    padding: 2rem 0;
+}
+
+.text-section p {
+    text-align: justify;
+}
+
+/*--------------------------------------------------------------
+# Show page
+--------------------------------------------------------------*/
+
+footer {
+    margin-top: 2rem;
+}
+
+a.footer-link {
+    padding-right: 1rem;
+}
