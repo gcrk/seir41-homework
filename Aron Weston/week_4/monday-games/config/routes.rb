@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   get '/guess/result' => 'guess#result'
 
   #SPR
-  get "/rock_paper_scissors/:throw"
+  get "/spr" => 'spr#index'
+  get "/spr/:throw" => 'spr#throw'
 
 end
