@@ -1,0 +1,26 @@
+<h2><%= @author[:name] %></h2>
+<div class="author_controls">
+  <button><a href="/authors/<%= @author[:id] %>/edit">Edit Author</a></button>
+  <button><a href="/authors/<%= @author[:id] %>/delete">Delete Author</a></button>
+</div>
+
+<h1>Country: <%= @author[:country] %></h1>
+
+
+<% unless @author[:image].nil? || @author[:image].empty? %>
+<img src="<%= @author[:image] %>" width ="300" height ="300" alt="Author's Image Coming Soon">
+<% end %>
+
+
+
+<h2>Books:</h2>
+
+
+
+<% @books.each do |book| %>
+<p>
+   <a href="/authors/<%= @author[:id] %>/<%= book[:id] %>">
+    📘<%= book.title%>
+   </a>
+</p>
+<% end %>
