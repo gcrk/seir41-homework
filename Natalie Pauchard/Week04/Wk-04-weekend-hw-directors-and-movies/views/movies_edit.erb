@@ -1,0 +1,30 @@
+<h1>Update Movie</h1>
+
+<form action="/movies/<%= @movie["id"] %>" method="post">
+  <label>
+    Name:
+    <input name="name" placeholder="Enter movie here" required value="<%= @movie["name"] %>"> <!-- required causes error message cannot format differently -->
+  </label>
+
+  <label>
+  Year of Release:
+  <input type="number" name="year" placeholder="Enter year here" value="<%= @movie["year"] %>">
+</label>
+
+<label>
+  Director:
+  <select name="director_id">
+    <option></option><!-- Blank is first so it's the default -->
+    <% Director.all.each do |director| %>
+      <option value="<%= director.id %>" <%= "selected" if director.id == @movie.director_id %>><%= director.name %></option>
+    <% end %>
+  </select>
+</label>
+
+<label>
+  Image:
+  <input type="url" name="image" placeholder="http://..." value="<%= @movie["image"] %>">
+</label>
+
+  <button>Update</button>
+</form>
