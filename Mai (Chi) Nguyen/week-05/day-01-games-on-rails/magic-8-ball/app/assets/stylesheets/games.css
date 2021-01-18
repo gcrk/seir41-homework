@@ -1,0 +1,32 @@
+body {
+  background-color: pink;
+}
+
+h1 {
+  text-align: center;
+}
+
+.container {
+  max-width: 960px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+nav a {
+  display: inline-block;
+  margin: 0 auto;
+}
+
+nav {
+  text-align: right;
+}
+
+ul {
+  text-align: left;
+  position: relative;
+  left: 40%;
+}
+
+input, button {
+  margin: 10px;
+}
