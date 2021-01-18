@@ -1,0 +1,21 @@
+
+
+<form action="/talks/<%= @talk['id'] %>" method = post >
+  <p>Fill in the form to update the talk!</p>
+  <label>
+    Title:
+    <input type="text" name = 'title' placeholder = 'Examined Life' value = '<%= @talk['title'] %>' required>
+  </label>
+
+  <label>
+    People:
+    <input type="text" name = 'people' placeholder = 'Judith Butler' value = '<%= @talk['people'] %>' required>
+  </label>
+
+  <label>
+    Youtube Embedded Link:
+    <input type="text" name = 'video' placeholder = 'https://www.youtube.com/embed/...' value = '<%= @talk['video'] %>' required>
+  </label>
+
+  <button>Update Talk</button>
+</form>

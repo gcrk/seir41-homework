@@ -1,0 +1,66 @@
+<h2>Editing: <%= @album.album_name %> 💿</h2>
+
+<form action="/albums/<%= @album.id %>" method="post" id="album-edit">
+
+  <label>
+    Album Name:
+    <input type="text" name="album_name" placeholder="Selected Ambient Works I" required>
+  </label>
+
+  <label>
+    Artist:
+    <select class="" name="artist_id">
+
+      <% @artists.each do |artist| %>
+
+        <option value="<%= artist.id %>"><%= artist.name %></option>
+
+      <% end %>
+
+    </select>
+
+  </label>
+
+  <label>
+    Other Artists Involved:
+    <input type="text" name="artist_other" placeholder="e.g. Luke Vibert">
+  </label>
+
+  <label>
+    Description:
+    <input type="text" name="description" placeholder="e.g. This album was inspired..">
+  </label>
+
+  <label>
+    Tracklist:
+    <input type="text" name="tracks" placeholder="e.g. 1. Rhubarb..">
+  </label>
+
+  <label>
+    Release Date:
+    <input type="date" name="released">
+  </label>
+
+  <label>
+    Label:
+    <input type="text" name="label" placeholder="e.g. Warp Records">
+  </label>
+
+  <label>
+    Rating:
+    <input type="number" name="rating" placeholder="e.g. 8">
+  </label>
+
+  <label>
+    Link to purchase:
+    <input type="text" name="link" placeholder="e.g. https://..">
+  </label>
+
+  <label>
+    Album Art:
+    <input type="text"  name="artwork" placeholder="e.g. https://..">
+  </label>
+
+  <button>Update! 💿</button>
+
+</form>
