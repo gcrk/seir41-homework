@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Games</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+    <nav>
+    <a href="/">Home</a>
+    <a href="/magic8">Play Magic 8</a>
+    <a href="/secretnumber">Play Secret Number</a>
+    <a href="/rockpaperscissors">Play Rock Paper Scissors</a>
+    </nav>
+    <%= yield %>
+  </body>
+</html>
