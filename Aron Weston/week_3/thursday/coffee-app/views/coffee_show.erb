@@ -1,0 +1,30 @@
+<head>
+    <title><%= @coffee["product_name"] %> | <%= @coffee["roaster_name"] %></title>
+</head>
+
+<section class="hero-section">
+    <img class="product-image"
+        src="<%= @coffee["product_image"] %>" alt="">
+    <div class="coffee-description">
+        <h1><%= @coffee["product_name"] %></h1>
+        <p><%= @coffee["roaster_name"] %> // <%= @coffee['roaster_location'] %></p>
+        <p><%= @coffee["origin"] %></p>
+        <p><%= @coffee["roast_profile"] %></p>
+        <p>$<%= @coffee["price"].to_f %> per 250g bag</p>
+        <p>rating: <%= @coffee["aron_rating"] %>/10</p>
+        <a target="_blank" class="buy-now" href="<%= @coffee["purchase_link"] %>">buy now</a>
+    </div>
+</section>
+
+<div class="container">
+    <section class="text-section">
+        <h3>Tasting Notes & Roast Profile</h3>
+        <p><%= @coffee["tasting_notes"] %></p>
+    </section>
+
+    <section class="text-section">
+        <h3>Brew Guide</h3>
+        <p><%= @coffee["brew_guide"] %></p>
+    </section>
+</div>
+

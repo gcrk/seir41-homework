@@ -1,0 +1,12 @@
+<title>Directors | IMDB</title>
+
+<h1>Directors</h1>
+
+<% @directors.each do |director| %>
+    <div class="director card">
+        <img src="#{<%= director.image %>}" alt="Director image">
+        <p><%= director.name %></p>
+        <p>Age: <%= director.age %></p>
+        <p>Nationality: <%= director.country %></p>
+    </div>
+<% end %>
