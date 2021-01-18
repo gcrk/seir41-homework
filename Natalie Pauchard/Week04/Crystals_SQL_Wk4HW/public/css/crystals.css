@@ -1,0 +1,29 @@
+body {
+  background-color: #CD9FEA;
+  color: #D1D7E0;
+}
+
+.container {
+  max-width: 960px;
+  margin: 0 auto;
+  color: #635A6A;
+}
+
+.navigate {
+  color: #D1D7E0;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  color: #D1D7E0;
+  }
+}
+
+nav a {
+  color: #D1D7E0;
+}
+
+img {
+  max-width: 100%;
+}

@@ -1,0 +1,14 @@
+<h2>Add A Book Written By <%= @author["name"] %></h2>
+
+<form action="/add_book/<%= @author["author_id"] %>" method="post">
+  <p>
+    <label for="title">Title: </label>
+    <input id="title" type="text" name="title" required>
+  </p>
+  <p>
+    <label for="year">Publication Year: </label>
+    <input id="year" type="number" name="publication_year">
+  </p>
+  <button>Add Book</button>
+
+</form>

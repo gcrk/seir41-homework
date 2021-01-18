@@ -1,0 +1,9 @@
+<h1>All Crystals</h1>
+
+<% @crystals.each do |crystal| %>
+<p>
+  <a href="crystals/<%= crystal["id"] %>">
+  <%= crystal["name"] %>
+  </a>
+</p>
+<% end %>

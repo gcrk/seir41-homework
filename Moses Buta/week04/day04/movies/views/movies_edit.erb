@@ -1,0 +1,25 @@
+<h1>Edit Butterfly</h1>
+
+<form action="/movies/<%= @movies["id"] %>" method="post">
+  <label>
+    Name:
+    <input name="name" placeholder="Titanic" required value="<%= @movie["name"] %>">
+  </label>
+
+  <label>
+    Release Year:
+    <input name="release_year" placeholder="1997" value="<%= @movie["release_year"] %>">
+  </label>
+
+  <label>
+    Small Plot:
+    <input name="small_plot" placeholder="the film outlines ..." value="<%= @movie["small_plot"] %>">
+  </label>
+
+  <label>
+    Cover:
+    <input type="url" name="cover" placeholder="http://..." value="<%= @movie["cover"] %>">
+  </label>
+
+  <button>Update Movie</button>
+</form>
