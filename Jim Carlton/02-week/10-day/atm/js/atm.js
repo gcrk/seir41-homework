@@ -5,6 +5,13 @@ $( document ).ready(function() { // Document ready so scripts can be placed at
   let checkingBalance;
   let savingsBalance;
 
+  let updateBalances = function () {
+
+    checkingBalance = Number($('#checking-balance').html().substring(1));
+    savingsBalance = Number($('#savings-balance').html().substring(1));
+
+  }
+
 // DEPOSIT FUNCTION
 
   let depositFunc = function (type1, balance1) {
@@ -38,14 +45,14 @@ $( document ).ready(function() { // Document ready so scripts can be placed at
       $(`#${type2}-balance`).text('$' + balance2);
     }
 
-    // conditions above mean that if input is greater than the total of all accounts, don't to a thing.
+    // conditions above allow for if input is greater than the total of all accounts, don't to a thing.
 
     if (balance1 <= 0) { // if balance is 0, add zero class to show alert to user
-      $(`#${type1}`).addClass('zero');
+      $(`#${type1}-balance`).addClass('zero');
     }
 
     if (balance2 <= 0) { // if balance is 0, add zero class to show alert to user
-      $(`#${type2}`).addClass('zero');
+      $(`#${type2}-balance`).addClass('zero');
     }
 
   };
@@ -55,18 +62,14 @@ $( document ).ready(function() { // Document ready so scripts can be placed at
 
   $(`#checking-deposit`).on('click', function () {
 
-    checkingBalance = Number($('#checking-balance').html().substring(1));
-
+    updateBalances();
     depositFunc('checking', checkingBalance);
 
   });
 
   $('#checking-withdraw').on('click', function () {
 
-    checkingBalance = Number($('#checking-balance').html().substring(1));
-
-    savingsBalance = Number($('#savings-balance').html().substring(1));
-
+    updateBalances();
     withdrawFunc('checking', checkingBalance, 'savings', savingsBalance);
 
   });
@@ -77,8 +80,7 @@ $( document ).ready(function() { // Document ready so scripts can be placed at
 
   $('#savings-deposit').on('click', function () {
 
-    savingsBalance = Number($('#savings-balance').html().substring(1));
-
+    updateBalances();
     depositFunc('savings', savingsBalance);
 
   });
@@ -87,10 +89,7 @@ $( document ).ready(function() { // Document ready so scripts can be placed at
 
   $('#savings-withdraw').on('click', function () {
 
-    checkingBalance = Number($('#checking-balance').html().substring(1));
-
-    savingsBalance = Number($('#savings-balance').html().substring(1));
-
+    updateBalances();
     withdrawFunc('savings', savingsBalance, 'checking', checkingBalance);
 
   });

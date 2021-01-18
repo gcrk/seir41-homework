@@ -22,10 +22,10 @@
 //
 // };
 // window.setInterval(catWalk, 50);
-const imageRef = document.getElementsByTagName('img')[0];
-imageRef.style.left = '0px';
+const $imageRef = $('img');
+$imageRef.style.left = '0px';
 const catWalk = function() {
   imageRef.style.left = (parseInt(imageRef.style.left) + 10) + 'px';
-  imageRef.style. = (parseInt(imageRef.style.right) + 10) + 'px';
+
 }
 window.setInterval(catWalk, 50);

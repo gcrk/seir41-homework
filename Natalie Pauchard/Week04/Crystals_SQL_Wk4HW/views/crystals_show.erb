@@ -1,0 +1,14 @@
+<h1><%= @crystal["name"] %></h1>
+
+<% unless @crystal["image"].nil? || @crystal["image"].empty? %>
+  <img src="<%= @crystal["image"] %>" alt="<%= @crystal["name"] %>">
+<% end %>
+
+
+<h3>Healing Properties (apparently):</h3>
+<p><%= @crystal["healingprop"] %></p>
+
+<div class="controls">
+  <a href="/crystals/<%= @crystal["id"] %>/edit">Edit</a>
+  <a href="/crystals/<%= @crystal["id"] %>/delete">Delete</a>
+</div>

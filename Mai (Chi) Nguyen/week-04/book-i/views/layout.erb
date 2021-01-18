@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="/css/master.css">
+    <title>Book I</title>
+  </head>
+  <body>
+    <nav>
+      <a href="/">Home</a>
+    </nav>
+
+    <div class="container">
+      <h1>Book Info Library</h1>
+
+      <form class="cover" action="/result">
+        <label>
+          Enter a book's name:
+          <input name="name" placeholder="eg: Harry Potter">
+        </label>
+
+        <button>Search</button>
+
+      </form>
+
+      <%= yield %>
+
+    </div>
+
+  </body>
+
+</html>
