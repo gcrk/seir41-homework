@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  # Games Route 
+  root :to => 'pages#index'
+
   # Magic Eightball
   get '/eightball' => 'eightball#index'
   get '/eightball/predict' => 'eightball#predict'
