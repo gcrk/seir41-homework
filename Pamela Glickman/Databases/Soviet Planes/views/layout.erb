@@ -4,6 +4,8 @@
     <meta charset="utf-8">
     <title>Soviet Planes</title>
     <link rel="stylesheet" href="/css/styles.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Raleway&family=Staatliches&display=swap" rel="stylesheet">
   </head>
   <body>
 
@@ -20,7 +22,7 @@
           <tr>
             <th>Name</th>
             <th>Role</th>
-            <th>Max Speed (in knots)</th>
+            <th>Max Speed</th>
             <th>Image</th>
             <th>Modify</th>
           </tr>
@@ -30,7 +32,7 @@
             <tr>
               <td><%= plane["name"] %></td>
               <td><%= plane["role"] %></td>
-              <td><%= plane["max_speed"] %></td>
+              <td><%= plane["max_speed"] %> knots</td>
               <td>
                 <!-- The unless statement doesn't work -->
                 <% unless plane["image"].nil? || plane["image"].empty? || plane["image"] == "_" %>
@@ -39,10 +41,10 @@
               </td>
               <td>
                 <form action="/edit/<%= plane["id"] %>">
-                  <button>Edit</button>
+                  <button class="edit">Edit</button>
                 </form>
                 <form action="/delete/<%= plane["id"] %>">
-                  <button>Delete</button>
+                  <button class="delete">Delete</button>
                 </form>
               </td>
             </tr>

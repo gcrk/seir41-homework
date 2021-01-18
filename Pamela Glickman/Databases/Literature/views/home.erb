@@ -1,0 +1,38 @@
+<% @authors.each do |author| %>
+  <section>
+    <img src="<%= author["image"]%>" alt="<%= author["name"] %>">
+      <div class="book_list">
+        <h2><%= author["name"] %> (<%= author["birth_year"] %> - <%= author["death_year"] %>)</h2>
+        <p><a href="/edit_author/<%= author["author_id"] %>">Edit Author</a> <a href="/delete_author/<%= author["author_id"] %>">Delete Author</a></p>
+        <h3>Book List</h3>
+        <% author.books.each do |book| %>
+            <p><%= book["title"] %> - <%= book["publication_year"] %> <a href="/edit_book/<%= book["book_id"] %>">Edit</a> <a href="/delete_book/<%= book["book_id"] %>">Remove</a></p>
+        <% end %>
+
+        <p><a href="/add_book/<%= author["author_id"]%>">Click here to add a book</a></p>
+
+      </div>
+
+  </section>
+<% end %>
+
+<section class="author_form">
+  <h2>Add an Author</h2>
+
+  <form action="/add_author" method="post">
+    <p>
+      <label for="name">Name: </label>
+      <input id="name" name="name" placeholder="Fyodor Dostoyevsky" required>
+      <label for="death_year">Image: </label>
+      <input id="death_year" name="image" placeholder="https://...." required>
+    </p>
+    <p>  
+      <label for="birth_year">Birth Year: </label>
+      <input id="birth_year" type="number" name="birth_year" placeholder="1821">
+      <label for="death_year">Death Year: </label>
+      <input id="death_year" type="number" name="death_year" placeholder="1881">
+    </p>
+    <button> Add an Author </button>
+  </form>
+
+</section>
