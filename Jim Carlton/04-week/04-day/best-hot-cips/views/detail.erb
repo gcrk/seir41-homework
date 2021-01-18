@@ -1,0 +1,16 @@
+<div class="detail-container">
+
+<h2><%= @chippery["place"] %></h2>
+<h3><%= @chippery["location"] %></h3>
+<p><%= @chippery["rating"] %></p>
+<img src="<%= @chippery["image"] %>" alt="<%= @chippery["place"] %>">
+<button><a href="<%= @chippery["map"] %>" target="_blank">Take me there pronto!</a></button>
+
+<div class="controls">
+
+<a href="/<%= @chippery["id"] %>/edit">Edit</a>
+<a href="/<%= @chippery["id"] %>/remove">Remove</a>
+
+</div>
+
+</div>
