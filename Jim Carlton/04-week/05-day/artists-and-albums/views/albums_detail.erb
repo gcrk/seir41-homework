@@ -1,0 +1,28 @@
+<h2><%= @album[:album_name] %></h2>
+
+<div class="sub-header">
+
+<% unless @album[:artwork].nil? || @album[:artwork].empty? %>
+<img src="<%= @album[:artwork] %>" alt="<%= @album[:album_name] %>">
+<% end %>
+
+</div>
+
+<p>Artist: <a href="/artists/<%= @album.artist[:artist_id] %>"><%= @album.artist[:name] %></a></p>
+
+<p>Released: <%= @album[:released] %></p>
+
+<p><%= @album[:description] %></p>
+
+<p>Tracklist: <%= @album[:tracks] %></p>
+
+<p>Label: <%= @album[:label] %></p>
+
+<p>Rating: <%= @album[:rating] %></p>
+
+<p>Purchase: <a href="<%= @album[:link] %>" target="_blank">Buy Now</a></p>
+
+<div class="controls">
+  <a href="/albums/<%= @album["id"] %>/edit">Edit Album</a>
+  <a href="/albums/<%= @album["id"] %>/delete">Delete</a>
+</div>
