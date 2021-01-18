@@ -6,6 +6,10 @@
   <img src="<%= @dish['image'] %>" alt="<%= @dish['name'] %>">
 <% end %>
 
+<form action="/food">
+  <button>Back</button>
+</form>
+
 <form action="/food/<%= @dish['id'] %>/edit">
   <button>Edit</button>
 </form>

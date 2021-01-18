@@ -1,3 +1,44 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
 body {
-  background-color: #fee;
+  background-color: rgba(0, 0, 0, .75);
+  color: rgba(255, 255, 255, 0.90);
+  font-family: 'Poppins', sans-serif;
+  text-align: center;
+}
+
+.container {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 0;
+}
+
+nav {
+  text-align: right;
+}
+
+a {
+  /* text-decoration: none; */
+  color:inherit;
+}
+
+li {
+  position: relative;
+  left: 40%;
+  text-align: left;
+}
+
+img {
+  width: 50%;
+  display: block;
+  margin: 0 auto;
+}
+
+form {
+  display: inline-flex;
+  margin: 10px auto;
+}
+
+button {
+  font-family: 'Poppins', sans-serif;
 }
