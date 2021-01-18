@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <style>
+    @import url('https://fonts.googleapis.com/css2?family=Coda+Caption:wght@800&display=swap');
+    </style>
     <title>Games</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
@@ -8,14 +11,15 @@
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
-
+<div class="container">
   <body>
     <nav>
     <a href="/">Home</a>
-    <a href="/magic8">Play Magic 8</a>
-    <a href="/secretnumber">Play Secret Number</a>
-    <a href="/rockpaperscissors">Play Rock Paper Scissors</a>
+    <a href="/magic8">Magic 8 Ball</a>
+    <a href="/secretnumber">Secret Number</a>
+    <a href="/rockpaperscissors">Rock Paper Scissors</a>
     </nav>
     <%= yield %>
   </body>
+  </div>
 </html>

@@ -1,29 +1,46 @@
 body {
-  background-color: #CD9FEA;
-  color: #D1D7E0;
+  background-color: #E3E2DF;
+  font-family: 'Coda Caption', sans-serif;
 }
 
 .container {
   max-width: 960px;
   margin: 0 auto;
-  color: #635A6A;
+  color: #5D001E;
 }
 
 .navigate {
-  color: #D1D7E0;
+  color: #5D001E;
 }
 
 nav {
   display: flex;
   justify-content: space-between;
-  color: #D1D7E0;
+  color: #5D001E;
   }
 }
 
-nav a {
-  color: #D1D7E0;
+h2 {
+  color: #9A1750;
+}
+nav {
+  color: #5D001E;
+}
+
+a {
+  color: #5D001E;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #EE4C7C;
+  text-decoration: underline;
 }
 
 img {
   max-width: 100%;
 }
+
+ * {
+   cursor: url(https://cur.cursors-4u.net/toons/too-3/too295.cur), auto !important;
+ }
