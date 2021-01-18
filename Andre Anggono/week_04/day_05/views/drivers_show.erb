@@ -1,0 +1,26 @@
+<h1><%= "#{@driver.first_name} #{@driver.last_name} ##{@driver.drivers_number}" %></h1>
+
+<% 
+  stat_header = %w[Team Country Podiums Points Grands\ Prix\ Entered Wolrd\ Championships Highest\ Grid\ Position Date\ of\ Birth Place\ of\ Birth] 
+  stat_data = Driver.column_names.slice(4, 9)
+%>
+
+<table class="table">
+  <% stat_header.size.times { |i| %>
+  <tr>
+    <th scope="row" class="stat-key">
+      <span class="text"><%= stat_header[i] %></span>
+    </th>
+    <td class="stat-value">
+      <%= 
+          if stat_header[i] == "Team"
+            binding.pry
+            @teams.find(@driver[:team]).name
+          else
+            @driver[stat_data[i].to_sym] 
+          end
+        %>
+    </td>
+  </tr>
+  <% } %>
+</table>
