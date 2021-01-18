@@ -1,0 +1,30 @@
+<h1>Add New Movie</h1>
+
+<form action="/movies" method="post">
+  <label>
+    Movie Title:
+    <input name="name" placeholder="Enter movie here" required>
+  </label>
+
+  <label>
+    Year of Movie Release:
+    <input type="number" name="year" placeholder="Enter year of movie release">
+  </label>
+
+  <label>
+    Director:
+    <select name="director_id">
+      <option></option>
+      <% Director.all.each do |director| %>
+        <option value="<%= director.id %>"><%= director.name %></option>
+      <% end %>
+    </select>
+  </label>
+
+  <label>
+    Image:
+    <input type="url" name="image" placeholder="http://...">
+  </label>
+
+  <button>Add Movie</button>
+</form>

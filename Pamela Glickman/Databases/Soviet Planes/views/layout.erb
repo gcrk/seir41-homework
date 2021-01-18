@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Soviet Planes</title>
+    <link rel="stylesheet" href="/css/styles.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Raleway&family=Staatliches&display=swap" rel="stylesheet">
+  </head>
+  <body>
+
+    <main>
+
+      <!-- This looks hideous, I should add more styles and fix the images glitch-->
+
+      <h1>Soviet World War II Planes</h1>
+
+      <%= yield %>
+
+      <table>
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Role</th>
+            <th>Max Speed</th>
+            <th>Image</th>
+            <th>Modify</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% @planes.each do |plane| %>
+            <tr>
+              <td><%= plane["name"] %></td>
+              <td><%= plane["role"] %></td>
+              <td><%= plane["max_speed"] %> knots</td>
+              <td>
+                <!-- The unless statement doesn't work -->
+                <% unless plane["image"].nil? || plane["image"].empty? || plane["image"] == "_" %>
+                  <img src="<%= plane["image"] %>" alt="<%= plane["name"] %>">
+                <% end %>
+              </td>
+              <td>
+                <form action="/edit/<%= plane["id"] %>">
+                  <button class="edit">Edit</button>
+                </form>
+                <form action="/delete/<%= plane["id"] %>">
+                  <button class="delete">Delete</button>
+                </form>
+              </td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+
+    </main>
+
+  </body>
+</html>

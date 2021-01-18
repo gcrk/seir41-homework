@@ -1,0 +1,11 @@
+<h2><%= @talk['title'] %></h2>
+<h3><%= @talk['people'] %></h3>
+
+<% unless @talk['video'].nil? || @talk['video'].empty? %>
+<iframe src="<%= @talk['video'] %>" frameborder="0"></iframe>
+<% end %>
+
+<div class="page">
+  <button><a href="/talks/<%= @talk['id'] %>/update">Edit Talk</a></button>
+  <button><a href="/talks/<%= @talk['id'] %>/delete">Delete Talk</a></button>
+</div>

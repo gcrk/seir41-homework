@@ -1,0 +1,74 @@
+<head>
+    <title>Add Espresso.</title>
+</head>
+<div class="container">
+    <h1>Add a new espresso.</h1>
+    <div class="row">
+        <form action="/coffee" method="POST" class="col s12">
+            <div class="row">
+                <div class="input-field col s6">
+                    <input name="product_name" required type="text" class="validate">
+                    <label for="product_name">Product Name</label>
+                </div>
+                <div class="input-field col s6">
+                    <input name="product_image" required type="url" class="validate">
+                    <label for="roaster_image">Image</label>
+                </div>
+
+                <div class="input-field col s6">
+                    <input name="roaster_name" required type="text" class="validate">
+                    <label for="roaster_name">Roaster</label>
+                </div>
+
+                <div class="input-field col s6">
+                    <input name="roaster_location" required type="text" class="validate">
+                    <label for="roaster_location">Location</label>
+                </div>
+
+                <div class="input-field col s6">
+                    <input name="origin" required type="text" class="validate">
+                    <label for="origin">Origin</label>
+                </div>
+
+                <div class="input-field col s6">
+                    <input name="roast_profile" required type="text" class="validate">
+                    <label for="roast_profile">Roast Profile</label>
+                </div>
+
+                <div class="input-field col s6">
+                    <input name="purchase_link" required type="url" class="validate">
+                    <label for="purchase_link">Purchase Link</label>
+                </div>
+
+                <div class="input-field col s6">
+                    <input name="price" required type="text" class="validate">
+                    <label for="price">Price</label>
+                </div>
+
+                <div class="input-field col s6">
+                    <input name="aron_rating" required type="number" class="validate">
+                    <label for="price">Aron Rating</label>
+                </div>
+
+            </div>
+
+
+    </div>
+
+    <div class="row">
+        <div class="col s12">
+            <label for="tasting_notes">Tasting Notes
+                <textarea required name="tasting_notes" class="validate" cols="5" rows="20"></textarea></label>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col s12">
+            <label for="brew_guide">Brew Guide
+                <textarea required name="brew_guide" class="validate" cols="5" rows="20"></textarea></label>
+        </div>
+    </div>
+    <button class="btn black">Add Coffee</button>
+    </form>
+</div>
+</div>
