@@ -1,0 +1,26 @@
+body {
+	background-color: cadetblue;
+}
+
+form,
+label {
+	font-size: 1.2em;
+}
+
+label {
+	font-weight: bold;
+}
+
+.result {
+	border-bottom: 2px solid black;
+	padding-bottom: 20px;
+}
+
+td:first-child {
+	font-weight: bold;
+	width: 120px;
+}
+
+div:last-child {
+	border-bottom: none;
+}

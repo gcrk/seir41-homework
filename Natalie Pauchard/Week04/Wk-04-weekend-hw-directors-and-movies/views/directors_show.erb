@@ -1,0 +1,26 @@
+<h1><%= @director["name"] %></h1>
+
+<h2><%= @director["year"] %></h2>
+
+<% unless @director["image"].nil? || @director["image"].empty? %>
+  <img src="<%= @director["image"] %>" alt="<%= @director["name"] %>">
+<% end %>
+
+<% unless @director.movies.empty? %>
+  <h3>Filmography:</h3>
+  <ul>
+    <% @director.movies.each do |movie| %>
+      <li>
+        <a href="/movies/<%= movie.id %>">
+          <%= movie.name %>
+        </a>
+      </li>
+    <% end %>
+  </ul>
+<% end %>
+
+
+<div class="controls">
+  <a href="/directors/<%= @director["id"] %>/edit">Edit</a>
+  <a href="/directors/<%= @director["id"] %>/delete">Delete</a>
+</div>

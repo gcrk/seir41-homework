@@ -1,0 +1,15 @@
+<h1>Update Movie Director</h1>
+
+<form action="/directors/<%= @director["id"] %>" method="post">
+  <label>
+    Name:
+    <input name="name" placeholder="Enter name here" required value="<%= @director["name"] %>"> <!-- required causes error message cannot format differently -->
+  </label>
+
+  <label>
+    Image:
+    <input type="url" name="image" placeholder="http://..." value="<%= @director["image"] %>">
+  </label>
+
+  <button>Update</button>
+</form>

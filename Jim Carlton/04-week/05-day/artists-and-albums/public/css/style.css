@@ -1,0 +1,150 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+body {
+  background-color: black;
+  color: white;
+  font-family: 'Space Mono', monospace;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+h1, h2, a {
+  color: #e6007a;
+}
+
+h1, h2 {
+  text-align: center;
+}
+
+ul {
+  display: flex;
+  justify-content: center;
+  padding-inline-start: 0;
+}
+
+li {
+  padding: 20px;
+  list-style: none;
+  display: inline-flex;
+}
+
+.main-container {
+  max-width: 70%;
+}
+
+.sub-container {
+  flex-wrap: wrap;
+}
+
+.sub-container > li {
+  align-self: bottom;
+  text-align: center;
+  margin-top: 10px;
+}
+
+.sub-container > li > p {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.sub-container > img {
+  align-self: center;
+}
+
+img {
+  display: flex;
+  max-width: 300px;
+  height: 300px;
+  object-fit: cover;
+}
+
+label {
+  display: block;
+  margin: 20px 0;
+}
+
+input, button {
+  padding: 10px;
+  font-family: 'Space Mono', monospace;
+  outline: none;
+  border: 1px solid #e6007a;
+  border-radius: 20px;
+  background-color: rgba(0,0,0,0);
+  color: white;
+}
+
+input {
+  min-width: 200px;
+}
+
+::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+  color: #e6007a;
+}
+::-moz-placeholder { /* Firefox 19+ */
+  color: #e6007a;
+}
+:-ms-input-placeholder { /* IE 10+ */
+  color: #e6007a;
+}
+:-moz-placeholder { /* Firefox 18- */
+  color: #e6007a;
+}
+
+button {
+  margin: 20px 0;
+  padding: 12px 20px;
+  border-radius: 30px;
+  cursor: pointer;
+  font-family: 'Space Mono', monospace;
+}
+
+button:hover {
+  transition: all .2s ease-out;
+  background-color: #e6007a;
+  color: white;
+}
+
+.controls {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+}
+
+.controls {
+  margin: 20px 0;
+}
+
+.controls > a {
+  padding: 20px;
+}
+
+select {
+  min-width: 50%;
+  padding: 10px 10px;
+  border-radius: 30px;
+  cursor: pointer;
+  font-family: 'Space Mono', monospace;
+  outline: none;
+  border: 1px solid #e6007a;
+  border-radius: 20px;
+  background-color: rgba(0,0,0,0);
+  color: #e6007a;
+}
+
+.sub-header {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-evenly;
+  margin-bottom: 50px;
+}
+
+.quote {
+  font-weight: 700;
+  font-style: italic;
+  max-width: 50%;
+  align-self: center;
+}

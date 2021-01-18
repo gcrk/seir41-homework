@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/normalise.css">
+    <link rel="stylesheet" href="/css/skeleton.css">
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+    <nav id="nav" class="row">
+        <div class="col">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/69/IMDB_Logo_2016.svg/1200px-IMDB_Logo_2016.svg.png"
+                alt="IMDB logo" width="150px">
+        </div>
+        <div class="col links">
+            <a href="/movies">Movies</a>
+            <a href="/movies/new">New Movie</a>
+        </div>
+        <div class="col links">
+            <a href="/directors">Directors</a>
+            <a href="/directors/new">New Director</a>
+        </div>
+    </nav>
+    <%= yield %>
+    </div>
+
+</body>
+
+</html>
