@@ -21,6 +21,7 @@
 # Open the REPL
 puts "Welcome to the Ruby REPL"
 puts "Type 'quit' (without brackets) to exit the REPL"
+puts "Warning: This version struggles with special characters and unclosed strings."
 
 # Set the Input
 input = ""
