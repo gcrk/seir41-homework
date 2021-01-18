@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Gamesonrails</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <link rel="stylesheet" href="games.css">
+  </head>
+
+  <body>
+  <nav>
+    <a href="/magic">Magic 8 Ball</a>
+    <a href="/secret">Secret NUmber</a>
+    <a href="/rps">Rock Paper sissors</a>
+  </nav>
+    <%= yield %>
+  </body>
+</html>

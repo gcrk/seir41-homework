@@ -30,31 +30,27 @@ def show_menu
 end
 
 def addition(num1, num2)
-  puts('working')
   sum = num1 + num2
   return sum
 end
 
 def subtraction(num1, num2)
-  puts('working')
-  sum = num1 + num2
+  sum = num1 - num2
   return sum
 end
 
 def multiplication(num1, num2)
-  puts('working')
-  sum = num1 + num2
+  sum = num1 * num2
   return sum
 end
 
 def division(num1, num2)
-  puts('working')
-  sum = num1 + num2
+  sum = num1 / num2
   return sum
 end
 
-show_menu
-menu_choice = gets.chomp.downcase
+show_menu #calls the function
+menu_choice = gets.chomp.downcase #grabs the choice and stores it
 
 until menu_choice == 'q'
   case menu_choice
@@ -62,23 +58,30 @@ until menu_choice == 'q'
     puts 'You chose addition!'
     print 'first number to add:'
     firstNum = gets.to_i
-    print ' second number to add:'
+    print "#{firstNum}...added to what number? : "
     secondNum = gets.to_i
-    addition(firstNum,secondNum)
+    puts addition(firstNum,secondNum)
   when 's'
     puts 'You chose subtraction!'
-    print 'first number to add:'
+    print 'first number please...:'
     firstNum = gets.to_i
-    print ' second number to add:'
+    print "#{firstNum}...minus what number? : "
     secondNum = gets.to_i
-    subtraction(firstNum,secondNum)
+    puts subtraction(firstNum,secondNum)
   when 'm'
     puts 'You chose multiplcation!'
-    print 'first number to add:'
+    print 'first number to multiply:'
     firstNum = gets.to_i
-    print ' second number to add:'
+    print "#{firstNum}...multiplied by...what number?: "
     secondNum = gets.to_i
-    multiplication(firstNum,secondNum)
+    puts multiplication(firstNum,secondNum)
+  when 'd'
+    puts 'You chose division!'
+    print 'first number to divide:'
+    firstNum = gets.to_i
+    print " #{firstNum}... divided by what number? : "
+    secondNum = gets.to_i
+    puts division(firstNum,secondNum)
   else
     puts 'Invalid selection. You idiot.'
 end
@@ -95,9 +98,8 @@ puts "Thanks for using this crappy calculator!"
 # ## Mortgage Calculator
 # Calculate the monthly required payment given the other variables as input (look up the necessary variables)
 #
-# ## BMI Calculator
-# Calculate the body mass index (BMI) for an individual, given their height and weight
-#
+weight
+
 # ## Trip Calculator
 # Calculate a trip time and cost given inputs for
 # - distance
