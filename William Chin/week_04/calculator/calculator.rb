@@ -72,4 +72,3 @@ menu_choice = gets.chomp.downcase
         end
 
                 puts "Thanks for using this calculator!"
-                

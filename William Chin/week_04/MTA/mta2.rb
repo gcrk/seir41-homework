@@ -9,7 +9,7 @@
 # 3 subway lines
 
 line = {
-  "N" => ["Times Square", "34th", "28thN", "23rdN", "Union Square", "8thN"],
+  "N" => ["Times Square", "34th", "28thN", "23rdN", "Union Square", "8thN",],
   "L" => ["8thL", "6th", "Union Square", "3rd", "1st"],
   "6" => ["Grand Central", "33rd", "28th6", "23rd6", "Union Square", "Astorce"]
 }
@@ -43,11 +43,38 @@ endstop = gets.chomp
 else
   totalstops = (uindex1 - index1).abs+(uindex2 - index2).abs #stop old line at Union Square and start new line at Union Square
 puts "You must travel through the following stops start on the #{startstop}."
-puts "Change at the stop Union Square"
+
 puts "Your journey end at #{endstop}. #{totalstops} stops in total. "
 end
 
- 
+  #show stops
+if startline == stopline
 
+if index1 < index2 
+  puts "#{line[startline][index1..index2]}"
+else 
+  index2 < index1
+  puts "#{line[startline][index2..index1].reverse}" 
+end
+end 
+
+if startline != stopline
+
+  if index1 < uindex1 
+    puts "#{line[startline][index1..uindex1]}"
+  else 
+    index1 > uindex1 
+    puts "#{line[startline][uindex1..index1].reverse}"
+  end
+  puts "Change at the stop Union Square"  
+  if index2 > uindex2
+puts "#{line[stopline][uindex2..index2]}"
+  else
+    index2 < uindex2
+    puts "#{line[stopline][index2..uindex2].reverse}"
+  end
+end
+
+ 
 
 
