@@ -1,0 +1,6 @@
+<h2>All Mountains</h2>
+<% @mountains.each { |mountain| %>
+  <p>
+      <%= link_to mountain.name, mountain_path(mountain.id) %> has an elevation level of <%= elevation = mountain.elevation; elevation = 0 unless elevation.present?; number_to_human elevation %> metres.
+  </p>
+<% } %>
