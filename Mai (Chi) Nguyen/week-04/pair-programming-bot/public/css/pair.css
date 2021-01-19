@@ -3,7 +3,6 @@ body {
   text-align: center;
   line-height: 20px;
   color: white;
-  /* background-color: #ffffff; */
   font-family: "Tahoma", "Verdana", "Helvetica", "Arial", sans-serif
 }
 
@@ -13,22 +12,18 @@ h1 {
 }
 
 form {
-  /* display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-between; */
+
   display: inline-block;
   margin: 0 auto;
   padding: 0;
-
 }
 
 button {
-  font-size: 14px;
   padding: 11px 19px;
   font-size: 17.5px;
   border-radius: 6px;
   color: white;
+  border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
 }
 
 .yes {
