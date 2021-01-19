@@ -1,0 +1,13 @@
+<h1>Results</h1>
+
+<% @results.each do |result| %>
+
+<div class="result">
+    <strong><%= result.name %></strong>
+    <p>Depth: <%= result.depth %></p>
+    <p>Area: <%= result.surface_area %></p>
+</div>
+<% end %>
+
+
+
