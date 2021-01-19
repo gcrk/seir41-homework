@@ -1,0 +1,39 @@
+<h2><%= @artist[:name] %></h2>
+
+<div class="sub-header">
+
+<% unless @artist[:photos].nil? || @artist[:photos].empty? %>
+<img src="<%= @artist[:photos] %>" alt="<%= @artist[:name] %>">
+<% end %>
+
+<p class="quote">"<%= @artist[:quote] %>"</p>
+
+</div>
+
+<p><%= @artist[:bio] %></p>
+
+<p><%= @artist[:genres] %></p>
+
+<p><a href="<%= @artist[:website] %>" target="_blank">Website</a></p>
+
+<h2>Albums, EPs, Samplers etc.</h2>
+
+<ul class="sub-container">
+
+<% @artist.albums.each do |album| %>
+
+  <li>
+    <a href="/albums/<%= album[:id] %>">
+      <img src="<%= album[:artwork] %>" alt="<%= album[:album_name] %>">
+      <p><%= album[:album_name] %></p>
+    </a>
+  </li>
+
+<% end %>
+
+</ul>
+
+<div class="controls">
+  <a href="/artists/<%= @artist["id"] %>/edit">Edit Artist</a>
+  <a href="/artists/<%= @artist["id"] %>/delete">Delete</a>
+</div>

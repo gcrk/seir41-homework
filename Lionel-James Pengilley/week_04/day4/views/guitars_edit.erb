@@ -1,0 +1,18 @@
+<h1>Edit Guitar</h1>
+
+<form action="/guitars/<%= @guitar["id"] %>" method="post">
+  <label>
+    Brand:
+    <input name="brand" placeholder="fender" required value="<%= @guitar["brand"] %>">
+  </label>
+  <label>
+    Model:
+    <input name="model" placeholder="stratocaster" value="<%= @guitar["model"] %>">
+  </label>
+  <label>
+    Image:
+    <input type="url" name="image" placeholder="http://..." value="<%= @guitar["image"] %>">
+  </label>
+
+  <button>Update guitar</button>
+</form>

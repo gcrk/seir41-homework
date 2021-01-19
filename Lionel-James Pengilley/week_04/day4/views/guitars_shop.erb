@@ -1,0 +1,14 @@
+<h1>Here are my wares, traveller</h1>
+
+<!-- Showing a list of all the guitar brands avaliable  -->
+<!-- Using a each loop, to iterate through each item -->
+
+<!-- Backend stays in the back -->
+<% @guitars.each do |guitar| %>
+  <p>
+    <!-- Click to ask the nice salesman if you can noodle on the fiddle -->
+    <a href="/guitars/<%= guitar["id"] %>">
+      <%= guitar["brand"] %>
+    </a>
+  </p>
+<% end %>
