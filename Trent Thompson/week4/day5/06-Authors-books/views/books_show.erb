@@ -1,0 +1,8 @@
+<h1><%= @books[:book] %> </h1>
+
+<h2><%= @books[:genre] %></h2>
+
+<nav class="Book_controls">
+<a href="/books/<%=@books[:id]%>/edit">Edit Book</a>
+<a href="/books/<%=@books[:id]%>/delete">Delete Book</a>
+</nav>

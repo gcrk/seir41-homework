@@ -1,0 +1,9 @@
+<h1><%= @authors["name"] %></h1>
+
+<form action="/authors/<%= @authors["id"] %>" method="post"> <!--this now sends a post request which gets setup under update-->
+  <label>
+    Name:
+    <input name="name" placeholder="..." required value="<%= @authors["name"] %>">
+  </label>
+  <button>Update Author</button>
+</form>

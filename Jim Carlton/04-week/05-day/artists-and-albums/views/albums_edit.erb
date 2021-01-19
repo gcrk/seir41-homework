@@ -4,7 +4,7 @@
 
   <label>
     Album Name:
-    <input type="text" name="album_name" placeholder="Selected Ambient Works I" required>
+    <input type="text" name="album_name" placeholder="Selected Ambient Works I" required value="<%= @album.album_name %>">
   </label>
 
   <label>
@@ -13,7 +13,7 @@
 
       <% @artists.each do |artist| %>
 
-        <option value="<%= artist.id %>"><%= artist.name %></option>
+        <option value="<%= artist.id %>" <%= "selected" if artist.id == @album.artist_id %>><%= artist.name %></option>
 
       <% end %>
 
@@ -23,42 +23,42 @@
 
   <label>
     Other Artists Involved:
-    <input type="text" name="artist_other" placeholder="e.g. Luke Vibert">
+    <input type="text" name="artist_other" placeholder="e.g. Luke Vibert" value="<%= @album.artist_other %>">
   </label>
 
   <label>
     Description:
-    <input type="text" name="description" placeholder="e.g. This album was inspired..">
+    <input type="text" name="description" placeholder="e.g. This album was inspired.." value="<%= @album.description %>">
   </label>
 
   <label>
     Tracklist:
-    <input type="text" name="tracks" placeholder="e.g. 1. Rhubarb..">
+    <input type="text" name="tracks" placeholder="e.g. 1. Rhubarb.." value="<%= @album.tracks %>">
   </label>
 
   <label>
     Release Date:
-    <input type="date" name="released">
+    <input type="date" name="released" value="<%= @album.released %>">
   </label>
 
   <label>
     Label:
-    <input type="text" name="label" placeholder="e.g. Warp Records">
+    <input type="text" name="label" placeholder="e.g. Warp Records" value="<%= @album.label %>">
   </label>
 
   <label>
     Rating:
-    <input type="number" name="rating" placeholder="e.g. 8">
+    <input type="number" name="rating" placeholder="e.g. 8" value="<%= @album.rating %>">
   </label>
 
   <label>
     Link to purchase:
-    <input type="text" name="link" placeholder="e.g. https://..">
+    <input type="text" name="link" placeholder="e.g. https://.." value="<%= @album.link %>">
   </label>
 
   <label>
     Album Art:
-    <input type="text"  name="artwork" placeholder="e.g. https://..">
+    <input type="text"  name="artwork" placeholder="e.g. https://.." value="<%= @album.artwork %>">
   </label>
 
   <button>Update! 💿</button>

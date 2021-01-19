@@ -1,0 +1,84 @@
+<main>
+
+  <section>
+    <h2>Magic 8 Ball</h2>
+
+    <form action="/games/magic_8_ball">
+      <p>
+        <label for="question">Ask Your Question: </label>
+        <input id="question" type="text" name="question" placeholder="Will I Get The Job I Want?">
+      </p>
+      <button>Submit</button>
+    </form>
+
+  </section>
+
+  <section>
+    <h2>Secret Number</h2>
+
+    <form action="/games/secret_num_game">
+      <p>
+        <label for="secret_num">Guess a Number: </label>
+        <select id= "secret_num" name="guess">
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="6">6</option>
+            <option value="7">7</option>
+            <option value="8">8</option>
+            <option value="9">9</option>
+            <option value="10">10</option>
+        </select>
+      </p>
+
+      <button>Submit</button>
+    </form>
+  </section>
+
+  <section>
+    <h2 class="rock-paper-scissors">Rock Paper Scissors</h2>
+    <h3>(Lizard Spock)</h3>
+
+    <form action="/games/rock_paper_scissors">
+      <p>
+        <label for="throw">Pick A Throw: </label>
+        <select id="throw" name="user_throw">
+            <option value="rock">Rock</option>
+            <option value="paper">Paper</option>
+            <option value="scissors">Scissors</option>
+            <option value="lizard">Lizard</option>
+            <option value="spock">Spock</option>
+        </select>
+      </p>
+      <button>Submit</button>
+    </form>
+  </section>
+
+
+</main>
+
+<!-- # Games on Rails
+
+Games on Rails is a web application with three games
+
+* Magic 8 Ball
+* Secret Number
+* Rock Paper Scissors
+
+__Magic 8 Ball__
+
+* Magic 8 ball takes user's questions from the the URL as params and returns a positive or negative answer.
+
+__Secret Number__
+
+* Users click a number between 1 and 10. The controller validates the guess and renders the win or lose view.
+
+__Rock Paper Scissors__
+
+* Create a route that goes from ```/games/rock_paper_scissors/:throw``` to ```games#rock_paper_scissors_play```
+* Use params[:throw] as a user's choice
+* Compare the 2! If  users throw matches the apps throw, the user wins.
+* i.e. If a user throws rock ```http://localhost:3000/games/rock_paper_scissors/rock``` and the server picks rock player wins! (Yes,  I know that is not how RPS works)
+Bonus: Set the win or lose condition based on the real rules of [Rock Paper Scissors](http://en.wikipedia.org/wiki/Rock-paper-scissors). -->

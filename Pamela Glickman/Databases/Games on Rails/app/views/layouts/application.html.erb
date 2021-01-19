@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>GamesOnRails</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+    <header>
+      <nav>
+        <ul>
+          <li><a href="/">Home</a></li>
+          <li><h1>Games on Rails</h1></li>
+        </ul>
+      </nav>
+      <img src="https://t3.ftcdn.net/jpg/02/77/09/16/360_F_277091606_aooKcx6POsWKy3EHb1IztmrGiQKoP1Hq.jpg" alt="">
+    </header>
+
+    <%= yield %>
+
+    <img src="https://t3.ftcdn.net/jpg/02/77/09/16/360_F_277091606_aooKcx6POsWKy3EHb1IztmrGiQKoP1Hq.jpg" alt="">
+  </body>
+</html>
