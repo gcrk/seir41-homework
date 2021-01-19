@@ -1,0 +1,13 @@
+<h1>FoodHub library</h1>
+<h2>All dishes</h2>
+
+<% @dishes.each do |dish| %>
+  <p>
+    <%= link_to dish.name, dish_path(dish.id) %>
+  </p>
+
+<% end %>
+
+<form action="<%= new_dish_path %>">
+  <button>Create new dish</button>
+</form>
