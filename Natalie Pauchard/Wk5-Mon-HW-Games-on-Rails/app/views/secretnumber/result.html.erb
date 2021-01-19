@@ -1,0 +1,11 @@
+<h1>Secret Number</h1>
+
+<h2>Your guess: <%= @number %></h2>
+
+<h3>The secret number was: <%= @secret_number %></h3>
+
+<% if @number != @secret_number %>
+<h4>Wrong! Try Again</h4>
+<% elsif @number == @secret_number %>
+<h4>Correct!</h4>
+<% end %>

@@ -1,0 +1,26 @@
+.container {
+  background-color: pink;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+}
+
+.sky {
+  background-color: blue;
+  position: absolute;
+  height: 60%;
+  width: 100%;
+}
+
+.ground {
+  background-color: green;
+  position: absolute;
+  height: 40%;
+  width: 100%;
+  top: 60%;
+}
+
+img {
+  position: absolute;
+  top: 40%;
+}

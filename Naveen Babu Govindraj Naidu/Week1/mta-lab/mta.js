@@ -16,11 +16,13 @@ const journeyOfUser = function(startLine,getIn,endLine,getOff){
     let totalStops1 = startInterIndex - getInIndex;
     let totalStops2 = Math.abs(endInterIndex-getOffIndex);
     noOfStops = totalStops1 + totalStops2;
-    getInIndex = getInIndex + 1;
+    getInIndex += 1;
+
     for (i = 0; i < totalStops1; i++){
       stopsTravelled[i] = startLine[getInIndex];
       getInIndex++;
     }
+      console.log(getInIndex)
 
     for(i = totalStops1 - 1;i < noOfStops - 1; i++){
       if(getOffIndex < endInterIndex){
@@ -33,7 +35,7 @@ const journeyOfUser = function(startLine,getIn,endLine,getOff){
     }
     console.log(`The total number of stops:${noOfStops -1}`);
     console.log(`You must travel through the following stops:${stopsTravelled}`);
-    
+
   };
      function planTrip(startLine,getIn,endLine,getOff){
       if(startLine == "N" || "L" || "S" && endLine == "N" || "L" || "S"){
