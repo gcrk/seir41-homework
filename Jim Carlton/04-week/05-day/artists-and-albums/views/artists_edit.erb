@@ -4,32 +4,32 @@
 
   <label>
     Artist Name:
-    <input type="text" name="name" placeholder="e.g. Aphex Twin" required>
+    <input type="text" name="name" placeholder="e.g. Aphex Twin" required value="<%= @artist.name %>">
   </label>
 
   <label>
     Bio:
-    <input type="text" name="bio" placeholder="e.g. Richard D James was born in 1979...">
+    <input type="text" name="bio" placeholder="e.g. Richard D James was born in 1979..." value="<%= @artist.bio %>">
   </label>
 
   <label>
     Genres
-    <input type="text" name="genres" placeholder="e.g. Experimental">
+    <input type="text" name="genres" placeholder="e.g. Experimental" value="<%= @artist.genres %>">
   </label>
 
   <label>
     Quote:
-    <input type="text" name="quote" placeholder="e.g. I created SAW I when I was a teenager">
+    <input type="text" name="quote" placeholder="e.g. I created SAW I when I was a teenager" value="<%= @artist.quote %>">
   </label>
 
   <label>
     Website:
-    <input type="text" name="website" placeholder="e.g. https://www...">
+    <input type="text" name="website" placeholder="e.g. https://www..." value="<%= @artist.website %>">
   </label>
 
   <label>
     Photos:
-    <input type="text" name="photos" placeholder="e.g. https://www...">
+    <input type="text" name="photos" placeholder="e.g. https://www..." value="<%= @artist.photos %>">
   </label>
 
   <button>Update! 🎙</button>

@@ -32,19 +32,15 @@ until menu_choice == 'q'
         print "Your answer is: "
         puts num1.to_i - num2.to_i
      
-    
-
     when 'm'
         puts "Your first number to multiply"
         num1 = gets.chomp
         puts "Your second number to multiply"
         num2 = gets.chomp
   
-    print "Your answer is: "
-    puts num1.to_i * num2.to_i
+        print "Your answer is: "
+        puts num1.to_i * num2.to_i
     
-    
-
     when 'd'
         puts "Your first number to divide"
         num1 = gets.chomp
@@ -57,8 +53,8 @@ until menu_choice == 'q'
     else
         puts 'Invalid selection.'
     end
-    show_menu
-    menu_choice = gets.chomp.downcase
+        show_menu
+        menu_choice = gets.chomp.downcase
     end
 
-puts "Thanks for using this amazing calculator!"
+        puts "Thanks for using this amazing calculator!"

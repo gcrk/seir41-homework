@@ -17,7 +17,7 @@ class Artist < ActiveRecord::Base
 end
 
 class Album < ActiveRecord::Base
-  belongs_to :artist
+  belongs_to :artist, :optional => true
 end
 
 # Root

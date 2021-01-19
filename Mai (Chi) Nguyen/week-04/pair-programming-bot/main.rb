@@ -28,3 +28,5 @@ end
 get '/write_test' do
   erb :write_test
 end
+
+# http://pairprogrammingbot.herokuapp.com/pass

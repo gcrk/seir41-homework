@@ -1,0 +1,44 @@
+body {
+  max-width: 960px;
+  text-align: center;
+}
+
+img {
+  width: 300px;
+}
+
+.plot {
+  margin-top: 5px;
+}
+
+.form {
+  border: 1px solid black;
+  border-radius: 5px;
+  width: 70%;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.block {
+  display: block;
+  margin: 0 auto;
+}
+
+textarea {
+  display: block;
+  margin: 0 auto;
+  max-width: 100%;
+  resize: none;
+}
+
+.form button {
+  margin-top: 20px;
+}
+
+.review {
+  border: 1px solid black;
+  border-radius: 5px;
+  width: 70%;
+  margin: 10px auto;
+  padding: 0 20px;
+}
