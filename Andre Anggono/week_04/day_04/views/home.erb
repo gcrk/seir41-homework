@@ -1,0 +1,18 @@
+<div class="parent-home">
+  <h1>Welcome, Andre!</h1>
+
+  <div class="home">
+    <h2>Number of Products:</h2>
+    <span class="result"><%= @inventories.size %></span>
+  </div>
+
+  <div class="home">
+    <h2>Items in Inventory:</h2>
+    <span class="result"><%= total("qty") %></span>
+  </div>
+
+  <div class="home">
+    <h2>Inventory Value:</h2>
+    <span class="result">$<%= total("price") %></span>
+  </div>
+</div>

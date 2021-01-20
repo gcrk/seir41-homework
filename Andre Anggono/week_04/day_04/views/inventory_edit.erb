@@ -1,0 +1,29 @@
+<div class="form">
+  <h1>Edit Inventory</h1>
+
+  <form action="/inventory/<%= @inventory["id"] %>" method="post">
+    <label> Name:
+      <input type="text" name="name" placeholder="Name of Product" value='<%=@inventory['name']%>'>
+    </label>
+    <label> Description:
+      <input type="text" name="description" placeholder="Description of Product" value='<%=@inventory['description']%>'>
+    </label>
+    <label> Manufacturer:
+      <input type="text" name="manufacturer" placeholder="Product Manufacturer" value='<%=@inventory['manufacturer']%>'>
+    </label>
+    <label> Quantity:
+      <input type="number" name="qty" placeholder="Quantity" value='<%=@inventory['qty']%>'>
+    </label>
+    <label> Price:
+      <input type="number" name="price" placeholder="$" value='<%=@inventory['price']%>'>
+    </label>
+    <label> Stocked Year:
+      <input type="number" name="stocked_year" placeholder="Year" value='<%=@inventory['stocked_year']%>'>
+    </label>
+    <label> Image URL: 
+      <input type="text" name="image" placeholder="http://" value='<%=@inventory['image']%>'>
+    </label>
+    <button>Update Inventory</button>
+  </form>
+</div>
+

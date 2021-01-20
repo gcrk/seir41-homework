@@ -1,0 +1,17 @@
+<h1><%= @team.name %></h1>
+
+<% 
+  stat_header = %w[Full\ Team\ Name Base Team\ Chief Technical\ Chief Chassis Power\ Unit First\ Team\ Entry World\ Championships Pole\ Positions Fastest\ Laps] 
+  stat_data = Team.column_names.slice(2, 10)
+%>
+
+<table class="table">
+  <% stat_header.size.times { |i| %>
+  <tr>
+    <th scope="row" class="stat-key">
+      <span class="text"><%= stat_header[i] %></span>
+    </th>
+    <td class="stat-value"><%= @team[stat_data[i].to_sym] %></td>
+  </tr>
+  <% } %>
+</table>

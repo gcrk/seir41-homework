@@ -1,0 +1,7 @@
+<% @teams.each { |team| %>
+<a href="/teams/<%= team.id %>">
+  <div>
+    <%= team.name %>
+  </div>
+</a>
+<% } %>
