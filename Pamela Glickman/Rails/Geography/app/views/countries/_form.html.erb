@@ -1,0 +1,12 @@
+<%= form_for @country do |f|%>
+  <%= f.label :name %>
+  <%= f.text_field :name, :required => true %>
+
+  <%= f.label :population %>
+  <%= f.number_field :population %>
+
+  <%= f.label :area %>
+  <%= f.number_field :area %>
+
+  <%= f.submit %>
+<% end %>
