@@ -1,0 +1,9 @@
+<h2> Worlds Tallest Mountains </h2>
+
+<% @mountains.each do |mountain| %>
+<p>
+<%= link_to mountain.name, mountain_path(mountain.id) %>
+is
+<%= pluralize mountain.height, 'meter' %>.
+</p>
+<% end %>

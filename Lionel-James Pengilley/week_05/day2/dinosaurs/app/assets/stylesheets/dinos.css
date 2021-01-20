@@ -1,0 +1,10 @@
+body {
+  background-image: url("dino_pattern.jpg");
+  text-align: center;
+  font-size: 2rem;
+}
+
+img {
+  max-width: 500px;
+  border-radius: 50%;
+}

@@ -1,0 +1,47 @@
+<h1>Edit Dinosaur</h1>
+
+<form action="<%= dino_path(@dino.id) %>" method="post">
+
+  Name:
+  <label>
+    <input type="text" name="name" required value="<%= @dino.name %>">
+  </label>
+
+  Scientific Name:
+  <label>
+    <input type="text" name="scientific_name" value="<%= @dino.scientific_name %>">
+  </label>
+
+  Location:
+  <label>
+    <input type="text" name="location" value="<%= @dino.location %>">
+  </label>
+
+  Diet:
+  <label>
+    <input type="text" name="diet" value="<%= @dino.diet %>">
+  </label>
+
+  Date:
+  <label>
+    <input type="number" name="date_time" value="<%= @dino.date_time %>">
+  </label>
+
+  Size:
+  <label>
+    <input type="number" name="size" value="<%= @dino.size %>">
+  </label>
+
+  Weight:
+  <label>
+    <input type="number" name="weight" value="<%= @dino.weight %>">
+  </label>
+
+  Image:
+  <label>
+    <input type="url" name="image" value="<%= @dino.image %>">
+  </label>
+
+  <button>Update Dinosaur</button>
+
+</form>
