@@ -1,0 +1,30 @@
+<h1>Edit dish</h1>
+
+<form action="<%= dish_path(@dish.id) %>" method="post">
+  <label>Name:
+    <input name="name" value="<%= @dish.name %>" required>
+  </label>
+
+  <label>Image link:
+    <input name="image" type="url" value="<%= @dish.image %>">
+  </label>
+
+  <label>Country of origin:
+    <input name="country" value="<%= @dish.country %>">
+  </label>
+
+  <label>Common paired sauce:
+    <input name="sauce" value="<%= @dish.sauce %>">
+  </label>
+
+  <label>Author's rating:
+    <input name="rating" type="number" step="any" value="<%= @dish.rating %>">
+  </label>
+
+  <label>Calories:
+    <input name="calories" type="number" value="<%= @dish.calories %>">
+  </label>
+
+  <button>Update dish</button>
+
+</form>

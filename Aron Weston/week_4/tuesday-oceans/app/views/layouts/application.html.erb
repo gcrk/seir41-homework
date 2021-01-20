@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>TuesdayOceans</title>
+  <%= csrf_meta_tags %>
+  <%= csp_meta_tag %>
+  <%# <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/water.css@2/out/water.css"> %>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.min.css" integrity="sha512-EZLkOqwILORob+p0BXZc+Vm3RgJBOe1Iq/0fiI7r/wJgzOFZMlsqTa29UEl6v6U6gsV4uIpsNZoV32YZqrCRCQ==" crossorigin="anonymous" />
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+</head>
+
+<body>
+  <div class="container">
+    <nav>
+      <%= link_to 'All Oceans', oceans_path, :class => "button" %>
+      <%= link_to 'New Ocean', new_ocean_path, :class => "button" %>
+      <form action="<%= search_ocean_path %>" method="get">
+      <%= search_field_tag :search, params[:search], placeholder: "Search"%> 
+      <button>Search Ocean</button>
+    </form>
+    </nav>
+    <%= yield %>
+    
+  </div>
+  
+</body>
+
+</html>

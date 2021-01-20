@@ -1,0 +1,21 @@
+<h2>New Mountain</h2>
+
+<form action="<%= mountains_path %>" method='post'>
+  <label>
+    Name:
+    <input type="text" name="name" placeholder='Everest' required>
+  </label>
+  <label>
+    Image:
+    <input type="url" name="image" placeholder='http://...'>
+  </label>
+  <label>
+    Elevation above sea level:
+    <input type="number" name="height" placeholder='8849'>
+  </label>
+  <label>
+    Country:
+    <input type="text" name="country" placeholder='Nepal'>
+  </label>
+  <button>Add mountain</button>
+</form>
