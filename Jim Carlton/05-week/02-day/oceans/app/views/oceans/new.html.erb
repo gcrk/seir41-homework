@@ -1,0 +1,42 @@
+<h2>New Ocean</h2>
+
+<form action="<%= oceans_path %>" method="post">
+
+  <label>
+    Name:
+    <input type="text" name="name" required>
+  </label>
+
+  <label>
+    Image:
+    <input type="URL" name="image">
+  </label>
+
+  <label>
+    Area:
+    <input type="number" name="area">
+  </label>
+
+  <label>
+    Volume:
+    <input type="number" name="volume">
+  </label>
+
+  <label>
+    Max Depth:
+    <input type="number" name="depth">
+  </label>
+
+  <label>
+    Countries it touches:
+    <input type="text" name="countries">
+  </label>
+
+  <label>
+    Species:
+    <input type="text" name="species">
+  </label>
+
+  <button>Create ocean!</button>
+
+</form>
