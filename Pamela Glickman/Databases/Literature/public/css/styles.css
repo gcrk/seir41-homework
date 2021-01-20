@@ -1,0 +1,97 @@
+body {
+  color: darkred;
+  background-color: lemonchiffon;
+  font-family: 'Raleway', sans-serif;
+  font-size: 1.2rem;
+  margin: 2%;
+  text-align: center;
+}
+
+h1 {
+  line-height: 1.5;
+  font-family: 'Staatliches', cursive;
+  letter-spacing: 8px;
+  font-size: 4.5rem;
+  margin: 20px auto;
+  width: 70%;
+  border-bottom: 5px solid #aa0000;
+  text-shadow: 2px 2px 2px black;
+}
+
+h2 {
+  font-size: 1.9rem;
+  text-shadow: 1px 1px 2px black;
+  margin: 4% auto;
+}
+
+section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 2%;
+}
+
+img {
+  max-width: 400px;
+  max-height: 400px;
+  border: 1px solid grey;
+  box-shadow: 2px 2px 2px black;
+}
+
+div {
+  width: 45%;
+  margin: 2% 5%;
+}
+
+p {
+  line-height: 2;
+  margin-bottom: 5%:
+}
+
+a {
+  margin: 0 2%;
+}
+
+form {
+  margin: 3% auto;
+  text-align: center;
+  display: block;
+  width: 80%;
+}
+
+.author_form {
+  display: block;
+}
+
+label {
+  margin-left: 2%;
+}
+
+input {
+  background-color: inherit;
+  padding: 2px;
+  color: #cc6600;
+  font-size: 1rem;
+  text-align: center;
+  border: 1px solid lemonchiffon;
+  border-bottom: 2px solid #cc6600;
+  outline: none;
+}
+
+input:hover {
+  cursor: pointer;
+}
+
+button {
+  padding: 1% 2%;
+  display: block;
+  margin: 5% auto;
+  font-size: 1.5rem;
+  color: white;
+  background-color: darkred;
+  border: none;
+  outline: none;
+  border-radius: 10px;
+  text-shadow: 1px 1px 2px black;
+  box-shadow: 1px 1px 2px black;
+}
