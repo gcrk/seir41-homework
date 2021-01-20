@@ -1,0 +1,16 @@
+<h1><%= @dish.name %></h1>
+
+<img src="<%= @dish.image %>" alt="<%= @dish.name %>">
+
+<p>Country of origin: <%= @dish.country %></p>
+
+<p>Common paired sauce: <%= @dish.sauce %></p>
+
+<p>Author's rating: <%= @dish.rating %></p>
+
+<p>Calories: <%= @dish.calories %></p>
+
+<form action="<%= edit_dish_path(@dish.id) %>"> 
+  <button>Edit dish</button>
+</form>
+<%= button_to 'Delete dish', dish_path(@dish.id), :method => 'delete' %>

@@ -1,0 +1,40 @@
+<h2>Edit Ocean</h2>
+
+<form action="<%= ocean_path(@ocean.id) %>" method="post">
+  <label>
+    Name:
+    <input name="name" required value="<%= @ocean.name %>">
+  </label>
+
+  <%# <label>
+    Image:
+    <input type="url" name="image">
+  </label> %>
+
+  <label>
+    Location:
+    <input type="text" name="location" value="<%= @ocean.location %>">
+  </label>
+
+  <label>
+    Area:
+    <input type="number" name="area" value="<%= @ocean.area %>">
+  </label>
+
+  <label>
+    Volume:
+    <input type="number" name="volume" value="<%= @ocean.volume %>">
+  </label>
+
+  <label>
+    Average depth:
+    <input type="number" name="avg_depth" value="<%= @ocean.avg_depth %>">
+  </label>
+
+  <label>
+    Coastline:
+    <input type="number" name="coastline" value="<%= @ocean.coastline %>">
+  </label>
+
+  <button>Update ocean</button>
+</form>
