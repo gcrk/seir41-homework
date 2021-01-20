@@ -1,0 +1,17 @@
+<h2><%= @mountain.name %></h2>
+
+<%= image_tag @mountain.image, :alt => 'this is the alt' if @mountain.image.present? %>
+
+<ul>
+<li>Name: <%= @mountain.name %></li>
+<li>Meaning of Name: <%= @mountain.name_meaning %></li>
+<li>Elevation (metres): <%= number_to_human @mountain.elevation %></li>
+<li>Approx. age (years): <%= number_to_human @mountain.age %></li>
+<li>Location: <%= @mountain.location %></li>
+<li>Animal: <%= @mountain.animal %></li>
+</ul>
+
+<div class="controls">
+  <%= link_to 'Edit mountain', edit_mountain_path(@mountain.id) %>
+  <%= button_to 'Delete mountain', mountain_path(@mountain.id), :method => 'delete' %>
+</div>

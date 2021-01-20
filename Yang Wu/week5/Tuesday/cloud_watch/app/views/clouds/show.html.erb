@@ -1,0 +1,10 @@
+<h2><%= @cloud.name %></h2>
+
+<h3>Height: <%= @cloud.height %></h3>
+<h3>Color: <%= @cloud.color %></h3>
+<h3>Shape: <%= @cloud.shape %></h3>
+<h3>Weather: <%= @cloud.weather %></h3>
+
+<%= link_to 'Edit Cloud', edit_cloud_path(@cloud.id) %>
+<%# delete %>
+<%= button_to 'Delete Cloud', cloud_path(@cloud.id), :method => 'delete' %>
