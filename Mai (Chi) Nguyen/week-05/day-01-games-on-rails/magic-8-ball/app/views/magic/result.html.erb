@@ -1,0 +1,15 @@
+<h1>Magic 8 Ball</h1>
+
+<h3>You asked: </h3>
+<div class="question">
+  <%= @question %>
+</div>
+
+<h3>Magic 8 Ball's answer: </h3>
+<div class="answer">
+  <%= @random_answer %>
+</div>
+
+<form action="/magic">
+  <button>Ask another question</button>
+</form>

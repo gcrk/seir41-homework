@@ -1,0 +1,9 @@
+<h1>All Musicians</h1>
+
+<% @musicians.each do |musician| %>
+  <p>
+    <a href="/musicians/<%= musician["id"] %>"> <!--or :id/:name -->
+      <%= musician["name"] %>
+    </a>
+  </p>
+<% end %>
