@@ -1,0 +1,13 @@
+<h1>Create an Ocean!</h1>
+
+<%# Meant the same thing as /planets %>
+<form action="<%= oceans_path %>" method="POST">
+    <label> Name <input type="text" name="name" required></label>
+    <label> Image: <input type="url" name="image" ></label>
+    <label> Depth(m): <input type="number" name="depth"></label>
+    <label> Surface Area (km<sup>2</sup>): <input type="number" name="surface_area"></label>
+    <label> Water Volume (km<sup>3</sup>): <input type="number" name="water_volume"></label>
+    <label> Largest Seas: <textarea name="largest_seas"></textarea></label>
+    <label> Settlements: <textarea name="settlements"></textarea></label>
+    <button>Create Ocean</button>
+</form>
