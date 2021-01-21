@@ -1,0 +1,28 @@
+<h2>Rocks Paper Scissors</h2>
+
+<form action="/rock-paper-scissors/result" method="get">
+
+  <label>
+    Rocks paper scissors! Choose your weapon:
+    <select name="throw">
+      <option value="Rock">Rock</option>
+      <option value="Paper">Paper</option>
+      <option value="Scissors">Scissors</option>
+    </select>
+  </label>
+
+  <button>Go go!</button>
+
+</form>
+
+<p>You chose: <%= @answer %></P>
+
+<p>The computer chose: <%= @comp_choice %></p>
+
+<% if @answer == @comp_choice %>
+<p>Draw! You both chose <%= @answer %></p>
+<% elsif @answer == "Rock" && @comp_choice == "Paper" || @answer == "Scissors" && @comp_choice == "Rock" %>
+<p>Computer wins with <%= @comp_choice %></p>
+<% else %>
+<p>You won with <%= @answer %></p>
+<% end %>

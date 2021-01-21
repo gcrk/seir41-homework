@@ -1,0 +1,14 @@
+<h2>Edit <%= @book["title"] %></h2>
+
+<form action="/edit_book/<%= @book["book_id"] %>" method="post">
+  <p>
+    <label for="title">Title: </label>
+    <input id="title" type="text" name="title" value="<%= @book["title"] %>" required>
+  </p>
+  <p>
+    <label for="year">Publication Year: </label>
+    <input id="year" type="number" name="publication_year" value="<%= @book["publication_year"] %>">
+  </p>
+  <button>Edit Book</button>
+
+</form>

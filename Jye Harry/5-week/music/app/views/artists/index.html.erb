@@ -1,0 +1,11 @@
+<h1>All Artists</h1>
+
+<% @artists.each do |artist| %>
+  <%= image_tag artist.image, :class => 'thumb' %>
+  <ul>
+    <li>Name: <%= link_to artist.name, artist %></li>
+    <li>Years active: <%= artist.years_active %></li>
+    <li>Nationality: <%= artist.nationality %></li>
+    <li>Records sold: <%= number_with_delimiter(artist.records_sold, :delimiter => ',') %></li>
+  </ul>
+<% end %>

@@ -1,0 +1,20 @@
+<h2>Edit: <%= @dish['name'] %></h2>
+
+<form action="/food/<%= @dish['id'] %>" method="post">
+  <label>
+    Name:
+    <input name="name" value="<%= @dish['name'] %>" required>
+  </label>
+
+  <label>
+    Country of origin:
+    <input name="country" value="<%= @dish['country'] %>">
+  </label>
+
+  <label>
+    Image link:
+    <input name="image" value="<%= @dish['image'] %>" type="url">
+  </label>
+
+  <button>Edit dish</button>
+</form>

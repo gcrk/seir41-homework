@@ -1,0 +1,40 @@
+<h2>New Mountain</h2>
+
+<form action="<%= mountains_path %>" method="post">
+  <label>
+    Name:
+    <input name="name" required>
+  </label>
+
+  <label>
+    Image:
+    <input type="url" name="image">
+  </label>
+
+  <label>
+    Meaning of Name:
+    <input type="text" name="name_meaning">
+  </label>
+
+  <label>
+    Elevation:
+    <input type="number" name="elevation">
+  </label>
+
+  <label>
+    Approximate Age:
+    <input type="number" name="age">
+  </label>
+
+  <label>
+    Location:
+    <input type="text" name="location">
+  </label>
+
+  <label>
+    Animal:
+    <input type="text" name="animal">
+  </label>
+
+  <button>Create a Mountain</button>
+</form>
