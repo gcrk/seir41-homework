@@ -1,0 +1,12 @@
+<%= form_for @landmark do |f|%>
+  <%= f.label :name %>
+  <%= f.text_field :name, :required => true %>
+
+  <%= f.label :image %>
+  <%= f.text_field :image %>
+
+  <%= f.label :country_id %>
+  <%= f.select :country_id, Country.pluck(:name, :id) %>
+
+  <%= f.submit %>
+<% end %>
