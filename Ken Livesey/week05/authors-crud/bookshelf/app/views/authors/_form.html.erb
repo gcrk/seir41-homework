@@ -1,0 +1,21 @@
+<%= form_for @author do |f| %>
+  <%= f.label :name %>
+  <%= f.text_field :name, :required => true, :autofocus => true %>
+
+  <%= f.label :nationality %>
+  <%= f.text_field :nationality %>
+
+  <%= f.label :dob %>
+  <%= f.text_field :dob, :placeholder => 'YYY-MM-DD' %>
+
+  <%= f.label :age %>
+  <%= f.text_field :age %>
+
+  <%= f.label :genre %>
+  <%= f.text_field :genre %>
+
+  <%= f.label :image %>
+  <%= f.url_field :image %>
+
+  <%= f.submit %>
+<% end %>

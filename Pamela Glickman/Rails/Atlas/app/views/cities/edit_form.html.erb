@@ -1,0 +1,38 @@
+<h2>Editing <%= @city["name"] %></h2>
+
+<form action="<%= edit_path %>/"  method="post">
+  <p>
+    <label for="name">Enter Name:</label>
+    <input id="name" name="name" value="<%= @city["name"] %>" required>
+    <label for="pop">Enter Population:</label>
+    <input id="pop" name="population" value="<%= @city["population"] %>">
+    <label for="image">Enter Image:</label>
+    <input id="image" name="image" value="<%= @city["image"] %>">
+  </p>
+  <button class="submit">Edit City</button>
+</form>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Population</th>
+      <th>Image</th>
+      <th>Modify</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @cities.each do |city| %>
+      <tr>
+        <td><%= city["name"] %></td>
+        <td title=<%= city["population"] %>><%= number_to_human city["population"] %></td>
+        <td><%= image_tag city["image"], :alt => city["name"] if city["image"].present? %></td>
+        <!-- I couldn't use a link_to here. I think the loop messed it up -->
+        <td>
+          <a class="edit" href="/edit/<%= city["id"] %>" method="delete">Edit</a>
+          <a href="/delete/<%= city["id"] %>" method="delete">Delete</a>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

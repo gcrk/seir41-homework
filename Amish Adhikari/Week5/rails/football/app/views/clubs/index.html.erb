@@ -1,0 +1,12 @@
+<h1>All Clubs</h1>
+
+ <% @clubs.each do |club| %>
+ <%= image_tag club.image, :class => 'thumb', :alt => club.title if club.image.present? %>
+
+ <ul>
+   <li>Title: <%= link_to club.title, club %></li>
+   <li>Country: <%= club.country %></li>
+   <li>City: <%= club.city %></li>
+   <li>Founded: <%= club.founded.strftime '%A, %B %e, %y' unless club.founded.nil? %></li>
+ </ul>
+ <% end %>

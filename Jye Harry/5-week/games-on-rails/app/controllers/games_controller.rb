@@ -31,7 +31,7 @@ class GamesController < ApplicationController
       "Very doubtful."
     ]
     @question = params[:question]
-    @answer = answers[rand(answers.size)]
+    @answer = answers.sample
     render :answer
   end
 end

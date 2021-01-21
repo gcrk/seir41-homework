@@ -1,0 +1,24 @@
+<h2>Edit Cloud</h2>
+<form action="<%= cloud_path(@cloud.id) %>" method = 'post'>
+  <label>
+    Name:
+    <input type="text" name='name' required value = <%= @cloud.name %>>
+  </label>
+  <label>
+    Height:
+    <input type="text" name = 'height' value = <%= @cloud.height %>>
+  </label>
+  <label>
+    Color:
+    <input type="text" name = 'color' value = <%= @cloud.color %>>
+  </label>
+  <label>
+    Shape:
+    <input type="text" name = 'shape' value = <%= @cloud.shape %>>
+  </label>
+  <label>
+    Weather:
+    <input type="text" name = 'weather' value = <%= @cloud.weather %>>
+  </label>
+  <button>Edit Cloud</button>
+</form>
