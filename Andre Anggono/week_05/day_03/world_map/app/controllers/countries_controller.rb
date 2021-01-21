@@ -24,7 +24,7 @@ class CountriesController < ApplicationController
 
   def show
     @country = Country.find(params[:id])
-    @capital = @country.cities.where(name: @country.capital)
+    @capital = @country.cities.find_by(:name => @country.capital)
   end
 
   def destroy

@@ -5,7 +5,11 @@
 <table>
   <tr>
     <th>Capital</th>
-    <td><%= @country.capital%></td>
+    <% if @capital.present? %>
+    <td><%= link_to @country.capital, @capital%></td>
+    <% else %>
+    <td><%= @country.capital %></td>
+    <% end %>
   </tr>
   <tr>
     <th>Area</th>
