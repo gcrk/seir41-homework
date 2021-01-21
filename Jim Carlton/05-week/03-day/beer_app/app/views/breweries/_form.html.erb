@@ -1,0 +1,23 @@
+<%= form_for @brewery do |f| %>
+
+  <%= f.label :name %>
+  <%= f.text_field :name, :required => true, :autofocus => true %>
+
+  <%= f.label :location %>
+  <%= f.text_field :location %>
+
+  <%= f.label :description %>
+  <%= f.text_field :description %>
+
+  <%= f.label :specialty %>
+  <%= f.text_field :specialty %>
+
+  <%= f.label :image %>
+  <%= f.text_field :image %>
+
+  <%= f.label :map %>
+  <%= f.text_field :map %>
+
+  <%= f.submit %>
+
+<% end %>

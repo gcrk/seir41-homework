@@ -1,0 +1,7 @@
+<h1>Songs</h1>
+
+
+<% @songs.each do |song| %>
+  <h3><%= link_to song.name, song %></h3>
+   <iframe class="thumbnail" width="560" height="315" src="<%= song.video %>" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<% end %>
