@@ -37,8 +37,8 @@ class OceansController < ApplicationController
 
   def destroy
     ocean = Ocean.find params[:id]
-    planet.destroy
-    redirect_to planets_path
+    ocean.destroy
+    redirect_to oceans_path
   end
 
 end

@@ -1,0 +1,23 @@
+<%= form_for @beer do |f| %>
+
+  <%= f.label :name %>
+  <%= f.text_field :name, :required => true, :autofocus => true %>
+
+  <%= f.label :variety %>
+  <%= f.text_field :variety %>
+
+  <%= f.label :description %>
+  <%= f.text_field :description %>
+
+  <%= f.label :image %>
+  <%= f.text_field :image %>
+
+  <%= f.label :alcohol_content %>
+  <%= f.text_field :alcohol_content %>
+
+  <%= f.label :brewery_id %>
+  <%= f.select :brewery_id, Brewery.pluck(:name, :id), :include_blank => true %>
+
+  <%= f.submit %>
+
+<% end %>
