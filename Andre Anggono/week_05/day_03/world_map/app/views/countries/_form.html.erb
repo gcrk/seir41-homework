@@ -1,0 +1,23 @@
+<%= form_for @country do |f| %>
+  <%= f.label :name %>
+  <%= f.text_field :name, :required => true, :autofocus => true %>
+  <%= f.label :capital %>
+  <%= f.text_field :capital %>
+  <%= f.label :area %>
+  <%= f.text_field :area %>
+  <%= f.label :population %>
+  <%= f.text_field :population %>
+  <%= f.label :life_expectancy %>
+  <%= f.text_field :life_expectancy %>
+  <%= f.label :poi %>
+  <%= f.text_field :poi %>
+  <%= f.label :language %>
+  <%= f.text_field :language %>
+  <%= f.label :currency %>
+  <%= f.text_field :currency %>
+  <%= f.label :flag %>
+  <%= f.url_field :flag %>
+  <%= f.label :map %>
+  <%= f.url_field :map %>
+  <%= f.submit %>
+<% end %>

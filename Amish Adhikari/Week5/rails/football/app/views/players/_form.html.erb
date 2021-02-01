@@ -1,0 +1,20 @@
+<%= form_for @player do |f| %>
+
+<%= f.label :name %>
+<%= f.text_field :name, :required => true, :autofocus => true %>
+
+<%= f.label :height %>
+<%= f.text_field :height %>
+
+<%= f.label :position %>
+<%= f.text_field :position %>
+
+<%= f.label :image %>
+<%= f.url_field :image, :required => true  %>
+
+<%= f.label :club_id %>
+<%= f.select :club_id, Club.pluck(:title, :id), :include_blank => true %>
+
+<%= f.submit %>
+
+<% end %>
