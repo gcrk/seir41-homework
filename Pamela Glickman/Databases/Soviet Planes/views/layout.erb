@@ -11,8 +11,6 @@
 
     <main>
 
-      <!-- This looks hideous, I should add more styles and fix the images glitch-->
-
       <h1>Soviet World War II Planes</h1>
 
       <%= yield %>
@@ -35,8 +33,8 @@
               <td><%= plane["max_speed"] %> knots</td>
               <td>
                 <!-- The unless statement doesn't work -->
-                <% unless plane["image"].nil? || plane["image"].empty? || plane["image"] == "_" %>
-                  <img src="<%= plane["image"] %>" alt="<%= plane["name"] %>">
+                <% unless plane["image"].length <= 1 %>
+                  <img src="../<%= plane["image"] %>" alt="<%= plane["name"] %>">
                 <% end %>
               </td>
               <td>
