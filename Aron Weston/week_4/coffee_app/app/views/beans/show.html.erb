@@ -1,0 +1,25 @@
+
+
+<section class="hero-section">
+     <%= link_to(image_tag(@bean.image, class:"product-iamge"), @bean) %>
+    <div class="coffee-description">
+        <h1><%= @bean.name %></h1>
+        <p><%= @bean.origin %></p>
+        <p><%= @bean.roast_profile %></p>
+        <p><%= number_to_currency @bean.price %> per 250g bag</p>
+        <p>rating: <%= @bean.aron_rating %>/10</p>
+        <%= link_to("buy now", @bean, class: "buy-now", target: "_blank") %>
+    </div>
+</section>
+
+<div class="container">
+    <section class="text-section">
+        <h3>Tasting Notes & Roast Profile</h3>
+        <p><%= @bean.tasting_notes %></p>
+    </section>
+
+    <section class="text-section">
+        <h3>Brew Guide</h3>
+        <p><%= @bean.brew_guide %></p>
+    </section>
+</div>

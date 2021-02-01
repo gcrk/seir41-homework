@@ -1,0 +1,52 @@
+<h1><%= @country.name %></h1>
+<%= image_tag @country.flag if @country.flag.present? %>
+<%= image_tag @country.map if @country.map.present? %>
+
+<table>
+  <tr>
+    <th>Capital</th>
+    <% if @capital.present? %>
+    <td><%= link_to @country.capital, @capital%></td>
+    <% else %>
+    <td><%= @country.capital %></td>
+    <% end %>
+  </tr>
+  <tr>
+    <th>Area</th>
+    <td><%= number_to_human @country.area %> KM<sup>2</sup></td>
+  </tr>
+  <tr>
+    <th>Population</th>
+    <td><%= number_to_human @country.population %></td>
+  </tr>
+  <tr>
+    <th>Life Expectancy</th>
+    <td><%= @country.life_expectancy %> Years</td>
+  </tr>
+  <tr>
+    <th>Point of Interests</th>
+    <td><%= @country.poi %></td>
+  </tr>
+  <tr>
+    <th>Language</th>
+    <td><%= @country.language %></td>
+  </tr>
+  <tr>
+    <th>Currency</th>
+    <td><%= @country.currency %></td>
+  </tr>
+</table>
+
+<% if @country.cities.count > 0 %>
+  <h2>Cities</h2>
+  <ul>
+    <% @country.cities.each {|city| %>
+    <li><%= link_to city.name, city %></li>
+    <% } %>
+  </ul>
+<% end %>
+
+<div class="controls">
+  <%= button_to 'Edit Country', edit_country_path(@country), :method => 'get' %>
+  <%= button_to 'Delete Country', @country, :method => 'delete' %>
+</div>
