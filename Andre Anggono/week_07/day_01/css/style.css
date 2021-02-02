@@ -1,0 +1,11 @@
+.display {
+	display: block;
+}
+
+.hidden {
+	display: none;
+}
+
+p {
+	text-align: justify;
+}
