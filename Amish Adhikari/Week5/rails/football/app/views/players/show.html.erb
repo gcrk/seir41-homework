@@ -1,0 +1,18 @@
+<h1><%= @player.name %></h1>
+
+<%= image_tag @player.image, :class => 'feature', :alt => @player.name if @player.image.present? %>
+
+<ul>
+  <li>Name: <%= @player.name %></li>
+  <% if @player.club.present? %>
+    <li>Club: <%= link_to @player.club.title, @player.club  %></li>
+  <% end %>
+  <li>Height: <%= @player.height %></li>
+  <li>Position: <%= @player.position %></li>
+</ul>
+
+<div class="controls">
+  <%= link_to 'Edit player', edit_player_path(@player) %>
+  <%= link_to 'Delete player', @player, :method =>'delete' %>
+
+</div>

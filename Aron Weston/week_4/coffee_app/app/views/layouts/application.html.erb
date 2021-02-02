@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>CoffeeApp</title>
+  <%= csrf_meta_tags %>
+  <%= csp_meta_tag %>
+  <link rel="stylesheet" href="/css/materialize.min.css">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css"
+    integrity="sha384-vp86vTRFVJgpjF9jiIGPEEqYqlDwgyBgEF109VFjmqGmIY/Y4HV4d3Gp2irVfcrp" crossorigin="anonymous">
+  <link rel="stylesheet" href="assets/style.css">
+  <%# JS %>
+  <script src="assets/jQuery.js"></script>
+  <script src="assets/materialize.min.js"></script>
+  <script src="assets/main.js"></script>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+</head>
+
+<%= yield %>
+<div>
+  <div class="fixed-action-btn">
+    <%= link_to(beans_path, class: "btn-floating btn-large black") do %> 
+      <i class="fas fa-coffee"></i>
+    <%end %>
+    
+    <ul>
+      <%# Add a coffee %>
+       <%= link_to(beans_path, class: "btn-floating btn-large black") do %> 
+        <i class="fas fa-plus"></i>
+      <%end %>
+
+      <%# Coffee Dashboard %>
+      <li><a href="/coffee" class="btn-floating btn-large black"><i class="fas fa-tachometer-alt"></i></a>
+      </li>
+
+      <%# Search %>
+      <li><a href="/coffee/search" class="btn-floating btn-large black"><i class="fas fa-search"></i></a>
+      </li>
+
+      <%# TO DO: only show the edit/delete links if we're on the coffee page; maybe check if params contains an id. %>
+    </ul>
+  </div>
+</div>
+
+
+<footer>
+  <div class="container">
+    <a class="footer-link" href="/">Fav coffees</a>
+    <a class="footer-link" href="/coffee">Dashboard</a>
+    <a class="footer-link" href="/coffee/new">Add a coffee</a>
+  </div>
+</footer>
+
+</body>
+
+</html>

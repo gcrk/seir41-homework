@@ -1,0 +1,8 @@
+<h1><%= @song.title %></h1>
+
+<ul>
+  <li>Year: <%= @song.year %></li>
+  <li>Video: <%= link_to @song.song_url, @song.song_url %></li>
+  <li>Genre: <%= link_to @song.genre.genre_name, @song.genre %></li>
+  <li>Artist: <%= link_to @song.artist.artist_name, @song.artist %></li>
+</ul>
