@@ -1,0 +1,9 @@
+ <h1>All The Greatest Movies</h1>
+
+<% @all_movies.each do |movie| %>
+  <p>
+    <a href="/movies/<%= movie["id"] %>">
+    <%= movie["name"] %>
+    </a>
+  </p>
+<% end %>

@@ -1,0 +1,173 @@
+/*
+Project Name: Ecard.ly
+Client: General Assembly
+Author: Christopher Castig | @castig
+Developer @GA in NYC
+*/
+
+/* Box Model Hack */
+* {
+     -moz-box-sizing: border-box; /* Firexfox */
+     -webkit-box-sizing: border-box; /* Safari/Chrome/iOS/Android */
+     box-sizing: border-box; /* IE */
+}
+
+html {
+  background-image: url(../images/background.jpg);
+  background-repeat: repeat-x;
+  background-color: #d7d7d7;
+}
+
+header {
+  margin: 20px auto;
+  max-width: 1200px;
+  text-align: center;
+}
+
+#main-container {
+  margin: 0 auto;
+  max-width: 935px;
+}
+
+p {
+  font-size: 11px;
+  line-height: 18px;
+}
+
+/* ------- Posts ------ */
+
+.post-container {
+  display: inline-block;
+  max-width: 640px;
+  background-color: white;
+  margin: 0;
+  vertical-align: top;
+  padding: 30px 20px 10px 20px;
+}
+
+.post {
+  border-bottom: solid;
+  border-width: 2px;
+  margin: 0 0 60px 0;
+}
+
+h2 {
+  font-size: 20px;
+}
+
+.post-img {
+  max-width: 100%;
+}
+
+.post-txt {
+  display: inline-block;
+  max-width: 100%;
+  margin: 0;
+  padding: 15px 0 15px 0;
+  letter-spacing: 0.7;
+  border-bottom: solid;
+  border-width: 1px;
+}
+
+.download, .post-author, .comment-count {
+  font-weight: 700;
+  color: #ff4700;
+}
+
+.download {
+  text-transform: uppercase;
+}
+
+.post-details {
+  margin-left: 8px;
+}
+
+.comments, .post-author {
+  cursor: pointer;
+}
+
+.comment-count {
+  margin: 0 2px 0 2px;
+}
+
+/* ------- Sub Nav ------- */
+
+.sub-nav {
+  display: inline-block;
+  max-width: 270px;
+  background-color: white;
+  padding: 20px 25px 20px 25px;
+  margin: 0 0 0 20px;
+  font-size: 14px;
+  font-weight: 800;
+}
+
+h3 {
+  text-transform: uppercase;
+  margin: 20px 0 -5px 0;
+}
+
+.sub-menu {
+  margin-bottom: 25px;
+}
+
+.sub-menu-item {
+  list-style: none;
+  margin: 0 0 5px -40px;
+  padding: 0;
+  line-height: 20px;
+  cursor: pointer;
+}
+
+.side-tile-img {
+  margin-bottom: 20px;
+  cursor: pointer;
+}
+
+/* ------- Footer ------- */
+
+footer {
+  margin: center auto;
+  max-width: 1200px;
+  text-align: center;
+}
+
+.footer-social {
+  margin: 50px 0 50px 0;
+}
+
+.social-twitter, .social-facebook, .social-pinterest {
+  list-style: none;
+  display: inline-block;
+}
+
+.test:nth-of-type(2) {
+  margin: 0 5px 0 5px;
+}
+
+.social-twitter {
+  content: url(../images/social-icon-twitter.png)
+}
+
+.social-facebook {
+  content: url(../images/social-icon-facebook.png)
+}
+
+.social-pinterest {
+  content: url(../images/social-icon-pinterest.png)
+}
+
+/* ------- Clear fix hack ------- */
+
+.clearfix:after {
+     content: ".";
+     display: block;
+     clear: both;
+     visibility: hidden;
+     line-height: 0;
+     height: 0;
+}
+
+.clear {
+	clear: both;
+}

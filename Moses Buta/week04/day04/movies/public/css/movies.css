@@ -1,0 +1,45 @@
+@import url('https://fonts.googleapis.com/css2?family=Wallpoet&display=swap');
+body {
+  background-color: CadetBlue;
+  font-family: 'Wallpoet', cursive;
+}
+
+.container {
+  /* border: 1px solid Black; */
+  margin: auto;
+  width: 75%;
+  text-align: center;
+}
+
+img {
+  max-width: 100%;
+  width: 30%;
+  height: 40%;
+}
+
+div .plot{
+  /* border: 1px solid black; */
+  max-width: 75%;
+  margin: auto;
+}
+
+nav {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 10px;
+  font-size: 25px;
+  padding: 10px;
+  font-family: Black;
+}
+nav .nav1 {
+    border: 1px solid black;
+    font-family: white;
+    margin: 10px;
+
+}
+nav .nav2 {
+  border: 1px solid black;
+  margin: 10px;
+}

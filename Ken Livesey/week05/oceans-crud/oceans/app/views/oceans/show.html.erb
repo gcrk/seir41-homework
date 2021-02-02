@@ -1,0 +1,17 @@
+<h2><%= @ocean.name %></h2>
+
+<%# <%= image_tag @ocean.image, :alt => @ocean.name if @ocean.image.present? %>
+
+<ul>
+  <li>Name: <%= @ocean.name %></li>
+  <li>Location: <%= @ocean.location %></li>
+  <li>Area: <%= @ocean.area %></li>
+  <li>Volume: <%= @ocean.volume %></li>
+  <li>Average depth: <%= @ocean.avg_depth %></li>
+  <li>Coastline: <%= @ocean.coastline %></li>
+</ul>
+
+<div class="controls">
+  <%= link_to 'Edit ocean', edit_ocean_path(@ocean.id) %>
+  <%= button_to 'Delete ocean', ocean_path(@ocean.id), :method => 'delete' %>
+</div>

@@ -1,0 +1,16 @@
+<h1>Guitar Forum</h1>
+
+<% @posts.each do |post| %>
+  <div class="post">
+    <h4> <%= post["username"] %> </h4>
+    <p>  <%= post["comment"] %> </p>
+    <img src="<%= post["image"] %>">
+    <p>
+      <a href="/forum/<%= post["id"] %>/edit">
+        Edit post
+      </a>
+      <br>
+      <a href="/forum/<%= post["id"] %>/delete">Delete Post</a>
+    </p>
+  </div>
+<% end %>
