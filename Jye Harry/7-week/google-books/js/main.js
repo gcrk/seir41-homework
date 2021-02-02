@@ -1,6 +1,6 @@
+const getBookInfo = function(event) {
+  event.preventDefault();
 
-
-const getBookInfo = function() {
   const xhr = new XMLHttpRequest();
   const title = document.getElementById('title').value;
   xhr.open('GET', `https://www.googleapis.com/books/v1/volumes?q=${title}`);
@@ -21,4 +21,5 @@ const getBookInfo = function() {
 
 document.addEventListener('DOMContentLoaded', function(event) {
   document.getElementById('button').addEventListener('click', getBookInfo);
+  document.querySelector('form').addEventListener('submit', getBookInfo);
 });
