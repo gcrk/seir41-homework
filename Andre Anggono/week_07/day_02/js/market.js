@@ -40,7 +40,6 @@ const ozCrypto = {
 	},
 	totalMarket() {
 		const allMarketIds = Object.keys(this.marketID).sort();
-
 		$result = $("#result");
 		$result.empty();
 		$result.append($("<h2></h2>").text("All Australian Market"));
@@ -49,8 +48,8 @@ const ozCrypto = {
 		}
 	},
 	singleMarket(marketID, baseCurrency) {
-		$result = $("#result");
 		$.ajax(`https://api.btcmarkets.net/v3/markets/${marketID}/ticker`).done((report) => {
+			$result = $("#result");
 			formattedLastPrice = baseCurrency === "BTC" ? `${report.lastPrice} BTC` : `${formatter.format(report.lastPrice)} AUD`;
 			$result.append($("<h3></h3>").text(marketID));
 			$result.append($("<p></p>").html(`<strong>Last Price : </strong> ${formattedLastPrice}`));
