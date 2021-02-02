@@ -1,4 +1,4 @@
-.output {
+/* .output {
     border: 1px solid #E1E1E1;
     background: white;
     border-radius: 4px;
@@ -31,20 +31,11 @@ ul {
 
 }
 
-.warning {
-    background-color: #f8d7da;
-    ;
-}
-
-.loading {
-    background-color: black;
-    color: white;
-}
-
-.hidden {
-    display: none;
-}
-
 .container {
     padding: 5rem;
+} */
+
+
+.text-white {
+    color: white;
 }
