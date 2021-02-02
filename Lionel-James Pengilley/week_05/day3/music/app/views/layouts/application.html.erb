@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Music</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+
+    <nav>
+      <%= link_to 'All artists', artists_path %>
+      <%= link_to 'New artist', new_artist_path %>
+
+      <%= link_to 'All songs', songs_path %>
+      <%= link_to 'New song', new_song_path %>
+    </nav>
+
+    <%= yield %>
+  </body>
+</html>

@@ -1,0 +1,19 @@
+<h1><%= @song.name %></h1>
+
+<iframe class="feature_song" width="560" height="315" src="<%= @song.video %>" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+
+<ul>
+  <li>Name: <%= @song.name %></li>
+  <% if @song.artist.present? %>
+    <li>Artist: <%= link_to @song.artist.name, @song.artist %></li>
+  <% end %>
+  <li>Album: <%= @song.album %></li>
+  <li>Length: <%= @song.length %> minutes</li>
+  <li>Genre: <%= @song.genre %></li>
+</ul>
+
+<div class="controls">
+  <%= link_to 'Edit song', edit_song_path(@song) %>
+  <%= link_to 'Delete song', @song, :method => 'delete' %>
+</div>

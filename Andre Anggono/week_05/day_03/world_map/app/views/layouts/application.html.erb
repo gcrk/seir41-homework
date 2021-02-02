@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>World Map</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+  <nav>
+    <%= link_to 'All Countries', countries_path %> -
+    <%= link_to 'New Country', new_country_path %> |
+    <%= link_to 'All Cities', cities_path %> -
+    <%= link_to 'New City', new_city_path %>
+  </nav>
+    <%= yield %>
+  </body>
+</html>

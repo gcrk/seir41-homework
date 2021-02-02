@@ -1,0 +1,20 @@
+<h1><%= @artist.name %></h1>
+
+<%= image_tag @artist.image, :class => 'feature', :alt => @artist.name if @artist.image.present? %>
+
+  <ul>
+    <li>Name: <%= @artist.name %></li>
+    <li>Genre: <%= @artist.genre %></li>
+  </ul>
+
+<h2>Songs</h2>
+  <% @artist.songs.each do |song| %>
+  <p><%= song.name %></p>
+  <iframe class="thumbnail" width="560" height="315" src="<%= song.video %>" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+  <% end %>
+
+
+<div class="controls">
+  <%= link_to 'Edit artist', edit_artist_path(@artist) %>
+  <%= link_to 'Delete artist', @artist, :method => 'delete' %>
+</div>
