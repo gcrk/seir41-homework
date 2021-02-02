@@ -1,9 +1,3 @@
-// TODOs
-
-// Pull, add, commit and push to github
-// Update JavaScript notes
-// Review computer science thing
-
 // Selectors
 const body = document.querySelector("body");
 const text_input = document.getElementById("title");
