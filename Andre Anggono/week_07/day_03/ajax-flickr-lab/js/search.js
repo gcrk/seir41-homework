@@ -37,7 +37,7 @@ const searchFlickr = (keywords, page) => {
 const showImages = (results) => {
 	_(results.photos.photo).each((photo) => {
 		const thumbnailURL = generateURL(photo);
-		const $img = $("<img></img>", { src: thumbnailURL, class: "col-4" }); // .attr('src', thumnailURL)
+		const $img = $("<img></img>", { src: thumbnailURL, class: "col-lg-4 col-sm-6 rounded" }); // .attr('src', thumnailURL)
 		$img.appendTo("#images"); // $('#images').append($img)
 	});
 };
