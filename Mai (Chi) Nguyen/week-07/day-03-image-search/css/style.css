@@ -29,3 +29,7 @@ button, input {
   font-family: 'Gloria Hallelujah', cursive;
   font-size: 1em;
 }
+
+img {
+  margin: 5px;
+}

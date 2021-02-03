@@ -41,7 +41,7 @@ const generateURL = function (p) {
     p.id,
     '_',
     p.secret,
-    '_c.jpg' // TODO: change 'q to sth else for different sizes (see docs)' https://www.flickr.com/services/api/misc.urls.html
+    '_z.jpg' // TODO: change 'q to sth else for different sizes (see docs)' https://www.flickr.com/services/api/misc.urls.html
   ].join('');
 };
 // function to generate photo's URL
