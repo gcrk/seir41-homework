@@ -1,0 +1,16 @@
+<h1><%= @artist.artist_name %></h1>
+
+<%= image_tag @artist.image %>
+
+<ul>
+  <li>Artist name: <%= @artist.artist_name %></li>
+  <li>Real name: <%= @artist.real_name %></li>
+  <li>DOB: <%= @artist.dob %></li>
+  <li>Nationality: <%= @artist.nationality %></li>
+  <li>Songs: </li>
+  <ul>
+    <% @artist.songs.each do |song| %>
+      <li><%= link_to song.title, song %></li>
+    <% end %>
+  </ul>
+</ul>

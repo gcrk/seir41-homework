@@ -1,0 +1,33 @@
+<div id="show">
+  <h1><%= @inventory["name"] %></h1>
+  <img src="<%= @inventory["image"] %>" alt="<%= @inventory["name"] %>">
+  <table>
+    <tbody>
+      <tr>
+        <td>Description</td>
+        <td><%= @inventory["description"] %></td>
+      </tr>
+      <tr>
+        <td>Manufacturer</td>
+        <td><%= @inventory["manufacturer"] %></td>
+      </tr>
+      <tr>
+        <td>QTY</td>
+        <td><%= @inventory["qty"] %></td>
+      </tr>
+      <tr>
+        <td>Price</td>
+        <td>$<%= @inventory["price"] %></td>
+      </tr>
+      <tr>
+        <td>Stocked Year</td>
+        <td><%= @inventory["stocked_year"] %></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="controls">
+    <a href="/inventory/<%= @inventory["id"] %>/edit">Edit</a>
+    <a href="/inventory/<%= @inventory["id"] %>/delete">Delete</a>
+  </div>
+</div>

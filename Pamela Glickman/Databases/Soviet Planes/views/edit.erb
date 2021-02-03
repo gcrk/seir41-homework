@@ -1,0 +1,22 @@
+<h2>Edit the <%= @plane["name"] %></h2>
+
+<div class="container">
+  <form action="/edit/<%= @plane["id"] %>" method="post">
+    <p>
+      <label for="plane_name">Enter the name of the Soviet plane:</label>
+      <input id="plane_name" name="name" value="<%= @plane["name"] %>" spellcheck="false" required>
+      <label for="plane_role">Enter the plane's role in combat:</label>
+      <input id="plane_role" name="role" value="<%= @plane["role"] %>">
+    </p>
+    <p>
+      <label for="plane_speed">Enter the plane's max speed (in knots):</label>
+      <input id="plane_speed" name="max_speed" value="<%= @plane["max_speed"] %>">
+      <label for="plane_image">Enter a url for an image of the plane:</label>
+      <!-- I made the images required, because I got sick of seeing the error icon when the image didn't load -->
+      <input id="plane_image" name="image" value="<%= @plane["image"] %>" spellcheck="false">
+    </p>
+    <button class="submit">Click Here To Edit The Plane</button>
+  </form>
+
+    <!-- I should add a cancel button that makes the form go away without submitting it-->
+</div>

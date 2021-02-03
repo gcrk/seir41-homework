@@ -1,0 +1,29 @@
+.container { 
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+
+.row {
+    display: flex;
+}
+
+
+
+#nav {
+    justify-content: space-between;
+    padding: 1rem;
+}
+
+
+.links {
+    justify-content: center;
+}
+
+a { 
+    text-decoration: none;
+    line-height: 20px;
+    color: black;
+    padding: 1rem;
+    border: 2px solid red;
+}

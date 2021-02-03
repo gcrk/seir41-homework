@@ -1,0 +1,29 @@
+<h1><%= @city.name %></h1>
+<table>
+  <tr>
+    <th>Country</th>
+    <td><%= link_to @city.country.name, @city.country %></td>
+  </tr>
+  <tr>
+    <th>Area</th>
+    <td><%= @city.area %></td>
+  </tr>
+  <tr>
+    <th>Founded in</th>
+    <td><%= @city.founded.strftime('%A, %B %e, %Y') unless @city.founded.nil? %></td>
+  </tr>
+  <tr>
+    <th>Population</th>
+    <td><%= @city.population %></td>
+  </tr>
+  <tr>
+    <th>Iconic Sites</th>
+    <td><%= @city.icons %></td>
+  </tr>
+  
+</table>
+
+<div class="controls">
+  <%= button_to 'Edit City', edit_city_path(@city), :method => 'get' %>
+  <%= button_to 'Delete City', @city, :method => 'delete' %>
+</div>

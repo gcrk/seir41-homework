@@ -1,0 +1,27 @@
+body {
+  background-color: teal;
+  max-width: 1100px;
+  margin: 0 auto;
+  font-family: monospace;
+  font-size: 25px;
+  text-shadow: 3px 5px 1px rgba(0, 0, 0, 0.2);
+}
+
+nav {
+  text-align: center;
+  text-shadow: none;
+}
+button {
+  border-radius: 5px;
+  background-color: baby blue;
+  width: auto;
+  height: 35px;
+  border-color: pink;
+  color: blue;
+  font-family: monospace;
+}
+
+input {
+  height: 35px;
+  font-family: monospace;
+}

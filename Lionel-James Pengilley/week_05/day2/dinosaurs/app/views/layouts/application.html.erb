@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Dinosaurs</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <link rel="stylesheet" href="/dinos.css">
+  </head>
+
+  <body>
+    <nav>
+      <%= link_to 'All Dinosaurs', dinos_path %>
+      <%= link_to 'New Dinosaur', new_dino_path %>
+    </nav>
+    <%= yield %>
+  </body>
+</html>

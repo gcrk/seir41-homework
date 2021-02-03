@@ -1,0 +1,117 @@
+@import url('https://fonts.googleapis.com/css2?family=Cookie&family=Rye&display=swap');
+
+body {
+  background: #D0E4F5 url("https://dynaimage.cdn.cnn.com/cnn/c_fill,g_auto,w_1200,h_675,ar_16:9/https%3A%2F%2Fcdn.cnn.com%2Fcnnnext%2Fdam%2Fassets%2F161005162923-02-scary-clown-t1-stock.jpg") repeat scroll 150% 150%;
+  font-family: 'Cookie', cursive;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-sizing: border-box;
+  font-size: 18px;
+  color: #4860A8;
+}
+
+header {
+  margin: 20px 0 0 0;
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  align-self: center;
+  background-color: rgba(255, 255, 255, 0.95);
+  border: 15px solid #D84818;
+  border-radius: 30px;
+}
+
+.main-container {
+  margin: 20px 0 0 0;
+  padding: 10px;
+  width: 50%;
+  background-color: rgba(255, 255, 255, 0.95);
+  border: 15px solid #D84818;
+  border-radius: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+h1 {
+  font-family: 'Rye', cursive;
+  font-size: 30px;
+  margin: 30px 0 10px 0;
+}
+
+h2 {
+  font-family: 'Rye', cursive;
+  text-align: center;
+}
+
+ul {
+  display: flex;
+  justify-content: center;
+  padding-inline-start: 0;
+}
+
+li {
+  padding: 0 20px 20px 20px;
+  list-style: none;
+  font-size: 24px;
+}
+
+a {
+  color: #4860A8;
+  text-decoration: none;
+}
+
+p, label {
+  font-size: 28px;
+  text-align: center;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  align-self: center;
+  align-items: center;
+  width: 60%;
+}
+
+input {
+  font-family: 'Cookie', cursive;
+  width: 100%;
+  justify-content: center;
+  color: #4860A8;
+  font-size: 25px;
+  margin: 20px auto;
+}
+
+button {
+  background-color: rgba(255, 255, 255, 0.95);
+  border: 5px solid #D84818;
+  border-radius: 30px;
+  margin: 15px;
+  padding: 5px;
+  width: 150px;
+  align-self: center;
+  font-family: 'Cookie', cursive;
+  color: #4860A8;
+  font-size: 25px;
+}
+
+.home-button {
+  font-size: 50px;
+  color: #D84818;
+  border: 5px solid #D84818;
+  border-radius: 30px;
+  margin: 15px;
+  padding: 20px;
+}
+
+.home-nav {
+  display: flex;
+  flex-direction: row;
+  flex-flow: wrap;
+  align-items: center;
+  justify-content: center;
+}

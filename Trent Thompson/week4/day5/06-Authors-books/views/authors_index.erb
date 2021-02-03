@@ -1,0 +1,9 @@
+<h1>Authors</h1>
+
+<% @authors.each do |author| %>  <!-- dont wanna see this either -->
+  <p>
+    <a href="/authors/<%= author["id"] %>"">
+    <%= author["name"] %>  <!-- just want to see this -->
+    </a>
+  </p>
+<% end %> <!-- dont want this to appear -->

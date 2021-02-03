@@ -1,0 +1,11 @@
+<h1>Rock Paper Scissors</h1>
+
+<p>Your choice: <%= @user_choice.capitalize %></p>
+
+<p>Computer's choice: <%= @choice.capitalize %></p>
+
+<p>Result: <%= @message %></p>
+
+<% if @message == "You won!" %>
+  <img src="/assets/clown-IT.gif" alt="scary clown">
+<% end %>

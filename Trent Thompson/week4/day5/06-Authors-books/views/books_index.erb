@@ -1,0 +1,9 @@
+<h1>Books</h1>
+
+<% @books.each do |book| %>  <!-- dont wanna see this either -->
+  <p>
+    <a href="/books/<%= book["id"] %>">
+    <%= book["book"] %>  <!-- just want to see this -->
+    </a>
+  </p>
+<% end %> <!-- dont want this to appear -->

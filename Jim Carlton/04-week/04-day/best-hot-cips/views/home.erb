@@ -1,0 +1,16 @@
+<h2>Welcome to Best Hot Chips!</h2>
+<p>Here you're find a list of the best chips around and a link to find the quickest path to chip glory from your current location 🤤</p>
+
+<ul class="chip-list">
+
+<% @chipperies.each do |chippery| %>
+
+    <li><a href="/<%= chippery["id"] %>">
+      <img src="<%= chippery["image"] %>" alt="<%= chippery["place"] %>">
+      <p class="chip-title"><%= chippery["place"] %></p>
+      <p><%= chippery["rating"] %></p>
+    </a></li>
+
+<% end %>
+
+</ul>

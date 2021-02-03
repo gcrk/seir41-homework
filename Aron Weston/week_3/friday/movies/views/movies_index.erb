@@ -1,0 +1,14 @@
+<title>Movies | IMDB</title>
+
+<h1>Movies</h1>
+
+<% @movies.each do |movie| %>
+    <div class="movie">
+        <img src="#{<%= movie.image %>}" alt="Movie image">
+        <p><%= movie.title %></p>
+        <p>Starring: <%= movie.starring %></p>
+        <p>Year: <%= movie.year %></p>
+        <p>Running Time: <%= movie.running_time %></p>
+        <p>Gross Box Office: <%= movie.box_office %></p>
+    </div>
+<% end %>

@@ -1,0 +1,30 @@
+body {
+  background-color: black;
+}
+
+.container {
+  background-color: black;
+  height: 400px;
+  width: 100%;
+}
+
+h1 {
+  color: white;
+  text-align: center;
+}
+
+.yes {
+  background-color: green;
+  color: white;
+  
+}
+
+.no {
+  background-color: red;
+  color: white;
+}
+
+.done {
+  background-color: blue;
+  color: white;
+}
