@@ -1,0 +1,8 @@
+<h2>Index of All musicians</h2>
+<% @musicians.each do |each_musician| %>
+<p>
+  <a href="/musicians/<%=  each_musician["id"] %>" >
+  <%= each_musician["name"] %>
+  </a>
+</p>
+<% end %>
