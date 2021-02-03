@@ -1,0 +1,21 @@
+
+#container {
+  display: grid;
+  background-color: teal;
+  border-radius: 5px;
+  justify-content: center;
+  grid-template-columns: 1fr 1fr 1fr;
+  column-gap: 10px;
+}
+body {
+  max-width: 960px;
+  margin:0 auto;
+  font-family: arial;
+}
+h1 {
+  text-align: center;
+}
+button{
+  font-size: 20px;
+  text-align: center;
+}

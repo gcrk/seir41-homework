@@ -1,0 +1,10 @@
+<h1>Your Number:<%= @your_number %></h1>
+<h1>Secret Number:<%= @secret_number %></h1>
+
+<% if @your_number.to_i != @secret_number %>
+<h1> You are wrong!</h1>
+<img src="https://slack-imgs.com/?c=1&o1=ro&url=https%3A%2F%2Fmedia1.giphy.com%2Fmedia%2FEcIkYquosH6zKr7cFZ%2Fgiphy-downsized.gif%3Fcid%3D6104955ec60bc2ab7d8a025181179b52520eaa5bc9eeea3d%26rid%3Dgiphy-downsized.gif" alt="">
+<% else %>
+<h1>You are correct!</h1>
+<img src="https://media2.giphy.com/media/iiQSTrHtDIgnw9YtlA/giphy.gif" alt="">
+<% end %>

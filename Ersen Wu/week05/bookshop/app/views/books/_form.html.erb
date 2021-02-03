@@ -1,0 +1,13 @@
+<%= form_for @book do |f| %>
+
+<%= f.label :title %>
+<%= f.text_field :title, :required =>true%>
+
+<%= f.label :year %>
+<%= f.text_field :year %>
+
+<%= f.label :image %>
+<%= f.url_field :image %>
+
+<%= f.submit %>
+<% end %>

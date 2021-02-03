@@ -1,0 +1,10 @@
+<h2>Book: <%= @book.title %> </h2>
+<p>Author: <%= @author.name %></p>
+
+<div class="books_controls">
+  <button><a href="/books/<%= @book[:id] %>/edit">Edit Book</a></button>
+  <button><a href="/books/<%= @book[:id] %>/delete">Delete book</a></button>
+</div>
+
+<h2>Year: <%= @book.year %></h2>
+<img src="@book.image" alt="Image coming soon">
