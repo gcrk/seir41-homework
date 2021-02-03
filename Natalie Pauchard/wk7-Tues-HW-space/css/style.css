@@ -1,0 +1,86 @@
+
+body {
+  align-content: center;
+  z-index: 0;
+	background: #000 url('https://image.ibb.co/mjnygo/stars.png') repeat top center;
+}
+
+.container {
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+
+h1 {
+  display: block;
+  color: #CACCCE;
+  text-align: center;
+  font-family: 'Orbitron', sans-serif;
+  font-size: 4em;
+}
+
+p {
+  display: block;
+  color: #F8F8FF;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 2em;
+  margin-left: 40%;
+  list-style: none;
+  padding: 10px;
+  position: sticky;
+}
+
+#spacenames {
+  display: block;
+  text-align: center;
+}
+
+#find {
+  display: block;
+  align-content: center;
+  margin-left: 35%;
+  margin-right: 35%;
+  padding: 20px 80px 20px 80px;
+  border-radius: 1em;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 1.2em;
+  color: #CACCCE;
+  background: transparent;
+}
+
+.grow:hover
+{
+        -webkit-transform: scale(1.3);
+        -ms-transform: scale(1.3);
+        transform: scale(1.3);
+}
+
+button:focus {
+  outline:0;
+}
+
+.box {
+	position: absolute;
+	display: block;
+	top:0; bottom:0;
+	left:0; right:0;
+	width:100%; height:100%;
+}
+
+.twinkling{
+	z-index: 2;
+	background:transparent url('https://image.ibb.co/ir1DE8/twinkling.png') repeat top center;
+	animation: move-twink-back 300s linear infinite;
+}
+
+@keyframes move-twink-back {
+	from {background-position:0 0;}
+	to {background-position:-10000px 5000px;}
+}
+
+.box {
+  margin-top: 17%;
+  display: grid;
+}
+
+/* Start https://www.cursors-4u.com */ * {cursor: url(https://cur.cursors-4u.net/mechanics/mec-1/mec5.cur), auto !important;} /* End https://www.cursors-4u.com */

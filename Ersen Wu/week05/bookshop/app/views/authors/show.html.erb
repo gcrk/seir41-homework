@@ -1,0 +1,15 @@
+<h1><%= @author.name %></h1>
+<%= image_tag @author.image, :class => 'feature', :alt=> @author.name if @author.image.present? %>
+
+<ul>
+  <li>Name: <%= @author.name %></li>
+
+  <li>Nationality: <%= @author.nationality %></li>
+  <li>Genre: <%= @author.genre %></li>
+</ul>
+
+<div class="controlls">
+  <%= link_to 'Edit Author', edit_author_path(@author) %>
+  <%= button_to 'Delete Author', @author, :method => 'delete' %>
+
+</div>

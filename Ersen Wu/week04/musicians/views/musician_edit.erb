@@ -1,0 +1,26 @@
+<h1>Edit Musician</h1>
+<form action="/musicians/<%= @musician["id"] %>" method="post">
+<h2 id="original">Original Information</h2>
+<h1><%= @musician["name"] %></h1>
+<h2>Genre: <%= @musician ["genre"] %></h2>
+<img src="<%= @musician["image"] %>" alt="<%= @musician["name"] %>">
+
+<h2 id="new">New Information</h2>
+<label>
+Name:
+  <input name="name" placeholder="name">
+</label>
+
+  <label>
+    Genre:
+    <input name="genre" placeholder="Genre">
+  </label>
+
+  <label>
+    Image:
+    <input type="url" name="image" placeholder="http://....">
+  </label>
+
+<button>Update Musician</button>
+
+</form>
