@@ -6,7 +6,8 @@ const searchFlickr = function (keywords, page) {
     api_key: '2f5ac274ecfac5a455f38745704ad084',
     text: keywords,
     format: 'json',    //this to tell flickr
-    page: page
+    page: page,
+    per_page: 20,
   }).done(showImages).done(function(info) {
     console.log(info);
   });
@@ -18,13 +19,15 @@ let pages = 0;
 const showImages = function (results) {
   // console.log(results.photos.page);
   pages = results.photos.pages;
-  _(results.photos.photo).each(function(photo) {
+  images = results.photos.photo;
+  _(images).each(function(photo) {
     // generate a URL
-    const thumbnailURL = generateURL(photo);
-    const $img = $('<img>', {src: thumbnailURL}); //.attr('src', thumbnailURL);
-    $img.appendTo('#images'); // $('#images').append($img);
-    // create a <img> with that URL
-    // display the image
+    const mediumURL = generateURL(photo);
+    //generate URL for the photo
+    const photoURL = generatePhotoURL(photo);
+
+    const $a = $(`<a href="${photoURL}" target="_blank"><img src='${mediumURL}'></img></a>`)
+    $a.appendTo('#images');
   });
 }
 
@@ -38,28 +41,30 @@ const generateURL = function (p) {
     p.id,
     '_',
     p.secret,
-    '_q.jpg' // TODO: change 'q to sth else for different sizes (see docs)'
+    '_c.jpg' // TODO: change 'q to sth else for different sizes (see docs)' https://www.flickr.com/services/api/misc.urls.html
   ].join('');
 };
+// function to generate photo's URL
+const generatePhotoURL = function (p) {
+  return `https://www.flickr.com/photos/${p.owner}/${p.id}`
+}
 
+//Function to reset the page
 const resetSearch = function(newKeywords) {
   currentPage = 1;
   $('#images').html('');
 }
 
 $(document).ready(function(event) {
-  //on form submit
 
   $('#search').on('submit', function(event) {
     event.preventDefault();
     const searchTerms = $('#query').val();
+    // reset the page with new search term
     resetSearch(searchTerms);
     searchFlickr(searchTerms, currentPage);
 
   })
-    // find the search terms
-    // get results from flickr
-    // display results
 
     // Very twitchy
   $(window).on('scroll', _.throttle(function () {
