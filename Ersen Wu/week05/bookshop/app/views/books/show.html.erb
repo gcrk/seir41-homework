@@ -1,0 +1,14 @@
+<h1><%= @book.title %></h1>
+
+<%= image_tag @book.image, :class => 'feature', :alt => @book.title if @book.image.present? %>
+
+
+<ul>
+  <li><%= @book.year %></li>
+</ul>
+
+
+<div class="controls">
+  <%= link_to 'Edit Book', edit_book_path(@book) %>
+  <%= link_to 'Delete Book', @book, :method=>'delete' %>
+</div>

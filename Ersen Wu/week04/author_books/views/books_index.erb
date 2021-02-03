@@ -1,0 +1,12 @@
+<h1><%= @author[:name] %>'s List of books</h1>
+
+<% @books.each do |book|  %>
+   <p>
+    <a href="/<%= @author[:id] %>/books/<%= book[:id] %>">
+      <%= book[:title] %>
+      </a>
+
+   </p>
+<% end %>
+
+  <button><a href="/<%= @author[:id] %>/books/new">Add New Book</a></button>

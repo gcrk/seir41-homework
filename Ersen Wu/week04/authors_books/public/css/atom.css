@@ -1,0 +1,17 @@
+body {
+  background-color: aliceblue;
+}
+
+.container {
+  max-width: 900px
+  margin: 0 auto;
+}
+
+nav a {
+  text-aligh: right;
+  color:red;
+}
+
+img {
+ max-width:100%;
+}
