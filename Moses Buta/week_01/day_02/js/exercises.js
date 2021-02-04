@@ -71,7 +71,7 @@ problemSolutions(10);
 //   DrEvil(1000000): 1000000 dollars (pinky)
 
 const drEvil = function(amount) {
-  if (amount == 10000000){
+  if (amount === 10000000){
            const numSize = `${amount} pinky`;
            console.log(numSize);
          }
@@ -89,7 +89,22 @@ drEvil(100);
 //   mixUp('dog', 'dinner'): 'dig donner'
 // Look up the JavaScript string reference to find methods which may be useful!
 // ```
-//
+const mixUp = function(firstString, secondString) {
+  //extract the first two characters and store the extracted
+  const extractOne = firstString.slice(0, 2);
+  // extract the first two character and store the remaning
+  const extractOneOne = firstString.substring(2);
+
+  //extract the first two characters and store the extracted
+  const extractTwo = secondString.slice(0, 2);
+  // extract the first two character and store the remaning
+  const extractTwoTwo = secondString.substring(2);
+
+  const concatenated = `${extractTwo}${extractOneOne} ${extractOne}${extractTwoTwo}`;
+  return concatenated;
+}
+console.log(mixUp("mix", "pod"));
+console.log(mixUp("dog", "dinner"));
 // ## FixStart
 //
 // Create a function called fixStart. It should take a single argument, a string, and return a version where all occurences of its first character have been replaced with '*', except for the first character itself. You can assume that the string is at least one character long. For example:

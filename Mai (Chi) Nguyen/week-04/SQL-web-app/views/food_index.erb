@@ -1,0 +1,14 @@
+<h2>Food Library</h2>
+
+<ol>
+<% @food.each do |dish| %>
+
+    <li><a href="/food/<%= dish['id'] %>"><%= dish['name'] %></a></li>
+
+<% end %>
+</ol>
+
+<form action="/food/new">
+  <button>Add new dish</button>
+
+</form>

@@ -1,0 +1,7 @@
+<h1>Dinosaurs</h1>
+
+<% @dinos.each do |dino| %>
+  <p>
+    <%= link_to dino.name, dino_path(dino.id) %>
+  </p>
+<% end %>

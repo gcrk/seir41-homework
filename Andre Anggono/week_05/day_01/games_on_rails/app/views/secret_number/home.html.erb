@@ -1,0 +1,14 @@
+<h1>Secret Number</h1>
+<h2>Secret Number: ???</h2>
+<form action="/secret-number/result">
+  <h2>Guess the secret number:</h2>
+  <div>
+    <% (1..10).each { |i| %>
+    <label>
+      <input type="radio" name="guess" value="<%= i %>" required>
+      <%= i %>
+    </label>
+    <% }%>
+  </div>
+  <button>Guess</button>
+</form>

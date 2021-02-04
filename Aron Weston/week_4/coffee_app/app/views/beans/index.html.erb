@@ -1,0 +1,37 @@
+<head>
+  <title>The Espresso Dashboard</title>
+</head>
+<link rel="stylesheet" href="style.css">
+
+<div class="container">
+  <h1>The Espresso Dashboard</h1>
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Roaster</th>
+        <th>Origin</th>
+        <th>Roast Profile</th>
+        <th>Price</th>
+        <th>Rating</th>
+        <th>Edit/Delete</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @beans.each do |bean| %>
+      <tr>
+        <td><%= link_to(bean.name, bean.purchase_link, class:"buy-now") %></td>
+        <% if bean.roaster.present? %>
+          <td><%= bean.roaster.name %></td>
+        <% end %>
+        <td><%= bean.roaster_id %></td>
+        <td><%= bean.origin %></td>
+        <td><%= bean.roast_profile %></td>
+        <td><%= number_to_currency bean.price %></td>
+        <td><%= bean.aron_rating %></td>
+        <td><%= link_to 'edit', edit_bean_path(bean) %>/<%= link_to 'delete', bean, method: "delete" %></td>
+      </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>

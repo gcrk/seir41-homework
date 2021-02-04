@@ -1,0 +1,13 @@
+<% @inventories.each { |inventory| %>
+<a href="/inventory/<%= inventory["id"] %>">
+  <div class="inventory">
+    <img src="<%= inventory["image"] %>" alt="<%= inventory["name"] %>">
+    <p><%= inventory["name"] %></p>
+  </div>
+</a>
+<% }%>
+<a href="/inventory/new">
+  <div id="new-inventory">
+    <p>New Inventory</p>
+  </div>
+</a>

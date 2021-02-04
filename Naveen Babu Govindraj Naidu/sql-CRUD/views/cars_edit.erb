@@ -1,0 +1,16 @@
+<h1> Edit Car</h1>
+<form action="/cars/<%= @car["id"] %>" method="post">
+   <label>
+     Brand:
+     <input name="brand" placeholder="eg...xyz" required value="<%= @car["brand"] %>">
+   </label>
+   <label>
+     Model:
+     <input name="model" placeholder="eg...xyz" value="<%= @car["model"] %>">
+   </label>
+   <label>
+     Image:
+     <input type="url" name="image" placeholder="http://..." value="<%= @car["image"] %>">
+   </label>
+   <button>Update car</button>
+</form>

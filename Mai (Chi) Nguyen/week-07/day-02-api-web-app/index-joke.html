@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <script src="js/jquery.js" charset="utf-8"></script>
+    <script src="js/joke.js" charset="utf-8"></script>
+    <title></title>
+  </head>
+  <body>
+    <nav>
+      <a href="index-joke.html">Joke of the day</a>
+      <a href="index-hero.html">Hero or Villian</a>
+    </nav>
+    <h1>Joke of the day</h1>
+
+    <form id='joke-form'>
+      <div>
+        <input type='radio' id='general' name='joke-type' value='general'>
+        <label for="general">General</label>
+      </div>
+
+      <div>
+        <input type='radio' id='programming' name='joke-type' value='programming' checked>
+        <label for="programming">Programming</label>
+      </div>
+      <!-- <div>
+        <label>Get a job by type</label>
+        <input type="search" placeholder="general/programming" id='type'>
+      </div> -->
+      <button id='fetch-joke'>Get a joke</button>
+    </form>
+
+    <div>
+      <p id='joke-content'></p>
+      <p id='punchline'></p>
+
+    </div>
+
+  </body>
+</html>
