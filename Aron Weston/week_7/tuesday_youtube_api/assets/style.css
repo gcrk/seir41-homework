@@ -1,0 +1,107 @@
+/*--------------------------------------------------------------
+# Root
+--------------------------------------------------------------*/
+:root {
+    /* --wrapper-width:  */
+    --bkg: #000;
+
+    /* Fonts */
+    --font-color: #fff;
+    --font-family: "Roboto",
+        "Segoe UI",
+        "Helvetica Neue",
+        Arial,
+        sans-serif,
+        "Apple Color Emoji",
+        "Segoe UI Emoji",
+        "Segoe UI Symbol";
+    --font-black: 900;
+    --font-bold: 700;
+    --font-reg: 400;
+    --font-light: 300;
+    /* Buttons */
+    --btn-color: #000;
+    --btn-border: 1px solid #000;
+    --btn-bkg: transparent;
+    /* :hover */
+    --btn-hv-color: #000;
+    --btn-hv-border: #000;
+    /* btn primary */
+    --btn-p-color: #000;
+    --btn-p-bkg: #000;
+    --btn-p-border: #000;
+    /* btn hover primary */
+    --btn-p-hov-color: #000;
+    --btn-p-hov-bkg: #000;
+    --btn-p-hov-border: #000;
+
+    /* Alert */
+    --warning: red;
+    --warning-color: #fff;
+    --success: green;
+    --success-color: #fff;
+}
+
+/*--------------------------------------------------------------
+# HTML & Body
+--------------------------------------------------------------*/
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: var(--bkg);
+    font-family: var(--font-family);
+    color: var(--font-color);
+
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    margin-top: 0;
+    margin-bottom: 2rem;
+}
+
+
+.center {
+    height: 100vh;
+    display: flex;
+    text-align: center;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    /* border: 3px solid green; */
+}
+
+
+
+/*--------------------------------------------------------------
+# Start here!
+--------------------------------------------------------------*/
+
+img {
+    margin: 0 auto;
+    display: inherit;
+    align-items: center;
+    cursor: pointer;
+}
+
+.spin {
+    transition-duration: 2.5s;
+    transform: rotate(360deg);
+}
+
+.fadeOut {
+    transition-duration: 1s;
+    opacity: 0;
+}
+
+.hide {
+    display: none;
+}
+

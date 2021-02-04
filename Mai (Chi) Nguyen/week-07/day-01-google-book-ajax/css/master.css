@@ -1,0 +1,41 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Rokkitt&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+
+h1 {
+  font-family: 'Dancing Script', cursive;
+  font-size: 60px;
+}
+
+body {
+  font-family: 'Rokkitt', serif;
+  font-size: 17px;
+}
+
+.container {
+  padding: 5px;
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+  background-color: #444;
+  color: white;
+  border-radius: 50% 20% / 10% 40%;
+  min-height: 720px;
+}
+
+img {
+  margin: 20px;
+  display: inline-block;
+  align-items: center;
+}
+
+.result-text {
+  text-align: left;
+  max-width: 350px;
+  margin: 0 auto;
+}
+
+button, input {
+  font-family: 'Press Start 2P', cursive;
+}
