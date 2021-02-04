@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Currencies</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/water.css@2/out/water.css">
+    <script src="JS/jquery.js"></script>
+    <script src="JS/exercise.js"></script>
+  </head>
+  <body>
+
+    <h1>Currency Converter</h1>
+
+    <form id="currency-form" action="index.html" method="post">
+      <label for="base">Enter a base currency:</label>
+      <input type="text" id="base" name="base" placeholder="RUB" pattern="[A-Z]{3}">
+      <label for="amount">Enter an amount:</label>
+      <input type="number" id="amount" name="amount" placeholder="1.00" step="0.01">
+      <label for="target">Convert to:</label>
+      <input type="text" id="target" name="target" placeholder="AUD" pattern="[A-Z]{3}">
+
+      <input type="submit">
+    </form>
+
+    <p>Converted Amount: <span id="converted-amount"></span></p>
+
+  </body>
+</html>

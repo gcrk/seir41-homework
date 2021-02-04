@@ -9,9 +9,11 @@
 	</head>
 	<body>
 		<h1>Google Books Search</h1>
-		<label for="bookTitle"><strong>Book Name:</strong></label>
-		<input type="text" id="bookTitle" placeholder="e.g. Harry Potter" autofocus required />
-		<button id="search">Search</button>
+		<form id="search-form">
+			<label for="bookTitle"><strong>Book Name:</strong></label>
+			<input type="text" id="bookTitle" placeholder="e.g. Harry Potter" autofocus required />
+			<button id="search">Search</button>
+		</form>
 		<h2 id="searchHeading" class="hidden">Search Result:</h2>
 		<div id="result"></div>
 		<script src="js/script.js"></script>
