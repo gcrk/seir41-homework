@@ -2,9 +2,35 @@
 // You will have to figure out what parameters to include
 // All functions must use recursion
 
-function findMax(){
-    // This function returns the largest number in a given array.
-}
+
+
+////without recursion
+const maximum = function (array) {
+  largestNumber = 0;
+  for(let i = 0; i < array.length; i++){
+    if (array[i] > largestNumber) {
+      largestNumber = (array[i])
+    }
+  }
+  return largestNumber
+};
+
+console.log(maximum([1,2,3,4,5,6,66]))
+
+//with recursion
+function findMax(array, index = 0, max = 0){ // This function returns the largest number in a given array.
+  if(index === array.length){
+    return max;
+  }
+  if( array[index] > max){
+    max = array[index]
+    return findMax(array, index + 1, max)
+  }
+  return max
+};
+
+console.log(findMax([1,4,6,8,32]));
+console.log(findMax([1,44,6,800,32]));
 
 function factorial(){
     // This function returns the factorial of a given number.
@@ -32,10 +58,10 @@ function letterCombinations(){
     // ["a","b","c","ab","ac","ba","bc","ca","cb","abc","acb","bac","bca","cab","cba"]
 }
 
-module.exports = {
-    findMax,
-    factorial,
-    fibonacci,
-    coinFlips,
-    letterCombinations
-}
+// module.exports = {
+//     findMax,
+//     factorial,
+//     fibonacci,
+//     coinFlips,
+//     letterCombinations
+// }
