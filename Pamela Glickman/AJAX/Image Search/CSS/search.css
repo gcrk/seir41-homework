@@ -1,0 +1,76 @@
+html {
+  background-color: black;
+}
+
+body {
+  max-width: 100%;
+  min-height: 100vh;
+  height: 100%;
+  padding: 0;
+}
+
+nav {
+  background-color: black;
+  color: lightblue;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 0;
+  width: 100%;
+  position: fixed; /* Keeps the navbar visible when scrolling down */
+  top: 0;
+}
+
+h1 {
+  color: inherit;
+  margin: 0 20px;
+  font-size: 2rem;
+  letter-spacing: 2px;
+}
+
+form {
+  width: 40%;
+}
+
+label, #query, button {
+  display: inline;
+  margin-right: 5px;
+}
+
+label {
+  font-size: 1.5rem;
+}
+
+div {
+  display: inline-block;
+  background-color: white;
+  border: 2px solid white;
+  width: 70vw;
+  height: 100%;
+  text-align: center;
+  margin-top: 50px;
+}
+
+#slideshow {
+  width: 25%;
+}
+
+#slideshow div {
+  width: 25%;
+  height: 00vh;
+  position: fixed;
+  top: 150px;
+  right: 40px;
+}
+
+img {
+  width: 15%;
+  margin: 2%;
+  border: 5px solid midnightblue;
+  box-shadow: 0 0 10px rgb(0,0,0);
+}
+
+.large-image {
+  width: 100%;
+  box-shadow: none;
+}
