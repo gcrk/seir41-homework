@@ -33,7 +33,7 @@ const updateQuote = function () {
 updateQuote();
 
 
-// Find Location of the ISS every 5 seconds
+// FIND LOCATION OS ISS AND DETERMINE IF OVER WATER OR LAND
 
 const getISSLocale = function () {
 
@@ -71,7 +71,7 @@ const updateLocale = function () {
 updateLocale();
 
 
-// Random color
+// RANDO COLOUR
 
 const getRandomColor = function () {
 
