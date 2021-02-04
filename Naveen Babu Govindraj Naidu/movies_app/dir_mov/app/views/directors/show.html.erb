@@ -1,0 +1,14 @@
+<h1> <%= @director.name %></h1>
+<%= image_tag @director.image,:alt => @director.name if @director.image.present? %>
+<ul>
+  <li>Name: <%= @director.name %></li>
+  <li>Nationality: <%= @director.nationality %></li>
+  <li>Date of birth: <%=  @director.dob.strftime '%A %B %e %Y' %></li>
+  <li>Period: <%= @director.period %></li>
+</ul>
+
+<div class="controls">
+  <%= button_to 'Edit Director', edit_director_path(@director) %>
+    <br>
+  <%= button_to 'Delete Director', @director, :method => 'delete' %>
+</div>
