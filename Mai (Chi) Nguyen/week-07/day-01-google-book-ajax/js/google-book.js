@@ -1,6 +1,8 @@
-const fetchBook = function () {
+const fetchBook = function (event) {
+  event.preventDefault(); //Dont leave this page
+
   const xhr = new XMLHttpRequest();
-  const name = document.getElementById('user-input').value;
+  const name = document.getElementById('user-input').value.toLowerCase();
   console.log(name);
   xhr.open('GET', `https://www.googleapis.com/books/v1/volumes?q=title:${name}`);
   xhr.send();
@@ -24,4 +26,5 @@ const fetchBook = function () {
   }
 }
 
-document.getElementById('fetch').addEventListener('click', fetchBook);
+const form = document.getElementById('search-form')
+form.addEventListener('submit', fetchBook);
