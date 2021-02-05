@@ -4,7 +4,7 @@
 
 
 
-////without recursion
+////without recursion////////////////////////////////////////////////////////////
 const maximum = function (array) {
   largestNumber = 0;
   for(let i = 0; i < array.length; i++){
@@ -17,7 +17,7 @@ const maximum = function (array) {
 
 console.log(maximum([1,2,3,4,5,6,66]))
 
-//with recursion
+//with recursion/////////////////////////////////////////////////////////////////
 function findMax(array, index = 0, max = 0){ // This function returns the largest number in a given array.
   if(index === array.length){
     return max;
@@ -32,9 +32,30 @@ function findMax(array, index = 0, max = 0){ // This function returns the larges
 console.log(findMax([1,4,6,8,32]));
 console.log(findMax([1,44,6,800,32]));
 
+///////////////////JOELS////////////////////////////////////////////////////////
+function findMax(array, largest=-Infinity) {
+  if (array.length === 0){
+    return largest;//base case//have we reached the base case??
+  }
+    //if we havent reached rthe base case
+  if (array[0] > largest) {
+    largest = array[0];
+  }
+
+  const rest = array.slice(1);
+
+  //RECURSION bit
+  return findMax(rest, largest);
+}
+
+
+
+
 function factorial(){
     // This function returns the factorial of a given number.
 }
+
+
 
 function fibonacci(){
     // This function returns the Nth number in the fibonacci sequence.
