@@ -63,14 +63,31 @@ function fibonacci(){
     // For this function, the first two fibonacci numbers are 1 and 1
 }
 
-function coinFlips(){
+function coinFlips(tosses){ //not recursive
+    const combinations = [];
+
+    //Helper: recursion
+    const flip = function (soFar=""){
+      console.log()
+      if (soFar.length === tosses){
+        combinations.push (soFar); //base case
+      } else {
+        flip(soFar + 'H')
+        flip(soFar + 'T')
+      }
+    }
+
+    flip();
+    return combinations
+}
     // This function returns an array of all possible outcomes from flipping a coin N times.
     // Input type: Integer
     // For example, coinFlips(2) would return the following:
     // ["HH", "HT", "TH", "TT"]
     // H stands for Heads and T stands for tails
     // Represent the two outcomes of each flip as "H" or "T"
-}
+
+
 
 function letterCombinations(){
     // This function returns an array of all combinations of the given letters
