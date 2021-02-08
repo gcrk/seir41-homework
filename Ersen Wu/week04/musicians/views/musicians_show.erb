@@ -1,0 +1,10 @@
+<h1><%= @musician["name"] %></h1>
+<h2>Genre: <%= @musician ["genre"] %></h2>
+<% unless @musician["image"].nil? || @musician["image"].empty? %>
+<img src="<%= @musician["image"] %>" alt="<%= @musician["name"] %>">
+<% end %>
+
+<div class="controls">
+  <a href="/musicians/<%= @musician["id"] %>/edit">Edit Musician</a>
+  <a href="/musicians/<%= @musician["id"] %>/delete">Delete Musician</a>
+</div>

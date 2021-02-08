@@ -1,4 +1,5 @@
-const fetchResult = () => {
+const fetchResult = (e) => {
+	e.preventDefault();
 	const query = document.getElementById("bookTitle").value;
 	const resultDiv = document.querySelector("#result");
 	const xhr = new XMLHttpRequest();
@@ -27,4 +28,4 @@ const fetchResult = () => {
 	};
 };
 
-document.querySelector("#search").addEventListener("click", fetchResult);
+document.querySelector("#search-form").addEventListener("submit", fetchResult);

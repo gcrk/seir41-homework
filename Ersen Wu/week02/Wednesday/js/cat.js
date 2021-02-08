@@ -23,7 +23,7 @@ const oldLeft = parseInt(img.style.left);
   img.style.left = newLeft + 'px';
 } else if (parseInt(img.style.left)>1800) {
 
-  img.style.left = '0px';
+  img.style.left = '-100px';
 }
 
 
