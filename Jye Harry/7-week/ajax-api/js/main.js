@@ -25,7 +25,7 @@ const getTemp = function(temp) {
   } else if (temp > 30) {
     return "Get in the pool.";
   } else if (temp > 25) {
-    return "Hot enough where the metal part of your seat belt will burn the crap out of the back of your arm.";
+    return "Hot enough where the metal part of your seat belt will burn the crap out of the back of your arm. Other than that it's actually beautiful.";
   } else if (temp > 20) {
     return "Average I suppose.";
   } else if (temp > 15) {
