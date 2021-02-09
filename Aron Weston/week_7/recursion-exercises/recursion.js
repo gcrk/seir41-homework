@@ -1,6 +1,4 @@
-// Write code inside the functions
-// You will have to figure out what parameters to include
-// All functions must use recursion
+
 const test = [3, 4, 2, 1, 2]
 
 function findMax(arr) {
@@ -10,7 +8,7 @@ function findMax(arr) {
     if (nums.length === 1) {
         return nums[0];
     }
-    //If the first is larger than the second, 
+    //If the first is larger than the second, remove it from the array.
     if (nums[0] > nums[1]) {
         nums.splice(1, 1);
     } else {
@@ -20,6 +18,8 @@ function findMax(arr) {
 }
 
 console.log(findMax(test));
+
+
 
 function factorial(num, n = num - 1) {
 
@@ -50,13 +50,17 @@ function fibonacci(num) {
 console.log(fibonacci(1));
 
 
-function coinFlips(flips) {
+function coinFlips(flips, arr = ['H', 'T']) {
+
+    let combos = arr.splice()
+
+    if (flips < 0) {
+        return;
+    }
 
     
 
-    if (flips < 0) {
-        return current;
-    }
+
 
 
     return flips(flips - 1, )

@@ -22,7 +22,7 @@ const getWeather = () => {
         }
 
         function error(err) {
-            console.error(`ERROR(${err.code}): ${err.message}`);
+            console.error(`ERROR(${err.code}): ${err. message}`);
         }
     }
 }

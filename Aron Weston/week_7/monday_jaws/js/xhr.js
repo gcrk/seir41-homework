@@ -30,7 +30,7 @@ const fetchData = (e) => {
         allBooks.forEach(book => {
             //The volume info for each book, all the data that we care about
             const info = book.volumeInfo;
-            
+    
             //Create an article for the flexbox grid with the all the info we care about, then append that to the grid.
             const article = document.createElement("article");
             article.className = "book-card";
