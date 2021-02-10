@@ -1,0 +1,52 @@
+body {
+  background-color: aliceblue;
+}
+
+h1 {
+  text-align: center;
+  margin: 2em 0;
+}
+
+form {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+label {
+  font-size: 40px;
+}
+
+input {
+  height: 3em;
+  width: 20em;
+  margin: 0 3em;
+  border: none;
+}
+
+button {
+  height: 3em;
+  width: 10em;
+  border: none;
+}
+
+.center {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+img {
+  display: block;
+  margin: 0 auto;
+}
+
+h2, h3 {
+  text-align: center;
+}
+
+#info {
+  margin: 2em 0;
+}

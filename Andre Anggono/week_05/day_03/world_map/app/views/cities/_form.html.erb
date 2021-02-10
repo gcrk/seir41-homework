@@ -1,0 +1,24 @@
+<%= form_for @city do |f| %>
+  <%= f.label :name %>
+  <%= f.text_field :name, :autofocus => true, :required => true %>
+
+  <%= f.label :area %>
+  <%= f.text_field :area %>
+
+  <%= f.label :founded %>
+  <%= f.text_field :founded, :placeholder => 'YYYY-MM-DD' %>
+
+  <%= f.label :population %>
+  <%= f.text_field :population %>
+
+  <%= f.label :icons, 'Iconic Sites' %>
+  <%= f.text_field :icons %>
+
+  <%= f.label :map %>
+  <%= f.url_field :map %>
+
+  <%= f.label :country_id %>
+  <%= f.select :country_id, Country.pluck(:name, :id), :include_blank => true %>
+
+  <%= f.submit %>
+<% end %>

@@ -1,0 +1,15 @@
+<h1><%= @ocean.name %></h1>
+
+<%= image_tag @ocean.image if @ocean.image.present? %>
+<ul>
+    <li>Depth: <%= number_to_human @ocean.depth %> Metres</li>
+    <li>Surface Area: <%= number_to_human @ocean.surface_area %> km<sup>2</sup></li>
+    <li>Water Volume: <%= number_to_human @ocean.water_volume %></li>
+    <li>Largest Seas: <%= @ocean.largest_seas %></li>
+    <li>Settlements: <%= @ocean.settlements %></li>
+</ul>
+
+<div class="controls">
+    <%= link_to 'Edit Ocean', edit_ocean_path(@ocean.id), :class => "button" %>
+    <%= button_to 'Delete Ocean', ocean_path(@ocean.id), :method => "delete", :class => "button button-primary" %>
+</div>

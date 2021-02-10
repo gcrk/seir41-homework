@@ -1,0 +1,17 @@
+<h2><%= @dino.name %></h2>
+
+<%= image_tag @dino.image, :alt => @dino.name if @dino.image.present? %>
+
+<ul>
+  <li>Scientific Name: <%= @dino.scientific_name %></li>
+  <li>Location: <%= @dino.location %></li>
+  <li>Diet: <%= @dino.diet %></li>
+  <li>Date: Lived <%= number_to_human @dino.date_time %> years ago</li>
+  <li>Size: <%= @dino.size %> meters</li>
+  <li>Weight: Weighed <%= number_to_human @dino.weight %> kg</li>
+</ul>
+
+<div class="controls">
+  <%= link_to 'Edit dinosaur', edit_dino_path(@dino.id) %>
+  <%= button_to 'Delete dinosaur', dino_path(@dino.id), :method => 'delete' %>
+</div>

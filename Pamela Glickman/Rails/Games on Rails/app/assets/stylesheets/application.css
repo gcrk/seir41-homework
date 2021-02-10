@@ -1,0 +1,143 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+
+html {
+  background-color: black;
+}
+
+body {
+  background-color: white;
+  color: midnightblue;
+  text-align: center;
+  height: 100%;
+  width: 100%;
+  margin: 0;
+}
+
+nav {
+  background-color: black;
+  color: white;
+}
+
+ul {
+  display: flex;
+  justify-content: flex-start;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+li {
+  display: flex;
+  align-items: center;
+  margin: 0;
+  padding: 1% 2%;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  font-size: 3rem;
+}
+
+a:hover {
+  color: lightblue;
+}
+
+h1 {
+  font-size: 3rem;
+  margin: auto 0;
+}
+
+img  {
+  max-height: 20vh;
+  width: 95%;
+  padding: 1%;
+}
+
+main {
+  height: 45vh;
+  width: 90%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin: 0 auto;
+}
+
+section {
+  height: 85%;
+  width: 35%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+h2 {
+  font-size: 2.5rem;
+  margin-bottom: 50px;
+}
+
+.rock-paper-scissors {
+  margin-bottom: 0;
+}
+
+h3 {
+  margin: 13px;
+}
+
+p, label {
+  font-size: 1.4rem;
+  margin: 40px auto;
+}
+
+input {
+  font-size: 1.1rem;
+  border: 1px solid white;
+  border-bottom: 1px solid midnightblue;
+}
+
+select {
+  border: 1px solid white;
+  border-bottom: 1px solid midnightblue;
+  background-color: inherit;
+  font-size: 1.2rem;
+  padding-left: 15px;
+}
+
+button {
+  background-color: midnightblue;
+  color: white;
+  font-size: 1.5rem;
+  display: block;
+  margin: 5px auto;
+  padding: 5px 15px;
+  border: none;
+  border-radius: 10px;
+}
+
+button:hover {
+  background-color: blue;
+  cursor: pointer;
+}
+
+#retry-button {
+  display: inline-block;
+  margin: 0 20px;
+}
+
+.secret {
+  display: none;
+}

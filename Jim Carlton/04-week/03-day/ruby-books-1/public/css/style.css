@@ -1,0 +1,102 @@
+html, body {
+    height: 100%;
+}
+
+body {
+  background-color: skyblue;
+  font-family: helvetica;
+  margin: 0;
+}
+
+header {
+  display: flex;
+  justify-content: center;
+  font-size: 16px;
+  color: royalblue;
+  margin-top: 30px;
+}
+
+a, h2 {
+  color: royalblue;
+  text-decoration: none;
+}
+
+.internal-block {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+}
+
+p {
+  font-size: 16px;
+  color: royalblue;
+  max-width: 700px;
+  text-align: center;
+  line-height: 25px;
+}
+
+form {
+  margin-top: 40px;
+}
+
+input {
+  padding: 25px;
+  border-radius: 30px 0px 0px 30px;
+  width: 200px;
+  background-color: rgba(0,0,0,0);
+  font-size: 16px;
+  border-style: solid;
+  border-color: white;
+  color: royalblue;
+  outline: none;
+  font-family: helvetica;
+  margin-right: -8px;
+}
+
+input::placeholder {
+  color: whitesmoke;
+}
+
+button {
+  border-radius: 0px 30px 30px 0px;
+  padding: 25px;
+  font-size: 16px;
+  cursor: pointer;
+  background-color: royalblue;
+  border-color: white;
+  color: skyblue;
+  border-style: solid;
+  font-family: helvetica;
+}
+
+button:hover {
+  background-color: skyblue;
+  border-color: white;
+  color: royalblue;
+  transition: all .2s ease-in-out;
+}
+
+.go-home {
+  margin-top: 20px;
+  padding: 15px;
+  font-size: 16px;
+  cursor: pointer;
+  background-color: royalblue;
+  border-color: white;
+  color: skyblue;
+  border-style: solid;
+  border-radius: 30px;
+}
+
+.go-home:hover {
+  background-color: skyblue;
+  border-color: white;
+  color: royalblue;
+  transition: all .2s ease-in-out;
+}
+
+span {
+  font-weight: 700;
+  display: block;
+}

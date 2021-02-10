@@ -1,0 +1,9 @@
+<h1>Artists</h1>
+
+<% @artists.each do |artist| %>
+  <%= image_tag artist.image, :class => 'thumbnail', :alt => artist.name if artist.image.present? %>
+  <ul>
+    <li>Name: <%= link_to artist.name, artist %></li>
+    <li>Genre: <%= artist.genre %></li>
+  </ul>
+<% end %>

@@ -38,11 +38,11 @@ const bank = {
 		const $savingsBalance = $("#savings-balance"); // Storing jQuery object for div id #savings-balance.
 
 		// Changing div balance background to Red / Gray by adding / removing .zero class. CSS changes the colour. $0 === Red , Balance in account === Gray.
-		bank.accounts.checking === 0 ? $checkingBalance.addClass("zero") : $checkingBalance.removeClass("zero"); // For Checking balance div.
-		bank.accounts.savings === 0 ? $savingsBalance.addClass("zero") : $savingsBalance.removeClass("zero"); // For Savings balance div.
+		this.accounts.checking === 0 ? $checkingBalance.addClass("zero") : $checkingBalance.removeClass("zero"); // For Checking balance div.
+		this.accounts.savings === 0 ? $savingsBalance.addClass("zero") : $savingsBalance.removeClass("zero"); // For Savings balance div.
 
 		// Update HTML div balance text to reflect the balance of each accounts.
-		$checkingBalance.text(`$${bank.accounts.checking}`);
-		$savingsBalance.text(`$${bank.accounts.savings}`);
+		$checkingBalance.text(`$${this.accounts.checking}`);
+		$savingsBalance.text(`$${this.accounts.savings}`);
 	}
 };

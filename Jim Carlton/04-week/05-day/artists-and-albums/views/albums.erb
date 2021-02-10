@@ -1,0 +1,16 @@
+<h2>Albums</h2>
+
+<ul class="sub-container">
+
+<% @albums.each do |album| %>
+
+  <li>
+    <a href="/albums/<%= album[:id] %>">
+      <img src="<%= album[:artwork] %>" alt="<%= album[:album_name] %>">
+      <p><%= album[:album_name] %></p>
+    </a>
+  </li>
+
+<% end %>
+
+</ul>

@@ -1,0 +1,20 @@
+<h1>Edit here</h1>
+
+<form action="/crystals/<%= @crystal["id"] %>" method="post">
+  <label>
+    Crystal Name:
+    <input type="text" name="name" placeholder="Enter name here" required value="<%= @crystal["name"] %>">
+  </label>
+
+  <label>
+    Apparent Healing Properties::
+    <input type="text" name="healingprop" placeholder="Describe Crystal's healing properties" value="<%= @crystal["healingprop"] %>">
+  </label>
+
+  <label>
+    Image URL:
+    <input type="url" name="image" placeholder="http://..." value="<%= @crystal["image"] %>">
+  </label>
+
+  <button>Update Crystal</button>
+</form>

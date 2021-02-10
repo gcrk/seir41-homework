@@ -1,0 +1,9 @@
+<form action="/rps/play">
+  Your Choice:
+  <select name="user">
+    <% @choices.each do |word| %>
+    <option value = <%=word %>><%=word%></option>
+    <% end %>
+  </select>
+  <button>Sumbit</button>
+</form>

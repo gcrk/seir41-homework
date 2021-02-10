@@ -1,0 +1,21 @@
+<p>User's Choice: <%=params[:user]%></p>
+<p>Computer's Choice: <%=@computer%></p>
+
+<h3>
+  Result:
+  <% if params[:user] == @computer %>
+  It's a draw!
+  <%elsif params[:user] =='rock' && @computer == 'paper'%>
+  Computer wins!
+  <%elsif params[:user] =='rock' && @computer == 'scissor'%>
+  You win!
+  <%elsif params[:user] =='paper' && @computer == 'rock'%>
+  You win!
+  <%elsif params[:user] =='paper' && @computer == 'scissor'%>
+  Computer wins!
+  <%elsif params[:user] =='scissor' && @computer == 'rock'%>
+  Computer wins!
+  <%elsif params[:user] =='scissor' && @computer == 'paper'%>
+  You win!
+  <% end %>
+</h3>

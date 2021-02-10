@@ -1,0 +1,46 @@
+<%= form_for(@bean, class: 'col s12') do |f| %>
+<div class="row">
+    <div class="input-field col s6">
+        <%= f.label(:name, :class => "validate") %>
+        <%= f.text_field(:name, :required => true)  %>
+    </div>
+    <div class="input-field col s6">
+        <%= f.label(:image, class: "validate") %>
+        <%= f.url_field(:image) %>
+    </div>
+    <div class="input-field col s6">
+        <%= f.select(:roaster_id, Roaster.pluck(:name, :id), :include_blank => true, class: "validate")%>
+        <%= f.label(:roaster_id, class: "validate") %>
+    </div>
+    <div class="input-field col s6">
+        <%= f.label :origin %>
+        <%= f.text_field(:origin, class: "validate")%>
+    </div>
+    <div class="input-field col s6">
+        <%= f.select(:roast_profile, options_for_select(['Light Roast', 'Medium/Light Roast', 'Medium Roast', 'Medium/Dark Roast', 'Dark Roast']), class: "validate") %>
+         <%= f.label :roast_profile %>
+    </div>
+    <div class="input-field col s6">
+        <%= f.label(:aron_rating) %>
+        <%= f.number_field(:aron_rating, class: "validate") %>
+    </div>
+    <div class="input-field col s6">
+        <%= f.label(:price) %>
+        <%= f.number_field(:price, class: "validate") %>
+    </div>
+</div>
+</div>
+<div class="row">
+    <div class="col s12">
+        <%= f.label :tasting_notes %>
+        <%= f.text_area(:tasting_notes, size: "20x5", class: "validate") %>
+    </div>
+</div>
+<div class="row">
+    <div class="col s12">
+        <%= f.label :brew_guide %>
+        <%= f.text_area(:brew_guide, size: "20x5", class: "validate") %>
+    </div>
+</div>
+<%= f.submit(class:"btn black") %>
+<% end %>

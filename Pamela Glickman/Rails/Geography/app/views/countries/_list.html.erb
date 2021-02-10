@@ -1,0 +1,26 @@
+<% @countries.each do |country| %>
+    <section>
+      <h2><%= country["name"] %></h2>
+      <div class="country">
+        <p><strong>Population:</strong> <%= number_to_human country["population"] %></p>
+        <p><strong>Area:</strong> <%= number_to_human country["area"] %> (in km<sup>2</sup>)</p>
+      </div>
+      <div class="country">
+        <%= link_to 'Edit Country', edit_country_path(country), :class => 'edit' %>
+        <%= link_to 'Delete Country', country_path(country), :method => "delete" %>
+      </div>
+      <% unless country.landmarks.length < 1 %>
+        <h3>Landmarks</h3>
+        <section class="landmarks">
+          <% country.landmarks.each do |landmark| %>
+            <div>
+              <h4><%= landmark["name"] %></h4>
+              <%= image_tag landmark["image"], :alt => landmark["name"] if landmark["image"].present? %>
+              <%= link_to 'Edit Landmark', edit_landmark_path(landmark), :class => 'edit' %>
+              <%= link_to 'Delete Landmark', landmark_path(landmark), :method => "delete" %>
+            </div>
+          <% end %>
+        </section>
+      <% end %>
+    </section>
+<% end %>
