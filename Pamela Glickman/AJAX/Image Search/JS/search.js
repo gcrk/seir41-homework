@@ -1,8 +1,23 @@
 // Global variables
 let pageNum = 1;
+let lastPageReached = false;
+
+// Alternate Solution
+const state = {
+  pageNum: 1,
+  requestInProgress: false
+}
 
 // Function for getting pictures from Flickr
 const searchFlickr = function (keywords, pageNum) {
+  // if (state.requestInProgress) {
+  //  return;
+  //}
+
+  // state.requestInProgress = true;
+  if (lastPageReached) {
+    return;
+  }
   console.log('Searching for', keywords);
   const flickrURL = 'https://api.flickr.com/services/rest?jsoncallback=?'; // JSONP
   $.getJSON(flickrURL, {
@@ -12,13 +27,18 @@ const searchFlickr = function (keywords, pageNum) {
     format: 'json',
     page: pageNum,
   }).done(showImages).done(function (info) {
+    //state.requestInProgress = false;
     console.log(info);
+    //console.log(state);
+    if (info.photos.pages >= info.photos.pages) {
+      lastPageReached = true; // prevents unnecessary requests
+    }
   });
 };
 
 // Function for displaying images
 const showImages = function (results, pageNum) {
-  if (results.photos.pages >= results.photos.page) {
+//  if (results.photos.pages >= results.photos.page) { // This was intended to prevent attempts to load images that didn't exist
     _(results.photos.photo).each(function (photo) {
         const thumbnailURL = generateURL(photo);
         const $a = $('<a>', {href: thumbnailURL}) // create a link to the image's flickr page
@@ -30,7 +50,7 @@ const showImages = function (results, pageNum) {
         $div.append($largeImg);
         $div.appendTo('#slideshow');
     });
-  }
+// }
 }
 
 // Function for creating image URL
@@ -65,17 +85,20 @@ $(document).ready(function() {
     const searchTerms = $('#query').val();
     $('img').remove();
     $('#slideshow div').remove();
+    lastPageReached = false;
     window.scrollTo(0,0);
     searchFlickr(searchTerms, pageNum);
   });
 });
 
+const chillSearchFlickr = _.debounce( searchFlickr, 4000, true); // Added after class
+
 // Function to create infinite scrolling
 $(window).on('scroll', function() {
   const scrollBottom = $(document).height() - $(document).scrollTop() - $(window).height();
-  if (scrollBottom < 1) { // I change the value to less than 1 to prevent the page from loading too many pages
+  if (scrollBottom < 500) { // I originally changed the value to less than 1 to prevent the page from loading too many pages
     pageNum++;
     const searchTerms = $('#query').val();
-    searchFlickr(searchTerms, pageNum); // getting page 1 again.
+    chillSearchFlickr(searchTerms, pageNum); // Added after class
   }
 });
