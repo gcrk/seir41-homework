@@ -1,0 +1,22 @@
+<div class="form">
+  <h1>Edit Bicycle</h1>
+
+  <form action="/bicycle/<%= @bicycle["id"] %>" method="post">
+    <label> Model:
+      <input type="text" name="model" placeholder="Model name" value='<%=@bicycle['model']%>'>
+    </label>
+    <label> Manufacturer:
+      <input type="text" name="manufacturer" placeholder="Manufacturer of Bicycle" value='<%=@bicycle['manufacturer']%>'>
+    </label>
+    <label> Description:
+      <input type="text" name="description" placeholder="Bicycle Description" value='<%=@bicycle['description']%>'>
+    </label>
+    <label> Price:
+      <input type="number" name="price" placeholder="RRP" value='<%=@bicycle['price']%>'>
+    </label>
+    <label> Image:
+      <input type="text" name="image" placeholder="Image of Bicycle" value='<%=@bicycle['image']%>'>
+    </label>
+    <button>Update Bicycle</button>
+  </form>
+</div>

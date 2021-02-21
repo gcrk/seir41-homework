@@ -1,0 +1,19 @@
+<h1>Magic 8 Ball</h1>
+
+<h4>You wanted to know if:</h4>
+<div class='question'>
+  <%= @question %>
+</div>
+
+<div class='answer'>
+  <h4>Magic 8 Ball says:</h4>
+  <%= @random_answer %>
+</div>
+
+<div>
+  <p>
+    <form action='/magic8_ball'>
+      <button>Ask for more wisdom</button>
+    </form>
+  </p>
+</div>
