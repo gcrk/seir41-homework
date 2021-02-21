@@ -3,7 +3,7 @@ const displayCurrency = function() {
     const base = $('#base').val();
     const amount = $('#amount').val();
     const target = $('#target').val();
-    $.ajax(`https://api.exchangeratesapi.io/latest?base=${base}`).done(function (results) {
+    $.ajax(`https://api.ratesapi.io/api/latest?base=${base}`).done(function (results) {
       const convertedAmount = results.rates[target] * amount;
       $('#converted-amount').text(`${convertedAmount.toFixed(2)} ${target}`);
     });
