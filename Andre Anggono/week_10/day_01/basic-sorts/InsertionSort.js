@@ -18,8 +18,8 @@ function insertionSort(items) {
 
 	for (let i = 1; i < items.length; i++) {
 		currValue = items[i];
-		let j;
-		for (j = i - 1; j >= 0; j--) {
+
+		for (var j = i - 1; j >= 0; j--) {
 			if (items[j] > currValue) {
 				items[j + 1] = items[j];
 			} else break;
