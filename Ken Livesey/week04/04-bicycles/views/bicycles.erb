@@ -1,0 +1,12 @@
+<% @bicycles.each { |bicycle| %>
+<a href="/bicycle/<%= bicycle["id"] %>">
+  <div class="bicycle">
+    <img src="<%= bicycle["image"] %>" alt="<%= bicycle["model"] %>">
+    <p><%= bicycle["model"] %></p>
+  </div>
+</a>
+<a href="/bicycle/new">
+  <div id="new-bicycle">
+    <p>New Bicycle</p>
+  </div>
+</a>
