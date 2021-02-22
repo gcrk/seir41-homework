@@ -2,30 +2,42 @@
 // You will have to figure out what parameters to include
 // All functions must use recursion
 
-function findMax(array, index = 0, largest){
-    // This function returns the largest number in a given array.
-  if (index === array.length) {
-    return largest;
+// function findMax(array, index = 0, largest){
+//     // This function returns the largest number in a given array.
+//   if (index === array.length) {
+//     return largest;
+//   }
+//   // check if the largest has any value, if not, assign the first value
+//   if (!largest) {
+//     largest = array[index];
+//   };
+//   if (array[index] > largest) {
+//     largest = array[index];
+//   }
+//   return findMax(array, index + 1, largest);
+// }
+
+function findMax(array, largest = array[0]) {
+  if (array.length === 0) {
+    return largest; // base case
   }
-  // check if the largest has any value, if not, assign the first value
-  if (!largest) {
-    largest = array[index];
-  };
-  if (array[index] > largest) {
-    largest = array[index];
-    return findMax(array, index + 1, largest);
+
+  if (array[0] > largest) {
+    largest = array[0]
   }
-  return findMax(array, index + 1, largest);
+
+  const rest = array.slice(1);
+  return findMax(rest, largest);
 }
 
-function factorial(number, index = 1, runningResult = 1){
+function factorial(number, runningResult = 1){
     // This function returns the factorial of a given number.
-    if (index > number) {
+    if (number === 1) {
       return runningResult;
     }
 
-    runningResult = runningResult * index;
-    return factorial(number, index + 1, runningResult);
+    runningResult = number * runningResult;
+    return factorial(number - 1, runningResult);
 }
 
 function fibonacci(number, index = 1, resultArray = [0]){
@@ -46,25 +58,37 @@ function fibonacci(number, index = 1, resultArray = [0]){
   return fibonacci(number, index + 1, resultArray);
 }
 
-function coinFlips(n){
-    // This function returns an array of all possible outcomes from flipping a coin N times.
-    // Input type: Integer
-    // For example, coinFlips(2) would return the following:
-    // ["HH", "HT", "TH", "TT"]
-    // H stands for Heads and T stands for tails
-    // Represent the two outcomes of each flip as "H" or "T"
-  let possibleOutcome = ['H', 'T'];
-  if (n === 1) {
-    return possibleOutcome;
+// function coinFlips(n){
+//   let possibleOutcome = ['H', 'T'];
+//   if (n === 1) {
+//     return possibleOutcome;
+//   }
+//
+//   let arrayToDuplicate = coinFlips(n - 1);
+//   let array1 = arrayToDuplicate;
+//   let array2 = arrayToDuplicate;
+//
+//   array1 = array1.map(posibility => posibility + possibleOutcome[0]);
+//   array2 = array2.map(posibility => posibility + possibleOutcome[1]);
+//   return array1.concat(array2);
+// }
+
+function coinFlips(tosses) { //not recursive
+  const combinations = [];
+
+  //Helper: recursive
+  const flip = function (soFar="") {
+    // console.log('soFar', soFar, soFar.length === tosses);
+    if (soFar.length === tosses) {
+      combinations.push( soFar ); //base case
+    } else {
+      flip(soFar + 'H');
+      flip(soFar + 'T');
+    }
   }
 
-  let arrayToDuplicate = coinFlips(n - 1);
-  let array1 = arrayToDuplicate;
-  let array2 = arrayToDuplicate;
-
-  array1 = array1.map(posibility => posibility + possibleOutcome[0]);
-  array2 = array2.map(posibility => posibility + possibleOutcome[1]);
-  return array1.concat(array2);
+  flip();
+  return combinations;
 }
 
 function letterCombinations(array){
