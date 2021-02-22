@@ -1,0 +1,13 @@
+body {
+    background-image: url('https://i.pinimg.com/originals/89/92/ba/8992ba8a5962114770ad9eb4d6be733c.jpg');
+    font-size: 4rem;
+    background-position: cover;
+    background-size: cover;
+    color: white;
+    text-align: center;
+    background-repeat: no-repeat;
+}
+
+div {
+    margin: 0 auto;
+}
