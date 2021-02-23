@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <%- include('partials/head') %>
+  <body>
+    <%-  include('partials/nav') %>
+    <form action="/result">
+      <label>
+        Which stonk would you like to check?
+        <input name="symbol" placeholder="What stock, sir?" autofocus>
+      </label>
+      <button type="button" name="button">Search!</button>
+    </form>
+  </body>
+</html>
