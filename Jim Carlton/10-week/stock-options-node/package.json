@@ -13,6 +13,7 @@
     "axios": "^0.21.1",
     "ejs": "^3.1.6",
     "express": "^4.17.1",
+    "stockfinder": "^3.1.1",
     "stocks": "^1.0.1",
     "underscore": "^1.12.0",
     "yahoo-stock-prices": "^1.1.0"

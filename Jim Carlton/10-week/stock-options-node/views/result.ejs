@@ -1,11 +1,8 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <title>Testicles</title>
-    <link rel="stylesheet" href="/css/style.css">
-  </head>
+  <%-  include('partials/head') %>
   <body>
-    <h1><%= stock %> is currently stonking at <%= price %></h1>
+    <%-  include('partials/nav') %>
+    <h1><%= symbol %> is currently stonking at $<%= price %> </h1>
   </body>
 </html>
