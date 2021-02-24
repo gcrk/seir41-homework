@@ -1,0 +1,16 @@
+@import url('https://fonts.googleapis.com/css2?family=Comic+Neue:wght@700&display=swap');
+
+body {
+    background-image: url('https://miro.medium.com/max/2560/1*VF9j49EAPmKUUPYBfYNYLQ.jpeg');
+    color: white;
+    font-family: 'Comic Neue',
+    cursive;
+    font-size: 4rem;
+    background-position: cover;
+    background-repeat: no-repeat;
+    color: red;
+}
+
+div {
+    margin: 0 auto;
+}

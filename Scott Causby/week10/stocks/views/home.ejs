@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+  <%- include('partials/head') %>
+<body>
+    <%- include('partials/nav') %>
+    <h1>Stocks</h1>
+    <form action="/info">
+        <label>
+             Stock Symbol:
+             <input type="search" name="symbol" placeholder="AAPL" required>
+        </label>
+        <button>find</button>
+    </form>
+</body>
+</html>
