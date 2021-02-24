@@ -4,12 +4,10 @@ function insertionSort (items) {
   // store the current item value so it can be placed correctly
   // in the sorted portion of the array
   items.forEach((item, i) => {
-    const item2 = item;
     for (let j = i - 1; j > -1; j--) {
-      if (item2 < items[j]) {
+      if (items[j] > item) {
         items[j+1] = items[j];
-      } else {
-        items[j+1] = item2;
+        items[j] = item;
       }
     }
   });
