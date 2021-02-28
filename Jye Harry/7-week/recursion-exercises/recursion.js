@@ -1,16 +1,23 @@
 // Write code inside the functions
 // You will have to figure out what parameters to include
 // All functions must use recursion
-function findMax(arr) {
-  let index = 0;
-  let largest = arr[index];
-  function returnMax() {
-    if (index >= arr.length - 1) return largest;
-    largest = largest > arr[index + 1] ? largest : arr[index + 1];
-    index++;
-    return returnMax();
-  }
-  return returnMax();
+// function findMax(arr) {
+//   let index = 0;
+//   let largest = arr[index];
+//   function returnMax() {
+//     if (index >= arr.length - 1) return largest;
+//     largest = largest > arr[index + 1] ? largest : arr[index + 1];
+//     index++;
+//     return returnMax();
+//   }
+//   return returnMax();
+// }
+
+function findMax(array, largest = -Infinity) {
+  if (array.length === 0) return largest;
+  if (array[0] > largest) largest = array[0];
+  const rest = array.slice(1);
+  return findMax(rest, largest);
 }
 
 function factorial(n) {
@@ -24,30 +31,17 @@ function fibonacci(n) {
 }
 
 function coinFlips(n) {
-  // This function returns an array of all possible outcomes from flipping a coin N times.
-  // Input type: Integer
-  // For example, coinFlips(2) would return the following:
-  // ["H", "T"]
-  // ["HH", "HT", "TH", "TT"]
-  // ["HHH", "HHT", "HTH", "HTT", "TTT", "TTH", "THT", "THH"]
-  // ["HHHH", "HHHT", "HHTH", "HHTT", "HTHH", "HTHT", "HTTH", "HTTT", "THHH", "THHT", "THTH", "THTT", "TTHH", "TTHT", "TTTH", "TTTT"]
-  // H stands for Heads and T stands for tails
-  // Represent the two outcomes of each flip as "H" or "T"
-  const outcomes = [];
-  const letters = ['H', 'T'];
-  function flip(lettersIndex) {
-    if (outcomes.length === 2 ** n) return outcomes;
-    // each letter is in the ith position of a string 2 ** n-1 times
-    let outcome = [];
-    function updateOutcome(lettersIndex) {
-      if (outcome.length >= n) return outcome.join('');
-
-      return updateOutcome();
+  const combinations = [];
+  const flip = function(soFar = '') {
+    if (soFar.length === n) {
+      combinations.push(soFar);
+    } else {
+      flip(soFar + 'H');
+      flip(soFar + 'T');
     }
-    outcomes.push(flip(0));
-    outcomes.push(flip(1));
   }
-  return flip();
+  flip();
+  return combinations;
 }
 
 function letterCombinations() {
