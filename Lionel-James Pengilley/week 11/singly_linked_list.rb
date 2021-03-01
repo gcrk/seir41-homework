@@ -68,10 +68,34 @@ class SinglyLinkedList
 
   # Tricky
   def reverse # non-destructive
+    node = @head
+    prev = nil
+
+    until node.nil?
+      next_node = node.next
+      node.next = prev
+      prev = node
+      node = next_node
+    end
+
+    @head = prev
   end
 
   # Trickier
   def reverse! # destructive
+    # return if @head.nil?
+    #
+    # @tmp_head = self.rtq
+    # @tmp_head.next = nil
+    # @tail = @tmp_head
+    #
+    # until @head.nil?
+    #   entry = self.rtq
+    #   entry.next = @tmp_head
+    #   @tmp_head = entry
+    # end
+    #
+    # @head = @tmp_head
   end
 
   # Trickiest -- how do you accept/invoke a block (do/end)?
