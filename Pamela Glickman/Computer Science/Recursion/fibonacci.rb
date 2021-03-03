@@ -24,4 +24,21 @@ def fibonacci_recursive(n)
   end
 end
 
+# Bonus homework:
+# Make this faster but still recursive:
+# Option a: memoisation
+# Option b: iterative recursion
+
+# I think I used both here
+def fibonacci_bonus(index, a = 1, b = 1, total = 1)
+  if index <= 2
+    return total
+  end
+  total = a + b
+  a = b
+  b = total
+  index -= 1
+  fibonacci_bonus(index, a, b, total)
+end
+
 binding.pry
