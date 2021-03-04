@@ -13,12 +13,12 @@ const searchFlickr = function (keywords, pageNum) {
   // if (state.requestInProgress) {
   //  return;
   //}
-
+  console.log("Hello from search flickr")
   // state.requestInProgress = true;
   if (lastPageReached) {
     return;
   }
-  console.log('Searching for', keywords);
+  console.log(`Searching for ${keywords}`);
   const flickrURL = 'https://api.flickr.com/services/rest?jsoncallback=?'; // JSONP
   $.getJSON(flickrURL, {
     method: 'flickr.photos.search', // not to confused with HTTP methods like GET/POST
@@ -30,7 +30,7 @@ const searchFlickr = function (keywords, pageNum) {
     //state.requestInProgress = false;
     console.log(info);
     //console.log(state);
-    if (info.photos.pages >= info.photos.pages) {
+    if (info.photos.pages <= pageNum) {
       lastPageReached = true; // prevents unnecessary requests
     }
   });
